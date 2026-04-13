@@ -1,152 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>History - MuLTEE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2C2C2A; line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-    
-    .nav { padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E8E6E0; }
-    .nav-logo { font-weight: 600; font-size: 18px; color: #1D9E75; }
-    .nav-links { display: flex; gap: 32px; font-size: 14px; }
-    .nav-links a { color: #5F5E5A; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: #1D9E75; }
-    
-    .page-header { background: #F8F7F5; padding: 48px 40px; }
-    .page-header h1 { font-size: 32px; font-weight: 600; margin-bottom: 8px; }
-    .page-header p { font-size: 16px; color: #5F5E5A; }
-    
-    .content { max-width: 800px; margin: 0 auto; padding: 48px 40px; }
-    
-    .section { margin-bottom: 40px; }
-    .section-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #2C2C2A; }
-    .section-text { font-size: 16px; color: #444441; margin-bottom: 12px; }
-    
-    .timeline { margin-top: 32px; border-left: 2px solid #E8E6E0; padding-left: 24px; }
-    .timeline-item { margin-bottom: 24px; position: relative; }
-    .timeline-item::before { content: ''; position: absolute; left: -29px; top: 6px; width: 10px; height: 10px; background: #1D9E75; border-radius: 50%; }
-    .timeline-year { font-weight: 600; font-size: 14px; color: #1D9E75; margin-bottom: 4px; }
-    .timeline-text { font-size: 14px; color: #5F5E5A; }
-    
-    .footer { background: #F8F7F5; padding: 40px; text-align: center; font-size: 14px; color: #5F5E5A; margin-top: 48px; }
-    .footer a { color: #1D9E75; }
-    
-    @media (max-width: 768px) {
-      .nav { padding: 16px 20px; }
-      .nav-links { gap: 16px; font-size: 13px; }
-      .page-header, .content { padding-left: 20px; padding-right: 20px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | MuLTEE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #1D9E75;
+            --green-dark: #177a5b;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        nav {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover { color: var(--green); }
+        
+        .page-header {
+            background: linear-gradient(135deg, #f0fdf7 0%, #e8f5f0 100%);
+            padding: 3rem 2rem;
+        }
+        
+        .page-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--green);
+        }
+        
+        p { margin-bottom: 1rem; }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border);
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.25rem;
+            width: 12px;
+            height: 12px;
+            background: var(--green);
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--green);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item p {
+            margin-bottom: 0;
+            color: var(--text-light);
+        }
+        
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        footer a { color: #8ae8c7; }
+        
+        @media (max-width: 768px) {
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
+            .page-header h1 { font-size: 1.75rem; }
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">MuLTEE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="populations.html">Populations</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="data.html">Data & Strains</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">MuLTEE</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="history.html" class="active">History</a>
-      <a href="populations.html">Populations</a>
-      <a href="data.html">Data & Strains</a>
-      <a href="publications.html">Publications</a>
-      <a href="team.html">Team</a>
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>History of the MuLTEE</h1>
+            <p>From foundational experiments to a multi-decade research program</p>
+        </div>
     </div>
-  </nav>
 
-  <header class="page-header">
-    <h1>History of the MuLTEE</h1>
-    <p>From foundational ideas to a multi-decade evolution experiment</p>
-  </header>
+    <main>
+        <section>
+            <h2>Intellectual Foundations</h2>
+            <p>
+                The MuLTEE builds on decades of theoretical and experimental work on major evolutionary transitions. 
+                JT Bonner's insight that increased size is the primary driver of early multicellularity shaped our 
+                selective regime. Andrew Knoll's work on oxygen and the evolution of complex life motivated our 
+                metabolic treatments. And Richard Lenski's Long-Term Evolution Experiment with <em>E. coli</em> 
+                demonstrated the power of watching evolution unfold in real time across thousands of generations.
+            </p>
+        </section>
 
-  <main class="content">
+        <section>
+            <h2>Origins: 2010–2018</h2>
+            <p>
+                The Ratcliff Lab spent eight years developing snowflake yeast as a model system for studying the 
+                transition to multicellularity. Building on <em>Saccharomyces cerevisiae</em>'s genetic tractability, 
+                the team evolved and characterized simple multicellular clusters that form through mother-daughter 
+                cell adhesion.
+            </p>
+            <p>
+                Key foundational work by Will Ratcliff and Mike Travisano showed that multicellularity could evolve 
+                via mutations in the ACE2 transcription factor, causing daughter cells to remain attached after division. 
+                This created branching, snowflake-shaped clusters with an emergent life cycle: groups grow until 
+                mechanical strain breaks a cell-cell bond, releasing a clonal propagule.
+            </p>
+            <p>
+                Critically, they developed gravitational selection as a method to select for larger multicellular size. 
+                Larger clusters settle faster through liquid media, allowing efficient screening of millions of clusters 
+                daily without requiring predators or other environmental manipulations. This made snowflake yeast 
+                an ideal model system for evolving and studying increased size.
+            </p>
+        </section>
 
-    <section class="section">
-      <h2 class="section-title">Origins (2010-2018): Developing the model system</h2>
-      <p class="section-text">
-        The Ratcliff Lab spent eight years developing snowflake yeast as a model system for studying the transition to multicellularity. Building on <em>Saccharomyces cerevisiae</em>'s genetic tractability, the team evolved and characterized simple multicellular clusters that form through mother-daughter cell adhesion.
-      </p>
-      <p class="section-text">
-        Key foundational work by Will Ratcliff and Mike Travisano showed that multicellularity could evolve via mutations in the <em>ACE2</em> transcription factor, causing daughter cells to remain attached after division. This created branching, snowflake-shaped clusters with an emergent life cycle: groups grow until mechanical strain breaks a cell-cell bond, releasing a clonal propagule.
-      </p>
-    </section>
+        <section>
+            <h2>Founding the MuLTEE: 2018</h2>
+            <p>
+                When Ozan Bozdag joined the Ratcliff Lab as a postdoc, he proposed evolving snowflake yeast under 
+                different oxygen and metabolic conditions. This work led to the discovery that oxygen concentration 
+                was a key constraint on size evolution. Growing yeast as petites (unable to respire) removed the 
+                oxygen limitation, and supplementing media with sparged air kept O<sub>2</sub> high for aerobic 
+                populations. These approaches unlocked the size constraint that had limited earlier experiments.
+            </p>
+            <p>
+                These results, published in <em>Nature Communications</em> (2021), transformed the initial postdoc 
+                project into the MuLTEE. All 15 populations began from an isogenic ancestor with a clean ACE2 
+                deletion, ensuring genetic consistency across replicate lines. Daily gravitational selection has 
+                continued ever since.
+            </p>
+        </section>
 
-    <section class="section">
-      <h2 class="section-title">Intellectual foundations</h2>
-      <p class="section-text">
-        Several ideas shaped the MuLTEE's design:
-      </p>
-      <p class="section-text">
-        <strong>JT Bonner's "size comes first" hypothesis</strong> proposed that the benefits of early multicellularity stem primarily from increased size. The MuLTEE tests this by selecting for larger clusters through daily settling selection.
-      </p>
-      <p class="section-text">
-        <strong>Andrew Knoll's work on oxygen and multicellular evolution</strong> raised questions about how atmospheric oxygen levels shaped the trajectory of complex life.
-      </p>
-      <p class="section-text">
-        <strong>Richard Lenski's Long-Term Evolution Experiment</strong> with <em>E. coli</em> demonstrated the power of multi-decade experimental evolution. The LTEE inspired the MuLTEE's design: multiple replicate populations, regular cryopreservation, and commitment to truly long-term observation.
-      </p>
-    </section>
+        <section>
+            <h2>Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2010–2018</div>
+                    <h3>Model System Development</h3>
+                    <p>Development and characterization of snowflake yeast; gravitational selection method established</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <h3>MuLTEE Begins</h3>
+                    <p>15 populations initiated across three metabolic treatments (PA, PM, PO)</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <h3>Oxygen & Size Paper</h3>
+                    <p><em>Nature Communications</em>: Oxygen suppression of macroscopic multicellularity</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <h3>Macroscopic Multicellularity</h3>
+                    <p><em>Nature</em>: De novo evolution of macroscopic multicellularity via entanglement</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <h3>Ecological Diversification & Epigenetics</h3>
+                    <p><em>Nature Ecology & Evolution</em>: Stable coexistence of small and large lineages<br>
+                    <em>Science Advances</em>: Hsp90 and proteostatic tuning in multicellular adaptation</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <h3>9,000+ Generations</h3>
+                    <p>Ongoing evolution with 3,000+ frozen samples archived</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section class="section">
-      <h2 class="section-title">Founding the MuLTEE (2018)</h2>
-      <p class="section-text">
-        When Ozan Bozdag joined the Ratcliff Lab as a postdoc, he proposed evolving snowflake yeast under different oxygen and metabolic conditions as his main project. The positive results from this work, published in <em>Nature Communications</em> (2021), demonstrated that oxygen availability profoundly shapes the evolution of multicellular size. This success transformed the initial postdoc project into the MuLTEE.
-      </p>
-      <p class="section-text">
-        G. Ozan Bozdag and William Ratcliff initiated the MuLTEE in early 2018. The experiment began with an isogenic ancestor carrying a clean <em>ACE2</em> deletion, ensuring all 15 replicate populations started from the same genetic basis.
-      </p>
-      <p class="section-text">
-        The selection regime is simple but powerful: daily settling selection favors larger clusters, which sink faster through liquid media. This screens millions of clusters for size each day, efficiently selecting for increased multicellular complexity.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Major milestones</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <p class="timeline-year">2018</p>
-          <p class="timeline-text">MuLTEE initiated with 15 populations across three treatments</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-year">2021</p>
-          <p class="timeline-text"><em>Nature Communications</em>: Oxygen suppression of macroscopic multicellularity (Bozdag et al.)</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-year">2023</p>
-          <p class="timeline-text"><em>Nature</em>: De novo evolution of macroscopic multicellularity (Bozdag et al.). Populations evolved 20,000-fold increases in size through "entanglement," becoming as tough as wood.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-year">2024</p>
-          <p class="timeline-text"><em>Nature Ecology & Evolution</em>: Emergence of stable coexistence through niche partitioning (Pineau et al.)</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-year">2024</p>
-          <p class="timeline-text"><em>Science Advances</em>: Proteostatic tuning underpins multicellular evolution (Montrose et al.)</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-year">Present</p>
-          <p class="timeline-text">Over 9,000 generations completed, with more than 3,000 frozen samples archived</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Looking forward</h2>
-      <p class="section-text">
-        The MuLTEE is designed to run for decades. Our first decadal plan (2025-2035) focuses on the origin of development, reproductive specialization, novel multicellular traits, and how multicellular evolution reshapes underlying cell biology.
-      </p>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>The MuLTEE is conducted at the <a href="https://ratclifflab.biology.gatech.edu" target="_blank">Ratcliff Lab</a>, Georgia Institute of Technology</p>
-    <p style="margin-top: 8px;">Contact: multee@gatech.edu</p>
-  </footer>
-
+    <footer>
+        <p>
+            MuLTEE · <a href="https://ratclifflab.biology.gatech.edu">Ratcliff Lab</a> · 
+            Georgia Institute of Technology · Atlanta, GA
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+            Supported by NSF LTREB Award #2424492
+        </p>
+    </footer>
 </body>
 </html>
