@@ -6,332 +6,293 @@
     <title>Data & Strains | MuLTEE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --green: #1D9E75;
-            --green-dark: #177a5b;
-            --text: #1a1a1a;
-            --text-light: #666;
-            --bg: #ffffff;
+            --primary: #2698BA;
+            --text: #111;
+            --text-light: #555;
+            --bg: #fff;
             --bg-alt: #f8f9fa;
-            --border: #e5e5e5;
+            --border: #dee2e6;
+            --sidebar-width: 220px;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Roboto', sans-serif;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 300;
         }
         
-        nav {
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 2rem;
-            position: sticky;
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
             top: 0;
-            z-index: 100;
-        }
-        
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--bg);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
         }
         
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--green);
-            text-decoration: none;
+        .sidebar-header { margin-bottom: 2rem; }
+        .sidebar-header h1 { font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 0.25rem; }
+        .sidebar-header p { font-size: 0.85rem; color: var(--text-light); }
+        
+        .sidebar-nav { list-style: none; flex: 1; }
+        .sidebar-nav li { margin-bottom: 0.5rem; }
+        .sidebar-nav a { color: var(--text); font-size: 0.95rem; font-weight: 400; padding: 0.5rem 0; display: block; }
+        .sidebar-nav a:hover { color: var(--primary); text-decoration: none; }
+        .sidebar-nav a.active { color: var(--primary); font-weight: 500; }
+        
+        .sidebar-footer { font-size: 0.8rem; color: var(--text-light); }
+        
+        .main {
+            margin-left: var(--sidebar-width);
+            padding: 3rem 4rem;
+            max-width: 900px;
         }
         
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+        .main h1 { font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
+        .main .subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; font-weight: 300; }
         
-        .nav-links a {
+        .main h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 2.5rem 0 1rem 0;
             color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
         }
         
-        .nav-links a:hover { color: var(--green); }
+        .main h2:first-of-type { margin-top: 0; }
         
-        .page-header {
-            background: linear-gradient(135deg, #f0fdf7 0%, #e8f5f0 100%);
-            padding: 3rem 2rem;
-        }
-        
-        .page-header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .page-header h1 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .page-header p {
+        .main h3 {
             font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 700px;
-        }
-        
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        
-        section {
-            margin-bottom: 3rem;
-        }
-        
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--green);
-        }
-        
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        
-        p { margin-bottom: 1rem; }
-        
-        a { color: var(--green); }
-        
-        /* Resource Cards */
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .resource-card {
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        
-        .resource-card h3 {
+            font-weight: 500;
             margin-bottom: 0.5rem;
         }
         
-        .resource-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
+        .main p { margin-bottom: 1rem; }
         
-        .resource-card a.btn {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
-        
-        .resource-card a.btn:hover {
-            background: var(--green-dark);
-        }
-        
-        /* Strain Request Section */
+        /* Strain Request Box */
         .strain-box {
-            background: #f0fdf7;
-            border: 2px solid var(--green);
-            border-radius: 8px;
-            padding: 2rem;
+            background: var(--bg-alt);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem 1.5rem;
             margin: 1.5rem 0;
         }
         
         .strain-box h3 {
-            color: var(--green);
-            margin-bottom: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
         }
         
         .strain-box ul {
-            margin: 1rem 0 1.5rem 1.5rem;
+            margin: 1rem 0 1.25rem 1.5rem;
         }
         
         .strain-box li {
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
         
         .btn-download {
             display: inline-block;
-            background: var(--green);
+            background: var(--primary);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.6rem 1.25rem;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: background 0.2s;
         }
         
         .btn-download:hover {
-            background: var(--green-dark);
+            background: #1f7f9e;
             color: white;
+            text-decoration: none;
         }
         
-        /* Frozen Archive Info */
+        /* Archive Info */
         .archive-info {
             background: var(--bg-alt);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 4px;
+            padding: 1.25rem 1.5rem;
             margin: 1.5rem 0;
         }
         
         .archive-info h4 {
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 0.5rem;
         }
         
-        footer {
-            background: var(--text);
-            color: white;
-            padding: 2rem;
-            text-align: center;
+        .archive-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0;
         }
         
-        footer a { color: #8ae8c7; }
+        /* Resource Cards */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
         
-        @media (max-width: 768px) {
-            .nav-links { gap: 1rem; font-size: 0.85rem; }
-            .page-header h1 { font-size: 1.75rem; }
+        .resource-card {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+        
+        .resource-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .resource-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+        
+        .resource-card .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .resource-card .btn:hover {
+            background: #1f7f9e;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 900px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .sidebar-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+            .sidebar-nav li { margin-bottom: 0; }
+            .main { margin-left: 0; padding: 2rem; }
+            .resource-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <a href="index.html" class="logo">MuLTEE</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="populations.html">Populations</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="data.html">Data & Strains</a></li>
-                <li><a href="team.html">Team</a></li>
-            </ul>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>MuLTEE</h1>
+            <p>Multicellularity Long-Term<br>Evolution Experiment</p>
         </div>
-    </nav>
-
-    <div class="page-header">
-        <div class="page-header-content">
-            <h1>Data & Strains</h1>
-            <p>Access MuLTEE resources for your research</p>
+        <ul class="sidebar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="populations.html">Populations</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="data.html" class="active">Data & Strains</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Ratcliff Lab<br>Georgia Tech</p>
         </div>
-    </div>
+    </aside>
 
-    <main>
-        <section>
-            <h2>Request Strains</h2>
-            <p>
-                The Ratcliff laboratory freely shares strains from the MuLTEE frozen archive to advance scientific 
-                research. We ask researchers to complete a strain request form so we can ensure you receive the 
-                correct strains and avoid unintentional overlap with ongoing projects in the community.
-            </p>
-            
-            <div class="strain-box">
-                <h3>Strain Request Process</h3>
-                <p>To request strains, please download and complete the request form. The form collects:</p>
-                <ul>
-                    <li><strong>Recipient information</strong> for shipping and documentation</li>
-                    <li><strong>Specific strains requested</strong> (strain names, timepoints, and treatments)</li>
-                    <li><strong>Research plan</strong> so we can share relevant protocols and coordinate with other labs</li>
-                    <li><strong>Shipping preferences</strong> (dry ice overnight vs. agar stabs)</li>
-                </ul>
-                <p>
-                    Understanding your research goals helps us provide methodological support and ensures coordination 
-                    across the growing community of labs studying multicellular evolution.
-                </p>
-                <a href="MuLTEE_Strain_Request_Form.docx" class="btn-download" download>
-                    Download Strain Request Form (.docx)
-                </a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
-                    Submit completed forms to Dr. Ozan Bozdag at 
-                    <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a>
-                </p>
-            </div>
-            
-            <div class="archive-info">
-                <h4>The Frozen Fossil Record</h4>
-                <p>
-                    Every 25 days (approximately 125 generations), we cryogenically preserve all 15 evolving populations 
-                    in a 35% glycerol solution at -80°C. This "frozen fossil record" now contains over 3,000 snapshots, 
-                    allowing us to resurrect actual ancestors from any timepoint and test evolutionary hypotheses with 
-                    modern technology. Strains are typically shipped within 2 weeks of approval.
-                </p>
-            </div>
-        </section>
+    <main class="main">
+        <h1>Data & Strains</h1>
+        <p class="subtitle">Access MuLTEE resources for your research</p>
 
-        <section>
-            <h2>Resources</h2>
-            <div class="resource-grid">
-                <div class="resource-card">
-                    <h3>Genome Sequences</h3>
-                    <p>Illumina short-read sequences for population samples and single-strain isolates from key timepoints.</p>
-                    <a href="#" class="btn">Coming Soon</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Phenotype Data</h3>
-                    <p>Systematic measurements of cluster size, cell morphology, and fitness across the experiment.</p>
-                    <a href="#" class="btn">Coming Soon</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Protocols</h3>
-                    <p>Detailed methods for working with snowflake yeast, including fitness assays and genetic transformation.</p>
-                    <a href="https://protocols.io" class="btn" target="_blank">protocols.io</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Analysis Scripts</h3>
-                    <p>Code for genomic analysis, image processing, and biophysical modeling.</p>
-                    <a href="#" class="btn">Coming Soon</a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>
-                For questions about strains, data, or collaboration opportunities, contact:<br><br>
-                <strong>Dr. Ozan Bozdag</strong><br>
-                <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a><br><br>
-                <strong>Dr. William Ratcliff</strong><br>
-                <a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a>
-            </p>
-        </section>
-    </main>
-
-    <footer>
+        <h2>Request Strains</h2>
         <p>
-            MuLTEE · <a href="https://ratclifflab.biology.gatech.edu">Ratcliff Lab</a> · 
-            Georgia Institute of Technology · Atlanta, GA
+            The Ratcliff laboratory freely shares strains from the MuLTEE frozen archive to advance scientific 
+            research. We ask researchers to complete a strain request form so we can ensure you receive the 
+            correct strains and avoid unintentional overlap with ongoing projects in the community.
         </p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-            Supported by NSF LTREB Award #2424492
+        
+        <div class="strain-box">
+            <h3>Strain Request Process</h3>
+            <p>To request strains, please download and complete the request form. The form collects:</p>
+            <ul>
+                <li><strong>Recipient information</strong> for shipping and documentation</li>
+                <li><strong>Specific strains requested</strong> (strain names, timepoints, and treatments)</li>
+                <li><strong>Research plan</strong> so we can share relevant protocols and coordinate with other labs</li>
+                <li><strong>Shipping preferences</strong> (dry ice overnight vs. agar stabs)</li>
+            </ul>
+            <p>
+                Understanding your research goals helps us provide methodological support and ensures coordination 
+                across the growing community of labs studying multicellular evolution.
+            </p>
+            <a href="MuLTEE_Strain_Request_Form.docx" class="btn-download" download>
+                Download Strain Request Form (.docx)
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                Submit completed forms to Dr. Ozan Bozdag at 
+                <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a>
+            </p>
+        </div>
+        
+        <div class="archive-info">
+            <h4>The Frozen Fossil Record</h4>
+            <p>
+                Every 25 days (approximately 125 generations), we cryogenically preserve all 15 evolving populations 
+                in a 35% glycerol solution at -80°C. This "frozen fossil record" now contains over 3,000 snapshots, 
+                allowing us to resurrect actual ancestors from any timepoint and test evolutionary hypotheses with 
+                modern technology. Strains are typically shipped within 2 weeks of approval.
+            </p>
+        </div>
+
+        <h2>Resources</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Genome Sequences</h3>
+                <p>Illumina short-read sequences for population samples and single-strain isolates from key timepoints.</p>
+                <a href="#" class="btn">Coming Soon</a>
+            </div>
+            <div class="resource-card">
+                <h3>Phenotype Data</h3>
+                <p>Systematic measurements of cluster size, cell morphology, and fitness across the experiment.</p>
+                <a href="#" class="btn">Coming Soon</a>
+            </div>
+            <div class="resource-card">
+                <h3>Protocols</h3>
+                <p>Detailed methods for working with snowflake yeast, including fitness assays and genetic transformation.</p>
+                <a href="https://protocols.io" class="btn" target="_blank">protocols.io</a>
+            </div>
+            <div class="resource-card">
+                <h3>Analysis Scripts</h3>
+                <p>Code for genomic analysis, image processing, and biophysical modeling.</p>
+                <a href="#" class="btn">Coming Soon</a>
+            </div>
+        </div>
+
+        <h2>Contact</h2>
+        <p>
+            For questions about strains, data, or collaboration opportunities, contact:<br><br>
+            <strong>Dr. Ozan Bozdag</strong><br>
+            <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a><br><br>
+            <strong>Dr. William Ratcliff</strong><br>
+            <a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a>
         </p>
-    </footer>
+    </main>
 </body>
 </html>

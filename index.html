@@ -6,383 +6,346 @@
     <title>MuLTEE | Multicellularity Long Term Evolution Experiment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --green: #1D9E75;
-            --green-dark: #177a5b;
-            --text: #1a1a1a;
-            --text-light: #666;
-            --bg: #ffffff;
+            --primary: #2698BA;
+            --text: #111;
+            --text-light: #555;
+            --bg: #fff;
             --bg-alt: #f8f9fa;
-            --border: #e5e5e5;
+            --border: #dee2e6;
+            --sidebar-width: 220px;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Roboto', sans-serif;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 300;
         }
         
-        /* Navigation */
-        nav {
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 2rem;
-            position: sticky;
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
             top: 0;
-            z-index: 100;
-        }
-        
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--bg);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
         }
         
-        .logo {
-            font-weight: 700;
+        .sidebar-header {
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-header h1 {
             font-size: 1.5rem;
-            color: var(--green);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
             font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+        
+        .sidebar-header p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            flex: 1;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-nav a {
+            color: var(--text);
             font-size: 0.95rem;
-            transition: color 0.2s;
+            font-weight: 400;
+            padding: 0.5rem 0;
+            display: block;
+            border-bottom: 1px solid transparent;
         }
         
-        .nav-links a:hover {
-            color: var(--green);
+        .sidebar-nav a:hover {
+            color: var(--primary);
+            text-decoration: none;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f0fdf7 0%, #e8f5f0 100%);
-            padding: 4rem 2rem;
+        .sidebar-nav a.active {
+            color: var(--primary);
+            font-weight: 500;
         }
         
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .sidebar-footer {
+            font-size: 0.8rem;
+            color: var(--text-light);
         }
         
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+        /* Main Content */
+        .main {
+            margin-left: var(--sidebar-width);
+            padding: 3rem 4rem;
+            max-width: 900px;
+        }
+        
+        .main h1 {
+            font-size: 2rem;
+            font-weight: 400;
             margin-bottom: 0.5rem;
             color: var(--text);
         }
         
-        .hero .subtitle {
-            font-size: 1.25rem;
+        .main .subtitle {
+            font-size: 1.1rem;
             color: var(--text-light);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
         
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 800px;
+        .main h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 2.5rem 0 1rem 0;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        
+        .main p {
             margin-bottom: 1rem;
         }
         
         /* Mission Box */
         .mission-box {
-            background: white;
-            border: 2px solid var(--green);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            max-width: 900px;
-        }
-        
-        .mission-box h3 {
-            color: var(--green);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            background: var(--bg-alt);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
         }
         
         .mission-box p {
-            font-size: 1rem;
-            margin-bottom: 0;
+            margin-bottom: 0.5rem;
         }
         
-        .nsf-note {
+        .mission-box p:last-child {
+            margin-bottom: 0;
             font-size: 0.9rem;
             color: var(--text-light);
-            margin-top: 0.75rem;
         }
         
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        
-        section {
-            margin-bottom: 3rem;
-        }
-        
-        h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-        }
-        
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        /* Cards Grid */
-        .card-grid {
+        /* Treatment Cards */
+        .treatments {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .card {
-            background: var(--bg-alt);
-            border-radius: 8px;
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-        }
-        
-        .card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .card.po { border-left: 4px solid #1D9E75; }
-        .card.pa { border-left: 4px solid #E24B4A; }
-        .card.pm { border-left: 4px solid #378ADD; }
-        
-        .tag {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        
-        .tag.po { background: #1D9E75; }
-        .tag.pa { background: #E24B4A; }
-        .tag.pm { background: #378ADD; }
-        
-        /* Project List */
-        .project-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
+            margin: 1.5rem 0;
         }
         
-        .project-item {
-            background: var(--bg-alt);
-            padding: 1rem 1.25rem;
-            border-radius: 6px;
-            border-left: 3px solid var(--green);
+        .treatment-card {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
         }
         
-        .project-item h4 {
+        .treatment-card h3 {
             font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
         
-        .project-item p {
+        .treatment-card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .treatment-card.po .tag { background: #d4edda; color: #155724; }
+        .treatment-card.pa .tag { background: #f8d7da; color: #721c24; }
+        .treatment-card.pm .tag { background: #cce5ff; color: #004085; }
+        
+        .treatment-card p {
             font-size: 0.9rem;
             color: var(--text-light);
             margin-bottom: 0;
         }
         
-        /* Footer */
-        footer {
-            background: var(--text);
-            color: white;
-            padding: 2rem;
-            text-align: center;
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin: 1.5rem 0;
         }
         
-        footer a {
-            color: #8ae8c7;
+        .project {
+            font-size: 0.95rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-alt);
+            border-radius: 4px;
         }
         
-        /* Mobile */
-        @media (max-width: 768px) {
-            .nav-links {
+        .project strong {
+            font-weight: 500;
+        }
+        
+        .project span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
                 gap: 1rem;
-                font-size: 0.85rem;
             }
-            
-            .hero h1 {
-                font-size: 1.75rem;
+            .sidebar-nav li { margin-bottom: 0; }
+            .main {
+                margin-left: 0;
+                padding: 2rem;
             }
-            
-            .hero .subtitle {
-                font-size: 1rem;
-            }
+            .treatments { grid-template-columns: 1fr; }
+            .projects { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <a href="index.html" class="logo">MuLTEE</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="populations.html">Populations</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="data.html">Data & Strains</a></li>
-                <li><a href="team.html">Team</a></li>
-            </ul>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>MuLTEE</h1>
+            <p>Multicellularity Long-Term<br>Evolution Experiment</p>
         </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>The Multicellularity Long-Term Evolution Experiment</h1>
-            <p class="subtitle">Official Website of the MuLTEE Project</p>
-            <p>
-                The MuLTEE is a multi-decade experiment examining how simple groups of cells evolve into complex, 
-                functionally integrated multicellular organisms. Using snowflake yeast (<em>Saccharomyces cerevisiae</em>), 
-                we study the evolutionary transition to multicellularity in real time, tracking genetic, cellular, 
-                and multicellular-level changes across thousands of generations.
-            </p>
-            
-            <div class="mission-box">
-                <h3>About This Website</h3>
-                <p>
-                    This website provides key information about the science behind the MuLTEE and makes data and strains 
-                    from the project publicly available to researchers worldwide. Our goal is to foster a community of 
-                    scientists working on the evolutionary transition to multicellularity.
-                </p>
-                <p class="nsf-note">
-                    Supported by NSF's Long-Term Research in Environmental Biology (LTREB) program, Award #2424492.
-                </p>
-            </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="populations.html">Populations</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="data.html">Data & Strains</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Ratcliff Lab<br>Georgia Tech</p>
         </div>
-    </section>
+    </aside>
 
-    <main>
-        <section>
-            <h2>Treatment Groups</h2>
-            <div class="card-grid">
-                <div class="card po">
-                    <h3><span class="tag po">PO1-5</span> Obligately Aerobic</h3>
-                    <p>
-                        Grown on YEP-glycerol, which can only be respired. These populations led to the discovery that 
-                        multicellularity drives ecological diversification: small and large cluster-forming lineages 
-                        convergently evolved and coexisted for over 4,300 generations through oxygen-mediated 
-                        growth-survival trade-offs.
-                    </p>
-                </div>
-                <div class="card pa">
-                    <h3><span class="tag pa">PA1-5</span> Anaerobic</h3>
-                    <p>
-                        Petite mutants with mtDNA deletions, grown on YEP-dextrose. Unable to respire, these populations 
-                        are unconstrained by oxygen limitation. They evolved macroscopic size (visible to the naked eye) 
-                        and extensive aneuploidy, and now show near-complete deletion of the mitochondrial genome.
-                    </p>
-                </div>
-                <div class="card pm">
-                    <h3><span class="tag pm">PM1-5</span> Mixotrophic</h3>
-                    <p>
-                        Grown on YEP-dextrose with functional mitochondria, using both fermentation and respiration. 
-                        These populations remained microscopic throughout the experiment and serve as controls, retaining 
-                        the capacity to revert to unicellularity even after 5,000+ generations.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Current Research Priorities (2025–2035)</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <h4>Origin of Cellular Differentiation</h4>
-                    <p>How transcriptionally-regulated cell types evolve from homogeneous ancestors</p>
-                </div>
-                <div class="project-item">
-                    <h4>Synchronized Cell Division</h4>
-                    <p>Evolution of developmental timing and its role in multicellular patterning</p>
-                </div>
-                <div class="project-item">
-                    <h4>Multicellular Entrenchment</h4>
-                    <p>How cells lose the ability to revert to unicellularity</p>
-                </div>
-                <div class="project-item">
-                    <h4>Germ-Soma Specialization</h4>
-                    <p>Biophysical origins of reproductive division of labor via entanglement</p>
-                </div>
-                <div class="project-item">
-                    <h4>Whole Genome Duplication</h4>
-                    <p>De novo evolution and long-term maintenance of polyploidy</p>
-                </div>
-                <div class="project-item">
-                    <h4>Overcoming Diffusion Limits</h4>
-                    <p>Self-induced fluid flows enabling exponential growth at macroscopic scales</p>
-                </div>
-                <div class="project-item">
-                    <h4>Symmetry-Breaking Morphologies</h4>
-                    <p>Evolution of toroidal shapes from spherical ancestors</p>
-                </div>
-                <div class="project-item">
-                    <h4>Mitochondrial Reductive Evolution</h4>
-                    <p>Real-time tracking of organelle genome loss in anaerobic populations</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Resources</h2>
-            <p>
-                We freely share strains from our frozen archive with researchers worldwide. 
-                Visit our <a href="data.html">Data & Strains</a> page to request strains, 
-                access genome sequences, and find protocols for working with snowflake yeast.
-            </p>
-        </section>
-    </main>
-
-    <footer>
+    <main class="main">
+        <h1>The Multicellularity Long-Term Evolution Experiment</h1>
+        <p class="subtitle">Official Website of the MuLTEE Project</p>
+        
         <p>
-            MuLTEE · <a href="https://ratclifflab.biology.gatech.edu">Ratcliff Lab</a> · 
-            Georgia Institute of Technology · Atlanta, GA
+            The MuLTEE is a multi-decade experiment examining how simple groups of cells evolve into complex, 
+            functionally integrated multicellular organisms. Using snowflake yeast (<em>Saccharomyces cerevisiae</em>), 
+            we study the evolutionary transition to multicellularity in real time, tracking genetic, cellular, 
+            and multicellular-level changes across thousands of generations.
         </p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-            Supported by NSF LTREB Award #2424492
+        
+        <div class="mission-box">
+            <p>
+                This website provides key information about the science behind the MuLTEE and makes data and strains 
+                from the project publicly available to researchers worldwide. Our goal is to foster a community of 
+                scientists working on the evolutionary transition to multicellularity.
+            </p>
+            <p>Supported by NSF's Long-Term Research in Environmental Biology (LTREB) program, Award #2424492.</p>
+        </div>
+        
+        <h2>Treatment Groups</h2>
+        <div class="treatments">
+            <div class="treatment-card po">
+                <span class="tag">PO1-5</span>
+                <h3>Obligately Aerobic</h3>
+                <p>
+                    Grown on YEP-glycerol, which can only be respired. These populations led to the discovery that 
+                    multicellularity drives ecological diversification: small and large cluster-forming lineages 
+                    convergently evolved and coexisted for over 4,300 generations through oxygen-mediated 
+                    growth-survival trade-offs.
+                </p>
+            </div>
+            <div class="treatment-card pa">
+                <span class="tag">PA1-5</span>
+                <h3>Anaerobic</h3>
+                <p>
+                    Petite mutants with mtDNA deletions, grown on YEP-dextrose. Unable to respire, these populations 
+                    are unconstrained by oxygen limitation. They evolved macroscopic size (visible to the naked eye) 
+                    and extensive aneuploidy, and now show near-complete deletion of the mitochondrial genome.
+                </p>
+            </div>
+            <div class="treatment-card pm">
+                <span class="tag">PM1-5</span>
+                <h3>Mixotrophic</h3>
+                <p>
+                    Grown on YEP-dextrose with functional mitochondria, using both fermentation and respiration. 
+                    These populations remained microscopic throughout the experiment and serve as controls, retaining 
+                    the capacity to revert to unicellularity even after 5,000+ generations.
+                </p>
+            </div>
+        </div>
+        
+        <h2>Current Research Priorities (2025–2035)</h2>
+        <div class="projects">
+            <div class="project">
+                <strong>Origin of Cellular Differentiation</strong>
+                <span>How transcriptionally-regulated cell types evolve from homogeneous ancestors</span>
+            </div>
+            <div class="project">
+                <strong>Synchronized Cell Division</strong>
+                <span>Evolution of developmental timing and its role in multicellular patterning</span>
+            </div>
+            <div class="project">
+                <strong>Multicellular Entrenchment</strong>
+                <span>How cells lose the ability to revert to unicellularity</span>
+            </div>
+            <div class="project">
+                <strong>Germ-Soma Specialization</strong>
+                <span>Biophysical origins of reproductive division of labor via entanglement</span>
+            </div>
+            <div class="project">
+                <strong>Whole Genome Duplication</strong>
+                <span>De novo evolution and long-term maintenance of polyploidy</span>
+            </div>
+            <div class="project">
+                <strong>Overcoming Diffusion Limits</strong>
+                <span>Self-induced fluid flows enabling exponential growth at macroscopic scales</span>
+            </div>
+            <div class="project">
+                <strong>Symmetry-Breaking Morphologies</strong>
+                <span>Evolution of toroidal shapes from spherical ancestors</span>
+            </div>
+            <div class="project">
+                <strong>Mitochondrial Reductive Evolution</strong>
+                <span>Real-time tracking of organelle genome loss in anaerobic populations</span>
+            </div>
+        </div>
+        
+        <h2>Resources</h2>
+        <p>
+            We freely share strains from our frozen archive with researchers worldwide. 
+            Visit our <a href="data.html">Data & Strains</a> page to request strains, 
+            access genome sequences, and find protocols for working with snowflake yeast.
         </p>
-    </footer>
+    </main>
 </body>
 </html>
