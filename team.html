@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | MuLTEE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #1D9E75;
+            --green-dark: #177a5b;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        nav {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover { color: var(--green); }
+        
+        .page-header {
+            background: linear-gradient(135deg, #f0fdf7 0%, #e8f5f0 100%);
+            padding: 3rem 2rem;
+        }
+        
+        .page-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--green);
+        }
+        
+        /* Team Cards */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .team-card {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .team-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-card .role {
+            color: var(--green);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .team-card p {
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+        
+        .team-card a {
+            color: var(--green);
+            text-decoration: none;
+        }
+        
+        .team-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-note {
+            font-size: 0.9rem;
+            background: #f0fdf7;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer a { color: #8ae8c7; }
+        
+        @media (max-width: 768px) {
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
+            .page-header h1 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">MuLTEE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="populations.html">Populations</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="data.html">Data & Strains</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Team</h1>
+            <p>The people behind the MuLTEE</p>
+        </div>
+    </div>
+
+    <main>
+        <h2>Principal Investigators</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>G. Ozan Bozdag</h3>
+                <div class="role">Senior Research Scientist, Georgia Tech</div>
+                <p>
+                    Co-founder of the MuLTEE. Studies the genetic and cellular basis of multicellular evolution.
+                </p>
+                <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a>
+            </div>
+            
+            <div class="team-card">
+                <h3>William Ratcliff</h3>
+                <div class="role">Professor, Georgia Tech</div>
+                <p>
+                    Co-founder of the MuLTEE. Developed the snowflake yeast model system starting in 2010.
+                </p>
+                <a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 2.5rem;">Research Staff</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>Dung T. Lac</h3>
+                <div class="role">Research Technician, Georgia Tech</div>
+                <p>
+                    Manages strain distribution and leads omics data collection efforts. BS in Biotechnology 
+                    (University of Science, Ho Chi Minh City), MS in Biology (Georgia State University). 
+                    Joined the Ratcliff Lab in 2021.
+                </p>
+                <a href="mailto:dlac3@gatech.edu">dlac3@gatech.edu</a>
+                <div class="contact-note">
+                    <strong>Point of contact for strain requests</strong>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            MuLTEE · <a href="https://ratclifflab.biology.gatech.edu">Ratcliff Lab</a> · 
+            Georgia Institute of Technology · Atlanta, GA
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+            Supported by NSF LTREB Award #2424492
+        </p>
+    </footer>
+</body>
+</html>
