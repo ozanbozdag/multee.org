@@ -1,244 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History | MuLTEE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2698BA;
-            --text: #111;
-            --text-light: #555;
-            --bg: #fff;
-            --bg-alt: #f8f9fa;
-            --border: #dee2e6;
-            --sidebar-width: 220px;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-        
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: var(--sidebar-width);
-            height: 100vh;
-            background: var(--bg);
-            border-right: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .sidebar-header { margin-bottom: 2rem; }
-        .sidebar-header h1 { font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 0.25rem; }
-        .sidebar-header p { font-size: 0.85rem; color: var(--text-light); }
-        
-        .sidebar-nav { list-style: none; flex: 1; }
-        .sidebar-nav li { margin-bottom: 0.5rem; }
-        .sidebar-nav a { color: var(--text); font-size: 0.95rem; font-weight: 400; padding: 0.5rem 0; display: block; }
-        .sidebar-nav a:hover { color: var(--primary); text-decoration: none; }
-        .sidebar-nav a.active { color: var(--primary); font-weight: 500; }
-        
-        .sidebar-footer { font-size: 0.8rem; color: var(--text-light); }
-        
-        .main {
-            margin-left: var(--sidebar-width);
-            padding: 3rem 4rem;
-            max-width: 900px;
-        }
-        
-        .main h1 { font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
-        .main .subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; font-weight: 300; }
-        
-        .main h2 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin: 2.5rem 0 1rem 0;
-            color: var(--text);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-        
-        .main p { margin-bottom: 1rem; }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid var(--border);
-            margin: 1.5rem 0;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 2rem;
-        }
-        
-        .timeline-item:last-child { padding-bottom: 0; }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.35rem;
-            top: 0.25rem;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            border: 2px solid white;
-        }
-        
-        .timeline-year {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        .timeline-item h3 {
-            font-size: 1.05rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-item p {
-            margin-bottom: 0;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        
-        @media (max-width: 900px) {
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-            .sidebar-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
-            .sidebar-nav li { margin-bottom: 0; }
-            .main { margin-left: 0; padding: 2rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History | MuLTEE</title>
+<meta name="description" content="History of the MuLTEE: development of the snowflake yeast model system from around 2010, the 2018 experiment testing whether oxygen limits multicellular size, and the continued daily transfers that made it a long-term evolution experiment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1>MuLTEE</h1>
-            <p>Multicellularity Long-Term<br>Evolution Experiment</p>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="story.html">The Story</a>
+      <a href="experiment.html">The Experiment</a>
+      <a href="populations.html">Populations</a>
+      <a href="history.html" aria-current="page">History</a>
+      <a href="publications.html">Publications</a>
+      <a href="press.html">Press</a>
+      <a href="data.html">Data &amp; Strains</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="team.html">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== page head -->
+  <div class="page">
+    <section class="section" style="padding-block:var(--sp-8)">
+      <p class="eyebrow">MuLTEE</p>
+      <h1 class="display">History of the experiment</h1>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 1. the model system -->
+  <div class="page">
+    <section class="section prose" id="model-system">
+      <div class="section-head">
+        <p class="eyebrow">One &middot; 2010 to 2014</p>
+        <h2>Building the model system</h2>
+      </div>
+
+      <p>Snowflake yeast were made in Michael Travisano's lab at the University of Minnesota, where
+        Will Ratcliff was a postdoc. Out of a conversation about experiments that could address the
+        major evolutionary transitions, the two designed a simple experiment around a new selection
+        regime: let yeast cells settle through the liquid culture, transfer the bottom fraction into
+        the next day's fresh tubes, and see whether yeast could evolve multicellular clusters. The
+        design was remarkably effective. Ten replicate populations of unicellular <em>Saccharomyces
+        cerevisiae</em> Y55 were grown in liquid and settled daily, and all ten evolved clonal
+        snowflake clusters within just 60 transfers, about 300 generations. Clusters form because
+        mother and daughter cells fail to separate after budding, so every group is clonal by
+        construction. Under settling selection the multicellular genotypes carried a 34% fitness
+        advantage. Without it they paid about 10%.</p>
+
+      <p>Two results from this period were important for the work that followed. The first was
+        genetic. RNA-seq identified 1,035 differentially expressed genes, and seven of the ten most
+        strongly downregulated were targets of the transcription factor <em>ACE2</em>. Knockout and
+        complementation confirmed that loss of <em>ACE2</em> is both necessary and sufficient for the
+        snowflake phenotype. Because a single gene deletion produces the multicellular phenotype,
+        later experiments could begin from a constructed <em>ace2&Delta;</em> ancestor rather than
+        waiting for the mutation to arise.</p>
+
+      <p>The second was methodological. Because larger clusters sink faster, settling selection
+        screens enormous numbers of clusters for size every day without needing a predator or any
+        other ecological manipulation, and the strength of selection can be adjusted simply by
+        shortening the settling window. That combination of scale and control is what made snowflake
+        yeast a practical system for evolving and studying increased multicellular size.</p>
+
+      <figure class="plate">
+        <img src="assets/img/cluster-dic-grayscale.png"
+             srcset="assets/img/cluster-dic-grayscale-sm.jpg 900w, assets/img/cluster-dic-grayscale.png 1050w"
+             sizes="(max-width:1100px) 100vw, 760px"
+             width="1050" height="891"
+             alt="Grayscale differential-interference-contrast micrograph of one branched snowflake yeast cluster of roughly 150 round budding cells, shown in silvery relief on a flat mid-grey background.">
+        <div class="plate-label">
+          <p class="plate-num">Plate 01</p>
+          <dl>
+            <dt>Imaging</dt><dd>Differential interference contrast</dd>
+            <dt>Subject</dt><dd>Snowflake yeast cluster</dd>
+          </dl>
         </div>
-        <ul class="sidebar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="history.html" class="active">History</a></li>
-            <li><a href="populations.html">Populations</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="data.html">Data & Strains</a></li>
-            <li><a href="team.html">Team</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>Ratcliff Lab<br>Georgia Tech</p>
-        </div>
-    </aside>
+      </figure>
+      <p class="plate-caption">A snowflake yeast cluster imaged in transmitted light, with no
+        fluorescent label. Cells remain attached to the mothers that budded them, so the branched
+        form is a consequence of how the group grows. The archive records no treatment or timepoint
+        for this image.</p>
 
-    <main class="main">
-        <h1>History of the MuLTEE</h1>
+      <p>Ratcliff moved to Georgia Tech in 2014 and continued this work there. At that point there
+        was no plan for a long-term evolution experiment.</p>
+    </section>
+  </div>
 
-        <h2>Intellectual Foundations</h2>
-        <p>
-            The MuLTEE builds on decades of theoretical and experimental work on major evolutionary transitions:
-        </p>
-        <p>
-            <strong>JT Bonner</strong> showed that increased size is the primary driver of early multicellularity, 
-            shaping our selective regime.
-        </p>
-        <p>
-            <strong>Andrew Knoll</strong>'s work on oxygen and the evolution of complex life motivated our 
-            metabolic treatments.
-        </p>
-        <p>
-            <strong>Richard Lenski</strong>'s Long-Term Evolution Experiment with <em>E. coli</em> demonstrated 
-            the power of watching evolution unfold in real time across thousands of generations.
-        </p>
+  <hr class="rule">
 
-        <h2>Origins: 2010–2018</h2>
-        <p>
-            The Ratcliff Lab spent eight years developing snowflake yeast as a model system for studying the 
-            transition to multicellularity. Building on <em>Saccharomyces cerevisiae</em>'s genetic tractability, 
-            the team evolved and characterized simple multicellular clusters that form through mother-daughter 
-            cell adhesion.
-        </p>
-        <p>
-            Key foundational work by Will Ratcliff and Mike Travisano showed that multicellularity could evolve 
-            via mutations in the ACE2 transcription factor, causing daughter cells to remain attached after division. 
-            This created branching, snowflake-shaped clusters with an emergent life cycle: groups grow until 
-            mechanical strain breaks a cell-cell bond, releasing a clonal propagule.
-        </p>
-        <p>
-            Critically, they developed gravitational selection as a method to select for larger multicellular size. 
-            Larger clusters settle faster through liquid media, allowing efficient screening of millions of clusters 
-            daily without requiring predators or other environmental manipulations. This made snowflake yeast 
-            an ideal model system for evolving and studying increased size.
-        </p>
+  <!-- ===================================================== 2. the oxygen idea -->
+  <div class="page">
+    <section class="section prose" id="oxygen">
+      <div class="section-head">
+        <p class="eyebrow">Two &middot; 2018</p>
+        <h2>Testing whether oxygen limits multicellular size</h2>
+      </div>
 
-        <h2>Founding the MuLTEE: 2018</h2>
-        <p>
-            While a powerful setup, the original snowflake yeast experiments were constrained to a microscopic 
-            scale, with size evolution plateauing after a few hundred generations. In 2018, inspired by Andrew 
-            Knoll's ideas and his PhD work growing yeast under different metabolic regimes, Ozan Bozdag 
-            developed an evolution experiment to test the role of oxygen concentration on multicellular size 
-            evolution. This work revealed that oxygen was indeed a key constraint on size evolution. Growing yeast as petites (unable to respire) removed the 
-            oxygen limitation, and supplementing media with sparged air kept O<sub>2</sub> high for aerobic 
-            populations. These approaches unlocked the size constraint that had limited earlier experiments.
-        </p>
-        <p>
-            These results, published in <em>Nature Communications</em> (2021), transformed the initial postdoc 
-            project into the MuLTEE. All 15 populations began from an isogenic ancestor with a clean ACE2 
-            deletion, ensuring genetic consistency across replicate lines. Daily gravitational selection has 
-            continued ever since.
-        </p>
+      <p>In these early experiments, the model system appeared to have an upper limit on size. Size
+        increase flattened after a few hundred generations, and the longest run in the lab, a
+        mixotrophic population carried to roughly 400 days, remained microscopic. The
+        interpretation available at the time was that snowflake yeast could evolve into multicellular
+        clusters but could not evolve much beyond that, and that the system was therefore not well
+        suited to studying open-ended multicellular evolution.</p>
 
+      <p>Ozan Bozdag joined the Ratcliff lab as a postdoc and proposed a new project exploring
+        the relationship between multicellular size, oxygen concentration, and carbon metabolism,
+        building on his doctoral work growing yeast under different metabolic regimes. In an organism
+        that respires, oxygen reaches interior cells by diffusion, and diffusion limits how large a
+        mass of respiring cells can become. If oxygen delivery was what constrained cluster size,
+        then the limit was a consequence of the culture conditions rather than a property of
+        snowflake yeast, and changing those conditions should remove it.</p>
+
+      <p>This can be tested directly, because metabolism in yeast can be manipulated.
+        Respiration-deficient petite mutants cannot use oxygen at all, so increased cluster size
+        carries no cost in oxygen delivery. Sparging air through the medium raises dissolved oxygen
+        for populations that do respire.</p>
+
+      <p>Bozdag's postdoc project comprised twenty populations across four metabolic and oxygen regimes:
+        anaerobic petites, strictly aerobic yeast at intermediate oxygen (about 24&ndash;25% of
+        present atmospheric level), strictly aerobic yeast at high oxygen (about 72&ndash;75% PAL),
+        and mixotrophic yeast at intermediate oxygen. All twenty were maintained under identical
+        daily growth and settling selection for 145 transfers, roughly 812 generations.</p>
+
+      <p>Oxygen strongly affected size evolution, and the effect was not monotonic. Populations at
+        intermediate oxygen increased in mean size by only 8.9%, while anaerobic populations
+        increased by 93% and high-oxygen populations by 97%. The size limit that had made the system
+        appear closed was therefore set by the metabolic regime rather than by the yeast, and it
+        could be removed.</p>
+      <p class="xref" style="margin-top:calc(var(--sp-5) * -0.62)"><a href="https://doi.org/10.1038/s41467-021-23104-0">Bozdag, Libby, Pineau, Reinhard &amp; Ratcliff 2021 &middot; Nature Communications 12:2838</a></p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 3. becoming the MuLTEE -->
+  <div class="page">
+    <section class="section prose" id="becoming">
+      <div class="section-head">
+        <p class="eyebrow">Three &middot; 2018 onward</p>
+        <h2>The decision to keep transferring</h2>
+      </div>
+
+      <p>At 145 transfers the experiment had answered the question it was designed to ask, and the
+        result was being prepared for publication in <em>Nature Communications</em>. Bozdag did not
+        stop the experiment. He continued transferring the populations daily, past 300 transfers and
+        then past 400. That decision is what turned a postdoc project into a long-term evolution
+        experiment.</p>
+
+      <p>There was no signal in the data at the time to justify continuing. Between roughly day 150
+        and day 400 the anaerobic populations did not increase in size. The motivation for continuing
+        came instead from Richard Lenski's long-term evolution experiment with <em>E.&nbsp;coli</em>,
+        which has been running since 1988 and has produced many of its most important results decades
+        after it began, from populations maintained through long periods in which little appeared to
+        change. A plateau in a selection experiment does not necessarily mean that adaptation has
+        stopped.</p>
+
+      <p>Past day 300 the anaerobic populations began increasing in size again, and continued to do
+        so. Within a few hundred further transfers the clusters were large enough to see without a
+        microscope. Bozdag showed the macroscopic lines to Ratcliff, and the two agreed that the
+        experiment should be maintained and developed as a long-term evolution experiment.</p>
+
+      <p>Fifteen of the original twenty populations are the ones still running: five anaerobic petite
+        (PA1&ndash;5), five mixotrophic (PM1&ndash;5) and five obligately aerobic (PO1&ndash;5), all
+        founded in 2018 from a single isogenic <em>ace2&Delta;</em> Y55 ancestor, so the starting
+        genotype is known exactly. These populations were not re-founded after the oxygen result was
+        published. They are the original populations, transferred continuously, which is why the
+        experiment has an unbroken time series running from its first transfer to the present.</p>
+
+      <p>By 600 transfers, about 3,000 generations, all five anaerobic populations had become
+        macroscopic. Mean cluster radius increased from 16&nbsp;&micro;m to 434&nbsp;&micro;m,
+        roughly a 20,000-fold increase in volume, and biophysical toughness increased about
+        10,000-fold. These results were published in <em>Nature</em> in 2023, with Bozdag as first
+        author and Ratcliff as senior author. The experiment was named the MuLTEE during the
+        preparation of that paper.</p>
+      <p class="xref" style="margin-top:calc(var(--sp-5) * -0.62)"><a href="https://doi.org/10.1038/s41586-023-06052-1">Bozdag, Zamani-Dahaj, Day et al. 2023 &middot; Nature 617:747&ndash;754</a></p>
+
+      <p>The experiment has since become the central project of the Ratcliff Lab and the basis of a
+        decadal research program. Bozdag is principal investigator on the NSF LTREB award that funds
+        it and Ratcliff is co-principal investigator. Bozdag continues to run the daily transfers,
+        with Dung T. Lac managing the frozen archive and strain distribution. The populations are
+        past 9,000 generations and the archive holds more than 3,000 samples.</p>
+
+      <div class="note" style="margin-top:var(--sp-6)">
+        <h3>A note on this history</h3>
+        <p>The MuLTEE was not planned as a long-term experiment. It began in 2018 as a test of
+          whether oxygen availability limits multicellular size, and it became a long-term experiment
+          because the populations were kept running after that test was complete. It was named in
+          2023, five years after its first transfer. We describe it this way because the sequence of
+          decisions is part of the record of how the experiment came about.</p>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== timeline -->
+  <div class="page">
+    <section class="section" id="timeline">
+      <div class="section-head">
+        <p class="eyebrow">Dated record</p>
         <h2>Timeline</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-year">2010–2018</div>
-                <h3>Model System Development</h3>
-                <p>Development and characterization of snowflake yeast, settling selection method established</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2018</div>
-                <h3>MuLTEE Begins</h3>
-                <p>15 populations initiated across three metabolic treatments (PA, PM, PO)</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2021</div>
-                <h3>Oxygen & Size Paper</h3>
-                <p><em>Nature Communications</em>: Oxygen suppression of macroscopic multicellularity</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2023</div>
-                <h3>Macroscopic Multicellularity</h3>
-                <p><em>Nature</em>: De novo evolution of macroscopic multicellularity</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">Present</div>
-                <h3>9,000+ Generations</h3>
-                <p>Ongoing evolution with 3,000+ frozen samples archived</p>
-            </div>
-        </div>
-    </main>
+      </div>
+
+      <figure class="plate-figure reveal">
+        <img src="assets/img/nuclei-cellwall-day400.jpg"
+             srcset="assets/img/nuclei-cellwall-day400-sm.jpg 900w, assets/img/nuclei-cellwall-day400.jpg 2000w"
+             sizes="(max-width:1100px) 100vw, 760px"
+             width="2000" height="1999" loading="lazy"
+             alt="Confocal projection of a radial snowflake yeast cluster: elongated cells outlined in bright cyan, each carrying one orange nucleus, fanning outward from a central branch point, with smaller clusters and single cells scattered across the black field.">
+      </figure>
+      <p class="plate-caption">Day 400. Cell walls in cyan, nuclei in orange. The yellow
+        magnification label and the 20&nbsp;&micro;m scale bar are the microscope's own annotation
+        and are left in place.</p>
+
+      <ol class="timeline" style="margin-top:var(--sp-7)">
+        <li>
+          <span class="yr">2012</span>
+          <div>
+            <h3>Multicellularity evolves de novo</h3>
+            <p><strong>Ratcliff</strong>, then a postdoc with Michael Travisano at the University of
+              Minnesota, grew ten replicate populations of unicellular <em>S.&nbsp;cerevisiae</em>
+              Y55 under daily settling selection, and all ten evolved the clonal snowflake phenotype
+              within 60 transfers, about 300 generations.
+              Multicellular genotypes held a 34% advantage under settling selection
+              (<span class="num">P</span> = 0.004). By transfer 60, apoptosis rate and settling rate
+              were tightly correlated (r&sup2; = 0.91). Ratcliff, Denison, Borrello &amp; Travisano,
+              PNAS 109:1595&ndash;1600.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2013</span>
+          <div>
+            <h3>A second organism, and the first tempo-and-mode study</h3>
+            <p><strong>Ratcliff</strong> and colleagues evolved multicellularity de novo in
+              <em>Chlamydomonas reinhardtii</em>, a green alga with no multicellular ancestor, in 219
+              days, with a facultative life cycle and an evolved unicellular bottleneck (Nature
+              Communications). In the same year <strong>Ratcliff</strong>, Pentz &amp; Travisano
+              tracked 227 days of post-origin snowflake adaptation and found
+              three ordered modes: more cells per cluster (days 7&ndash;28), a 2.21-fold increase in
+              per-cell volume (days 28&ndash;65), then more hydrodynamic cluster shape (days
+              65&ndash;227).</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2014</span>
+          <div>
+            <h3>Theory, synthesis, a classroom kit, and a move to Georgia Tech</h3>
+            <p>Libby, <strong>Ratcliff</strong>, Travisano &amp; Kerr (PLoS Computational Biology)
+              formalized clusters as tree graphs and
+              explained why that geometry favours apoptosis, predicting an evolved rate near
+              10<sup>&minus;2</sup>. Libby &amp; Ratcliff (Science) named ratcheting as the
+              mechanism that stabilizes transitions. Ratcliff &amp; Travisano (BioScience)
+              synthesized the program. The 2012 experiment became a three-week undergraduate lab,
+              distributed free of charge (The American Biology Teacher). Ratcliff moved to Georgia
+              Tech the same year.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2015</span>
+          <div>
+            <h3><em>ACE2</em> identified, heritability measured</h3>
+            <p><strong>Ratcliff</strong>, Fankhauser, Rogers, Greig &amp; Travisano showed by
+              knockout and complementation that loss of <em>ACE2</em> is necessary and sufficient for
+              the snowflake phenotype, with non-synonymous <em>ACE2</em> mutations in five of ten
+              independently evolved lineages. Broad-sense heritability of cluster size at reproduction
+              was 0.84, and a Pascal's-triangle model of the body plan fit strains from 7 to 227 days
+              of evolution (r&sup2; = 0.94). Nature Communications 6:6102. Because a single gene
+              deletion produces the phenotype, every MuLTEE population was later founded from a
+              constructed <em>ace2&Delta;</em> ancestor.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2017</span>
+          <div>
+            <h3>First NSF award for multicellular complexity</h3>
+            <p>NSF IOS-1656549, &ldquo;Origin of multicellular complexity in experimentally-evolved
+              <em>Saccharomyces cerevisiae</em>,&rdquo; <strong>Ratcliff</strong> PI with Yunker as
+              co-PI, $638,834, February 2017 to January 2020.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2018</span>
+          <div>
+            <h3>Reproduction turns out to be fracture</h3>
+            <p>Jacobeen et al. (Nature Physics) showed that snowflake yeast reproduce when
+              growth-induced internal stress breaks the cluster: total volume contracts to 94% at
+              fracture. Over seven weeks, about 291 generations, cells evolved an 8% larger aspect
+              ratio while cluster volume fraction fell from 0.32&nbsp;&plusmn;&nbsp;0.04 to
+              0.22&nbsp;&plusmn;&nbsp;0.03, giving a 1.7-fold size increase with no change in the
+              chitin bonds themselves.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2018</span>
+          <div>
+            <h3>The oxygen experiment begins</h3>
+            <p><strong>Bozdag</strong> founded twenty populations from a single isogenic
+              <em>ace2&Delta;</em> Y55 ancestor to test whether oxygen availability, not the organism,
+              was what capped
+              multicellular size: anaerobic petites, mixotrophic yeast, and strictly aerobic yeast at
+              intermediate and at high oxygen, all under identical daily growth-and-settling
+              selection. Fifteen of these populations, the anaerobic, mixotrophic and obligately
+              aerobic lines, are the fifteen still being transferred today.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2018&ndash;2020</span>
+          <div>
+            <h3>The experiment is continued past its endpoint</h3>
+            <p>The designed run ended at 145 transfers. <strong>Bozdag</strong> continued daily
+              transfers past 300 and 400, through a stretch of roughly 250 days in which anaerobic
+              cluster size did not
+              increase at all, on the reasoning behind Lenski's <em>E.&nbsp;coli</em> experiment
+              running since 1988: a plateau in a selection experiment does not necessarily mean
+              adaptation has stopped. Past day 300 the anaerobic populations resumed increasing in
+              size and became macroscopic. <strong>Bozdag</strong> and <strong>Ratcliff</strong> then
+              agreed the experiment should be maintained and developed as a long-term evolution
+              experiment.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2019</span>
+          <div>
+            <h3>NSF CAREER award</h3>
+            <p>IOS-1845363, &ldquo;Examining the Role of Nascent Multicellular Life Cycles on the
+              Evolution of Organismal Complexity,&rdquo; <strong>Ratcliff</strong> sole PI,
+              $1,136,348, May 2019 to April 2025.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2020</span>
+          <div>
+            <h3>NIH R35 MIRA awarded</h3>
+            <p>NIGMS R35 to <strong>Ratcliff</strong> as sole PI, August 2020 to May 2024. The 2024
+              renewal was
+              organized around three MuLTEE priorities: cellular differentiation, synchronized cell
+              division, and whole-genome duplication.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2021</span>
+          <div>
+            <h3>Oxygen suppression of macroscopic multicellularity</h3>
+            <p>The first 145 transfers published: 20 populations, about 812 generations, four
+              metabolic and oxygen regimes. Intermediate oxygen permitted only an 8.9% size increase,
+              while anaerobic and high-oxygen populations grew 93% and 97% larger. The relationship
+              between oxygen and multicellular size is not monotonic. <strong>Bozdag</strong>, Libby,
+              Pineau, Reinhard &amp; Ratcliff, Nature Communications 12:2838, with Bozdag as first
+              author.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2023</span>
+          <div>
+            <h3>Macroscopic multicellularity, and the experiment gets its name</h3>
+            <p>After 600 rounds of selection, about 3,000 generations, all five anaerobic
+              populations had become macroscopic: mean cluster radius rose from 16&nbsp;&micro;m to
+              434&nbsp;&micro;m, roughly a 20,000-fold increase in volume, with toughness up about
+              10,000-fold. <strong>Bozdag</strong>, Zamani-Dahaj, Day et al., Nature
+              617:747&ndash;754, published online 10 May 2023, with Bozdag as first author and
+              Ratcliff as senior author. The experiment was named the MuLTEE during preparation of
+              this paper, five years after its first transfer. The same year it ran as a
+              three-quarter-page colour photo feature in The New York Times.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <div>
+            <h3>Four mechanism-and-consequence papers</h3>
+            <p>Montrose et al. (Science Advances) traced cell elongation to reduced Hsp90
+              expression. Pineau et al. (Nature Ecology &amp; Evolution) reported small and large
+              lineages coexisting for about 4,300 generations. Day et al. (Physical Review X
+              14:011008) generalized entanglement to any growing branched living matter. Bingham
+              &amp; Ratcliff (PNAS) showed that multicellularity lowers effective population
+              size.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <div>
+            <h3>LTREB proposal for the 2025&ndash;2035 decade</h3>
+            <p>Submitted in September 2024 with <strong>Bozdag</strong> as PI and Ratcliff as co-PI,
+              requesting
+              support to maintain the evolving populations, the frozen archive, systematic
+              phenotyping and genomics, and an open-access portal. The experiment's current
+              long-term support is
+              <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">NSF award
+              2452109</a>.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2025</span>
+          <div>
+            <h3>Genome duplication, and a stocktaking of long-term experiments</h3>
+            <p>Tong et al. (Nature 639:691&ndash;699) reported convergent tetraploidy arising within
+              the first 50 days and persisting for the next 950, close to 5,000 generations, across
+              ten replicate populations. Stroud &amp; Ratcliff (Nature 639:589&ndash;601) placed the
+              MuLTEE among the field's long-running systems. Also 2025: Narayanasamy et al. on
+              metabolically driven flows, Cede&ntilde;o-P&eacute;rez et al. on coordinated cell
+              division, Wong et al. (PLOS Biology) on oxygen-binding proteins, and Yoon et al.
+              (Nature Communications) on super-resolution imaging.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">Present</span>
+          <div>
+            <h3>Past 9,000 generations, and still transferring</h3>
+            <p>The archive holds more than 3,000 frozen samples across the 15 lines. Populations are
+              cryopreserved every 25 days, roughly every 125 generations. <strong>Bozdag</strong>
+              continues to run the daily transfers, with Dung T. Lac managing the archive and strain
+              distribution. The
+              characterized leading edge of the experiment is day 1,000, the timepoint sequenced and
+              phenotyped in Tong et al. 2025. The living populations are well beyond it.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== onward -->
+  <div class="page">
+    <section class="section wide" id="onward" style="padding-block:var(--sp-8)">
+      <div class="doors">
+        <a class="door" href="publications.html">
+          <span class="count">MuLTEE &amp; precedents</span>
+          <h3>Publications</h3>
+          <p>The eight papers that use MuLTEE populations, plus the snowflake yeast work behind them.</p>
+        </a>
+        <a class="door" href="populations.html">
+          <span class="count">15 lines &middot; 3 treatments</span>
+          <h3>Populations</h3>
+          <p>What each of the fifteen lines has done since it was founded in 2018.</p>
+        </a>
+        <a class="door" href="data.html">
+          <span class="count">3,000+ frozen samples</span>
+          <h3>Data &amp; Strains</h3>
+          <p>Request any population from any timepoint in the archive, plus genomes and
+            protocols.</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="data.html">Strain requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
 </body>
 </html>

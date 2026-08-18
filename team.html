@@ -1,206 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team | MuLTEE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2698BA;
-            --text: #111;
-            --text-light: #555;
-            --bg: #fff;
-            --bg-alt: #f8f9fa;
-            --border: #dee2e6;
-            --sidebar-width: 220px;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-        
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: var(--sidebar-width);
-            height: 100vh;
-            background: var(--bg);
-            border-right: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .sidebar-header { margin-bottom: 2rem; }
-        .sidebar-header h1 { font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 0.25rem; }
-        .sidebar-header p { font-size: 0.85rem; color: var(--text-light); }
-        
-        .sidebar-nav { list-style: none; flex: 1; }
-        .sidebar-nav li { margin-bottom: 0.5rem; }
-        .sidebar-nav a { color: var(--text); font-size: 0.95rem; font-weight: 400; padding: 0.5rem 0; display: block; }
-        .sidebar-nav a:hover { color: var(--primary); text-decoration: none; }
-        .sidebar-nav a.active { color: var(--primary); font-weight: 500; }
-        
-        .sidebar-footer { font-size: 0.8rem; color: var(--text-light); }
-        
-        .main {
-            margin-left: var(--sidebar-width);
-            padding: 3rem 4rem;
-            max-width: 900px;
-        }
-        
-        .main h1 { font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
-        .main .subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; font-weight: 300; }
-        
-        .main h2 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin: 2.5rem 0 1rem 0;
-            color: var(--text);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-        
-        .main h2:first-of-type { margin-top: 0; }
-        
-        .main p { margin-bottom: 1rem; }
-        
-        /* Team Cards */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1rem 0 2rem 0;
-        }
-        
-        .team-grid.single {
-            grid-template-columns: 1fr;
-            max-width: 400px;
-        }
-        
-        .team-card {
-            padding: 1.25rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            background: var(--bg-alt);
-        }
-        
-        .team-card h3 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.15rem;
-        }
-        
-        .team-card .role {
-            color: var(--primary);
-            font-weight: 400;
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .team-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-card a {
-            font-size: 0.9rem;
-        }
-        
-        .contact-note {
-            font-size: 0.85rem;
-            background: white;
-            border: 1px solid var(--border);
-            padding: 0.4rem 0.6rem;
-            border-radius: 3px;
-            display: inline-block;
-            margin-top: 0.5rem;
-            font-weight: 400;
-        }
-        
-        @media (max-width: 900px) {
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-            .sidebar-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
-            .sidebar-nav li { margin-bottom: 0; }
-            .main { margin-left: 0; padding: 2rem; }
-            .team-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team | MuLTEE</title>
+<meta name="description" content="The people who run the Multicellularity Long-Term Evolution Experiment: leads and contacts, current contributors, the alumni who built the experiment, and the collaborators whose work it depends on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/page-team.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1>MuLTEE</h1>
-            <p>Multicellularity Long-Term<br>Evolution Experiment</p>
-        </div>
-        <ul class="sidebar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="populations.html">Populations</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="data.html">Data & Strains</a></li>
-            <li><a href="team.html" class="active">Team</a></li>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="story.html">The Story</a>
+      <a href="experiment.html">The Experiment</a>
+      <a href="populations.html">Populations</a>
+      <a href="history.html">History</a>
+      <a href="publications.html">Publications</a>
+      <a href="press.html">Press</a>
+      <a href="data.html">Data &amp; Strains</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="team.html" aria-current="page">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== page head -->
+  <div class="page">
+    <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
+      <p class="eyebrow">Team</p>
+      <h1 class="display">Team</h1>
+      <p class="lede">The MuLTEE has run since 2018, and it requires a transfer every single day.
+        The experiment is maintained by a small permanent core, a rotating group of graduate and
+        undergraduate researchers, and collaborators on three continents.</p>
+      <p class="dim" style="margin-top:var(--sp-5);font-size:var(--t-small)">The roles below are
+        based on authorship of the papers that use MuLTEE populations. Full author lists are on the
+        <a href="publications.html">Publications</a> page.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== leads -->
+  <div class="page">
+    <section class="section wide" id="leads">
+      <div class="section-head">
+        <p class="eyebrow">Leads and contacts</p>
+        <h2>Who to write to</h2>
+      </div>
+
+      <div class="people">
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/ratcliff.jpg" alt="William C. Ratcliff" width="400" height="400" loading="lazy">
+          <h3>William C. Ratcliff</h3>
+          <p class="role">Professor, School of Biological Sciences, Georgia Tech</p>
+          <p>Co-founder of the MuLTEE. He developed the snowflake yeast system from around 2010 as a
+            postdoc in Michael Travisano's lab at the University of Minnesota, where daily settling
+            selection was first used to evolve multicellularity de novo, and moved to Georgia Tech in
+            2014. Senior author of the 2023 <em>Nature</em> macroscopic-size paper and co-PI on the
+            NSF LTREB award that funds the experiment.</p>
+          <p class="mono" style="font-size:var(--t-micro)"><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></p>
+        </article>
+
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/bozdag.jpg" alt="G. Ozan Bozdag" width="400" height="400" loading="lazy">
+          <h3>G. Ozan Bozdag</h3>
+          <p class="role">Senior Research Scientist, Georgia Tech</p>
+          <p>Co-founder of the MuLTEE, and the person who runs it day to day. He proposed and
+            designed the metabolic treatment scheme that removed the oxygen limit on cluster size,
+            founded the fifteen populations in 2018, and continued transferring them past the end of
+            the original experiment, which is what made the MuLTEE a long-term experiment. First
+            author of both the 2021 oxygen paper and the 2023 <em>Nature</em> macroscopic-size paper,
+            and PI on NSF award 2452109, the LTREB grant behind the 2025&ndash;2035 decadal plan.</p>
+          <p class="badge">Strain requests &middot; scientific scoping</p>
+          <p class="mono" style="font-size:var(--t-micro)"><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></p>
+        </article>
+
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/lac.jpg" alt="Dung T. Lac" width="400" height="400" loading="lazy">
+          <h3>Dung T. Lac</h3>
+          <p class="role">Research Scientist, Georgia Tech</p>
+          <p>Joined the lab in 2021. She manages strain distribution and leads omics data
+            collection, and is studying the role of Hsp90 in macroscopic adaptation through a replay
+            evolution experiment. Co-author on the 2023 macroscopic-size, 2024 coexistence, 2024
+            Hsp90 and 2025 genome-duplication papers.</p>
+          <p class="badge">Strain requests &middot; logistics and shipping</p>
+          <p class="mono" style="font-size:var(--t-micro)"><a href="mailto:dlac3@gatech.edu">dlac3@gatech.edu</a></p>
+        </article>
+      </div>
+
+      <p class="plate-caption">Strain requests reach both: Dung Lac handles the paperwork and
+        shipping, Ozan Bozdag scopes the science of the request. Start on the
+        <a href="data.html">Data &amp; Strains</a> page.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== current contributors -->
+  <div class="page">
+    <section class="section" id="contributors">
+      <div class="section-head">
+        <p class="eyebrow">Current contributors</p>
+        <h2>Working on MuLTEE populations now</h2>
+      </div>
+
+      <div class="people">
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/burnetti.jpg" alt="Anthony J. Burnetti" width="400" height="400" loading="lazy">
+          <h3>Anthony J. Burnetti</h3>
+          <p class="role">Research Scientist, Georgia Tech</p>
+          <p>Co-author on the 2023 macroscopic-size paper, the 2024 Hsp90 paper and the 2024
+            entanglement paper. His own line of work is the mechanisms life uses to overcome oxygen
+            limitation on multicellular size, including phototrophy and oxygen-binding globins. PhD
+            at Duke on the yeast metabolic and cell division cycles.</p>
+        </article>
+
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/datta.jpg" alt="Sayantan Datta" width="400" height="400" loading="lazy">
+          <h3>Sayantan Datta</h3>
+          <p class="role">PhD student, QBioS</p>
+          <p>Co-author on the 2025 genome-duplication paper and on the 2025 super-resolution
+            imaging paper that phenotyped evolved and ancestral anaerobic strains. He works on the
+            life history of nascent multicellular yeast and the evolution of cell differentiation.
+            BS-MS from IISER Pune.</p>
+        </article>
+
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/cedeno-perez.jpg" alt="Luis Felipe Cede&ntilde;o-P&eacute;rez" width="400" height="400" loading="lazy">
+          <h3>Luis Felipe Cede&ntilde;o-P&eacute;rez</h3>
+          <p class="role">PhD student, QBioS</p>
+          <p>First author of the 2025 paper on coordinated cell division, which showed that the
+            anaerobic lines lost the ancestral first-division delay by day 200 and stayed
+            synchronous through day 1,000. He began on evolved trade-offs in snowflake yeast during
+            a year-long internship before the PhD. Genomic Sciences, UNAM.</p>
+        </article>
+
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/katani.jpg" alt="Hikaru Katani" width="400" height="400" loading="lazy">
+          <h3>Hikaru Katani</h3>
+          <p class="role">PhD student, Biology, Georgia Tech</p>
+          <p>Working with Dung Lac and Ozan Bozdag on emergent gene expression patterns in
+            <em>S.&nbsp;cerevisiae</em> under anaerobic, mixotrophic and aerobic regimes.</p>
+        </article>
+
+        <article class="person">
+          <img class="person-photo" src="assets/img/team/adamson.jpg" alt="Liam Adamson" width="400" height="400" loading="lazy">
+          <h3>Liam Adamson</h3>
+          <p class="role">Bachelor's and Master's student, Georgia Tech</p>
+        </article>
+
+      </div>
+
+      <p class="plate-caption">The lab is larger than this list. Named here are the members whose
+        MuLTEE contributions are evidenced by authorship; the full roster is on the
+        <a href="https://ratclifflab.biosci.gatech.edu/people-2/">Ratcliff Lab people page</a>.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== alumni credits -->
+  <div class="page">
+    <section class="section wide" id="alumni">
+      <div class="section-head">
+        <p class="eyebrow">Alumni credits</p>
+        <h2>Former members who built the experiment</h2>
+      </div>
+      <p class="dim" style="margin-bottom:var(--sp-6);font-size:var(--t-small)">An experiment that
+        runs for decades outlasts most of the people who work on it. Much of the work described on
+        this site was done by researchers who have since moved on, and the credit is theirs. The
+        contributions below are taken from the author lists of the papers that use MuLTEE
+        populations.</p>
+
+      <ul class="credits">
+        <li>
+          <span class="who">Kai Tong</span>
+          <span class="what">First author of the 2025 <em>Nature</em> genome-duplication paper;
+            co-author on the 2023 macroscopic-size and 2024 Hsp90 papers. Now a postdoc at
+            Harvard.</span>
+        </li>
+        <li>
+          <span class="who">Thomas C. Day</span>
+          <span class="what">First author of the 2024 <em>Physical Review X</em> entanglement
+            paper; co-author on the 2023 macroscopic-size, 2024 coexistence, 2025
+            genome-duplication and 2025 cell-division papers. Now a postdoc at USC.</span>
+        </li>
+        <li>
+          <span class="who">Rozenn M. Pineau</span>
+          <span class="what">First author of the 2024 <em>Nature Ecology &amp; Evolution</em>
+            coexistence paper, and a co-author on the 2025 cell-division paper. Now a postdoc at
+            Utah State.</span>
+        </li>
+        <li>
+          <span class="who">Peter L. Conlin</span>
+          <span class="what">Postdoc in the lab; senior author of the 2025 cell-division paper and
+            co-author on the 2023 macroscopic-size, 2024 entanglement and 2025 genome-duplication
+            papers. Now a research scientist in the Rosenzweig lab at Georgia Tech.</span>
+        </li>
+        <li>
+          <span class="who">Seyed Alireza Zamani-Dahaj</span>
+          <span class="what">Second author on both the 2023 macroscopic-size paper and the 2024
+            entanglement paper, the two results that established how evolved clusters hold
+            together.</span>
+        </li>
+        <li>
+          <span class="who">Emma P. Bingham</span>
+          <span class="what">Co-author on the 2024 entanglement paper and on the study of
+            metabolically driven flows in millimetre-scale clusters.</span>
+        </li>
+        <li>
+          <span class="who">Penelope C. Kahn</span>
+          <span class="what">Research technician on the experiment and a co-author of the 2023
+            <em>Nature</em> macroscopic-size paper.</span>
+        </li>
+        <li>
+          <span class="who">Vivian Cheng, Daniella J. Haas and Saranya Gourisetti</span>
+          <span class="what">Undergraduate and Master's researchers, co-authors of the 2025
+            genome-duplication paper.</span>
+        </li>
+      </ul>
+      <p class="credits-note">This is the MuLTEE subset of a much longer alumni list. The lab's
+        pre-2018 snowflake yeast work, which built the model system these populations were founded
+        from, carries its own set of names; those papers are grouped as foundational on the
+        <a href="publications.html">Publications</a> page.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== collaborators -->
+  <div class="page">
+    <section class="section wide" id="collaborators">
+      <div class="section-head">
+        <p class="eyebrow">Collaborators</p>
+        <h2>Collaborating groups</h2>
+      </div>
+      <p class="dim" style="margin-bottom:var(--sp-6);font-size:var(--t-small)">Recurring
+        co-authors outside the lab, each listed with the MuLTEE work they appear on.</p>
+
+      <ul class="credits">
+        <li>
+          <span class="who">Peter J. Yunker</span>
+          <span class="what">School of Physics, Georgia Tech. Co-author on the 2023
+            macroscopic-size, 2024 entanglement, 2024 coexistence and metabolically-driven-flow
+            papers, and PI or co-PI with Ratcliff on the grants that fund the biophysics.</span>
+        </li>
+        <li>
+          <span class="who">Juha Saarikangas</span>
+          <span class="what">HiLIFE and Faculty of Biological and Environmental Sciences,
+            University of Helsinki. Senior author of the 2024 <em>Science Advances</em> paper on
+            proteostatic tuning, which found the Hsp90 mechanism behind cell elongation.</span>
+        </li>
+        <li>
+          <span class="who">Kristopher Montrose</span>
+          <span class="what">University of Helsinki. First author of that same proteostatic tuning
+            paper.</span>
+        </li>
+        <li>
+          <span class="who">Shashi Thutupalli</span>
+          <span class="what">Simons Centre for the Study of Living Machines, National Centre for
+            Biological Sciences (TIFR), Bangalore. Senior author of the work showing that
+            metabolism drives circulatory flows through millimetre-scale clusters.</span>
+        </li>
+        <li>
+          <span class="who">Eric Libby</span>
+          <span class="what">Department of Mathematics and Mathematical Statistics, Ume&aring;
+            University. Co-author of the 2024 coexistence paper and of the 2021 oxygen experiment
+            whose result set the MuLTEE's three metabolic treatments.</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== closing -->
+  <div class="page">
+    <section class="section" style="padding-block:var(--sp-8)">
+      <div class="note">
+        <h3>Working with the experiment</h3>
+        <p>Any population from any archived timepoint can be requested, and sharing the archive is
+          a central aim of the project. Requests go through the
+          <a href="data.html">Data &amp; Strains</a> page. Dung Lac handles logistics and shipping,
+          and Ozan Bozdag scopes the science of the request. For anything else, write to Ratcliff or
+          Bozdag at the addresses above.</p>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="data.html">Strain requests</a></li>
         </ul>
-        <div class="sidebar-footer">
-            <p>Ratcliff Lab<br>Georgia Tech</p>
-        </div>
-    </aside>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <main class="main">
-        <h1>Team</h1>
-
-        <div class="team-grid">
-            <div class="team-card">
-                <h3>G. Ozan Bozdag</h3>
-                <div class="role">Senior Research Scientist, Georgia Tech</div>
-                <p>
-                    Co-founder of the MuLTEE. Studies the genetic and cellular basis of multicellular evolution.
-                </p>
-                <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a>
-            </div>
-            
-            <div class="team-card">
-                <h3>William Ratcliff</h3>
-                <div class="role">Professor, Georgia Tech</div>
-                <p>
-                    Co-founder of the MuLTEE. Developed the snowflake yeast model system starting in 2010.
-                </p>
-                <a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a>
-            </div>
-        </div>
-
-        <div class="team-grid single">
-            <div class="team-card">
-                <h3>Dung T. Lac</h3>
-                <div class="role">Research Technician, Georgia Tech</div>
-                <p>
-                    Manages strain distribution and leads omics data collection efforts.
-                </p>
-                <a href="mailto:dlac3@gatech.edu">dlac3@gatech.edu</a>
-                <div class="contact-note">
-                    <strong>Point of contact for strain requests</strong>
-                </div>
-            </div>
-        </div>
-    </main>
+<script src="assets/js/site.js"></script>
 </body>
 </html>

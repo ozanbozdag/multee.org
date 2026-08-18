@@ -1,0 +1,25 @@
+/* ==========================================================================
+   page-press.css — Press page only. Loaded after site.css.
+   The system has no tag for "who wrote this". On a press page that matters:
+   a Georgia Tech release and a New York Times feature are not the same
+   evidence, and a reader should be able to tell them apart without reading
+   the sentence. Hue alone would not survive grayscale, so the release tag is
+   also dashed.
+   ========================================================================== */
+
+.press-kind{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  line-height:1.5;color:var(--ink);
+  border:1px solid currentColor;padding:2px var(--sp-2);
+  display:inline-block;max-width:100%;margin-top:var(--sp-3);
+}
+.press-kind.is-release{color:var(--ink-dim);border-style:dashed}
+
+/* Syndication line: metadata about the row, not part of the description.
+   Specificity has to beat .press-list p, which sets serif and t-small. */
+.press-list p.press-also{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  letter-spacing:.04em;color:var(--ink-dim);
+  margin-top:var(--sp-3);
+}

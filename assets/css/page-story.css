@@ -1,0 +1,235 @@
+/* ==========================================================================
+   story.html only. Loaded after site.css.
+   Two components the design system does not have: a pull quote, and the
+   decade scrubber (an instrument panel: hairlines, monospace, tabular nums).
+   ========================================================================== */
+
+/* --------------------------------------------------------------- 1. quotes
+   The page is built around eight verbatim passages from the LTREB proposal
+   and the two books it quotes. They need to read as evidence, not decoration,
+   so they take the amber rule the .note component uses and nothing else. */
+.pull{
+  margin:var(--sp-6) 0;
+  border-left:2px solid var(--amber-ink);
+  padding:var(--sp-1) 0 var(--sp-1) var(--sp-5);
+}
+.pull p{
+  font-size:clamp(1.1rem,1.8vw,1.35rem);
+  line-height:1.45;
+  color:var(--ink);
+  margin:0 0 var(--sp-3);
+}
+.pull footer,
+.prose .pull footer{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--ink-dim);
+}
+
+/* -------------------------------------------------- 2. progressive enhancement
+   Anything carrying data-requires-js is inert without script: the empty canvas
+   and the controls that would do nothing. The scrubber's static day-600 state
+   is written into the HTML, so the section still reads correctly if this file
+   loads and scrubber.js does not. JS removes the attribute on init. */
+[data-requires-js]{display:none!important}
+
+/* ------------------------------------------------------------ 3. the scrubber */
+.scrub{
+  border:1px solid var(--rule);
+  display:grid;grid-template-columns:minmax(0,1fr);
+}
+.scrub-chart{
+  margin:0;padding:var(--sp-4) var(--sp-4) var(--sp-3);
+  border-bottom:1px solid var(--rule);
+}
+.scrub-canvas-wrap{position:relative;width:100%;height:290px}
+@media (max-width:700px){.scrub-canvas-wrap{height:230px}}
+.scrub-canvas-wrap canvas{width:100%;height:100%;display:block}
+
+.scrub-legend{
+  display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-5);
+  margin-top:var(--sp-3);
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:.06em;color:var(--ink-dim);
+}
+.prose .scrub-legend{color:var(--ink-dim)}
+.scrub-legend span{display:inline-flex;align-items:center;gap:var(--sp-2)}
+.scrub-legend i{font-style:normal;color:var(--accent)}
+.scrub-legend i.hollow{color:var(--amber-ink)}
+.scrub-legend i.dash{color:var(--ink-dim);letter-spacing:-.1em}
+
+/* ---- controls */
+.scrub-controls{
+  padding:var(--sp-4);
+  border-bottom:1px solid var(--rule);
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+  gap:var(--sp-3) var(--sp-4);align-items:center;
+}
+.scrub-controls .label{white-space:nowrap}
+@media (max-width:640px){
+  .scrub-controls{grid-template-columns:minmax(0,1fr) auto}
+  .scrub-controls .label{grid-column:1/-1}
+}
+
+/* The range input is the instrument's one moving part. Track is a hairline,
+   thumb is a filled cyan block, matching .btn as the single filled element. */
+.scrub-range{
+  -webkit-appearance:none;appearance:none;
+  width:100%;background:transparent;margin:0;padding:var(--sp-3) 0;cursor:pointer;
+}
+.scrub-range:focus{outline:none}
+.scrub-range:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+.scrub-range::-webkit-slider-runnable-track{
+  height:1px;background:var(--ink-dim);border:0;
+}
+.scrub-range::-moz-range-track{height:1px;background:var(--ink-dim);border:0}
+.scrub-range::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:12px;height:26px;margin-top:-13px;border-radius:0;
+  background:var(--accent);border:1px solid var(--accent);
+}
+.scrub-range::-moz-range-thumb{
+  width:12px;height:26px;border-radius:0;
+  background:var(--accent);border:1px solid var(--accent);
+}
+.scrub-play{
+  font-family:var(--font-mono);font-size:var(--t-label);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  padding:var(--sp-2) var(--sp-4);min-width:6.5rem;
+  background:none;color:var(--ink);border:1px solid var(--rule);cursor:pointer;
+}
+.scrub-play:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---- numeric readout */
+.scrub-readout{
+  margin:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  border-bottom:1px solid var(--rule);
+}
+.scrub-readout>div{
+  padding:var(--sp-4);border-right:1px solid var(--rule);
+  display:grid;align-content:start;gap:var(--sp-1);
+}
+.scrub-readout>div:last-child{border-right:0}
+.scrub-readout dt{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim);
+}
+.scrub-readout dd{
+  margin:0;font-family:var(--font-mono);font-size:1.35rem;font-weight:500;
+  color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.15;
+}
+.scrub-readout .sub{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  letter-spacing:.04em;color:var(--ink-dim);text-transform:none;
+}
+@media (max-width:880px){
+  .scrub-readout>div{border-bottom:1px solid var(--rule)}
+}
+
+/* A value that is not a measurement never appears in measured styling. */
+.tag{
+  display:inline-block;font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  border:1px solid currentColor;padding:1px var(--sp-2);line-height:1.5;
+}
+.tag-measured{color:var(--accent)}
+.tag-interp{color:var(--amber-ink);border-style:dashed}
+
+/* ---- panels: traits, plate, papers */
+.scrub-panels{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+@media (max-width:880px){.scrub-panels{grid-template-columns:minmax(0,1fr)}}
+.scrub-panel{padding:var(--sp-5);border-right:1px solid var(--rule)}
+.scrub-panel:last-child{border-right:0}
+@media (max-width:880px){
+  .scrub-panel{border-right:0;border-bottom:1px solid var(--rule)}
+  .scrub-panel:last-child{border-bottom:0}
+}
+.scrub-panel h3{
+  font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--ink-dim);margin:0 0 var(--sp-4);
+}
+
+/* traits */
+.trait-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+/* Explicit placement in both layouts. Auto-flow put .trait-body into the 1.6rem
+   marker column once .trait-state was pinned to a column, which crushed every
+   description to one word per line at phone widths. */
+.trait{
+  display:grid;grid-template-columns:1.6rem 5.2rem minmax(0,1fr);
+  gap:var(--sp-1) var(--sp-3);
+  padding:var(--sp-3) 0;border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.trait-mark{grid-column:1;grid-row:1}
+.trait-day{grid-column:2;grid-row:1}
+.trait-body{grid-column:3;grid-row:1}
+.trait-state{grid-column:3;grid-row:2}
+@media (max-width:560px){
+  .trait{grid-template-columns:1.6rem minmax(0,1fr)}
+  .trait-body{grid-column:1/-1;grid-row:2}
+  .trait-state{grid-column:1/-1;grid-row:3}
+}
+.trait-mark{
+  font-family:var(--font-mono);font-size:.9rem;line-height:1.5;
+  color:var(--accent);text-align:center;
+}
+.trait-day{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:.06em;
+  color:var(--ink-dim);font-variant-numeric:tabular-nums;line-height:1.9;
+}
+.trait-body{display:grid;gap:var(--sp-1)}
+.trait-name{font-size:1rem;color:var(--ink);line-height:1.35}
+.trait-detail{font-size:var(--t-small);color:var(--ink-dim);line-height:1.45}
+.trait-meta{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:.06em;color:var(--ink-dim);
+}
+/* Pending is signalled three ways, not by colour alone: hollow marker, the
+   word "pending", and reduced opacity. */
+.trait.pending .trait-mark{color:var(--ink-dim)}
+.trait.pending .trait-name{color:var(--ink-dim)}
+.trait.pending .trait-detail{opacity:.62}
+.trait-state{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--accent);
+}
+.trait.pending .trait-state{color:var(--ink-dim)}
+
+/* plate + papers */
+.scrub-plate{margin:0}
+.scrub-plate .plate-figure{aspect-ratio:1/1;border:1px solid var(--on-void-rule)}
+.scrub-papers{margin-top:var(--sp-5);border-top:1px solid var(--rule);padding-top:var(--sp-4)}
+.scrub-papers .count{
+  font-family:var(--font-mono);font-size:1.35rem;font-weight:500;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+}
+.scrub-papers .recent{font-size:var(--t-small);color:var(--ink-dim);margin-top:var(--sp-2)}
+.scrub-foot{
+  padding:var(--sp-4) var(--sp-5);border-top:1px solid var(--rule);
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  letter-spacing:.04em;color:var(--ink-dim);line-height:1.7;
+}
+.prose .scrub-foot,.prose .trait-detail,.prose .trait-meta,
+.prose .scrub-papers .recent,.prose .scrub-readout .sub{color:var(--ink-dim)}
+
+/* --------------------------------------------------------- 4. priority list */
+.priorities{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.priorities li{
+  display:grid;grid-template-columns:3.5rem minmax(0,1fr);gap:var(--sp-5);
+  padding:var(--sp-5) 0;border-bottom:1px solid var(--rule);
+}
+.priorities .n{
+  font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  letter-spacing:var(--track-label);color:var(--amber-ink);padding-top:.3em;
+  font-variant-numeric:tabular-nums;
+}
+.priorities h3{margin:0 0 var(--sp-2);font-size:1.05rem}
+.priorities p{color:var(--ink-dim);font-size:var(--t-small);margin:0}
+@media (max-width:640px){
+  .priorities li{grid-template-columns:1fr;gap:var(--sp-2)}
+  .priorities .n{padding-top:0}
+}

@@ -1,0 +1,116 @@
+/* ==========================================================================
+   populations.html only. Loaded after site.css. Three rules.
+   ========================================================================== */
+
+/* 1. The 3x5 population grid keeps its row label beside the cells on wide
+      screens, but at phone widths the label plus five cells leaves under 20px
+      of text per cell, so the label stacks above its row instead. */
+@media (max-width:640px){
+  .pop-row{grid-template-columns:1fr;gap:var(--sp-2);align-items:start}
+}
+
+/* 2. Treatment sections pair a plate with a bordered summary card of unequal
+      height. Stretched, the shorter one ends in a large empty bordered gap and
+      .note distributes the slack between its heading and its text. Top-align. */
+.two-col{align-items:start}
+
+/* 3. Plate labels are uppercased, and CSS uppercase maps the micro sign to a
+      capital Greek Mu, so "20 um" reads as "20 MM". Units opt out of the case
+      transform so a micrometre never looks like a millimetre. */
+.plate-label .unit{text-transform:none;letter-spacing:.02em}
+
+/* ==========================================================================
+   GROW A BODY. The one interactive on this page. Rules 4 to 10.
+   ========================================================================== */
+
+/* 4. The widget is a plate beside a control column. The canvas is the specimen
+      and gets the black field every other plate on the site gets, in both
+      themes, because the cell strokes are emission colours that are only
+      legible on black. Below 860px the control column drops underneath, where
+      it can use the full measure. */
+.grow{display:grid;gap:var(--sp-5);grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  align-items:start}
+@media (max-width:860px){.grow{grid-template-columns:minmax(0,1fr)}}
+.grow-plate{border:1px solid var(--on-void-rule);background:var(--void);margin:0}
+.grow-canvas-wrap{background:var(--void);position:relative}
+.grow-canvas-wrap canvas{width:100%;height:260px}
+.grow-side{display:grid;gap:var(--sp-5);align-content:start}
+
+/* 5. Nothing that depends on JS is shown until the script has run and set
+      data-ready. Without it the reader gets the fallback paragraph instead of
+      an empty black box and a row of controls that do nothing. The hidden and
+      shown states are both grid so the show rule cannot flatten the layout. */
+.grow .grow-live{display:none}
+.grow[data-ready="true"] .grow-live{display:grid}
+.grow .grow-canvas-wrap canvas{display:none}
+.grow[data-ready="true"] .grow-canvas-wrap canvas{display:block}
+.grow[data-ready="true"] .grow-fallback{display:none}
+.grow-fallback{margin:0;padding:var(--sp-5);color:var(--on-void-dim);
+  font-size:var(--t-small);line-height:1.5}
+
+/* 6. Controls. accent-color is the one-line way to get a range track and thumb
+      that follow the theme in both light and dark; site.css already supplies
+      the :focus-visible outline for inputs and buttons. */
+.grow-controls{display:grid;gap:var(--sp-5);border:1px solid var(--rule);
+  padding:var(--sp-5)}
+.grow-field{display:grid;gap:var(--sp-2)}
+.grow-field .label{display:flex;justify-content:space-between;gap:var(--sp-3);margin:0}
+.grow-field .label b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
+.grow-field input[type="range"]{width:100%;accent-color:var(--accent);margin:0}
+.grow-actions{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.grow-btn{font-family:var(--font-mono);font-size:var(--t-label);text-transform:uppercase;
+  letter-spacing:var(--track-label);padding:var(--sp-2) var(--sp-4);cursor:pointer;
+  background:none;border:1px solid var(--rule);color:var(--ink)}
+.grow-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* 7. Honesty state for the aspect-ratio slider. Three states, not two: the two
+      published endpoints are measured, everything strictly between them is an
+      unmeasured modelling value, and anything outside them is extrapolation.
+      The dashed left border is the same visual grammar the ring table uses for
+      a predicted rather than a placed count. */
+.grow-arstate{font-family:var(--font-mono);font-size:var(--t-micro);line-height:1.5;
+  color:var(--ink-dim);border-left:2px solid var(--rule);padding-left:var(--sp-3)}
+.grow-arstate[data-state="measured"]{border-left-style:solid;color:var(--ink)}
+.grow-arstate[data-state="between"],
+.grow-arstate[data-state="outside"],
+.grow-arstate[data-state="model"]{border-left-style:dashed}
+
+/* 8. The live readout. Monospace and tabular so the numbers line up as they
+      change; a proportional face makes a changing count jitter sideways. */
+.grow-readout{border:1px solid var(--rule);padding:var(--sp-5);display:grid;gap:var(--sp-4)}
+.grow-readout dl{display:grid;grid-template-columns:auto 1fr;gap:var(--sp-2) var(--sp-4);margin:0}
+.grow-readout dt{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim)}
+.grow-readout dd{margin:0;font-family:var(--font-mono);font-size:var(--t-small);
+  color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* 9. Ring table. Two encodings for the same pair of numbers: the digits, and a
+      pair of bars where the PREDICTED count is a dashed hollow bar and the
+      PLACED count is filled. Neither quantity is a measurement, and the header
+      says which is arithmetic and which is this simulation. */
+.grow-table{width:100%;border-collapse:collapse;font-family:var(--font-mono);
+  font-size:var(--t-micro);font-variant-numeric:tabular-nums}
+.grow-table caption{text-align:left;color:var(--ink-dim);font-size:var(--t-micro);
+  line-height:1.5;padding-bottom:var(--sp-3)}
+.grow-table th,.grow-table td{border-bottom:1px solid var(--rule);padding:4px var(--sp-2);
+  text-align:right;font-weight:400}
+/* Same reasoning as rule 3: the case transform would turn C(d, x) into C(D, X),
+   which is a different thing on a page that also uses d for doublings. */
+.grow-table .fx{text-transform:none}
+.grow-table thead th{color:var(--ink-dim);text-transform:uppercase;
+  letter-spacing:var(--track-label);vertical-align:bottom;line-height:1.3}
+.grow-table tbody th{color:var(--ink-dim);text-align:right}
+.grow-table td{color:var(--ink)}
+.grow-table tr.is-short td:nth-child(3){color:var(--amber-ink)}
+.grow-barcell{width:38%;padding-left:var(--sp-3)!important}
+.grow-bar-pred,.grow-bar-got{display:block;height:6px;min-width:2px;margin:2px 0}
+.grow-bar-pred{border:1px dashed var(--ink-dim);background:none}
+.grow-bar-got{background:var(--accent)}
+
+/* 10. The fracture report is always present and carries a resting message, so
+       the polite live region has somewhere stable to announce into rather than
+       appearing from nothing. Same amber left rule as .note: same kind of
+       aside. */
+.grow-fracture{border-left:2px solid var(--amber-ink);padding-left:var(--sp-4);
+  font-size:var(--t-small);color:var(--ink-dim);line-height:1.5}
+.grow-fracture strong{color:var(--ink);font-weight:500}

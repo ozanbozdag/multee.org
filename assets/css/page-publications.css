@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Publications page only. Loaded after site.css.
+   One component the system lacks: a DOI inside .pub-meta.
+   .pub-meta uppercases and letter-spaces its contents, which is correct for
+   the year and the venue and wrong for an identifier that people copy. A DOI
+   is also an unbreakable flex item, so at 390px it would push the page wide
+   unless it is allowed to wrap mid-string.
+   ========================================================================== */
+.pub-meta .doi{
+  text-transform:none;
+  letter-spacing:.02em;
+  overflow-wrap:anywhere;
+  min-width:0;
+}
+
+/* ==========================================================================
+   Papers over time — the interactive timeline above the two lists.
+   Built by assets/js/papers-timeline.js. Everything here is scoped to .pt so
+   it cannot leak into the lists below.
+   ========================================================================== */
+
+/* The no-JS state. JS replaces it; if JS never runs, this is what stands, and
+   the two full lists below it are unaffected. */
+.pt-fallback{
+  border:1px solid var(--rule);border-left:2px solid var(--amber-ink);
+  padding:var(--sp-4) var(--sp-5);
+  font-size:var(--t-small);color:var(--ink-dim);margin:0;
+}
+
+/* --------------------------------------------------------------- the plate
+   site.css: "The void is never themed: plate interiors match the JPEG black
+   exactly." MULTEE.THEMES uses emission hues picked for a black field, so the
+   colour-coded parts of this widget live on void in both themes.
+
+   Two of those six hues are NOT theme-invariant: --pa-text and --po-text flip
+   to #2A3ECC and #C01028 in light mode, which measure about 2.7:1 and 3.3:1 on
+   black. Pinning them to their dark-field values here keeps MULTEE.THEMES as
+   the single source of the theme-to-colour mapping while keeping the Methods
+   and Theory dots as legible as the rest. Scoped to the plate only. */
+.pt-plate{
+  --pa-text:#7B8CFF;
+  --po-text:#FF6B7E;
+  color:var(--on-void);
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+}
+
+/* ------------------------------------------------------------------ filters
+   These carry the theme swatches, so they double as the colour legend. */
+.pt-filters{
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-3);
+  padding:var(--sp-4) var(--sp-4) var(--sp-4);
+  border-bottom:1px solid var(--on-void-rule);
+}
+.pt-filters-label{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--on-void-dim);
+}
+.pt-filter-group{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.pt-filter{
+  display:inline-flex;align-items:center;gap:var(--sp-2);
+  background:none;border:1px solid var(--on-void-rule);color:var(--on-void-dim);
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);
+  padding:var(--sp-2) var(--sp-3);cursor:pointer;line-height:1.1;
+}
+.pt-filter:hover{color:var(--on-void);border-color:var(--on-void-dim)}
+.pt-filter[aria-pressed="true"],
+.pt-filter.is-on{color:var(--on-void);border-color:var(--cyan)}
+.pt-filter:focus-visible{outline:2px solid var(--cyan-hi);outline-offset:2px}
+.pt-filter-count{color:var(--on-void-dim);font-variant-numeric:tabular-nums}
+.pt-filter[aria-pressed="true"] .pt-filter-count,
+.pt-filter.is-on .pt-filter-count{color:var(--cyan)}
+.pt-swatch{
+  width:.6em;height:.6em;border-radius:50%;background:currentColor;
+  flex:none;display:inline-block;
+}
+
+/* --------------------------------------------------------------- the plot
+   The wrap is the shared coordinate origin: no padding, canvas fills it
+   exactly, dots are positioned in the same pixel space the canvas draws in. */
+.pt-wrap{position:relative;padding:0;overflow:hidden}
+.pt-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pt-dots{position:absolute;inset:0}
+
+.pt-dot{
+  position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;
+  display:block;text-decoration:none;
+  transition:opacity var(--dur-fast) var(--ease);
+}
+.pt-dot::before{
+  content:"";position:absolute;inset:5px;border-radius:50%;
+  border:2px solid currentColor;
+}
+.pt-dot.is-multee::before{background:currentColor}
+.pt-dot.is-found::before{background:var(--void)}
+.pt-dot:hover::before,
+.pt-dot.pt-on::before{box-shadow:0 0 0 2px var(--void),0 0 0 3.5px var(--on-void)}
+.pt-dot:focus-visible{outline:2px solid var(--cyan-hi);outline-offset:0}
+/* Filtering dims rather than removes so the shape of the corpus stays visible.
+   On black that puts a floor under the alpha: at .16 an evolved cyan dot
+   composites to about 1.3:1 against the void and a 2px hollow ring disappears
+   outright, which is removal wearing a different name. .4 recesses it to about
+   2.7:1 and keeps every dot readable as a shape. */
+.pt-dot.pt-dim{opacity:.4}
+.pt-dot.pt-dim:hover,.pt-dot.pt-dim:focus-visible,.pt-dot.pt-dim.pt-on{opacity:.8}
+
+/* ------------------------------------------------------------------ legend */
+.pt-legend{
+  display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-5);
+  padding:var(--sp-3) var(--sp-4);
+  border-top:1px solid var(--on-void-rule);
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:.06em;color:var(--on-void-dim);
+}
+.pt-legend-item{display:inline-flex;align-items:center;gap:var(--sp-2)}
+.pt-legend-dot{
+  width:13px;height:13px;border-radius:50%;flex:none;
+  border:2px solid var(--on-void);
+}
+.pt-legend-dot.is-multee{background:var(--on-void)}
+.pt-legend-dot.is-found{background:var(--void)}
+
+/* -------------------------------------------------------------------- card
+   min-height is set so that moving between dots does not shift the page. */
+.pt-card{
+  border-top:1px solid var(--on-void-rule);
+  padding:var(--sp-4) var(--sp-4) var(--sp-5);
+  min-height:12.5rem;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-2);
+  align-content:start;
+}
+.pt-card-meta{
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2) var(--sp-3);
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--on-void-dim);margin:0;
+}
+.pt-card-theme{color:inherit}
+.pt-card-kind{border:1px solid currentColor;padding:1px var(--sp-2)}
+.pt-card-kind.is-multee{color:var(--cyan)}
+.pt-card-date{margin-left:auto;font-variant-numeric:tabular-nums}
+.pt-card-title{font-size:1.15rem;color:var(--on-void);margin:0}
+.pt-card-cite{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:.08em;color:var(--amber);margin:0;
+}
+.pt-card-finding{font-size:var(--t-small);color:var(--on-void-dim);margin:0;max-width:78ch}
+.pt-card-doi{
+  font-family:var(--font-mono);font-size:var(--t-micro);color:var(--on-void-dim);
+  margin:0;overflow-wrap:anywhere;
+}
+
+/* ------------------------------------------------------- the honesty note */
+.pt-note{
+  border-top:1px solid var(--on-void-rule);
+  padding:var(--sp-3) var(--sp-4);
+  font-size:var(--t-small);line-height:1.5;color:var(--on-void-dim);margin:0;
+}
+
+@media (max-width:700px){
+  .pt-card-date{margin-left:0}
+  .pt-card{min-height:0}
+}
+
+/* Nothing here animates on load: the settled state is the first painted state.
+   The only transitions are on hover and filter dimming, both user-initiated,
+   and both are removed outright under reduced motion. */
+@media (prefers-reduced-motion:reduce){
+  .pt-dot{transition:none}
+}
+
+/* The two lists below are the printable version. A full-bleed black plate is
+   not, and it carries nothing the lists do not. */
+@media print{
+  .pt{display:none}
+}
+

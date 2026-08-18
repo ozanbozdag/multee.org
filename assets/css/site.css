@@ -1,0 +1,566 @@
+/* ==========================================================================
+   MuLTEE — multee.org
+   "Plate & Void": the page is the same dark field the specimens were
+   photographed in. Everything is stroke; almost nothing is fill.
+   Plain CSS, no build step. Edit this file directly.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- tokens */
+:root{
+  --font-serif:"Newsreader",ui-serif,Georgia,"Times New Roman",serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --t-display:clamp(2.15rem,4.6vw,3.9rem);
+  --t-h2:clamp(1.6rem,2.8vw,2.25rem);
+  --t-h3:clamp(1.15rem,1.7vw,1.35rem);
+  --t-body:clamp(1rem,1.6vw,1.15rem);
+  --t-small:.875rem;
+  --t-label:.7rem;
+  --t-micro:.63rem;
+  --lh-tight:1.04; --lh-head:1.15; --lh-body:1.55; --lh-label:1.65;
+  --track-label:.14em; --track-eyebrow:.18em; --track-display:-.02em;
+
+  --sp-1:.25rem;  --sp-2:.5rem;   --sp-3:.75rem;  --sp-4:1rem;
+  --sp-5:1.5rem;  --sp-6:2rem;    --sp-7:3rem;    --sp-8:4rem;
+  --sp-9:6rem;    --sp-10:8rem;   --sp-11:10rem;  --sp-12:12rem;
+  --gutter:clamp(1.25rem,5vw,4rem);
+  --shell:1680px;
+  --measure:68ch;
+
+  /* The void is never themed: plate interiors match the JPEG black exactly. */
+  --void:#000;
+  --on-void:#E6E9EC;
+  --on-void-dim:#96A0A8;
+  --on-void-rule:#2A3036;
+
+  --cyan:#24E3F2; --cyan-hi:#4FEFFF;
+  --amber:#F79A2E; --amber-hot:#FF7A1A;
+  --green:#7CFC1F;
+
+  /* --amber is an EMISSION colour: it is only legible on --void or on the dark
+     page. Anything amber that sits on the themed page background must use
+     --amber-ink instead, which darkens in light mode. On #F7F6F3 the emission
+     amber measures 2.0:1, well under the 4.5:1 floor for text. */
+  --amber-ink:#F79A2E;
+
+  /* Treatment coding. Stroke and text are different values on purpose:
+     the stroke hues are too dark to carry text at AA. */
+  --pa-stroke:#4A63FF; --pa-text:#7B8CFF;
+  --po-stroke:#FF2E4D; --po-text:#FF6B7E;
+  --pm-stroke:#F79A2E; --pm-text:#F7B25E;
+
+  --depth-1:#1E5AFF; --depth-2:#22E0D0; --depth-3:#7CE83C;
+  --depth-4:#F2E33C; --depth-5:#F2452E;
+
+  color-scheme:dark;
+  --bg:#0A0B0D;
+  --surface:#101317;
+  --ink:#E6E9EC;
+  --ink-dim:#96A0A8;
+  --rule:#1E2226;
+  --accent:#24E3F2;
+  --accent-hover:#F79A2E;
+  --focus:#4FEFFF;
+  --body-weight:420;
+  --display-weight:380;
+
+  --dur-fast:.18s; --dur-slow:.9s;
+  --ease:cubic-bezier(.2,.7,.3,1);
+}
+
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light;
+    --bg:#F7F6F3; --surface:#EDEBE6;
+    --ink:#14161A; --ink-dim:#4A5058;
+    --rule:#D8D5CE;
+    --accent:#08606E; --accent-hover:#8A4A00; --focus:#08606E;
+    --body-weight:400; --display-weight:350;
+    --pa-text:#2A3ECC; --po-text:#C01028; --pm-text:#8A4A00;
+    --amber-ink:#8A4A00;
+  }
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#F7F6F3; --surface:#EDEBE6; --ink:#14161A; --ink-dim:#4A5058;
+  --rule:#D8D5CE; --accent:#08606E; --accent-hover:#8A4A00; --focus:#08606E;
+  --body-weight:400; --display-weight:350;
+  --pa-text:#2A3ECC; --po-text:#C01028; --pm-text:#8A4A00;
+  --amber-ink:#8A4A00;
+}
+
+/* ----------------------------------------------------------------- reset */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-serif);
+  font-size:var(--t-body);
+  font-weight:var(--body-weight);
+  line-height:var(--lh-body);
+  font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;font-weight:var(--display-weight);line-height:var(--lh-head);
+  letter-spacing:var(--track-display);text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{color:var(--accent-hover)}
+:where(a,button,summary,input,[tabindex]):focus-visible{
+  outline:2px solid var(--focus);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;
+    scroll-behavior:auto!important}
+}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--surface);
+  color:var(--ink);padding:var(--sp-3) var(--sp-4);font-family:var(--font-mono);
+  font-size:var(--t-label);text-transform:uppercase;letter-spacing:var(--track-label)}
+.skip:focus{left:var(--sp-4);top:var(--sp-4)}
+
+/* ------------------------------------------------------------ page shell */
+.page{
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(var(--gutter),1fr)
+    [wide-start] minmax(0,12rem)
+    [text-start] minmax(0,var(--measure))
+    [text-end] minmax(0,12rem)
+    [wide-end] minmax(var(--gutter),1fr)
+    [full-end];
+}
+.page>*{grid-column:text}
+.wide{grid-column:wide}
+.full{grid-column:full}
+
+/* Below the point where all three inner tracks can reach their maximum, CSS
+   Grid's maximize-tracks step splits the free space EQUALLY between them, so
+   the two empty side rails grow in lockstep with the reading column. Measured
+   on this page before the fix: at 780px the measure was 318px with 384px of
+   empty rail beside it; at 500px it was 150px between two 150px voids.
+   Making the rails flexible lets the reading column fill to --measure first
+   and hands only the remainder to the rails. The two grids agree at the
+   breakpoint, so nothing jumps. */
+@media (max-width:1120px){
+  .page{
+    grid-template-columns:
+      [full-start] var(--gutter)
+      [wide-start] minmax(0,1fr)
+      [text-start] minmax(0,var(--measure))
+      [text-end] minmax(0,1fr)
+      [wide-end] var(--gutter)
+      [full-end];
+  }
+}
+
+/* --------------------------------------------------------------- masthead
+   Opaque, never translucent: a see-through bar breaks the instant a light
+   page shell sits above a black hero. */
+.masthead{
+  position:sticky;top:0;z-index:50;
+  background:var(--surface);
+  border-bottom:1px solid var(--rule);
+}
+.masthead-in{
+  max-width:var(--shell);margin:0 auto;
+  padding:0 var(--gutter);
+  min-height:56px;
+  display:flex;align-items:center;gap:var(--sp-5);
+}
+.brand{
+  font-family:var(--font-mono);font-weight:500;
+  font-size:.95rem;letter-spacing:.06em;
+  color:var(--ink);text-decoration:none;flex:none;
+}
+.brand:hover{color:var(--accent)}
+.brand .brand-sub{color:var(--ink-dim);letter-spacing:var(--track-label);
+  font-size:var(--t-micro);text-transform:uppercase;display:block;margin-top:-2px}
+
+.nav{margin-left:auto;display:flex;align-items:center;gap:var(--sp-5);flex-wrap:wrap}
+.nav a{
+  font-family:var(--font-mono);font-size:var(--t-label);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--ink-dim);text-decoration:none;
+  padding:var(--sp-2) 0;border-bottom:1px solid transparent;
+  white-space:nowrap;
+}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--amber-ink)}
+
+.nav-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--rule);
+  color:var(--ink);font-family:var(--font-mono);font-size:var(--t-label);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  padding:var(--sp-2) var(--sp-3);cursor:pointer}
+.theme-toggle{background:none;border:1px solid var(--rule);color:var(--ink-dim);
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);padding:var(--sp-1) var(--sp-2);cursor:pointer;flex:none}
+.theme-toggle:hover{color:var(--ink);border-color:var(--ink-dim)}
+
+@media (max-width:1400px){
+  .nav-toggle{display:block}
+  .nav{
+    display:none;width:100%;flex-direction:column;align-items:flex-start;
+    gap:0;padding-bottom:var(--sp-4);
+  }
+  .masthead[data-open="true"] .nav{display:flex}
+  .masthead-in{flex-wrap:wrap;padding-top:var(--sp-3);padding-bottom:0}
+  .nav a{width:100%;padding:var(--sp-3) 0;border-bottom:1px solid var(--rule)}
+  .nav a[aria-current="page"]{border-bottom-color:var(--amber)}
+}
+
+/* ------------------------------------------------------------------ type */
+.eyebrow{
+  font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-eyebrow);
+  color:var(--accent);margin:0 0 var(--sp-4);
+}
+.display{font-size:var(--t-display);line-height:var(--lh-tight)}
+/* The emphasis hue tracks the emission colours of the plate beside it. The hero
+   micrograph is cyan walls and amber nuclei, so the italic is amber. It always
+   sits on --void, never on the themed page, so it is safe in both themes. */
+.hero-body .display em{font-style:italic;color:var(--amber)}
+
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3)}
+.lede{font-size:clamp(1.15rem,1.9vw,1.4rem);line-height:1.5;color:var(--ink)}
+.prose p{margin:0 0 var(--sp-5);color:var(--ink)}
+.prose p:last-child{margin-bottom:0}
+.prose h2{margin:var(--sp-8) 0 var(--sp-4)}
+.prose h3{margin:var(--sp-6) 0 var(--sp-3)}
+.prose ul,.prose ol{margin:0 0 var(--sp-5);padding-left:1.2em}
+.prose li{margin:0 0 var(--sp-2)}
+.prose li::marker{color:var(--ink-dim)}
+.dim{color:var(--ink-dim)}
+.mono{font-family:var(--font-mono)}
+.label{
+  font-family:var(--font-mono);font-size:var(--t-label);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--ink-dim);line-height:var(--lh-label);
+}
+.num{font-variant-numeric:tabular-nums}
+
+/* section rhythm */
+.section{padding-block:var(--sp-9)}
+@media (min-width:900px){.section{padding-block:var(--sp-11)}}
+.section-head{margin:0 0 var(--sp-7)}
+.rule{border:0;border-top:1px solid var(--rule);margin:0}
+
+/* ----------------------------------------------------------------- plates
+   A plate is a hairline mount around a true-black field. Never a "card":
+   no radius, no shadow, no fill. */
+.plate{
+  border:1px solid var(--on-void-rule);
+  background:var(--void);
+  margin:0;
+}
+/* .plate-figure does NOT carry the .plate class, so both must be named here. */
+.plate img,
+.plate-figure img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  background:var(--void);
+}
+.plate-figure{aspect-ratio:1/1;overflow:hidden;background:var(--void)}
+.plate-figure.wide-ratio{aspect-ratio:16/9}
+.plate-figure.tall-ratio{aspect-ratio:4/5}
+/* Images carrying burned-in "Magnification: 60 x" and a scale bar get the
+   bottom cropped away; that information is restated in the label instead. */
+.plate img.crop-annotations{object-position:50% 34%}
+
+.plate-label{
+  padding:var(--sp-3) var(--sp-4);
+  border-top:1px solid var(--on-void-rule);
+  display:grid;gap:2px;
+  background:var(--void);
+}
+.plate-label dl{display:grid;grid-template-columns:auto 1fr;gap:2px var(--sp-3);margin:0}
+.plate-label dt{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--on-void-dim);
+}
+.plate-label dd{
+  margin:0;font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:.06em;color:var(--on-void);
+}
+.plate-num{
+  font-family:var(--font-mono);font-size:var(--t-micro);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--amber);margin-bottom:var(--sp-1);
+}
+.plate-caption{margin:var(--sp-3) 0 0;font-size:var(--t-small);color:var(--ink-dim);
+  line-height:1.5}
+
+/* -------------------------------------------------------------------hero */
+.hero{position:relative;background:var(--void);border-bottom:1px solid var(--on-void-rule)}
+.hero-grid{
+  max-width:var(--shell);margin:0 auto;
+  display:grid;grid-template-columns:1fr;
+  position:relative;
+}
+.hero-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--void)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero-body{
+  position:relative;padding:var(--sp-6) var(--gutter) var(--sp-7);
+  background:var(--void);color:var(--on-void);
+}
+.hero-body .eyebrow{color:var(--cyan)}
+.hero-body .display{color:var(--on-void)}
+.hero-body .lede{color:var(--on-void-dim);max-width:52ch;margin-top:var(--sp-5)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:var(--sp-4);margin-top:var(--sp-6)}
+
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1fr;min-height:min(76vh,720px)}
+  .hero-media{position:absolute;inset:0;aspect-ratio:auto}
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.55) 38%,rgba(0,0,0,.88) 62%,rgba(0,0,0,.94) 100%);
+  }
+  .hero-body{
+    background:none;align-self:center;justify-self:end;
+    width:min(52ch,52%);padding:var(--sp-9) var(--gutter);
+  }
+}
+
+/* The single filled element on the site: one saturated cell in a field of
+   outlines. Everything else is a hairline. */
+.btn{
+  display:inline-block;font-family:var(--font-mono);font-size:var(--t-label);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  padding:var(--sp-3) var(--sp-5);text-decoration:none;
+  border:1px solid var(--cyan);color:var(--void);background:var(--cyan);
+  transition:background var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
+}
+.btn:hover{background:var(--cyan-hi);border-color:var(--cyan-hi);color:var(--void)}
+.btn-ghost{
+  background:none;color:var(--on-void);border-color:var(--on-void-rule);
+}
+.btn-ghost:hover{background:none;color:var(--cyan);border-color:var(--cyan)}
+.page .btn-ghost{color:var(--ink);border-color:var(--rule)}
+.page .btn-ghost:hover{color:var(--accent);border-color:var(--accent)}
+
+/* --------------------------------------------------------- standing facts */
+.facts{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border:1px solid var(--rule);
+}
+.facts div{padding:var(--sp-4) var(--sp-5);border-right:1px solid var(--rule)}
+.facts div:last-child{border-right:0}
+.facts dt{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim);margin-bottom:var(--sp-2);
+}
+.facts dd{margin:0;font-family:var(--font-mono);font-size:1.5rem;font-weight:500;
+  color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.1}
+.facts-note{margin-top:var(--sp-3);font-family:var(--font-mono);font-size:var(--t-micro);
+  color:var(--ink-dim);letter-spacing:.04em}
+@media (max-width:640px){
+  .facts div{border-right:0;border-bottom:1px solid var(--rule)}
+  .facts div:last-child{border-bottom:0}
+}
+
+/* ------------------------------------------------------------- discoveries
+   Numbered because these are ranked by how much they changed the experiment,
+   not because a numeral looks tidy. */
+.findings{display:grid;gap:0;border-top:1px solid var(--rule);margin:0;padding:0;list-style:none}
+.finding{
+  display:grid;grid-template-columns:3.5rem 1fr;gap:var(--sp-5);
+  padding:var(--sp-6) 0;border-bottom:1px solid var(--rule);
+}
+.finding-num{
+  font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  letter-spacing:var(--track-label);color:var(--amber-ink);padding-top:.35em;
+  font-variant-numeric:tabular-nums;
+}
+.finding h3{margin:0 0 var(--sp-3)}
+.finding p{color:var(--ink-dim);margin:0 0 var(--sp-3)}
+.finding .cite{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:.08em;color:var(--ink-dim);
+}
+.finding .cite a{color:var(--ink-dim)}
+.finding .cite a:hover{color:var(--accent)}
+@media (max-width:640px){
+  .finding{grid-template-columns:1fr;gap:var(--sp-3)}
+  .finding-num{padding-top:0}
+}
+
+/* -------------------------------------------------------------- treatments */
+.triptych{display:grid;gap:var(--sp-5);grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.treatment{border:1px solid var(--rule);display:flex;flex-direction:column}
+.treatment .plate-figure{aspect-ratio:1/1;border-bottom:1px solid var(--on-void-rule)}
+.treatment-body{padding:var(--sp-5);display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3)}
+.chip{
+  display:inline-flex;align-items:center;gap:var(--sp-2);
+  font-family:var(--font-mono);font-size:var(--t-micro);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  border:1px solid currentColor;padding:var(--sp-1) var(--sp-2);
+  width:max-content;
+}
+/* Treatment identity carries four redundant channels: hue, the PA/PM/PO code,
+   an oxygen glyph, and fixed order. It survives grayscale and colour blindness. */
+.chip::before{content:attr(data-o2);font-size:.9em;line-height:1}
+.chip-pa{color:var(--pa-text)}
+.chip-pm{color:var(--pm-text)}
+.chip-po{color:var(--po-text)}
+.treatment h3{margin:0}
+.treatment p{color:var(--ink-dim);font-size:var(--t-small);margin:0}
+.treatment dl{display:grid;grid-template-columns:auto 1fr;gap:var(--sp-1) var(--sp-3);margin:0}
+.treatment dt{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim)}
+.treatment dd{margin:0;font-size:var(--t-small);color:var(--ink)}
+
+/* --------------------------------------------------------- population grid */
+.pop-grid{display:grid;gap:var(--sp-4);margin:0;padding:0;list-style:none}
+.pop-row{display:grid;grid-template-columns:auto 1fr;gap:var(--sp-4);align-items:center}
+.pop-cells{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--sp-2)}
+.pop-cell{
+  border:1px solid currentColor;padding:var(--sp-3) var(--sp-2);text-align:center;
+  font-family:var(--font-mono);font-size:var(--t-label);letter-spacing:.06em;
+  text-decoration:none;display:block;cursor:pointer;color:inherit;
+}
+.pop-cell:hover{background:color-mix(in srgb,currentColor 14%,transparent)}
+
+/* ---------------------------------------------------------------- timeline */
+.timeline{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.timeline li{
+  display:grid;grid-template-columns:7rem 1fr;gap:var(--sp-5);
+  padding:var(--sp-5) 0;border-bottom:1px solid var(--rule);
+}
+.timeline .yr{font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  letter-spacing:var(--track-label);color:var(--amber-ink);font-variant-numeric:tabular-nums}
+.timeline h3{margin:0 0 var(--sp-2);font-size:1.05rem}
+.timeline p{color:var(--ink-dim);font-size:var(--t-small);margin:0}
+@media (max-width:640px){
+  .timeline li{grid-template-columns:1fr;gap:var(--sp-2)}
+}
+
+/* ------------------------------------------------------------ publications */
+.pubs{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.pubs li{padding:var(--sp-5) 0;border-bottom:1px solid var(--rule)}
+.pub-title{font-size:1.15rem;margin:0 0 var(--sp-2)}
+.pub-title a{color:var(--ink);text-decoration:none}
+.pub-title a:hover{color:var(--accent);text-decoration:underline}
+.pub-meta{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:.08em;color:var(--ink-dim);margin:0 0 var(--sp-3);
+  display:flex;flex-wrap:wrap;gap:var(--sp-3);
+}
+.pub-meta .venue{color:var(--amber-ink)}
+.pubs p.finding-text{color:var(--ink-dim);font-size:var(--t-small);margin:0;max-width:var(--measure)}
+.authors{font-size:var(--t-small);color:var(--ink-dim);margin:0 0 var(--sp-2)}
+
+/* ---------------------------------------------------------------- glossary */
+.glossary{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.glossary li{padding:var(--sp-5) 0;border-bottom:1px solid var(--rule)}
+.glossary dt{
+  font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--accent);margin:0 0 var(--sp-3);
+}
+.glossary dd{margin:0 0 var(--sp-3)}
+.glossary dd:last-child{margin-bottom:0}
+.glossary .in-multee{color:var(--ink-dim);font-size:var(--t-small)}
+.glossary .in-multee strong{color:var(--amber-ink);font-weight:500;font-family:var(--font-mono);
+  font-size:var(--t-micro);text-transform:uppercase;letter-spacing:var(--track-label)}
+.xref{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:.08em;color:var(--ink-dim)}
+
+/* ------------------------------------------------------------------- cards */
+.doors{display:grid;gap:var(--sp-4);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.door{
+  border:1px solid var(--rule);padding:var(--sp-5);text-decoration:none;display:grid;
+  grid-template-columns:minmax(0,1fr);gap:var(--sp-2);
+  align-content:start;transition:border-color var(--dur-fast) var(--ease);
+}
+.door:hover{border-color:var(--accent)}
+.door .count{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--amber-ink)}
+.door h3{color:var(--ink);margin:0}
+.door p{color:var(--ink-dim);font-size:var(--t-small);margin:0}
+
+.people{display:grid;gap:var(--sp-5);grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.person{border:1px solid var(--rule);padding:var(--sp-5);display:grid;
+  grid-template-columns:minmax(0,1fr);gap:var(--sp-2);align-content:start}
+.person-photo{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;margin-bottom:var(--sp-2)}
+.person h3{margin:0;font-size:1.1rem}
+.person .role{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim)}
+.person p{font-size:var(--t-small);color:var(--ink-dim);margin:0}
+.person .badge{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--amber-ink);border:1px solid var(--amber-ink);
+  padding:var(--sp-1) var(--sp-2);width:max-content;
+}
+
+.press-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.press-list li{display:grid;grid-template-columns:9rem 1fr;gap:var(--sp-5);
+  padding:var(--sp-5) 0;border-bottom:1px solid var(--rule)}
+.press-list .outlet{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--amber-ink)}
+.press-list .date{font-family:var(--font-mono);font-size:var(--t-micro);color:var(--ink-dim);
+  font-variant-numeric:tabular-nums;display:block;margin-top:2px}
+.press-list h3{font-size:1.05rem;margin:0 0 var(--sp-2)}
+.press-list h3 a{color:var(--ink);text-decoration:none}
+.press-list h3 a:hover{color:var(--accent);text-decoration:underline}
+.press-list p{color:var(--ink-dim);font-size:var(--t-small);margin:0}
+@media (max-width:640px){.press-list li{grid-template-columns:1fr;gap:var(--sp-2)}}
+
+/* -------------------------------------------------------------- callout box */
+.note{border:1px solid var(--rule);border-left:2px solid var(--amber-ink);
+  padding:var(--sp-5);display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3)}
+.note h3{margin:0;font-size:1.05rem}
+.note p{color:var(--ink-dim);font-size:var(--t-small);margin:0}
+
+/* ------------------------------------------------------------------ footer */
+.site-footer{border-top:1px solid var(--rule);background:var(--surface);
+  padding-block:var(--sp-8)}
+.site-footer .page{row-gap:var(--sp-6)}
+.footer-grid{display:grid;gap:var(--sp-6);grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.site-footer h3{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim);margin:0 0 var(--sp-3);font-weight:500}
+.site-footer p,.site-footer li{font-size:var(--t-small);color:var(--ink-dim);margin:0 0 var(--sp-2)}
+.site-footer ul{list-style:none;padding:0}
+
+/* ------------------------------------------------- rack focus (scroll reveal)
+   Plates resolve as you scroll, the way a specimen comes up under a
+   microscope as you turn the fine adjustment. Scoped to .js-focus so a JS
+   failure can never leave plates permanently blurred. */
+.js-focus .reveal img{
+  filter:blur(6px) brightness(.72);transform:scale(1.02);
+  transition:filter var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease);
+}
+.js-focus .reveal.in img{filter:none;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js-focus .reveal img{filter:none;transform:none;transition:none}
+}
+
+/* --------------------------------------------------------------- utilities */
+.stack-4>*+*{margin-top:var(--sp-4)}
+.stack-5>*+*{margin-top:var(--sp-5)}
+.stack-6>*+*{margin-top:var(--sp-6)}
+.stack-7>*+*{margin-top:var(--sp-7)}
+.two-col{display:grid;gap:var(--sp-6);grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.scroll-x{overflow-x:auto}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ------------------------------------------- components inside .prose
+   `.prose p` is (0,1,1) and outranks single-class component rules like
+   `.plate-caption` (0,1,0). Where a page puts .prose on a section that also
+   contains plates or eyebrows, the component colours were being overwritten,
+   which in light theme painted plate numbers in near-black on a black label.
+   These restore the component's own colour. Keep this block last. */
+.prose .eyebrow{color:var(--accent)}
+.prose .plate-caption,
+.prose .cite,
+.prose .label,
+.prose .facts-note,
+.prose .xref,
+.prose .dim{color:var(--ink-dim)}
+.prose .plate-num{color:var(--amber)}
+.prose .plate-label dt{color:var(--on-void-dim)}
+.prose .plate-label dd{color:var(--on-void)}
+.prose .pub-meta .venue{color:var(--amber-ink)}

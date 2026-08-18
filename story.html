@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Story | MuLTEE</title>
+<meta name="description" content="Why the MuLTEE exists: the case for evolving a multicellular organism forward instead of reconstructing one backwards. Includes an interactive scrubber through the first 1,800 transfers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/page-story.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="story.html" aria-current="page">The Story</a>
+      <a href="experiment.html">The Experiment</a>
+      <a href="populations.html">Populations</a>
+      <a href="history.html">History</a>
+      <a href="publications.html">Publications</a>
+      <a href="press.html">Press</a>
+      <a href="data.html">Data &amp; Strains</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="team.html">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-media">
+        <img src="assets/img/hero-cluster-green-fluorescence.jpg"
+             srcset="assets/img/hero-cluster-green-fluorescence-sm.jpg 1200w, assets/img/hero-cluster-green-fluorescence.jpg 2400w"
+             sizes="100vw"
+             width="2400" height="1596"
+             alt="Fluorescence micrograph of a single snowflake yeast cluster glowing green against a black field, its cells branching outward from a central attachment point."
+             fetchpriority="high">
+      </div>
+      <div class="hero-body">
+        <p class="eyebrow">The story</p>
+        <h1 class="display">Running the transition forward</h1>
+        <p class="lede">The major transitions in individuality happened in the deep past, and the
+          transitional forms are long extinct. Rather than reconstruct the origin of
+          multicellularity from what survives, we evolve it forward under conditions we control, one
+          transfer per day, and freeze the entire record as we go.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#what-happened">Interactive timeline</a>
+          <a class="btn btn-ghost" href="experiment.html">How the experiment works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== 1. hierarchy -->
+  <div class="page">
+    <section class="section prose">
+      <div class="section-head">
+        <p class="eyebrow">1 &middot; The unanswered question</p>
+        <h2>The hierarchy of biological individuality</h2>
+      </div>
+      <p>Life is organised in nested levels: genes within chromosomes, chromosomes within genomes,
+        genomes within cells, and cells within multicellular bodies. At each level, entities that
+        once replicated independently became parts of a larger individual. Biology has a detailed
+        account of what happened at each of these levels, but no general explanation for why such
+        transitions occur.</p>
+      <blockquote class="pull">
+        <p>&ldquo;That life is hierarchically organized, with species composed of populations,
+          populations of individuals, individuals of cells, cells of organelles, organelles of
+          genomes, genomes of chromosomes, and chromosomes of genes, is so obvious an observation
+          that it is quite remarkable that we have no general explanation of why this is so.&rdquo;</p>
+        <footer>Leo Buss, <cite>The Evolution of Individuality</cite>, 1987</footer>
+      </blockquote>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 2. why it matters -->
+  <div class="page">
+    <section class="section prose">
+      <div class="section-head">
+        <p class="eyebrow">2 &middot; Why this layer in particular</p>
+        <h2>The importance of multicellularity</h2>
+      </div>
+      <p>The origin of multicellular life was one of the most transformative events in the history
+        of life on Earth. It allowed for the evolution of the large, complex organisms we see today,
+        and nearly every organism visible without a microscope is a product of it.</p>
+      <blockquote class="pull">
+        <p>&ldquo;&hellip;if all multicellular eukaryotes suddenly vanished from Earth, our planet
+          would appear as barren as Mars.&rdquo;</p>
+        <footer>Kirk, 1998, <cite>BioEssays</cite> 20:496&ndash;507</footer>
+      </blockquote>
+      <p>Understanding how multicellular complexity arises is a central goal of evolutionary
+        biology.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 3. looking backwards -->
+  <div class="page">
+    <section class="section prose">
+      <div class="section-head">
+        <p class="eyebrow">3 &middot; The obstacle</p>
+        <h2>The problem of looking backwards in time</h2>
+      </div>
+      <p>Understanding the evolution of complex multicellular individuals from unicellular
+        ancestors has been extremely challenging, largely because the first steps in this process
+        occurred in the deep past (>200 million years ago). As a result, transitional forms have
+        been lost to extinction. What is left to study is the finished product, and it is tempting
+        to read the regulatory machinery of a modern animal or plant backwards into the origin.</p>
+      <blockquote class="pull">
+        <p>&ldquo;As an analogy, engineers studying the space shuttle might find it nearly
+          impossible to infer from it how the Wright brothers constructed their first plane.&rdquo;</p>
+      </blockquote>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 4. the catch -->
+  <div class="page">
+    <section class="section prose">
+      <div class="section-head">
+        <p class="eyebrow">4 &middot; The catch</p>
+        <h2>Development is a consequence of multicellularity, not a precondition</h2>
+      </div>
+      <p>Development is the obvious candidate explanation. Transcriptional programs, cell-type
+        specification, and controlled morphogenesis are what allow a group of cells to build a body.
+        But these developmental systems are themselves multicellular adaptations, evolving long
+        after the origin of multicellularity, so they cannot explain how the process started.</p>
+      <p>A simple group of cells has none of that machinery. It has geometry, mechanics, and
+        whatever its cells were already doing as single cells. The question we address is how simple
+        cell groups like these can begin the process of open-ended multicellular evolution and
+        gradually become more complex.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 5. evolve it forward -->
+  <div class="page">
+    <section class="section prose">
+      <div class="section-head">
+        <p class="eyebrow">5 &middot; The answer</p>
+        <h2>Long-term experimental evolution as an alternative approach</h2>
+      </div>
+      <p>Ozan Bozdag founded fifteen populations of snowflake yeast in 2018 and has transferred them
+        every day since. Each population is grown for 24 hours and then selected on how fast it
+        settles through liquid. Five populations ferment anaerobically, five are mixotrophic, and
+        five respire obligately. All fifteen descend from a single known genotype, so nothing about
+        the starting condition has to be inferred. Every 25 days, roughly every 125 generations, a
+        sample of each population is frozen at &minus;80&nbsp;&deg;C. The archive now holds more than
+        3,000 samples, and transfers continue daily.</p>
+      <p>Our model system cannot simply be studied. It has to be created through evolution, which
+        means the primary deliverable of the project is the continuation of the experiment itself.
+        A frozen population can be revived years later and measured with instruments that did not
+        exist when it was frozen. Some of the most important results from Lenski and Barrick's
+        <em>E.&nbsp;coli</em> LTEE came from genome sequencing and genetic reconstruction, neither of
+        which was available at scale when that experiment began in 1988. To our knowledge we are the
+        only research group using long-term experimental evolution to study the origin of
+        multicellularity.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 6. THE SCRUBBER -->
+  <div class="page">
+    <section class="section wide" id="what-happened">
+      <div class="section-head">
+        <p class="eyebrow">6 &middot; What happened</p>
+        <h2>The first 1,800 transfers</h2>
+      </div>
+
+      <div class="prose" style="max-width:var(--measure);margin-bottom:var(--sp-6)">
+        <p>Drag the slider to move through the experiment. The size curve plots all five anaerobic
+          populations at the twelve sampling points in Bozdag et al. 2023 Fig. 1e, digitized from
+          the published figure. Published size data runs through day 600, and the experiment
+          continues well past that. The faint lines behind the mean are the individual replicates,
+          which begin increasing in size at different times.</p>
+      </div>
+
+      <div class="scrub" id="scrub">
+
+        <!-- ---- chart -->
+        <figure class="scrub-chart">
+          <div class="scrub-canvas-wrap">
+            <canvas id="scrub-canvas" data-requires-js
+                    role="img"
+                    aria-label="Timeline of the MuLTEE from transfer day 0 to day 1,800. Mean cluster radius rises from a measured 16 micrometres at day 0 to a measured 434 micrometres at day 600, drawn as a dashed line because no value between the two is measured. Trait onsets are ticked along the top, ploidy state along the bottom, and everything past day 1,000 is shaded as beyond the published record.">
+              Mean cluster radius rises from 16&nbsp;&micro;m at day 0 to 434&nbsp;&micro;m at day 600
+              in the anaerobic populations. Those two values are measured; nothing between them is.
+            </canvas>
+          </div>
+          <figcaption class="scrub-legend">
+            <span><i>&#9679;</i> Sampling point, Fig. 1e</span>
+            <span><i class="dash">&#9476;&#9476;&#9476;</i> The five replicate lines</span>
+            <span><i class="hollow">&#9675;</i> Approximate trait onset</span>
+            <span><i class="hollow">&#9612;</i> Beyond the published record</span>
+          </figcaption>
+        </figure>
+
+        <!-- ---- controls. Hidden until scrubber.js removes data-requires-js, so a
+                  script failure leaves a complete static day-600 snapshot instead
+                  of a slider that does nothing. -->
+        <div class="scrub-controls" id="scrub-controls" data-requires-js>
+          <label class="label" for="scrub-day">Transfer day</label>
+          <input class="scrub-range" type="range" id="scrub-day"
+                 min="0" max="1800" step="1" value="600"
+                 aria-valuetext="Day 600, transfer 600, about 3,000 generations. Cluster radius 434 micrometres, digitized from Fig. 1e.">
+          <button class="scrub-play" type="button" id="scrub-play" aria-pressed="false">Play</button>
+        </div>
+
+        <!-- ---- readout. Static values below are the day-600 state. -->
+        <dl class="scrub-readout">
+          <div>
+            <dt>Day</dt>
+            <dd id="rd-day">600</dd>
+          </div>
+          <div>
+            <dt>Transfer</dt>
+            <dd id="rd-transfer">600</dd>
+            <span class="sub">One transfer per day, so the two counts are the same.</span>
+          </div>
+          <div>
+            <dt>Generations</dt>
+            <dd id="rd-gens">&#8776;3,000</dd>
+            <span class="sub">At 5 generations per transfer (Bozdag et al. 2023).</span>
+          </div>
+          <div>
+            <dt>Cluster radius</dt>
+            <dd id="rd-radius">434 &micro;m</dd>
+            <span id="rd-radius-tag" class="tag tag-measured">Sampled</span>
+            <span class="sub" id="rd-radius-sub">A sampling point in Bozdag et al. 2023 Fig. 1e, mean of the five anaerobic lines. Digitized from the published figure, so approximate to a few per cent.</span>
+          </div>
+          <div>
+            <dt>Ploidy</dt>
+            <dd id="rd-ploidy">4n</dd>
+            <span class="sub" id="rd-ploidy-sub">Tetraploid, fixed. Tong et al. 2025.</span>
+          </div>
+        </dl>
+
+        <!-- ---- panels -->
+        <div class="scrub-panels">
+
+          <div class="scrub-panel">
+            <h3>Evolved traits</h3>
+            <ul class="trait-list">
+              <li class="trait" data-day="100">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 100</span>
+                <span class="trait-body">
+                  <span class="trait-name">Cells elongate</span>
+                  <span class="trait-detail">Higher cellular aspect ratio lowers packing density and delays the strain-driven fracture that limits cluster size.</span>
+                  <span class="trait-meta">PA &middot; Bozdag et al. 2023 &middot; approximate onset</span>
+                </span>
+                <span class="trait-state">Evolved by day 100</span>
+              </li>
+              <li class="trait" data-day="100">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 100</span>
+                <span class="trait-body">
+                  <span class="trait-name">Tetraploidy fixes</span>
+                  <span class="trait-detail">Whole-genome duplication arose by day 50 and fixed by day 100 in all ten focal populations. Longer tetraploid cells make larger clusters.</span>
+                  <span class="trait-meta">PA + PM &middot; Tong et al. 2025</span>
+                </span>
+                <span class="trait-state">Evolved by day 100</span>
+              </li>
+              <li class="trait" data-day="200">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 200</span>
+                <span class="trait-body">
+                  <span class="trait-name">Division becomes synchronous</span>
+                  <span class="trait-detail">The ancestral first-division delay was lost by day 200 and synchrony was retained through day 1,000. Synchrony builds less branched topologies that fracture later.</span>
+                  <span class="trait-meta">PA &middot; Cede&ntilde;o-P&eacute;rez et al. 2025</span>
+                </span>
+                <span class="trait-state">Evolved by day 200</span>
+              </li>
+              <li class="trait" data-day="400">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 400</span>
+                <span class="trait-body">
+                  <span class="trait-name">Branches entangle</span>
+                  <span class="trait-detail">Elongated branches interlock in configurations that rigid-body motion cannot undo, so groups hold together after many cell-cell bonds break.</span>
+                  <span class="trait-meta">PA &middot; Day et al. 2024 &middot; approximate onset</span>
+                </span>
+                <span class="trait-state">Evolved by day 400</span>
+              </li>
+              <li class="trait" data-day="600">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 600</span>
+                <span class="trait-body">
+                  <span class="trait-name">Hsp90 down-regulated</span>
+                  <span class="trait-detail">All five macroscopic anaerobic lineages converged on reduced Hsp90, destabilising Cdc28, delaying mitosis and prolonging polarized growth.</span>
+                  <span class="trait-meta">PA &middot; Montrose et al. 2024 &middot; approximate onset</span>
+                </span>
+                <span class="trait-state">Evolved by day 600</span>
+              </li>
+              <li class="trait" data-day="600">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 600</span>
+                <span class="trait-body">
+                  <span class="trait-name">Bodies become macroscopic</span>
+                  <span class="trait-detail">Mean cluster radius reaches 434 &micro;m, about 20,000 times the ancestral volume. As a material the yeast goes from weaker than gelatin to the toughness of wood.</span>
+                  <span class="trait-meta">PA &middot; Bozdag et al. 2023</span>
+                </span>
+                <span class="trait-state">Evolved by day 600</span>
+              </li>
+              <li class="trait pending" data-day="715">
+                <span class="trait-mark" aria-hidden="true">&#9675;</span>
+                <span class="trait-day">Day 715</span>
+                <span class="trait-body">
+                  <span class="trait-name">Small and large specialists coexist</span>
+                  <span class="trait-detail">Three of five obligately aerobic populations split into coexisting morphs held at roughly 9% large and 91% small by competition for dissolved oxygen.</span>
+                  <span class="trait-meta">PO &middot; Pineau et al. 2024</span>
+                </span>
+                <span class="trait-state">Not yet at this day</span>
+              </li>
+              <li class="trait pending" data-day="800">
+                <span class="trait-mark" aria-hidden="true">&#9675;</span>
+                <span class="trait-day">Day 800</span>
+                <span class="trait-body">
+                  <span class="trait-name">Clusters pump their own fluid</span>
+                  <span class="trait-detail">Above a threshold size, metabolism drives buoyant circulation that carries nutrients inward, sustaining exponential growth past the diffusion limit.</span>
+                  <span class="trait-meta">PA &middot; Narayanasamy et al. 2025 &middot; approximate onset</span>
+                </span>
+                <span class="trait-state">Not yet at this day</span>
+              </li>
+              <li class="trait pending" data-day="1000">
+                <span class="trait-mark" aria-hidden="true">&#9675;</span>
+                <span class="trait-day">Day 1000</span>
+                <span class="trait-body">
+                  <span class="trait-name">Aneuploid routes open</span>
+                  <span class="trait-detail">Anaerobic tetraploids accumulated extensive, partly convergent aneuploidy that tracked the continued evolution of macroscopic size.</span>
+                  <span class="trait-meta">PA &middot; Tong et al. 2025 &middot; approximate onset</span>
+                </span>
+                <span class="trait-state">Not yet at this day</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="scrub-panel">
+            <h3>From the archive</h3>
+            <figure class="scrub-plate">
+              <div class="plate-figure">
+                <img id="scrub-plate-img" data-day="600"
+                     src="assets/img/anaerobic-day600-confocal.jpg"
+                     srcset="assets/img/anaerobic-day600-confocal-sm.jpg 900w, assets/img/anaerobic-day600-confocal.jpg 1021w"
+                     sizes="(max-width:880px) 100vw, 33vw"
+                     width="1021" height="1021" loading="lazy"
+                     alt="Confocal micrograph of an anaerobic snowflake yeast cluster, blue-dominant, against black.">
+              </div>
+              <figcaption class="plate-caption" id="scrub-plate-cap">Day 600, anaerobic treatment. Replicate line not recorded.</figcaption>
+              <p class="trait-meta" style="margin-top:var(--sp-2)" id="scrub-plate-note">Nearest archived timepoint at or before this day. Four timepoints are imaged: 400, 600, 715, 1000.</p>
+            </figure>
+
+            <div class="scrub-papers">
+              <p class="label">Papers reporting the experiment at this day</p>
+              <p class="count" id="scrub-paper-count">5</p>
+              <p class="recent" id="scrub-paper-recent">Most recent: &ldquo;De novo evolution of macroscopic multicellularity&rdquo;, Bozdag et al. 2023.</p>
+              <p class="trait-meta" style="margin-top:var(--sp-3)">Counted from the traits reported by this transfer day, not from publication dates. Experiment time and calendar time are separate clocks here: transfers are not one per calendar day, so a transfer day does not convert to a year. <a href="publications.html">See all publications on the calendar timeline &rarr;</a></p>
+            </div>
+          </div>
+        </div>
+
+        <p class="scrub-foot">
+          Sources: cluster radius, Bozdag et&nbsp;al. 2023 (two measured points, day&nbsp;0 and
+          day&nbsp;600, anaerobic lines). Ploidy, Tong et&nbsp;al. 2025, published through
+          day&nbsp;1,000. Trait onsets are the day each trait is first reported, which is not
+          necessarily the day it arose. Generations use the published conversion of 5 per transfer.
+          Nothing on this instrument is extrapolated past its last published value.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 7. next decade -->
+  <div class="page">
+    <section class="section prose">
+      <div class="section-head">
+        <p class="eyebrow">7 &middot; 2025&ndash;2035</p>
+        <h2>Research priorities for 2025&ndash;2035</h2>
+      </div>
+      <p>Over the next decade we will focus on four priorities. Each one is a question the
+        experiment has already raised, rather than a topic chosen in advance.</p>
+
+      <ol class="priorities">
+        <li>
+          <span class="n">01</span>
+          <div>
+            <h3>The origin of multicellular development</h3>
+            <p>How transcriptionally regulated cell differentiation emerges, and whether the
+              appearance of distinct cell types is what entrenches multicellularity.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n">02</span>
+          <div>
+            <h3>The evolution of reproductive specialization</h3>
+            <p>Whether branch entanglement passively creates germ-like and soma-like fates, and how
+              that could scaffold true germ-soma differentiation.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n">03</span>
+          <div>
+            <h3>The evolution of novel multicellular traits</h3>
+            <p>Metabolically driven fluid flows that permit exponential growth beyond the diffusion
+              limit, and the toroidal symmetry-breaking morphologies now present in every
+              mixotrophic population.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n">04</span>
+          <div>
+            <h3>How multicellular evolution changes cell biology</h3>
+            <p>Reductive mitochondrial evolution in the anaerobic lines, and how whole-genome
+              duplication and the aneuploidy that follows it fuel adaptive radiation.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 8. the close -->
+  <div class="page">
+    <section class="section prose">
+      <div class="section-head">
+        <p class="eyebrow">8 &middot; The horizon</p>
+        <h2>The long-term commitment</h2>
+      </div>
+      <p>Lenski's <em>E.&nbsp;coli</em> lines have run since 1988 and are still producing results
+        that could not have been anticipated when they began. Peter and Rosemary Grant studied
+        Darwin's finches on Daphne Major for forty years. The MuLTEE is planned on the same scale,
+        which means the daily transfers, the freezer, and the completeness of the record matter more
+        than any single result. We hope to develop a model system that will be used by researchers
+        around the world, long after our own careers are over.</p>
+      <p><a href="data.html">Request a strain from any timepoint &rarr;</a></p>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="data.html">Strain requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/multee-data.js"></script>
+<script src="assets/js/scrubber.js"></script>
+</body>
+</html>

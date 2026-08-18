@@ -1,298 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data & Strains | MuLTEE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2698BA;
-            --text: #111;
-            --text-light: #555;
-            --bg: #fff;
-            --bg-alt: #f8f9fa;
-            --border: #dee2e6;
-            --sidebar-width: 220px;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-        
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: var(--sidebar-width);
-            height: 100vh;
-            background: var(--bg);
-            border-right: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .sidebar-header { margin-bottom: 2rem; }
-        .sidebar-header h1 { font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 0.25rem; }
-        .sidebar-header p { font-size: 0.85rem; color: var(--text-light); }
-        
-        .sidebar-nav { list-style: none; flex: 1; }
-        .sidebar-nav li { margin-bottom: 0.5rem; }
-        .sidebar-nav a { color: var(--text); font-size: 0.95rem; font-weight: 400; padding: 0.5rem 0; display: block; }
-        .sidebar-nav a:hover { color: var(--primary); text-decoration: none; }
-        .sidebar-nav a.active { color: var(--primary); font-weight: 500; }
-        
-        .sidebar-footer { font-size: 0.8rem; color: var(--text-light); }
-        
-        .main {
-            margin-left: var(--sidebar-width);
-            padding: 3rem 4rem;
-            max-width: 900px;
-        }
-        
-        .main h1 { font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
-        .main .subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; font-weight: 300; }
-        
-        .main h2 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin: 2.5rem 0 1rem 0;
-            color: var(--text);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-        
-        .main h2:first-of-type { margin-top: 0; }
-        
-        .main h3 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        
-        .main p { margin-bottom: 1rem; }
-        
-        /* Strain Request Box */
-        .strain-box {
-            background: var(--bg-alt);
-            border-left: 4px solid var(--primary);
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .strain-box h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-        
-        .strain-box ul {
-            margin: 1rem 0 1.25rem 1.5rem;
-        }
-        
-        .strain-box li {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .btn-download {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.6rem 1.25rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: background 0.2s;
-        }
-        
-        .btn-download:hover {
-            background: #1f7f9e;
-            color: white;
-            text-decoration: none;
-        }
-        
-        /* Archive Info */
-        .archive-info {
-            background: var(--bg-alt);
-            border-radius: 4px;
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .archive-info h4 {
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        
-        .archive-info p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-        }
-        
-        /* Resource Cards */
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .resource-card {
-            padding: 1rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
-        
-        .resource-card h3 {
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
-        }
-        
-        .resource-card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0.75rem;
-        }
-        
-        .resource-card .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.35rem 0.75rem;
-            border-radius: 3px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.85rem;
-            transition: background 0.2s;
-        }
-        
-        .resource-card .btn:hover {
-            background: #1f7f9e;
-            text-decoration: none;
-        }
-        
-        @media (max-width: 900px) {
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-            .sidebar-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
-            .sidebar-nav li { margin-bottom: 0; }
-            .main { margin-left: 0; padding: 2rem; }
-            .resource-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data &amp; Strains | MuLTEE</title>
+<meta name="description" content="Any MuLTEE population from any archived timepoint, on request. How the strain request works, what the frozen archive holds, and which datasets are not yet posted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/page-data.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1>MuLTEE</h1>
-            <p>Multicellularity Long-Term<br>Evolution Experiment</p>
-        </div>
-        <ul class="sidebar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="populations.html">Populations</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="data.html" class="active">Data & Strains</a></li>
-            <li><a href="team.html">Team</a></li>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="story.html">The Story</a>
+      <a href="experiment.html">The Experiment</a>
+      <a href="populations.html">Populations</a>
+      <a href="history.html">History</a>
+      <a href="publications.html">Publications</a>
+      <a href="press.html">Press</a>
+      <a href="data.html" aria-current="page">Data &amp; Strains</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="team.html">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== page head -->
+  <div class="page">
+    <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
+      <p class="eyebrow">Data &amp; Strains</p>
+      <h1 class="display">Data &amp; Strains</h1>
+      <p class="lede">We are developing a model system that we hope will be used by diverse
+        researchers around the world. Strains from the frozen archive are shared on request, with
+        no authorship requirement. We ask only that requests not overlap with work ongoing in our
+        lab or that of a collaborator. Fill in one form and tell us what you are trying to find
+        out.</p>
+    </section>
+  </div>
+
+  <!-- ===================================================== archive facts -->
+  <div class="page">
+    <section class="section wide" style="padding-block:0 var(--sp-8)">
+      <dl class="facts">
+        <div><dt>Populations</dt><dd class="num">15</dd></div>
+        <div><dt>Frozen snapshots</dt><dd class="num">3,000+</dd></div>
+        <div><dt>Freeze interval</dt><dd class="num">25 days</dd></div>
+        <div><dt>Storage</dt><dd class="num">-80 &deg;C</dd></div>
+      </dl>
+      <p class="facts-note">Archive figures maintained by the lab. 25 days is about 125 generations.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== request -->
+  <div class="page">
+    <section class="section" id="request">
+      <div class="section-head">
+        <p class="eyebrow">Requesting strains</p>
+        <h2>How a request works</h2>
+      </div>
+
+      <div class="prose">
+        <p>We share strains with no authorship requirement. The form allows us to identify exactly
+          which samples to pull from the freezer, and to check that a request does not overlap with
+          work ongoing in our lab or that of a collaborator. We can currently ship within the United
+          States only.</p>
+
+        <h3>What the form collects</h3>
+        <ul>
+          <li><strong>Recipient information</strong>, for shipping and documentation.</li>
+          <li><strong>The strains you want</strong>: population, timepoint and treatment.</li>
+          <li><strong>A short research plan</strong>, so we can send the protocols that go with
+            those strains and flag overlap with work already under way elsewhere.</li>
+          <li><strong>Shipping preference</strong>: overnight on dry ice, or agar stabs.</li>
         </ul>
-        <div class="sidebar-footer">
-            <p>Ratcliff Lab<br>Georgia Tech</p>
-        </div>
-    </aside>
 
-    <main class="main">
-        <h1>Data & Strains</h1>
-        <p class="subtitle">Access MuLTEE resources for your research</p>
+        <h3>Naming what you want</h3>
+        <p>Populations run PA1&ndash;5 (anaerobic), PM1&ndash;5 (mixotrophic) and PO1&ndash;5
+          (obligately aerobic). Timepoints are written the way the papers write them: <span
+          class="mono">PA5 t600</span> is anaerobic population 5 at transfer 600. Because the cycle
+          is daily, transfer number and day number are the same coordinate. If you know the
+          phenotype you want but not the timepoint, say so on the form and we will work it out.</p>
 
-        <h2>Request Strains</h2>
-        <p>
-            The Ratcliff laboratory freely shares strains from the MuLTEE frozen archive to advance scientific 
-            research. We ask researchers to complete a strain request form so we can ensure you receive the 
-            correct strains and avoid unintentional overlap with ongoing projects in the community.
-        </p>
-        
-        <div class="strain-box">
-            <h3>Strain Request Process</h3>
-            <p>To request strains, please download and complete the request form. The form collects:</p>
-            <ul>
-                <li><strong>Recipient information</strong> for shipping and documentation</li>
-                <li><strong>Specific strains requested</strong> (strain names, timepoints, and treatments)</li>
-                <li><strong>Research plan</strong> so we can share relevant protocols and coordinate with other labs</li>
-                <li><strong>Shipping preferences</strong> (dry ice overnight vs. agar stabs)</li>
-            </ul>
-            <p>
-                Understanding your research goals helps us provide methodological support and ensures coordination 
-                across the growing community of labs studying multicellular evolution.
-            </p>
-            <a href="MuLTEE_Strain_Request_Form.docx" class="btn-download" download>
-                Download Strain Request Form (.docx)
-            </a>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
-                Submit completed forms to Dr. Ozan Bozdag at 
-                <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a>
-            </p>
-        </div>
-        
-        <div class="archive-info">
-            <h4>The Frozen Fossil Record</h4>
-            <p>
-                Every 25 days (approximately 125 generations), we cryogenically preserve all 15 evolving populations 
-                in a 35% glycerol solution at -80°C. This "frozen fossil record" now contains over 3,000 snapshots, 
-                allowing us to resurrect actual ancestors from any timepoint and test evolutionary hypotheses with 
-                modern technology. Strains are typically shipped within 2 weeks of approval.
-            </p>
+        <p class="dim">Strains are typically shipped within two weeks of approval.</p>
+      </div>
+
+      <p style="margin-top:var(--sp-6)">
+        <a class="btn" href="MuLTEE_Strain_Request_Form.docx" download>Download the request form (.docx)</a>
+      </p>
+
+      <div class="note" style="margin-top:var(--sp-6)">
+        <h3>Where to send it</h3>
+        <p>Send the completed form to <strong>Dung T. Lac</strong>,
+          <a href="mailto:dlac3@gatech.edu">dlac3@gatech.edu</a>, who handles logistics and
+          shipping for the archive. If you are not sure which populations or timepoints answer your
+          question, write to <strong>Ozan Bozdag</strong>,
+          <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a>,
+          who scopes requests scientifically. Both routes reach the same archive.</p>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== archive -->
+  <div class="page">
+    <section class="section wide" id="archive">
+      <div class="section-head">
+        <p class="eyebrow">The frozen archive</p>
+        <h2>The frozen archive</h2>
+      </div>
+
+      <div class="two-col">
+        <div class="prose">
+          <p>Every 25 days, about 125 generations, we freeze all fifteen populations at
+            &minus;80&nbsp;&deg;C. The archive now holds more than 3,000 of these samples. Any
+            sample can be thawed and revived, so we can directly compete an evolved isolate against
+            its own ancestor under the same conditions the population experienced.</p>
         </div>
 
-        <h2>Resources</h2>
-        <div class="resource-grid">
-            <div class="resource-card">
-                <h3>Genome Sequences</h3>
-                <p>Illumina short-read sequences for population samples and single-strain isolates from key timepoints.</p>
-                <a href="#" class="btn">Coming Soon</a>
+        <div>
+          <figure class="plate">
+            <div class="plate-figure reveal">
+              <img src="assets/img/cellwall-nuclei-dense-field.jpg"
+                   srcset="assets/img/cellwall-nuclei-dense-field-sm.jpg 900w, assets/img/cellwall-nuclei-dense-field.jpg 1021w"
+                   sizes="(max-width:900px) 100vw, 45vw"
+                   width="1021" height="1021"
+                   alt="A dense packed field of elongated snowflake yeast cells outlined in cyan with scattered orange nuclei, with a burned-in 20 micrometre scale bar at lower right.">
             </div>
-            <div class="resource-card">
-                <h3>Phenotype Data</h3>
-                <p>Systematic measurements of cluster size, cell morphology, and fitness across the experiment.</p>
-                <a href="#" class="btn">Coming Soon</a>
-            </div>
-            <div class="resource-card">
-                <h3>Protocols</h3>
-                <p>Detailed methods for working with snowflake yeast, including fitness assays and genetic transformation.</p>
-                <a href="https://protocols.io" class="btn" target="_blank">protocols.io</a>
-            </div>
-            <div class="resource-card">
-                <h3>Analysis Scripts</h3>
-                <p>Code for genomic analysis, image processing, and biophysical modeling.</p>
-                <a href="#" class="btn">Coming Soon</a>
-            </div>
+            <figcaption class="plate-label">
+              <p class="plate-num">Material in hand</p>
+              <dl>
+                <dt>Magnification</dt><dd>60 x</dd>
+                <dt>Scale bar</dt><dd style="text-transform:none">20 &micro;m</dd>
+                <dt>Channels</dt><dd>Cell wall, nuclei</dd>
+              </dl>
+            </figcaption>
+          </figure>
+          <p class="plate-caption">Cell walls and nuclei in a field of evolved snowflake yeast. The
+            source file carries no line or timepoint, so this frame is not attributed to a
+            treatment. The magnification and scale bar are burned in by the microscope.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== resources -->
+  <div class="page">
+    <section class="section wide" id="resources">
+      <div class="section-head">
+        <p class="eyebrow">Data and methods</p>
+        <h2>What else is available, and what is not yet</h2>
+      </div>
+
+      <div class="doors">
+        <div class="door door-static">
+          <span class="door-status">Not yet posted</span>
+          <h3>Genome sequences</h3>
+          <p>Illumina short-read data for population samples and single-strain isolates from key
+            timepoints. Sequence data behind published papers are deposited with those papers.</p>
+          <p><a href="#request">Ask on the request form</a></p>
         </div>
 
-        <h2>Contact</h2>
-        <p>
-            For questions about strains, data, or collaboration opportunities, contact:<br><br>
-            <strong>Dr. Ozan Bozdag</strong><br>
-            <a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a><br><br>
-            <strong>Dr. William Ratcliff</strong><br>
-            <a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a>
-        </p>
-    </main>
+        <div class="door door-static">
+          <span class="door-status">Not yet posted</span>
+          <h3>Phenotype data</h3>
+          <p>Cluster size distributions, cell morphology and fitness measurements across the
+            experiment.</p>
+          <p><a href="#request">Ask on the request form</a></p>
+        </div>
+
+        <div class="door door-static">
+          <span class="door-status">Sent with strains</span>
+          <h3>Protocols</h3>
+          <p>Culture conditions, settling selection and fitness competitions. Working protocols
+            travel with the strains; published methods are in the papers.</p>
+          <p><a href="publications.html">See the publications</a></p>
+        </div>
+
+        <div class="door door-static">
+          <span class="door-status">Not yet posted</span>
+          <h3>Analysis scripts</h3>
+          <p>Code for genomic analysis, image processing and biophysical modelling.</p>
+          <p><a href="#request">Ask on the request form</a></p>
+        </div>
+      </div>
+
+      <p class="plate-caption">None of this material sits behind a login. Where a dataset is not
+        yet posted publicly, the request form is the way to obtain it.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== contacts -->
+  <div class="page">
+    <section class="section wide" id="contact">
+      <div class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2>Who to write to</h2>
+      </div>
+
+      <div class="people">
+        <div class="person">
+          <span class="badge">Logistics &amp; shipping</span>
+          <h3>Dung T. Lac</h3>
+          <p class="role">Strain distribution, Ratcliff Lab</p>
+          <p>Receives completed request forms, pulls the tubes, and arranges shipping.</p>
+          <p><a href="mailto:dlac3@gatech.edu">dlac3@gatech.edu</a></p>
+        </div>
+
+        <div class="person">
+          <span class="badge">Scientific scoping</span>
+          <h3>G. Ozan Bozdag</h3>
+          <p class="role">Principal investigator, NSF 2452109</p>
+          <p>Works out which populations and timepoints will answer your question, and what to
+            expect from them.</p>
+          <p><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></p>
+        </div>
+
+        <div class="person">
+          <span class="badge">Collaborations</span>
+          <h3>William C. Ratcliff</h3>
+          <p class="role">Co-principal investigator, NSF 2452109</p>
+          <p>Collaborations, visits, and anything about the experiment as a whole.</p>
+          <p><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="data.html">Strain requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
 </body>
 </html>

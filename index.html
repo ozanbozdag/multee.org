@@ -1,351 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MuLTEE | Multicellularity Long Term Evolution Experiment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2698BA;
-            --text: #111;
-            --text-light: #555;
-            --bg: #fff;
-            --bg-alt: #f8f9fa;
-            --border: #dee2e6;
-            --sidebar-width: 220px;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-        
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        
-        /* Sidebar */
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: var(--sidebar-width);
-            height: 100vh;
-            background: var(--bg);
-            border-right: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .sidebar-header {
-            margin-bottom: 2rem;
-        }
-        
-        .sidebar-header h1 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 0.25rem;
-        }
-        
-        .sidebar-header p {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-        
-        .sidebar-nav {
-            list-style: none;
-            flex: 1;
-        }
-        
-        .sidebar-nav li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .sidebar-nav a {
-            color: var(--text);
-            font-size: 0.95rem;
-            font-weight: 400;
-            padding: 0.5rem 0;
-            display: block;
-            border-bottom: 1px solid transparent;
-        }
-        
-        .sidebar-nav a:hover {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .sidebar-nav a.active {
-            color: var(--primary);
-            font-weight: 500;
-        }
-        
-        .sidebar-footer {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-        
-        /* Main Content */
-        .main {
-            margin-left: var(--sidebar-width);
-            padding: 3rem 4rem;
-            max-width: 900px;
-        }
-        
-        .main h1 {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        
-        .main .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .main h2 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin: 2.5rem 0 1rem 0;
-            color: var(--text);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-        
-        .main p {
-            margin-bottom: 1rem;
-        }
-        
-        /* Mission Box */
-        .mission-box {
-            background: var(--bg-alt);
-            border-left: 4px solid var(--primary);
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .mission-box p {
-            margin-bottom: 0.5rem;
-        }
-        
-        .mission-box p:last-child {
-            margin-bottom: 0;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        /* Treatment Cards */
-        .treatments {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .treatment-card {
-            padding: 1rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
-        
-        .treatment-card h3 {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        
-        .treatment-card .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.15rem 0.4rem;
-            border-radius: 3px;
-            margin-bottom: 0.5rem;
-        }
-        
-        .treatment-card.po .tag { background: #d4edda; color: #155724; }
-        .treatment-card.pa .tag { background: #f8d7da; color: #721c24; }
-        .treatment-card.pm .tag { background: #cce5ff; color: #004085; }
-        
-        .treatment-card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-        }
-        
-        /* Projects */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            margin: 1.5rem 0;
-        }
-        
-        .project {
-            font-size: 0.95rem;
-            padding: 0.75rem 1rem;
-            background: var(--bg-alt);
-            border-radius: 4px;
-        }
-        
-        .project strong {
-            font-weight: 500;
-        }
-        
-        .project span {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-        
-        /* Responsive */
-        @media (max-width: 900px) {
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-            .sidebar-nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-            .sidebar-nav li { margin-bottom: 0; }
-            .main {
-                margin-left: 0;
-                padding: 2rem;
-            }
-            .treatments { grid-template-columns: 1fr; }
-            .projects { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MuLTEE | The Multicellularity Long-Term Evolution Experiment</title>
+<meta name="description" content="Fifteen populations of snowflake yeast under daily selection for larger size since 2018. The MuLTEE follows an evolutionary transition in individuality as it happens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1>MuLTEE</h1>
-            <p>Multicellularity Long-Term<br>Evolution Experiment</p>
-        </div>
-        <ul class="sidebar-nav">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="populations.html">Populations</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="data.html">Data & Strains</a></li>
-            <li><a href="team.html">Team</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>Ratcliff Lab<br>Georgia Tech</p>
-        </div>
-    </aside>
+<a class="skip" href="#main">Skip to content</a>
 
-    <main class="main">
-        <h1>The Multicellularity Long-Term Evolution Experiment</h1>
-        <p class="subtitle">Official Website of the MuLTEE Project</p>
-        
-        <p>
-            The MuLTEE is a multi-decade experiment examining how simple groups of cells evolve into complex, 
-            functionally integrated multicellular organisms. Using snowflake yeast (<em>Saccharomyces cerevisiae</em>), 
-            we study the evolutionary transition to multicellularity in real time, tracking genetic, cellular, 
-            and multicellular-level changes across thousands of generations.
-        </p>
-        
-        <div class="mission-box">
-            <p>
-                This website provides key information about the science behind the MuLTEE and makes data and strains 
-                from the project publicly available to researchers worldwide. Our goal is to foster a community of 
-                scientists working on the evolutionary transition to multicellularity.
-            </p>
-            <p>Supported by NSF's Long-Term Research in Environmental Biology (LTREB) program, Award #2424492.</p>
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="story.html">The Story</a>
+      <a href="experiment.html">The Experiment</a>
+      <a href="populations.html">Populations</a>
+      <a href="history.html">History</a>
+      <a href="publications.html">Publications</a>
+      <a href="press.html">Press</a>
+      <a href="data.html">Data &amp; Strains</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="team.html">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-media">
+        <img src="assets/img/hero-day600-wide.jpg"
+             srcset="assets/img/hero-day600-wide-sm.jpg 1200w, assets/img/hero-day600-wide.jpg 2000w"
+             sizes="100vw"
+             width="2000" height="1100"
+             alt="Confocal micrograph of evolved snowflake yeast: elongated cells with cyan-stained cell walls and amber nuclei, branching outward from central attachment points against a black field."
+             fetchpriority="high">
+      </div>
+      <div class="hero-body">
+        <p class="eyebrow">Multicellularity Long-Term Evolution Experiment</p>
+        <h1 class="display">Welcome to the MuLTEEverse</h1>
+        <p class="lede">Fifteen populations of snowflake yeast, five in each of three metabolic
+          environments, selected daily for how fast they settle. Running since 2018, past 9,000
+          generations, and still going.</p>
+        <div class="hero-actions">
+          <a class="btn" href="experiment.html">How the experiment works</a>
         </div>
-        
-        <h2>Treatment Groups</h2>
-        <div class="treatments">
-            <div class="treatment-card po">
-                <span class="tag">PO1-5</span>
-                <h3>Obligately Aerobic</h3>
-                <p>
-                    Grown on YEP-glycerol, which can only be respired. These populations led to the discovery that 
-                    multicellularity drives ecological diversification: small and large cluster-forming lineages 
-                    convergently evolved and coexisted for over 4,300 generations through oxygen-mediated 
-                    growth-survival trade-offs.
-                </p>
-            </div>
-            <div class="treatment-card pa">
-                <span class="tag">PA1-5</span>
-                <h3>Anaerobic</h3>
-                <p>
-                    Petite mutants with mtDNA deletions, grown on YEP-dextrose. Unable to respire, these populations 
-                    are unconstrained by oxygen limitation. They evolved macroscopic size (visible to the naked eye) 
-                    and extensive aneuploidy, and now show near-complete deletion of the mitochondrial genome.
-                </p>
-            </div>
-            <div class="treatment-card pm">
-                <span class="tag">PM1-5</span>
-                <h3>Mixotrophic</h3>
-                <p>
-                    Grown on YEP-dextrose with functional mitochondria, using both fermentation and respiration. 
-                    These populations remained microscopic throughout the experiment and serve as controls, retaining 
-                    the capacity to revert to unicellularity even after 5,000+ generations.
-                </p>
-            </div>
-        </div>
-        
-        <h2>Current Research Priorities (2025–2035)</h2>
-        <div class="projects">
-            <div class="project">
-                <strong>Origin of Cellular Differentiation</strong>
-                <span>How transcriptionally-regulated cell types evolve from homogeneous ancestors</span>
-            </div>
-            <div class="project">
-                <strong>Synchronized Cell Division</strong>
-                <span>Evolution of developmental timing and its role in multicellular patterning</span>
-            </div>
-            <div class="project">
-                <strong>Multicellular Entrenchment</strong>
-                <span>How cells lose the ability to revert to unicellularity</span>
-            </div>
-            <div class="project">
-                <strong>Germ-Soma Specialization</strong>
-                <span>Biophysical origins of reproductive division of labor via entanglement</span>
-            </div>
-            <div class="project">
-                <strong>Whole Genome Duplication</strong>
-                <span>De novo evolution and long-term maintenance of polyploidy</span>
-            </div>
-            <div class="project">
-                <strong>Overcoming Diffusion Limits</strong>
-                <span>Self-induced fluid flows enabling exponential growth at macroscopic scales</span>
-            </div>
-            <div class="project">
-                <strong>Symmetry-Breaking Morphologies</strong>
-                <span>Evolution of toroidal shapes from spherical ancestors</span>
-            </div>
-            <div class="project">
-                <strong>Mitochondrial Reductive Evolution</strong>
-                <span>Real-time tracking of organelle genome loss in anaerobic populations</span>
-            </div>
-        </div>
-        
-        <h2>Resources</h2>
-        <p>
-            We freely share strains from our frozen archive with researchers worldwide. 
-            Visit our <a href="data.html">Data & Strains</a> page to request strains, 
-            access genome sequences, and find protocols for working with snowflake yeast.
-        </p>
-    </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== standing facts -->
+  <div class="page">
+    <section class="section wide" style="padding-block:var(--sp-7)">
+      <dl class="facts">
+        <div><dt>Generations</dt><dd class="num">9,000+</dd></div>
+        <div><dt>Populations</dt><dd class="num">15</dd></div>
+        <div><dt>Treatments</dt><dd class="num">3</dd></div>
+        <div><dt>Frozen samples</dt><dd class="num">3,000+</dd></div>
+        <div><dt>First transfer</dt><dd class="num">2018</dd></div>
+      </dl>
+      <p class="facts-note">Status maintained by the lab. Transfers continue daily.</p>
+    </section>
+  </div>
+
+  <!-- ===================================================== lede -->
+  <div class="page">
+    <section class="section prose" style="padding-block:var(--sp-8)">
+      <p class="lede">The origin of multicellular life was one of the most profound transitions in the
+        history of life on Earth, allowing for the evolution of the large, complex organisms we see
+        today. Understanding how it happened has been extremely challenging, largely because the
+        earliest steps occurred hundreds of millions of years ago and left almost no direct
+        record. Here, we take the opposite approach: rather than reconstructing the transition
+        from fossils and phylogenies, we run it forward under conditions we control. Each day,
+        fifteen populations of snowflake yeast grow for 24 hours and are then selected for how fast
+        they settle through liquid, which depends mainly on cluster size. The growth phase is also
+        selective, and it favours the opposite: small clusters that divide quickly. Everything that
+        has evolved since, from millimetre-scale bodies visible to the naked eye to whole-genome
+        duplication, has come out of the tension between these two phases.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== findings -->
+  <div class="page">
+    <section class="section" id="findings">
+      <div class="section-head">
+        <p class="eyebrow">What the experiment has shown</p>
+        <h2>Key results</h2>
+      </div>
+
+      <ol class="findings">
+        <li class="finding">
+          <span class="finding-num">01</span>
+          <div>
+            <h3>Evolution of macroscopic size through cell elongation and branch entanglement</h3>
+            <p>After 600 rounds of daily settling selection, roughly 3,000 generations, all five
+              anaerobic populations evolved millimetre-scale bodies. Mean cluster radius rose from
+              16&nbsp;&micro;m to 434&nbsp;&micro;m, about a 20,000-fold increase in volume. Cells
+              first evolved to be more elongate, lowering packing density and delaying fracture, and
+              that elongation then let adjacent branches entangle so groups held together even after
+              many mother-daughter bonds had broken. As a material, these organisms went from weaker
+              than gelatin to as tough as wood.</p>
+            <p class="cite"><a href="https://doi.org/10.1038/s41586-023-06052-1">Bozdag et al. 2023 &middot; Nature 617:747&ndash;754</a></p>
+          </div>
+        </li>
+
+        <li class="finding">
+          <span class="finding-num">02</span>
+          <div>
+            <h3>Convergent whole-genome duplication driven by size selection</h3>
+            <p>Diploid snowflake yeast under size selection became tetraploid within the first 50
+              days and fixed tetraploidy by day 100 in all ten anaerobic and mixotrophic populations,
+              then held it for the next 950 days. We hypothesize that tetraploidy arose because it
+              brings immediate phenotypic effects, generating larger, longer cells that yield larger
+              clusters. Relax that selection and the evolved tetraploids readily shed ploidy, so it
+              is selection rather than genome stability holding the state in place.</p>
+            <p class="cite"><a href="https://doi.org/10.1038/s41586-025-08689-6">Tong et al. 2025 &middot; Nature 639:691&ndash;699</a></p>
+          </div>
+        </li>
+
+        <li class="finding">
+          <span class="finding-num">03</span>
+          <div>
+            <h3>Stable coexistence of small and large lineages through frequency-dependent selection</h3>
+            <p>In the obligately aerobic treatment, three of five populations split from a
+              monomorphic ancestor into coexisting small and large lineages that persisted together
+              for about 4,300 generations. Competitions started from many different frequencies
+              converge on the same equilibrium, roughly 9% Large and 91% Small, which is negative
+              frequency dependence rather than an unfinished sweep. The axis is dissolved oxygen:
+              small clusters compete better during growth, large clusters survive settling better.
+              Group size alone, with no differentiated tissues, was enough to partition a niche.</p>
+            <p class="cite"><a href="https://doi.org/10.1038/s41559-024-02367-y">Pineau et al. 2024 &middot; Nature Ecology &amp; Evolution 8:1010&ndash;1020</a></p>
+          </div>
+        </li>
+
+        <li class="finding">
+          <span class="finding-num">04</span>
+          <div>
+            <h3>Metabolically driven fluid flows sustain exponential growth at macroscopic scale</h3>
+            <p>Diffusion should limit exponential growth to bodies about 50&nbsp;&micro;m across,
+              yet evolved anaerobic clusters keep growing exponentially in static liquid up to about
+              a centimetre. Above a threshold size, their own metabolism generates density gradients
+              that drive persistent buoyant circulation, at speeds comparable to the flows extant
+              organisms produce with cilia. The flows stop in dead or starved clusters and reverse
+              when the chamber is flipped, confirming they are metabolically driven. Transport
+              arrives before any transport organ evolves, providing a clear case of biophysical
+              scaffolding.</p>
+            <p class="cite"><a href="https://doi.org/10.1126/sciadv.adr6399">Narayanasamy et al. 2025 &middot; Science Advances 11:eadr6399</a></p>
+          </div>
+        </li>
+
+        <li class="finding">
+          <span class="finding-num">05</span>
+          <div>
+            <h3>Convergent Hsp90 down-regulation underlies the evolution of cell elongation</h3>
+            <p>All five anaerobic lineages that became macroscopic converged on reduced Hsp90
+              expression; the mixotrophic line that stayed microscopic did not. Less Hsp90
+              destabilises its client Cdc28, delaying mitosis and prolonging polarized growth, which
+              is what makes cells longer. Restoring either gene shortened cells, shrank clusters and
+              lowered fitness. A protein-folding system conserved across eukaryotes was therefore
+              modified by selection acting on a group-level trait.</p>
+            <p class="cite"><a href="https://doi.org/10.1126/sciadv.adn2706">Montrose et al. 2024 &middot; Science Advances 10:eadn2706</a></p>
+          </div>
+        </li>
+
+        <li class="finding">
+          <span class="finding-num">06</span>
+          <div>
+            <h3>Loss of the first-division delay and the emergence of coordinated cell division</h3>
+            <p>The anaerobic ancestor divides asynchronously because daughter cells take about 25%
+              longer to complete their first division than later ones. That delay builds more
+              branched topologies, which concentrate mechanical stress and fracture sooner. Synchrony
+              is favoured twice over, improving growth during the 24-hour phase and survival during
+              settling, so one cell-level timing change is visible to selection at both levels.
+              Anaerobic populations had lost the delay by day 200 and stayed synchronous through day
+              1,000.</p>
+            <p class="cite"><a href="https://doi.org/10.1101/2025.04.23.650085">Cede&ntilde;o-P&eacute;rez et al. 2025 &middot; PLOS Computational Biology</a></p>
+          </div>
+        </li>
+
+        <li class="finding">
+          <span class="finding-num">07</span>
+          <div>
+            <h3>Morphological entanglement is generic to growing branched organisms</h3>
+            <p>Segmented 3-D electron-microscopy reconstructions showed evolved branches caged by two
+              or more neighbours, in configurations that rigid-body translation and rotation cannot
+              undo. Simulations found that the narrow geometric window familiar from non-living
+              entangled materials applies only at short times; given continued growth, most
+              permissible geometries eventually entangle. Timescale, not geometry, is the control
+              variable, which means tough, fracture-resistant bodies can arise early and generically,
+              before any developmental control evolves.</p>
+            <p class="cite"><a href="https://doi.org/10.1103/PhysRevX.14.011008">Day et al. 2024 &middot; Physical Review X 14:011008</a></p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="note" style="margin-top:var(--sp-7)">
+        <h3>Before the MuLTEE</h3>
+        <p>Two earlier results are often grouped with the ones above, but they come from separate
+          work. In 2012, Ratcliff and colleagues showed that ten replicate populations of unicellular
+          <em>S.&nbsp;cerevisiae</em> all evolved clonal snowflake clusters within 60 transfers of
+          settling selection, and the genetic basis was loss of a single transcription factor,
+          <em>ACE2</em>. In 2021, Bozdag and colleagues published the first 145 transfers of a
+          20-population experiment testing how oxygen affects size evolution, and found the
+          relationship is not monotonic: intermediate oxygen suppressed size evolution, while both
+          anaerobic and high-oxygen conditions permitted it. Fifteen of those twenty populations were
+          kept running and became the MuLTEE.
+          <a href="history.html">See the full history &rarr;</a></p>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== treatments -->
+  <div class="page">
+    <section class="section wide" id="treatments">
+      <div class="section-head">
+        <p class="eyebrow">Three metabolic environments</p>
+        <h2>Fifteen populations, five per treatment</h2>
+      </div>
+
+      <div class="triptych">
+        <article class="treatment">
+          <figure class="plate-figure reveal">
+            <img src="assets/img/pa5-day1000-cellwall-gfp.jpg"
+                 srcset="assets/img/pa5-day1000-cellwall-gfp-sm.jpg 900w, assets/img/pa5-day1000-cellwall-gfp.jpg 1021w"
+                 sizes="(max-width:900px) 100vw, 33vw"
+                 width="1021" height="1021" loading="lazy"
+                 class="crop-annotations"
+                 alt="Dense field of elongated snowflake yeast cells with teal cell walls, green interiors and magenta highlights.">
+          </figure>
+          <div class="treatment-body">
+            <span class="chip chip-pa" data-o2="&#9675;">PA1&ndash;5 Anaerobic</span>
+            <h3>The only lines that became macroscopic</h3>
+            <dl>
+              <dt>Metabolism</dt><dd>Obligate fermentation</dd>
+              <dt>Mitochondria</dt><dd>Petite; cannot respire</dd>
+            </dl>
+            <p>Because they cannot respire, these populations pay no oxygen-diffusion cost for large
+              size. All five evolved millimetre-scale bodies, then tetraploidy, lost the ancestral
+              first-division delay, converged on reduced Hsp90, and at large size began generating
+              their own fluid flows.</p>
+          </div>
+        </article>
+
+        <article class="treatment">
+          <!-- The archive holds no image attributable to a mixotrophic line. This is a
+               microscopic cluster, which is what PM remained; it makes no treatment claim. -->
+          <figure class="plate-figure reveal">
+            <img src="assets/img/cluster-depth-coded-3d.jpg"
+                 srcset="assets/img/cluster-depth-coded-3d-sm.jpg 900w, assets/img/cluster-depth-coded-3d.jpg 1280w"
+                 sizes="(max-width:900px) 100vw, 33vw"
+                 width="1280" height="1172" loading="lazy"
+                 alt="A single microscopic snowflake yeast cluster rendered in depth-coded colour, blue through green to amber, against black.">
+          </figure>
+          <div class="treatment-body">
+            <span class="chip chip-pm" data-o2="&#9682;">PM1&ndash;5 Mixotrophic</span>
+            <h3>Stayed microscopic, but not a control</h3>
+            <dl>
+              <dt>Metabolism</dt><dd>Fermentation and respiration</dd>
+              <dt>Mitochondria</dt><dd>Intact</dd>
+            </dl>
+            <p>These lines stayed microscopic, but they underwent the same rapid whole-genome
+              duplication as the anaerobic populations while remaining largely euploid afterwards.
+              All five have since evolved hollow toroidal morphologies whose central opening drives
+              rapid flow without cilia or flagella (unpublished).</p>
+          </div>
+        </article>
+
+        <article class="treatment">
+          <figure class="plate-figure reveal">
+            <img src="assets/img/aerobic-day715-membrane-cellwall.jpg"
+                 srcset="assets/img/aerobic-day715-membrane-cellwall-sm.jpg 900w, assets/img/aerobic-day715-membrane-cellwall.jpg 1021w"
+                 sizes="(max-width:900px) 100vw, 33vw"
+                 width="1021" height="1021" loading="lazy"
+                 class="crop-annotations"
+                 alt="Fluorescence micrograph of rounder yeast cells with red membrane and green cell-wall labelling.">
+          </figure>
+          <div class="treatment-body">
+            <span class="chip chip-po" data-o2="&#9679;">PO1&ndash;5 Obligately aerobic</span>
+            <h3>Size-based niche diversification under oxygen limitation</h3>
+            <dl>
+              <dt>Metabolism</dt><dd>Obligate respiration</dd>
+              <dt>Carbon source</dt><dd>Glycerol; cannot be fermented</dd>
+            </dl>
+            <p>Growth requires dissolved oxygen, which makes oxygen a directly contested resource.
+              Three of the five populations diversified into coexisting small growth specialists and
+              large survival specialists, maintained for thousands of generations by negative
+              frequency-dependent selection.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="plate-caption">Images show cells from evolved populations. Line and timepoint
+        attributions are drawn from our imaging archive and are listed on the
+        <a href="populations.html">Populations</a> page.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== archive doors -->
+  <div class="page">
+    <section class="section wide" id="open">
+      <div class="section-head">
+        <p class="eyebrow">Open science</p>
+        <h2>Strains, data, and protocols</h2>
+      </div>
+      <div class="doors">
+        <a class="door" href="data.html">
+          <span class="count">Strains &amp; sequences</span>
+          <h3>Data &amp; Strains</h3>
+          <p>Request any population from any timepoint in the frozen archive, plus genomes,
+            phenotype data and protocols.</p>
+        </a>
+        <a class="door" href="publications.html">
+          <span class="count">MuLTEE &amp; precedents</span>
+          <h3>Publications</h3>
+          <p>Every paper that uses MuLTEE populations, plus the snowflake yeast work the
+            experiment is built on.</p>
+        </a>
+        <a class="door" href="glossary.html">
+          <span class="count">24 terms</span>
+          <h3>Glossary</h3>
+          <p>Entanglement, ratcheting traits, the unicellular bottleneck and the rest of the
+            vocabulary, defined.</p>
+        </a>
+        <a class="door" href="press.html">
+          <span class="count">In the media</span>
+          <h3>Press</h3>
+          <p>The experiment in the New York Times, The Atlantic, Quanta, National Geographic and
+            Smithsonian.</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="data.html">Strain requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
 </body>
 </html>

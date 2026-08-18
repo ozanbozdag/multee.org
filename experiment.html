@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Experiment | MuLTEE</title>
+<meta name="description" content="How the MuLTEE works: snowflake yeast, a daily cycle of growth and settling selection, three metabolic treatments, and a frozen archive that keeps every ancestor revivable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/page-experiment.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="story.html">The Story</a>
+      <a href="experiment.html" aria-current="page">The Experiment</a>
+      <a href="populations.html">Populations</a>
+      <a href="history.html">History</a>
+      <a href="publications.html">Publications</a>
+      <a href="press.html">Press</a>
+      <a href="data.html">Data &amp; Strains</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="team.html">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== page head -->
+  <div class="page">
+    <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
+      <p class="eyebrow">How the experiment works</p>
+      <h1 class="display">The experimental protocol</h1>
+      <p class="lede">The experimental design is simple. Yeast are grown for a day, the culture is
+        allowed to settle, and only the fraction that reaches the bottom first is carried forward.
+        That one procedure, repeated every day across fifteen populations in three metabolic
+        environments, is the only selection we impose. Everything the MuLTEE has produced, from
+        millimetre-scale bodies visible to the naked eye to a duplicated genome, has evolved under
+        it.</p>
+    </section>
+  </div>
+
+  <div class="page">
+    <section class="section wide" style="padding-block:0 var(--sp-8)">
+      <dl class="facts">
+        <div><dt>Populations</dt><dd class="num">15</dd></div>
+        <div><dt>Treatments</dt><dd class="num">3</dd></div>
+        <div><dt>Cycle</dt><dd class="num">24 h</dd></div>
+        <div><dt>Archived every</dt><dd class="num">25 d</dd></div>
+        <div><dt>Running since</dt><dd class="num">2018</dd></div>
+      </dl>
+      <p class="facts-note">Fifteen initially isogenic populations, five in each metabolic
+        treatment. Transfers continue daily.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== what a snowflake yeast is -->
+  <div class="page">
+    <section class="section wide" id="organism">
+      <div class="section-head">
+        <p class="eyebrow">The organism</p>
+        <h2>What a snowflake yeast is</h2>
+      </div>
+
+      <div class="prose" style="max-width:var(--measure)">
+        <p>Baker's yeast, <em>Saccharomyces cerevisiae</em>, reproduces by budding. A daughter cell
+          swells off the side of a mother, and when mitosis is finished an enzyme dissolves the
+          septum at the bud neck so the two cells come apart. Snowflake yeast are what happens when
+          that last step fails. Mother and daughter stay joined, the daughter buds in turn, and the
+          cluster grows outward from one founding cell into a branched, roughly radial body.</p>
+        <p>Because the cluster is built by cells staying attached after division rather than by
+          free-living cells finding each other, every cell in it carries the same genome. This is
+          clonal multicellularity, and it matters: with no genetic differences inside a cluster,
+          there is nothing for a cheater cell to gain, and cell fitness and group fitness point the
+          same way from the start.</p>
+        <p>The genetic basis is a single transcription factor. <em>ACE2</em> regulates the genes that
+          degrade the bud neck septum, so a loss-of-function mutation leaves daughters attached and
+          produces the whole snowflake package at once. When we sequenced ten independently evolved
+          snowflake lineages, five carried non-synonymous <em>ACE2</em> mutations, and in every case
+          both copies had been made identical by gene conversion. The mutation is repeatable. We do
+          not wait for it: all fifteen MuLTEE populations were founded from an
+          <em>ace2&Delta;</em> strain in the Y55 background, so the experiment starts at the
+          multicellular state rather than having to evolve into it.</p>
+      </div>
+
+      <figure class="plate reveal" style="margin-top:var(--sp-7)">
+        <div class="plate-figure wide-ratio">
+          <img src="assets/img/nuclei-cellwall-day400.jpg"
+               srcset="assets/img/nuclei-cellwall-day400-sm.jpg 900w, assets/img/nuclei-cellwall-day400.jpg 2000w"
+               sizes="(max-width:900px) 100vw, 980px"
+               width="2000" height="1999"
+               class="crop-annotations"
+               alt="Confocal projection of a snowflake yeast cluster: cells outlined in bright cyan, each holding a single orange nucleus, fanning outward from a central branch point, with smaller clusters and loose cells scattered across a black field.">
+        </div>
+        <div class="plate-label">
+          <p class="plate-num">Plate 01</p>
+          <dl>
+            <dt>Subject</dt><dd>Snowflake yeast cluster</dd>
+            <dt>Timepoint</dt><dd>Day 400</dd>
+            <dt>Stain</dt><dd>Cell wall / nuclei</dd>
+            <dt>Frame</dt><dd>60&times; magnification</dd>
+          </dl>
+        </div>
+      </figure>
+      <p class="plate-caption">One cluster, one genome. The cyan outlines are cell walls and the
+        orange points are nuclei, one per cell. Branch points are where a daughter budded and never
+        let go. The original frame carries a burned-in 20&nbsp;&micro;m scale bar along the bottom
+        edge, cropped here.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== the daily cycle -->
+  <div class="page">
+    <section class="section wide" id="cycle">
+      <div class="section-head">
+        <p class="eyebrow">The daily cycle</p>
+        <h2>Growth, settling, transfer</h2>
+      </div>
+
+      <div style="max-width:var(--measure)">
+      <div class="prose">
+        <p>One round of the MuLTEE takes a single day, and none of it is automated. The
+          populations grow, they sediment under gravity, and the fraction that settles fastest is
+          transferred by pipette into fresh medium. The regime is therefore selection for rapid
+          growth followed by selection for larger group size, and the fact that these two act in
+          sequence within each day is central to the design.</p>
+      </div>
+
+      <ol class="findings" style="margin-top:var(--sp-6)">
+        <li class="finding">
+          <span class="finding-num">01</span>
+          <div>
+            <h3>Grow, for about twenty-four hours in liquid medium</h3>
+            <p>The small volume carried over from yesterday expands back to a full culture. This
+              phase is not neutral. It rewards whatever divides fastest, and in the obligately
+              aerobic populations, where the measurement has been made, that is the smaller
+              clusters.</p>
+          </div>
+        </li>
+        <li class="finding">
+          <span class="finding-num">02</span>
+          <div>
+            <h3>Settle, under gravity</h3>
+            <p>The culture is left standing and biomass falls out of suspension. Larger and denser
+              clusters sink faster, so within a fixed settling window they arrive at the bottom of
+              the tube while smaller ones are still in the liquid above.</p>
+          </div>
+        </li>
+        <li class="finding">
+          <span class="finding-num">03</span>
+          <div>
+            <h3>Transfer the fastest-settling fraction into fresh medium</h3>
+            <p>Only the bottom fraction is moved forward. Everything still in suspension is
+              discarded. That transfer is the selection event, and tomorrow it happens again. Over
+              600 rounds this took mean cluster radius from 16&nbsp;&micro;m to 434&nbsp;&micro;m in
+              the anaerobic populations, roughly a 20,000-fold increase in volume, and took the
+              number of cells in a group from about 100 to about 450,000.</p>
+          </div>
+        </li>
+      </ol>
+      </div>
+
+      <!-- ============================== the transfer engine (interactive) -->
+      <div class="te" id="transfer-engine" style="margin-top:var(--sp-8)">
+        <p class="te-flag">Interactive &middot; Schematic, not to scale</p>
+        <h3 style="margin:0 0 var(--sp-3)">The transfer engine</h3>
+        <p class="te-caption" style="margin-top:0">Forty clusters in a tube. Press play and they
+          fall, larger ones faster. Everything that reaches the transfer line goes into fresh medium
+          and regrows to a full culture; everything still in suspension is thrown away. The chart
+          beside the vessel is the size distribution of the whole culture, and the starting
+          distribution stays on it as a dashed outline. About fifteen transfers is enough to see the
+          whole distribution move right. The run stops after twenty so the drawing stays in
+          scale.</p>
+
+        <div class="te-stage">
+          <canvas width="900" height="506" role="img"
+            aria-label="Schematic animation. Forty clusters settle in a tall narrow vessel, the largest reaching a transfer line near the bottom first. Clusters below the line are kept and regrow with heritable size, and a histogram beside the vessel shows the size distribution moving toward larger sizes over successive transfers, against a dashed outline of the starting distribution."></canvas>
+        </div>
+
+        <p class="te-fallback">This section carries an interactive diagram of the selection step,
+          which needs JavaScript. The mechanism it draws is the one described above: clusters of
+          different sizes fall through a tube, larger ones sink faster and reach the bottom first,
+          only the bottom fraction is pipetted into fresh medium, and because size is inherited the
+          size distribution of the population shifts toward larger clusters transfer by
+          transfer.</p>
+
+        <div class="te-controls">
+          <button type="button" class="btn btn-ghost" data-te="play">Play</button>
+          <button type="button" class="btn btn-ghost" data-te="step">Step one transfer</button>
+          <button type="button" class="btn btn-ghost" data-te="reset">Reset</button>
+        </div>
+
+        <p class="te-status" data-te="status" aria-live="polite">Transfer 1 of 20.</p>
+
+        <p class="te-rmnote" data-te="rmnote" hidden>Your system is set to reduce motion, so nothing
+          here animates. The frame shows the settled state of the transfer, with the transfer line
+          drawn and the retained clusters marked. Use <strong>Step one transfer</strong> to advance
+          the cycle one selection event at a time, and <strong>Reset</strong> to start the run
+          again.</p>
+
+        <p class="te-caption"><strong>What is schematic.</strong> Settling speed here rises with
+          cluster size by one simple monotonic rule, plus a small random difference between clusters
+          that stands in for everything else. Real snowflake clusters are branched and porous, so
+          they do not follow the simple relation that holds for a solid sphere: fluid moves through
+          and around a branched body, and evolved changes in shape and packing alter how fast it
+          sinks independently of how big it is. Sizes appear only as multiples of the starting mean,
+          never in micrometres.</p>
+
+        <p class="te-caption">The selection step is simplified too. In the widget the settling
+          window ends when the pipette volume is full, so about twelve clusters out of forty carry
+          forward every transfer. The real regime uses a fixed settling window, which is not quite
+          the same thing.</p>
+
+        <p class="te-caption">For scale, two numbers that are measured: mean cluster radius in the
+          anaerobic populations went from <span class="num" data-multee="radius-start">16</span>&nbsp;&micro;m
+          to <span class="num" data-multee="radius-end">434</span>&nbsp;&micro;m over
+          <span class="num" data-multee="radius-days">600</span> transfers, roughly a 20,000-fold
+          increase in volume (<span data-multee="radius-cite">Bozdag et al. 2023, Nature
+          617:747&ndash;754</span>). Those two endpoints come from the published record. Nothing
+          inside the frame above does.</p>
+      </div>
+
+      <div style="max-width:var(--measure)">
+      <div class="prose" style="margin-top:var(--sp-7)">
+        <p>Both phases are selective and they act in opposite directions. Growth favours small,
+          fast-dividing clusters, and settling favours large ones. A trait spreads only if it pays
+          for itself across the full 24-hour cycle, which is why the same selection regime produced
+          macroscopic bodies in one treatment and, in another, a stable split into small growth
+          specialists and large survival specialists that have coexisted for thousands of
+          generations. When we compete evolved and ancestral isolates under this regime and score
+          the two phases separately, snowflake yeast make most of their fitness gains during
+          settling, which means they are increasing fitness at the level of the group rather than
+          the cell.</p>
+      </div>
+
+      <div class="note" style="margin-top:var(--sp-7)">
+        <h3>Full culture parameters</h3>
+        <p>Detailed culture parameters (vessel type, growth temperature, shaking speed, settling
+          window length, and transferred volume) will be posted here as part of the open protocol
+          documentation.</p>
+      </div>
+
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== settling as a proxy -->
+  <div class="page">
+    <section class="section wide" id="proxy">
+      <div class="section-head">
+        <p class="eyebrow">Why settling selection</p>
+        <h2>How and why we select for size</h2>
+      </div>
+
+      <div style="max-width:var(--measure)">
+        <div class="prose">
+          <p>Larger clusters sink faster through liquid. After 24 hours of growth, we let the
+            culture settle and transfer only the bottom fraction into fresh medium. Everything still
+            in suspension is discarded. Larger, denser clusters reach the bottom first, so the
+            regime is directional selection for increased group size.</p>
+          <p>We chose settling selection because it is experimentally tractable. Its strength can be
+            tuned simply by shortening the settling window, it is far more reproducible than
+            predation, and there is no predator to co-evolve or go extinct halfway through a
+            decade. Sedimentation rate is also an ecological trait in its own right for aquatic
+            organisms, not purely a laboratory convenience.</p>
+          <p>Many of the interesting phenotypes that evolved were not things we directly selected
+            for. Cells elongated, lowering how densely a cluster packs and delaying fracture.
+            Branches entangled. Division timing synchronised. All of those arrived because they
+            made clusters bigger or harder to break.</p>
+        </div>
+      </div>
+
+      <div class="two-col" style="margin-top:var(--sp-7)">
+        <figure class="plate reveal">
+          <div class="plate-figure" style="aspect-ratio:1280/1172">
+            <img src="assets/img/cluster-depth-coded-3d.jpg"
+                 srcset="assets/img/cluster-depth-coded-3d-sm.jpg 900w, assets/img/cluster-depth-coded-3d.jpg 1280w"
+                 sizes="(max-width:900px) 100vw, 480px"
+                 width="1280" height="1172" loading="lazy"
+                 alt="Three-dimensional rendering of one snowflake yeast cluster on black, its cells coloured cyan and blue at the front through green and yellow to orange at the back, giving a spiky radial branching silhouette.">
+          </div>
+          <div class="plate-label">
+            <p class="plate-num">Plate 02</p>
+            <dl>
+              <dt>Subject</dt><dd>Single cluster, 3-D reconstruction</dd>
+              <dt>Colour</dt><dd>Depth coded, near to far</dd>
+              <dt>Frame</dt><dd>Scale bar burned in, lower centre</dd>
+            </dl>
+          </div>
+        </figure>
+
+        <figure class="plate reveal">
+          <div class="plate-figure" style="aspect-ratio:909/869">
+            <img src="assets/img/clusters-many-depth-coded.jpg"
+                 srcset="assets/img/clusters-many-depth-coded-sm.jpg 900w, assets/img/clusters-many-depth-coded.jpg 909w"
+                 sizes="(max-width:900px) 100vw, 480px"
+                 width="909" height="869" loading="lazy"
+                 alt="About eighteen small three-dimensional snowflake yeast clusters scattered across a black field, each depth coded from blue through green to yellow, showing a range of sizes and branching shapes.">
+          </div>
+          <div class="plate-label">
+            <p class="plate-num">Plate 03</p>
+            <dl>
+              <dt>Subject</dt><dd>Many clusters, 3-D reconstruction</dd>
+              <dt>Colour</dt><dd>Depth coded, near to far</dd>
+              <dt>Reads as</dt><dd>Population, not individual</dd>
+            </dl>
+          </div>
+        </figure>
+      </div>
+      <p class="plate-caption">Selection acts on a whole distribution of cluster sizes, like the
+        one in Plate 03, and retains its upper tail every day. Cluster size is reported as a
+        biomass-weighted radius for this reason: a population containing many small propagules and a
+        few large adults would otherwise be summarised by its propagules. Plate 02 carries a
+        burned-in 20&nbsp;&micro;m scale bar.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== treatments -->
+  <div class="page">
+    <section class="section wide" id="treatments">
+      <div class="section-head">
+        <p class="eyebrow">Three metabolic environments</p>
+        <h2>Three metabolic treatments</h2>
+      </div>
+
+      <div style="max-width:var(--measure)">
+        <div class="prose">
+          <p>A big body has an interior, and the interior has to be fed. For an organism that
+            respires, that means oxygen has to diffuse in, and diffusion sets a hard ceiling on how
+            large a solid mass of metabolising cells can get. The three treatments exist to test
+            whether that ceiling is what limits multicellular size over the long run, by giving five
+            replicate populations each a different relationship to oxygen and then applying the
+            identical settling regime to all fifteen.</p>
+          <p>These treatments were established in 2018, and the first 145 transfers were published
+            in 2021 as a test of how oxygen affects size evolution. The result was counterintuitive:
+            intermediate oxygen suppressed size evolution, while both anaerobic conditions and high
+            oxygen permitted it. Fifteen of those populations have been transferred continuously ever
+            since, and they are the fifteen described here.</p>
+        </div>
+      </div>
+
+      <div class="triptych" style="margin-top:var(--sp-7)">
+        <article class="treatment">
+          <div class="treatment-body">
+            <span class="chip chip-pa" data-o2="&#9675;">PA1&ndash;5 Anaerobic</span>
+            <h3>Cannot respire, so pays no oxygen cost for size</h3>
+            <dl>
+              <dt>Metabolism</dt><dd>Obligate fermentation</dd>
+              <dt>Mitochondria</dt><dd>Petite; respiration lost</dd>
+              <dt>Oxygen</dt><dd>Cannot be used at all</dd>
+            </dl>
+            <p>Petite mutants carry defective mitochondria and cannot use oxygen at all. Removing
+              respiration also removes the diffusion limit on size, so if oxygen delivery is what
+              constrains size, these lines were the ones expected to escape it. All five became
+              macroscopic.</p>
+          </div>
+        </article>
+
+        <article class="treatment">
+          <div class="treatment-body">
+            <span class="chip chip-pm" data-o2="&#9682;">PM1&ndash;5 Mixotrophic</span>
+            <h3>Can ferment or respire</h3>
+            <dl>
+              <dt>Metabolism</dt><dd>Fermentation and respiration</dd>
+              <dt>Mitochondria</dt><dd>Intact</dd>
+              <dt>Carbon</dt><dd>Glucose-based medium</dd>
+            </dl>
+            <p>Glucose with access to oxygen, which is how ordinary yeast grows. These populations
+              stayed microscopic, but they are not a passive control. All five underwent the same
+              whole-genome duplication as the anaerobic lines, and all five have since evolved hollow
+              toroidal morphologies whose central opening drives rapid flow with no cilia or flagella
+              (unpublished).</p>
+          </div>
+        </article>
+
+        <article class="treatment">
+          <div class="treatment-body">
+            <span class="chip chip-po" data-o2="&#9679;">PO1&ndash;5 Obligately aerobic</span>
+            <h3>Must respire, so oxygen is a contested resource</h3>
+            <dl>
+              <dt>Metabolism</dt><dd>Obligate respiration</dd>
+              <dt>Mitochondria</dt><dd>Intact and required</dd>
+              <dt>Carbon</dt><dd>Glycerol-based medium</dd>
+            </dl>
+            <p>Glycerol cannot be fermented, so growth is impossible without dissolved oxygen. That
+              turns oxygen into something clusters compete over, and three of the five populations
+              split into coexisting small and large lineages held together by negative
+              frequency-dependent selection.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="plate-caption">Population-by-population detail is on the
+        <a href="populations.html">Populations</a> page.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== the archive -->
+  <div class="page">
+    <section class="section" id="archive">
+      <div class="section-head">
+        <p class="eyebrow">The frozen fossil record</p>
+        <h2>Cryopreservation and the revivable past</h2>
+      </div>
+
+      <div class="prose">
+        <p>Every 25 days, roughly 125 generations, we cryopreserve all fifteen populations at
+          &minus;80&nbsp;&deg;C. Frozen samples neither die nor continue to evolve, so when they are
+          thawed they resume growing in the state the population was in on the day it was frozen.
+          This frozen fossil record now holds more than 3,000 samples.</p>
+        <p>A revivable past is what separates a long-term evolution experiment from an experiment
+          that simply runs for a long time. In most studies the past exists only as data. Here it
+          exists as a living organism that can be thawed, placed in a tube alongside its own
+          descendant, and competed directly. That is how we measure fitness: an evolved isolate is
+          competed against the ancestor it came from, under the same growth-and-settling cycle the
+          population experienced.</p>
+        <p>The archive also lets us test the order in which things happened. If a trait is present at
+          day 600, we can thaw day 400 and check whether it was already segregating there, rather
+          than inferring it. Reversibility can be tested the same way, by relaxing selection on a
+          revived evolved strain and seeing whether the trait is lost. That is how we showed that
+          tetraploidy in these populations is maintained by ongoing selection rather than by genome
+          stability.</p>
+        <p>Finally, the archive is built for instruments that do not exist yet. Some of the most
+          important results from Lenski's <em>E.&nbsp;coli</em> LTEE came from genome sequencing and
+          genetic reconstruction, neither of which was available at scale when that experiment began
+          in 1988. Freezing samples is inexpensive. Regenerating a decade of evolution is not
+          possible at all.</p>
+      </div>
+
+      <div class="note" style="margin-top:var(--sp-6)">
+        <h3>Working with the archive</h3>
+        <p>Requests for any population at any timepoint go through the
+          <a href="data.html">Data &amp; Strains</a> page. We share strains with no authorship
+          requirement, provided the request does not overlap with ongoing work in our lab or that
+          of a collaborator. Nothing would make us happier than to foster a community of
+          researchers working on the MuLTEE.</p>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== measurements -->
+  <div class="page">
+    <section class="section" id="measurements">
+      <div class="section-head">
+        <p class="eyebrow">What gets measured</p>
+        <h2>Types of data we collect</h2>
+      </div>
+
+      <div class="prose">
+        <p>The daily transfer is the experiment itself. Everything else is measurement, carried out
+          on isolates revived from the freezer. Because the archive is available, the same assay can
+          be applied to day 0, day 400 and day 1,000 in the same week, by the same person, on the
+          same instrument.</p>
+      </div>
+
+      <ul class="glossary" style="margin-top:var(--sp-6)">
+        <li>
+          <dl>
+            <dt>Morphology</dt>
+            <dd>Biomass-weighted cluster radius across evolutionary time, cellular aspect ratio, and
+              bud scar geometry, which records where every past division happened.</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>Fitness</dt>
+            <dd>Evolved isolates competed head to head against the revived ancestor under the
+              standard growth-plus-settling regime, with the growth phase and the settling phase
+              scored separately when the question calls for it.</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>Mechanics</dt>
+            <dd>Compression assays for the stress-strain response and for multicellular toughness. As
+              a material, these clusters went from around 100-fold weaker than gelatin to the
+              strength and toughness of wood.</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>Genomes</dt>
+            <dd>Whole-genome sequencing of evolved isolates, plus synthetic reconstruction: candidate
+              mutations are engineered back into a clean background to test whether they actually
+              cause the phenotype they correlate with.</dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>Imaging</dt>
+            <dd>Serial block-face scanning electron microscopy to reconstruct the inside of a
+              cluster, time-lapse microscopy to follow division timing cell by cell, and
+              super-resolution panoramic integration to measure subcellular shape across whole
+              populations rather than a handful of picked cells.</dd>
+          </dl>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== doors -->
+  <div class="page">
+    <section class="section wide">
+      <div class="doors">
+        <a class="door" href="populations.html">
+          <span class="count">15 populations</span>
+          <h3>Populations</h3>
+          <p>What each of the fifteen lines has done, treatment by treatment and timepoint by
+            timepoint.</p>
+        </a>
+        <a class="door" href="history.html">
+          <span class="count">2010 to now</span>
+          <h3>History</h3>
+          <p>Where snowflake yeast came from, and how an experiment on oxygen and size became a
+            decade-long one.</p>
+        </a>
+        <a class="door" href="data.html">
+          <span class="count">Strains &amp; sequences</span>
+          <h3>Data &amp; Strains</h3>
+          <p>Request any population from any timepoint in the frozen archive, plus genomes and
+            protocols.</p>
+        </a>
+        <a class="door" href="glossary.html">
+          <span class="count">24 terms</span>
+          <h3>Glossary</h3>
+          <p>Morphological entanglement, ratcheting traits, the unicellular bottleneck and the
+            vocabulary.</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="data.html">Strain requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/multee-data.js"></script>
+<script src="assets/js/transfer-engine.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

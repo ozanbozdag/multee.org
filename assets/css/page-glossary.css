@@ -1,0 +1,104 @@
+/* ==========================================================================
+   page-glossary.css — loaded after site.css, glossary.html only.
+   Three things the design system does not have: the A-Z jump ribbon, the
+   term index, and the headword rail that keeps 24 long definitions from
+   reading as one column of undifferentiated prose. The only site.css rules it
+   touches are the dt/dd margins inside .glossary, which the rail layout resets.
+   ========================================================================== */
+
+/* Anchor targets must clear the sticky masthead, which is 57px tall when the
+   nav fits on one line and 94px when it wraps (roughly 900-1290px). One offset
+   has to clear the worst case. */
+.letter-group,
+.glossary li,
+#index{scroll-margin-top:6.5rem}
+
+/* The page runs in the wide track throughout so the headword rail, the ribbon
+   and the intro all hang off one left margin. Measure is restored per block. */
+.gloss-intro{max-width:56ch}
+.gloss-note{max-width:var(--measure);margin-top:var(--sp-7)}
+
+/* ------------------------------------------------------------- A-Z ribbon */
+.azbar{
+  display:flex;flex-wrap:wrap;gap:2px;
+  padding:var(--sp-2) 0;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  background:var(--bg);
+}
+.azbar a,.azbar span{
+  font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  letter-spacing:.04em;line-height:1;
+  min-width:2rem;padding:var(--sp-2) var(--sp-1);
+  text-align:center;text-decoration:none;
+  border:1px solid transparent;
+}
+.azbar a{color:var(--accent)}
+.azbar a:hover{color:var(--accent-hover);border-color:currentColor}
+.azbar span{color:var(--ink-dim);opacity:.3}
+
+/* -------------------------------------------------------------- term index */
+.term-index{padding-block:var(--sp-5) 0}
+.term-index .label{margin:0 0 var(--sp-4)}
+.term-index ul{
+  list-style:none;margin:0;padding:0;
+  columns:3;column-gap:var(--sp-6);
+}
+.term-index li{break-inside:avoid;margin:0 0 var(--sp-3)}
+.term-index a{
+  display:block;
+  font-family:var(--font-mono);font-size:var(--t-label);
+  text-transform:uppercase;letter-spacing:.06em;line-height:1.35;
+  color:var(--ink-dim);text-decoration:none;
+}
+.term-index a:hover{color:var(--accent)}
+@media (max-width:900px){.term-index ul{columns:2}}
+@media (max-width:520px){.term-index ul{columns:1}}
+
+/* ------------------------------------------------------------ letter groups */
+.letter-group+.letter-group{margin-top:var(--sp-8)}
+.letter-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:var(--sp-4);margin:0 0 var(--sp-4);
+}
+.letter{
+  font-family:var(--font-mono);font-size:1.75rem;font-weight:500;
+  letter-spacing:var(--track-label);line-height:1;
+  color:var(--amber);margin:0;
+}
+.uplink{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--ink-dim);text-decoration:none;
+}
+.uplink:hover{color:var(--accent)}
+
+/* ------------------------------------------------------------- entry layout
+   Headword in a fixed rail, definition in a measured column: the same
+   two-track rhythm as .timeline and .press-list, sized for a longer body. */
+.glossary dl{margin:0}
+.glossary dd.gist{
+  font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.45;
+  color:var(--ink);margin-bottom:var(--sp-4);
+}
+.glossary dd.long{color:var(--ink-dim)}
+.glossary dd.xrefs{
+  margin-top:var(--sp-4);margin-bottom:0;
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:.08em;line-height:1.9;
+  color:var(--ink-dim);
+}
+.glossary dd.xrefs .xref:first-child{color:var(--ink-dim);opacity:.75;margin-right:var(--sp-2)}
+.glossary .xsep{color:var(--ink-dim);opacity:.5}
+.glossary a.xref{text-decoration-thickness:1px;text-underline-offset:.2em}
+
+@media (min-width:1000px){
+  .glossary li{padding-block:var(--sp-6)}
+  .glossary dl{
+    display:grid;
+    grid-template-columns:16rem minmax(0,var(--measure));
+    column-gap:var(--sp-6);
+  }
+  .glossary dt{grid-column:1;grid-row:1 / span 4;align-self:start;margin:0}
+  .glossary dd{grid-column:2}
+}

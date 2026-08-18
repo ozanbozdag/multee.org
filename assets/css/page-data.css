@@ -1,0 +1,19 @@
+/* ==========================================================================
+   page-data.css: Data & Strains only. Loaded after site.css.
+   One layout bug fix that should be hoisted into site.css, plus two rules
+   about telling the truth in the resource grid: a card that is not a link
+   must not behave like one, and an unavailable resource needs a status that
+   reads as status rather than as a call to action.
+   ========================================================================== */
+
+/* .door is normally an <a>. These cards are <div>s because the resource they
+   name has no URL yet, so the hover affordance has to go. */
+.door-static:hover{border-color:var(--rule)}
+
+/* Deliberately not --amber like .count: amber reads as "here it is". */
+.door-status{
+  font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--ink-dim);border:1px solid var(--rule);
+  padding:var(--sp-1) var(--sp-2);width:max-content;
+}
