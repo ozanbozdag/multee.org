@@ -1,0 +1,61 @@
+/* ==========================================================================
+   page-protocols.css: the generated Protocols and Pipelines pages
+   (protocols/, pipelines/). Loaded after site.css. The pages themselves are
+   built by tools/build_protocol_pages.py; this file is edited by hand.
+   They reuse the site's components (.pubs, .doors, .plate, .prose); this file
+   only covers what converted protocol text and figure legends need on top.
+   ========================================================================== */
+
+/* Protocol and pipeline titles are long sentences, not one-word page names,
+   so they step down from --t-display. */
+.protocol-title{font-size:clamp(1.9rem,3.6vw,3rem)}
+.protocol-meta{margin-top:var(--sp-5)}
+.section .lede{margin-top:var(--sp-5)}
+.protocol-actions{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-6)}
+.eyebrow a{color:inherit;text-decoration:none}
+.eyebrow a:hover{text-decoration:underline}
+
+/* ------------------------------------------------- converted protocol text */
+.protocol-body>:first-child{margin-top:0}
+.protocol-body h2{font-size:var(--t-h3);margin:var(--sp-7) 0 var(--sp-3)}
+.protocol-body h3,.protocol-body h4{font-size:1.05rem;margin:var(--sp-6) 0 var(--sp-3)}
+.protocol-body li>ol,.protocol-body li>ul{margin:var(--sp-2) 0 0}
+.protocol-body [id]{scroll-margin-top:80px}            /* clear the sticky masthead */
+.protocol-body :target{outline:1px solid var(--amber-ink);outline-offset:6px}
+.protocol-body img{height:auto}
+
+.protocol-body .scroll-x{margin:0 0 var(--sp-5)}
+.protocol-body table{border-collapse:collapse;width:100%;font-size:var(--t-small)}
+.protocol-body th,.protocol-body td{text-align:left;vertical-align:top;
+  padding:var(--sp-2) var(--sp-3) var(--sp-2) 0;border-bottom:1px solid var(--rule)}
+.protocol-body th{font-family:var(--font-mono);font-size:var(--t-micro);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-label);color:var(--ink-dim)}
+.protocol-body thead tr{border-top:1px solid var(--rule)}
+
+/* Cross-references between protocols. site.css uses .xref for the glossary's
+   small mono label; inside protocol text it is an ordinary link reading
+   "Category › Protocol › Section". */
+.protocol-body .xref{font:inherit;text-transform:none;letter-spacing:normal;color:var(--accent)}
+.protocol-body span.xref{color:var(--ink)}               /* target not published */
+.protocol-body .xref-path{color:var(--ink-dim)}
+
+/* ------------------------------------------------------------------ figures
+   Figures keep their own proportions: unlike the site's square plates they
+   are never cropped, because a cropped gel or plate loses information. */
+/* auto-fill, not auto-fit: a protocol with one figure keeps a column-sized
+   figure instead of stretching it across the whole page. */
+.protocol-figures{display:grid;gap:var(--sp-7);
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.protocol-figure,main section[id]{scroll-margin-top:72px}
+.figure-media{display:block;aspect-ratio:auto}
+.plate .figure-media img{height:auto;object-fit:contain}
+.figure-legend p{margin:0 0 var(--sp-2)}
+.figure-legend strong{color:var(--ink);font-weight:500}
+
+/* -------------------------------------------------------- pipeline contents */
+.zip-contents{margin-top:var(--sp-7);border-top:1px solid var(--rule);padding-top:var(--sp-4)}
+.zip-contents summary{cursor:pointer}
+.zip-contents ul{list-style:none;padding:0;margin:var(--sp-4) 0 0}
+.zip-contents li{display:flex;justify-content:space-between;gap:var(--sp-4);
+  font-family:var(--font-mono);font-size:var(--t-micro);color:var(--ink-dim);
+  padding:var(--sp-1) 0;border-bottom:1px solid var(--rule);overflow-wrap:anywhere}

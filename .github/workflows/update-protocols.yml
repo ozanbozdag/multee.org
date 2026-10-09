@@ -1,0 +1,74 @@
+# Nightly: download the published protocols and pipelines from the lab's protocol
+# log, rebuild protocols/ and pipelines/, and republish the site if anything changed.
+#
+# Needs, under Settings -> Secrets and variables -> Actions:
+#   variable PROTOCOLS_EXPORT_URL    e.g. https://<username>.pythonanywhere.com/api/public-export.zip
+#   secret   PROTOCOLS_EXPORT_TOKEN  the EXPORT_TOKEN printed by the protocol log's setup script
+#
+# Run it by hand any time from the Actions tab ("Run workflow").
+
+name: Update protocols
+
+on:
+  schedule:
+    - cron: "17 8 * * *"      # daily at 08:17 UTC (about 4 am in Atlanta)
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit the rebuilt pages
+  pages: write      # ask GitHub Pages to republish
+
+concurrency:
+  group: update-protocols
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download the public export
+        env:
+          EXPORT_URL: ${{ vars.PROTOCOLS_EXPORT_URL }}
+          EXPORT_TOKEN: ${{ secrets.PROTOCOLS_EXPORT_TOKEN }}
+        run: |
+          if [ -z "$EXPORT_URL" ] || [ -z "$EXPORT_TOKEN" ]; then
+            echo "::error::Set the PROTOCOLS_EXPORT_URL variable and PROTOCOLS_EXPORT_TOKEN secret (see the top of this file)."
+            exit 1
+          fi
+          # Retries cover the protocol log waking up; a paused (expired) free
+          # PythonAnywhere app fails here, and GitHub emails about the failed run.
+          curl --fail --silent --show-error --location --retry 3 --retry-delay 30 \
+               --header "Authorization: Bearer $EXPORT_TOKEN" \
+               --output "$RUNNER_TEMP/export.zip" "$EXPORT_URL"
+
+      - name: Build the pages
+        run: python tools/build_protocol_pages.py "$RUNNER_TEMP/export.zip"
+
+      - name: Commit if anything changed
+        id: commit
+        run: |
+          git add protocols pipelines
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "Update protocols and pipelines from the lab's protocol log"
+          git pull --rebase --quiet   # in case the site was edited while this ran
+          git push --quiet
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made by this workflow don't trigger a Pages build on their own.
+      - name: Republish the site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
