@@ -2398,7 +2398,7 @@
    "line": 5,
    "ancestor": false,
    "transfer": 600,
-   "strain": "",
+   "strain": "GOB1413",
    "type": "Isolate",
    "ploidy": "4n baseline",
    "run": "SRR23803536",
