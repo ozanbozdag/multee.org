@@ -1,0 +1,164 @@
+/* ==========================================================================
+   simulator.html only. Loaded after site.css.
+   Everything here belongs to the snowflake yeast growth simulator. Every
+   value is a token from site.css except the four strain-scale stops, which
+   are the model's own data colours (strain-colors.mjs) and must match it.
+   ========================================================================== */
+
+/* 1. Progressive. Without JS (or without module support) the reader gets the
+      fallback paragraph and no dead controls; snowflake-app.mjs adds
+      .is-ready, which swaps the fallback for the live simulator. */
+.sf-live{display:none}
+.sf.is-ready .sf-live{display:grid}
+.sf.is-ready .sf-fallback{display:none}
+/* The script toggles the hidden attribute; .btn's display:inline-block would
+   otherwise outrank the browser's own [hidden] rule and leave it showing. */
+.sf [hidden]{display:none!important}
+
+.sf-flag{
+  font-family:var(--font-mono);font-size:var(--t-micro);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--amber-ink);margin:0 0 var(--sp-3);
+}
+.sf-fallback{font-size:var(--t-small);color:var(--ink-dim);border:1px solid var(--rule);
+  padding:var(--sp-5);max-width:var(--measure)}
+
+/* 2. Frame on the left, controls on the right; one column on narrow screens. */
+.sf-live{grid-template-columns:minmax(0,1fr) minmax(16rem,20rem);gap:var(--sp-6);align-items:start}
+@media (max-width:980px){.sf-live{grid-template-columns:minmax(0,1fr)}}
+
+/* 3. The stage is a plate: hairline mount, true-black field. The 3D view
+      draws its own colours, so the void stays black in both themes. */
+.sf-stage{position:relative;aspect-ratio:4/3;background:var(--void);
+  border:1px solid var(--on-void-rule)}
+@media (max-width:520px){.sf-stage{aspect-ratio:1/1}}
+.sf-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sf-hint{position:absolute;right:var(--sp-3);bottom:var(--sp-2);margin:0;pointer-events:none;
+  font-family:var(--font-mono);font-size:var(--t-micro);letter-spacing:.06em;color:var(--on-void-dim)}
+.sf-gl-error{position:absolute;inset:auto var(--sp-4) var(--sp-4);margin:0;padding:var(--sp-3);
+  border:1px solid var(--on-void-rule);background:var(--void);color:var(--on-void);
+  font-size:var(--t-small)}
+
+/* The live counts sit in a plate label directly under the field. */
+.sf-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;
+  background:var(--void);border:1px solid var(--on-void-rule);border-top:0}
+.sf-counts div{padding:var(--sp-3) var(--sp-4);border-right:1px solid var(--on-void-rule)}
+.sf-counts div:last-child{border-right:0}
+.sf-counts dt{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--on-void-dim)}
+.sf-counts dd{margin:0;font-family:var(--font-mono);font-size:1.35rem;font-weight:500;
+  color:var(--on-void);font-variant-numeric:tabular-nums;line-height:1.2}
+@media (max-width:520px){
+  .sf-counts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sf-counts div:nth-child(2){border-right:0}
+  .sf-counts div:nth-child(-n+2){border-bottom:1px solid var(--on-void-rule)}
+}
+
+/* 4. Buttons wear the existing .btn / .btn-ghost skins; only the cursor, the
+      disabled state and the row layout are new. */
+.sf-controls{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center;margin-top:var(--sp-4)}
+.sf .btn{cursor:pointer;font-family:var(--font-mono)}
+.sf .btn[disabled]{opacity:.45;cursor:not-allowed}
+.sf .btn-ghost[disabled]:hover{color:var(--ink);border-color:var(--rule)}
+.sf-run{min-width:9.5rem;text-align:center}
+
+.sf-status{margin-top:var(--sp-3);font-family:var(--font-mono);font-size:var(--t-micro);
+  letter-spacing:.06em;color:var(--ink-dim);font-variant-numeric:tabular-nums}
+.sf-notice{margin-top:var(--sp-3);font-size:var(--t-small);color:var(--ink-dim);
+  border-left:2px solid var(--amber-ink);padding-left:var(--sp-3)}
+
+/* 5. The control panel. Field labels in the label register, values in mono. */
+.sf-panel{border:1px solid var(--rule);padding:var(--sp-5);display:grid;
+  grid-template-columns:minmax(0,1fr);gap:var(--sp-5)}
+.sf-group{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-4);margin:0;padding:0;border:0;min-width:0}
+.sf-group+.sf-group{border-top:1px solid var(--rule);padding-top:var(--sp-5)}
+.sf-group legend,.sf-group-title{
+  font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;
+  text-transform:uppercase;letter-spacing:var(--track-eyebrow);color:var(--accent);
+  padding:0;margin:0 0 var(--sp-4);float:left;width:100%;
+}
+.sf-group legend+*{clear:both}
+.sf-field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--sp-1) var(--sp-3);align-items:baseline}
+.sf-field label,.sf-check{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink)}
+.sf-field output{font-family:var(--font-mono);font-size:var(--t-small);color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.sf-field input[type=range],.sf-field select,.sf-field input[type=number],.sf-field small{grid-column:1 / -1}
+.sf-field small,.sf-small{font-size:var(--t-small);color:var(--ink-dim);line-height:1.45}
+.sf input[type=range]{width:100%;margin:0;accent-color:var(--accent)}
+.sf input[type=checkbox]{accent-color:var(--accent);margin:0;width:1rem;height:1rem;flex:none}
+.sf select,.sf input[type=number]{
+  font-family:var(--font-mono);font-size:var(--t-small);color:var(--ink);background:var(--bg);
+  border:1px solid var(--rule);padding:var(--sp-2) var(--sp-3);border-radius:0;width:100%}
+.sf select:hover,.sf input[type=number]:hover{border-color:var(--ink-dim)}
+.sf-check{display:flex;gap:var(--sp-3);align-items:center;cursor:pointer}
+
+.sf-active{font-family:var(--font-mono);font-size:var(--t-micro);letter-spacing:.04em;
+  color:var(--ink-dim);line-height:1.6}
+.sf-pending{font-size:var(--t-small);color:var(--ink-dim);border-left:2px solid var(--amber-ink);
+  padding-left:var(--sp-3)}
+.sf-apply{justify-self:start}
+
+.sf-presets{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.sf-presets .btn{padding:var(--sp-2) var(--sp-3);font-size:var(--t-micro)}
+
+/* 6. Strain legend. The gradient reproduces strain-colors.mjs exactly:
+      0 → #5db8cc, 0.5 → #9ed3a1, 0.8 → #efd373, 1 (break) → #f47e62. */
+.sf-scale{height:.6rem;border:1px solid var(--rule);
+  background:linear-gradient(90deg,#5db8cc 0%,#9ed3a1 50%,#efd373 80%,#f47e62 100%)}
+.sf-ticks{display:flex;justify-content:space-between;margin-top:var(--sp-1);
+  font-family:var(--font-mono);font-size:var(--t-micro);color:var(--ink-dim);font-variant-numeric:tabular-nums}
+
+/* 7. Readable measure for the captions that follow the wide frame. */
+.sf-caption{margin-top:var(--sp-4);font-size:var(--t-small);color:var(--ink-dim);line-height:1.5;max-width:var(--measure)}
+.sf-caption+.sf-caption{margin-top:var(--sp-3)}
+
+/* 8. The model-details disclosure borrows the .note skin, but .note is a grid and
+      display:grid on <details> breaks the open/closed toggle in some engines. */
+.sf-details{display:block}
+.sf-details>p{margin-top:var(--sp-4)}
+
+/* 9. .prose sets p colour at (0,1,1) and would repaint these components. */
+.prose .sf-caption,.prose .sf-status,.prose .sf-fallback,.prose .sf-small{color:var(--ink-dim)}
+.prose .sf-flag{color:var(--amber-ink)}
+
+/* 10. Keep the model in view while the settings scroll (added for multee.org).
+       The settings panel is far taller than one screen, so without this a reader
+       loses sight of the cluster before reaching the presets or display options.
+       57px is the sticky masthead (56px plus its 1px rule). Short screens, where a
+       pinned block would fill the view, keep the plain stacked layout. The 3D view
+       re-sizes itself to whatever frame it is given (ResizeObserver in the app). */
+
+/* Two columns: the whole left column sticks beside the scrolling panel. The
+   frame keeps its 4:3 shape until the screen is too short for the column to
+   fit, then gets wider rather than taller. */
+@media (min-width:981px) and (min-height:660px){
+  .sf-main{position:sticky;top:calc(57px + var(--sp-4));container-type:inline-size}
+  .sf-stage{aspect-ratio:auto;height:max(18rem,min(75cqw,calc(100vh - 57px - 21rem)))}
+}
+
+/* One column: the frame, counts and run controls dock under the masthead as a
+   compact strip, and everything else scrolls beneath it. display:contents lets
+   the dock stick against the whole widget rather than its own short column. */
+@media (max-width:980px) and (min-height:560px){
+  .sf-main{display:contents}
+  .sf-live{row-gap:var(--sp-3)}
+  .sf-panel{margin-top:var(--sp-3)}
+  .sf-dock{position:sticky;top:57px;z-index:5;background:var(--bg);
+    padding-block:var(--sp-2) var(--sp-3);border-bottom:1px solid var(--rule)}
+  .sf-stage{aspect-ratio:auto;height:min(38vh,75vw)}
+  .sf-counts,.sf-counts div:nth-child(-n+2){border-bottom-width:0}
+  .sf-counts{grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--on-void-rule)}
+  .sf-counts div{padding:var(--sp-2) var(--sp-3)}
+  .sf-counts div:nth-child(2){border-right:1px solid var(--on-void-rule)}
+  .sf-counts div:last-child{border-right:0}
+  .sf-counts dd{font-size:1.05rem}
+  .sf-controls{margin-top:var(--sp-2);gap:var(--sp-2)}
+  .sf-controls .btn{padding:var(--sp-2) var(--sp-3)}
+  .sf-run{min-width:6.5rem}
+}
+/* Phones: the four buttons share one row so the strip stays short. */
+@media (max-width:520px) and (min-height:560px){
+  .sf-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sf-controls .btn{padding:var(--sp-2) var(--sp-1);text-align:center;min-width:0;white-space:nowrap}
+}
