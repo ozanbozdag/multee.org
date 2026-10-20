@@ -9,11 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/page-simulator.css">
 <script>
   /* Set before first paint so neither the theme nor the reveal state flashes. */
   (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
   document.documentElement.classList.add('js-focus');})();
 </script>
+<!-- The simulator's vendored Three.js resolves the bare specifier "three" through
+     this map. It must come before any module script on the page. -->
+<script type="importmap">{"imports":{"three":"./assets/simulator/vendor/three.module.min.js"}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -251,11 +255,14 @@
   <hr class="rule">
 
   <!-- ===================================================== simulator
-       Links to simulator.html (the lab's snowflake yeast growth simulator). Wording
-       drawn from that page; no new claims about the model. -->
+       The lab's snowflake yeast growth simulator, live on this page (it used to sit on
+       simulator.html, which now redirects here). Wording drawn from that page; no new
+       claims about the model. The markup is what assets/simulator/snowflake-app.mjs
+       expects; the module itself loads only as the section nears the screen (script at
+       the end of this file). -->
   <div class="page">
-    <section class="section" id="simulator">
-      <div class="section-head">
+    <section class="section" id="simulator" style="padding-bottom:var(--sp-6)">
+      <div class="section-head" style="margin-bottom:var(--sp-5)">
         <p class="eyebrow">In the browser</p>
         <h2>Interact with snowflake yeast virtually</h2>
       </div>
@@ -267,12 +274,243 @@
           of their bonds, run the weak, default and strong presets in turn, and watch how the life
           cycle responds. It
           runs in any recent browser, with nothing to install.</p>
-        <p><a class="btn" href="simulator.html">Open the simulator</a></p>
       </div>
-      <p class="plate-caption" style="margin-top:var(--sp-5)">A deliberately simple model in
-        dimensionless units: it shows how a branched body can generate its own reproduction, not
-        how large or how fast a real cluster grows. The simulator page suggests questions to
-        explore with it.</p>
+    </section>
+  </div>
+
+  <div class="page">
+    <div class="wide" style="padding-bottom:var(--sp-8)">
+      <div class="sf" id="snowflake-sim">
+        <p class="sf-flag">Interactive &middot; Uncalibrated model, dimensionless units</p>
+
+        <p class="sf-fallback">This section carries an interactive 3D simulator, which needs
+          JavaScript and a recent browser. It grows a cluster from one cell: each cell buds, its
+          daughters stay attached, contacts between cells push the branches apart, and a bond
+          breaks when it is stretched past a set threshold, leaving two clusters that both keep
+          growing.</p>
+
+        <div class="sf-live">
+          <div class="sf-main">
+            <!-- .sf-dock keeps the model, its counts and the run controls in view while the
+                 settings scroll (page-simulator.css, section 10). -->
+            <div class="sf-dock">
+              <div class="sf-stage">
+                <canvas id="sf-canvas" tabindex="0"
+                  aria-label="3D view of a growing snowflake yeast cluster made of ellipsoidal cells. Drag to rotate; pinch or Control plus scroll to zoom. Arrow keys rotate; plus and minus zoom."></canvas>
+                <p class="sf-hint" aria-hidden="true">Drag to rotate &middot; pinch or Ctrl + scroll to zoom</p>
+                <p class="sf-gl-error" id="sf-gl-error" role="alert" hidden></p>
+              </div>
+              <dl class="sf-counts">
+                <div><dt>Cells</dt><dd id="sf-cells">1</dd></div>
+                <div><dt>Clusters</dt><dd id="sf-clusters">1</dd></div>
+                <div><dt>Broken bonds</dt><dd id="sf-broken">0</dd></div>
+                <div><dt>Growth ticks</dt><dd id="sf-ticks">0</dd></div>
+              </dl>
+
+              <div class="sf-controls">
+                <button type="button" class="btn sf-run" id="sf-run" aria-pressed="false" disabled>Run</button>
+                <button type="button" class="btn btn-ghost" id="sf-step" disabled>Step</button>
+                <button type="button" class="btn btn-ghost" id="sf-reset">Reset</button>
+                <button type="button" class="btn btn-ghost" id="sf-fit">Fit view</button>
+              </div>
+            </div>
+            <p class="sf-status" id="sf-status" aria-live="polite">Loading the simulator…</p>
+            <p class="sf-notice" id="sf-notice" role="status" hidden></p>
+
+            <!-- VOICE-PASS: caption under the frame, ~55 words. Sources: the simulator's own
+                 legend and display-effect notes (strain-colors.mjs, fragment-presentation.mjs,
+                 brownian-presentation.mjs). -->
+            <p class="sf-caption">Cells are coloured by the stretch on their attachments, from blue
+              (slack) to red (at the breaking point). Detached clusters drift apart on screen so you
+              can tell them apart. That drift, and the gentle jiggle, move whole clusters for
+              display only and never feed back into the physics.</p>
+          </div>
+
+          <aside class="sf-panel" aria-label="Simulation settings">
+            <fieldset class="sf-group">
+              <legend>Compare bond strengths</legend>
+              <p class="sf-small">Seed 8, shape 1.80, later-bud angle 25°. Each restarts and runs.</p>
+              <div class="sf-presets">
+                <button type="button" class="btn btn-ghost" data-sf-preset="0.45">Weak &middot; 0.45</button>
+                <button type="button" class="btn btn-ghost" data-sf-preset="1">Default &middot; 1.00</button>
+                <button type="button" class="btn btn-ghost" data-sf-preset="1.3">Strong &middot; 1.30</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="sf-group">
+              <legend>The cells</legend>
+              <div class="sf-field">
+                <label for="sf-shape">Cell shape</label><output id="sf-shape-out" for="sf-shape">1.80</output>
+                <input id="sf-shape" type="range" min="1" max="3" step=".05" value="1.8" autocomplete="off">
+                <small>Long axis over short axis. Mature cell volume stays the same.</small>
+              </div>
+              <div class="sf-field">
+                <label for="sf-strength">Bond strength</label><output id="sf-strength-out" for="sf-strength">1.00</output>
+                <input id="sf-strength" type="range" min=".05" max="2" step=".05" value="1" autocomplete="off">
+                <small>How far a bond can stretch, as a fraction of its rest length, before it
+                  breaks. Lower values break sooner.</small>
+              </div>
+              <div class="sf-field">
+                <label for="sf-angle">Later-bud angle</label><output id="sf-angle-out" for="sf-angle">25°</output>
+                <input id="sf-angle" type="range" min="0" max="90" step="1" value="25" autocomplete="off">
+                <small>Starting direction of later daughters: 0° parallel to the mother's long axis,
+                  90° at a right angle. Each cell's first daughter grows from its tip at 0°.</small>
+              </div>
+              <div class="sf-field">
+                <label for="sf-seed">Random seed</label>
+                <input id="sf-seed" type="number" min="0" max="4294967295" step="1" value="8" autocomplete="off" inputmode="numeric">
+                <small>The same seed and settings reproduce the same run.</small>
+              </div>
+              <p class="sf-pending" id="sf-pending" role="status" hidden></p>
+              <button type="button" class="btn btn-ghost sf-apply" id="sf-apply" hidden>Apply changes &amp; restart</button>
+              <p class="sf-active" id="sf-active"></p>
+            </fieldset>
+
+            <fieldset class="sf-group">
+              <legend>Growth limit</legend>
+              <div class="sf-field">
+                <label for="sf-limit">Stop budding at</label>
+                <select id="sf-limit" autocomplete="off">
+                  <option value="64">64 cells</option>
+                  <option value="128">128 cells</option>
+                  <option value="256">256 cells</option>
+                  <option value="512">512 cells</option>
+                  <option value="1024" selected>1,024 cells</option>
+                </select>
+                <small>Total cells across all clusters. This is not a biological setting: it
+                  takes effect immediately, and raising it lets a finished run continue.</small>
+              </div>
+              <p class="sf-small" id="sf-limit-note" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="sf-group">
+              <legend>Display</legend>
+              <div class="sf-field">
+                <label for="sf-color">Colour cells by</label>
+                <select id="sf-color" autocomplete="off">
+                  <option value="strain" selected>Bond stretch</option>
+                  <option value="cluster">Cluster</option>
+                </select>
+              </div>
+              <div id="sf-legend-strain">
+                <div class="sf-scale" aria-hidden="true"></div>
+                <div class="sf-ticks"><span>0</span><span id="sf-tick-mid">0.5</span><span id="sf-tick-high">1 &middot; break</span></div>
+                <p class="sf-small" id="sf-readout" style="margin-top:var(--sp-2)"></p>
+              </div>
+              <p class="sf-small" id="sf-legend-cluster" hidden>Each colour is one cluster. Colours
+                repeat when there are many.</p>
+              <label class="sf-check"><input id="sf-outlines" type="checkbox" checked autocomplete="off"> Outline clusters</label>
+              <p class="sf-small" id="sf-outline-note"></p>
+              <label class="sf-check"><input id="sf-separate" type="checkbox" checked autocomplete="off"> Separate clusters</label>
+              <label class="sf-check"><input id="sf-jiggle" type="checkbox" checked autocomplete="off"> Jiggle while running</label>
+            </fieldset>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== things to try -->
+  <!-- VOICE-PASS: guided prompts, ~210 words. Drafted with the personal-voice profile.
+       Sources: the simulator's own example note (seed 8, shape 1.8, 25°, thresholds
+       0.45 and 1.30); story.html and index.html for elongation and entanglement. No
+       outcomes are asserted for any setting. -->
+  <div class="page">
+    <section class="section" id="simulator-try">
+      <div class="section-head">
+        <p class="eyebrow">Things to try</p>
+        <h2>Ask the model a question</h2>
+        <p class="dim" style="margin-top:var(--sp-4)">Try changing a variable to investigate its
+          effect on the properties of the cluster.</p>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><strong>Watch for the first break.</strong> Press Run with the default settings. Once
+            a bond snaps, a white outline marks the cluster that still holds the founding cell and
+            coloured outlines mark the pieces that broke away, each of which keeps growing and can
+            break again.</li>
+          <li><strong>Compare bond strengths.</strong> Run the three presets in turn. They share a
+            seed and differ only in bond strength, so any difference in when the first branch
+            breaks off, and in how many clusters you end up with, comes from that one setting.</li>
+          <li><strong>Change the shape of the cells.</strong> In the MuLTEE's anaerobic lines, cells
+            evolved to be more elongate, lowering packing density and delaying fracture
+            (<a href="story.html">The Story</a>). Move the shape slider, apply the change, and ask
+            what cell shape alone does to a growing body when nothing else changes.</li>
+          <li><strong>Change the seed.</strong> The seed fixes the random sequence of bud positions
+            and budding times, so the same settings can grow a visibly different body, showing how
+            much of the outcome rides on chance events at each bud. Do multiple runs with the same
+            conditions but different seeds for an exercise in investigating the importance of
+            repeats!</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== what it leaves out -->
+  <!-- VOICE-PASS: scope and honesty framing, ~150 words. Drafted with the personal-voice
+       profile. Sources: the simulator's "What is being simulated?" notes and
+       SCIENTIFIC_NOTES.md; index.html for entanglement. The details block below is the
+       lab simulator's own text, trimmed only of features this page does not include. -->
+  <div class="page">
+    <section class="section" id="simulator-model">
+      <div class="section-head">
+        <p class="eyebrow">The model</p>
+        <h2>What it includes, and what it leaves out</h2>
+      </div>
+      <div class="prose">
+        <p>This is a deliberately simple model. Cells are rigid ellipsoids that grow, bud and push
+          against their neighbours. Each bond between a mother and daughter stretches like a spring,
+          bends a little (yielding permanently past a modest angle), and breaks for good once it is
+          stretched past the threshold you set. Nothing tells a cluster when or where to split:
+          every break comes out of the mechanics of growth and crowding. All units are
+          dimensionless and nothing is calibrated to measured yeast, so the simulator shows how a
+          branched body can generate its own reproduction, not how large or how fast a real
+          cluster grows.</p>
+        <p>The model also counts every detached piece as a new cluster, without asking whether
+          that piece could actually escape its neighbours. Branch entanglement, which let evolved
+          MuLTEE clusters hold together after many mother-daughter bonds had broken, is
+          therefore outside its scope.</p>
+      </div>
+
+      <details class="note sf-details" style="margin-top:var(--sp-6)">
+        <summary class="label" style="cursor:pointer">Model details and numerical limits</summary>
+        <p>Oriented, rigid ellipsoids grow and bud with elastic surface attachments and modest
+          angular plasticity. A mature cell has size 1 and a newborn starts at 0.23; changing the
+          shape preserves cell volume. Every cell places its first successful daughter at its
+          distal pole, along the positive long axis. Later daughters use the selected 0&ndash;90&deg;
+          initial growth-axis angle. Their attachment sites are independent of this direction: a
+          fixed surface ring at 90% of the mother's half-length toward its distal pole, with random
+          azimuth. The newborn's basal pole starts 0.25 model units from its attachment site along
+          its own axis. Contacts and elastic bending can change the axes after birth; the selected
+          angle is an initial condition, not a permanent angular constraint. Each newborn begins
+          its own reproductive history.</p>
+        <p>Repulsion and torque from cell contacts rearrange branches. Contact uses
+          orientation-dependent ellipsoid overlap classification (Perram&ndash;Wertheim) with an
+          approximate soft-penalty depth and normal. Bending below 12&deg; from the current
+          preferred angle is elastic. Beyond 12&deg;, the preferred angle gradually changes; that
+          retained change is plastic. Each bond has a cumulative 25&deg; plastic-rotation
+          allowance. Axial rest length does not change. Failure uses axial tensile strain only, is
+          irreversible, and is checked during numerical relaxation rather than after a fully
+          equilibrated fracture solve. More than one bond can fail in a substep. Connected
+          components define clusters. Clusters keep growing and contacting each other in the
+          mechanical model; no cuts or separating kicks are imposed on the solver.</p>
+        <p>Mechanics are overdamped, with illustrative spring, bending and contact parameters.
+          Growth advances only when overlap is at most 0.035 and residual motion is at most 0.0015
+          after relaxation, so some updates relax the same cells without advancing their growth
+          tick, and growth can appear uneven. The solver compares one full step with two half
+          steps to estimate numerical error and accepts only the two-half-step path. A persistent
+          stall means this numerical settling criterion remains unresolved, not that biological
+          jamming has been established. A solver fault retains the last finite state and is not a
+          biological outcome.</p>
+        <p>Growth schedules, mobility, neck geometry, stiffness and time step are illustrative.
+          These are not calibrated forces, physical times or predictions of yeast phenotypes.
+          The cluster separation and jiggle are rigid display transforms of whole clusters; they
+          never alter the forces, strain or fracture calculation.</p>
+      </details>
     </section>
   </div>
 
@@ -363,10 +601,28 @@
         <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
           reuse.</p>
       </div>
+      <div>
+        <h3>Simulator</h3>
+        <p>Built on <a href="https://threejs.org/">Three.js</a>, included under its MIT
+          license (<a href="assets/simulator/vendor/THREE-LICENSE.txt">license text</a>).</p>
+      </div>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
+<!-- Load the simulator (about 0.8 MB of script, mostly Three.js) only when its section
+     comes within a screen of view, so visitors who never scroll that far don't pay for
+     it. Until then the section shows its plain-text fallback. -->
+<script type="module">
+  const sim = document.getElementById('snowflake-sim');
+  const load = () => import('./assets/simulator/snowflake-app.mjs');
+  if (sim && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { io.disconnect(); load(); }
+    }, {rootMargin: '100% 0px'});
+    io.observe(sim);
+  } else if (sim) load();
+</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   simulator.html only. Loaded after site.css.
+   The simulator section of outreach.html only. Loaded after site.css.
    Everything here belongs to the snowflake yeast growth simulator. Every
    value is a token from site.css except the four strain-scale stops, which
    are the model's own data colours (strain-colors.mjs) and must match it.

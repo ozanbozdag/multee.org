@@ -1,6 +1,6 @@
 # Snowflake yeast growth simulator (multee.org copy)
 
-The interactive simulator on `simulator.html`: growth, budding, contact mechanics and
+The interactive simulator in the Outreach page (`outreach.html#simulator`): growth, budding, contact mechanics and
 strain-driven fracture (reproduction). It has no entanglement, retention or escape
 modelling. No build step, no dependencies to install, no server code. It runs as static
 files on GitHub Pages.
@@ -45,7 +45,7 @@ parameter logic are carried over from `app.js`. These are the differences:
 - Drawing pauses while the frame is scrolled off screen. The worker keeps computing.
 - The status text is simplified. The honest stall/fault notices are kept.
 
-Page markup is in `simulator.html` and styles in `assets/css/page-simulator.css`. Element
+Page markup is in `outreach.html` (the `#simulator` section) and styles in `assets/css/page-simulator.css`. Element
 IDs are prefixed `sf-`.
 
 Changes made when the page went on multee.org (2026-10-20):
@@ -59,13 +59,22 @@ Changes made when the page went on multee.org (2026-10-20):
   compact strip. Short screens keep the stacked layout. No script changes were needed:
   the app finds everything by ID, and its ResizeObserver handles the new frame sizes.
 
+Moved onto the Outreach page (2026-10-20):
+
+- The simulator, "Things to try" and the model notes now sit in `outreach.html` under
+  `#simulator`, `#simulator-try` and `#simulator-model`. `simulator.html` is a redirect
+  stub that sends old links (and its `#try` / `#model` anchors) there.
+- `outreach.html` loads `snowflake-app.mjs` lazily: a small inline module imports it once
+  the section comes within one screen of view, so the page itself stays light. The import
+  map for `three` sits in its `<head>`. The app still does not run until Run is pressed.
+
 ## Run locally
 
 Module workers do not load from `file://`. Serve the site root over HTTP:
 
 ```sh
 cd multee.org && python3 -m http.server 8000
-# open http://localhost:8000/simulator.html
+# open http://localhost:8000/outreach.html#simulator
 ```
 
 ## Re-sync after the lab simulator changes

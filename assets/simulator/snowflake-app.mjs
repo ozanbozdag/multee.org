@@ -1,5 +1,5 @@
 /* ==========================================================================
-   snowflake-app.mjs — the snowflake yeast growth simulator, simulator.html.
+   snowflake-app.mjs — the snowflake yeast growth simulator, outreach.html#simulator.
 
    Page glue only. The mechanics (core.js), the worker that runs them, and the
    display helpers beside this file are byte-identical copies of the Ratcliff
