@@ -132,36 +132,36 @@
         <h2>What each trait records</h2>
       </div>
       <dl class="ph-guide">
-        <dt>Macroscopic</dt>
-        <dd>Whether clusters reach a size visible to the naked eye, as each paper judges it. Bozdag et al. 2023 calls clusters macroscopic when they are visible by eye (millimetre scale); Day et al. 2024 uses &ldquo;larger than 1&nbsp;mm&rdquo;. Tong et al. 2025 gives no numeric threshold. The threshold a row uses is in its notes.</dd>
-        <dt>Entanglement</dt>
-        <dd>Whether branches from different parts of a cluster are physically interlocked, so the cluster holds together after mother&ndash;daughter bonds break. Each row gives the paper&rsquo;s evidence: overlapping components in reconstructed clusters (Bozdag et al. 2023), the fraction of entangled clusters in a growth assay, or a jump in group size in engineered strains (Day et al. 2024).</dd>
         <dt>Cluster size</dt>
-        <dd>Papers report different statistics, and they are not interchangeable: mean radius (Bozdag et al. 2021, Pineau et al. 2024), biomass-weighted mean radius (Bozdag et al. 2023, Tong et al. 2025), or the diameter of clusters squashed into modules under a coverslip (Yoon et al. 2025). The statistic and the growth time are given in every row.</dd>
+        <dd>How large clusters grow, as a radius or diameter in &micro;m. Size can be summarised in several ways: the mean radius, the biomass-weighted mean radius (which weights each cluster by its volume, so it follows where most of the biomass is), or the median. It also changes over the daily growth cycle. Each column therefore holds one statistic at one growth time; compare values within a column, not across columns.</dd>
         <dt>Cell aspect ratio</dt>
-        <dd>Long axis over short axis of individual cells, usually from calcofluor-stained cells of crushed clusters.</dd>
+        <dd>Cell length divided by width, measured on individual cells released from clusters. More elongated cells pack less densely, which lets a cluster grow larger before it fractures.</dd>
         <dt>Cell size</dt>
-        <dd>Mostly cell volume in &micro;m&sup3;, computed from the long and short axes; the statistic says when another size measure is used.</dd>
-        <dt>Cell packing fraction</dt>
-        <dd>Fraction of a cluster&rsquo;s volume occupied by cells.</dd>
-        <dt>Budding pattern</dt>
-        <dd>Where and when cells bud: bud angle relative to the mother&rsquo;s axis, the timing of first and later divisions, and whether daughters divide in step with their mothers (mainly Cede&ntilde;o-P&eacute;rez et al. 2025; also Day et al. 2024).</dd>
+        <dd>Cell volume in &micro;m&sup3;, calculated from each cell&rsquo;s long and short axes, or cell diameter where volume was not measured.</dd>
         <dt>Ploidy</dt>
-        <dd>Genome copy number, from propidium iodide DNA-content peaks or from sequencing karyotypes (Tong et al. 2025). The t50 and t100 population values are computed from the paper&rsquo;s cell-level data: the main DNA-content peak and the fraction of cells below 3N.</dd>
+        <dd>Genome copy number, in haploid genome equivalents (N). For isolates, the G1 peak of DNA content and the karyotype from genome sequencing. For populations, the main DNA-content peak and the fraction of cells below 3N, which shows how many diploid cells remain.</dd>
+        <dt>Macroscopic</dt>
+        <dd>Whether clusters grow large enough to see with the naked eye, around a millimetre across.</dd>
+        <dt>Entanglement</dt>
+        <dd>Whether branches from different parts of a cluster interlock, so the cluster stays in one piece even after the bonds between mother and daughter cells break.</dd>
+        <dt>Cell packing</dt>
+        <dd>The fraction of a cluster&rsquo;s volume filled by cells. Denser packing builds strain sooner and limits how large a cluster grows before it breaks.</dd>
+        <dt>Budding pattern</dt>
+        <dd>Where and when cells divide: the angle at which daughters bud from their mother, how long the first and later divisions take, and whether daughters keep pace with their mothers.</dd>
         <dt>Mechanical properties</dt>
-        <dd>Toughness, fracture stress, compressive stress at a given strain, and single-cell stiffness (Bozdag et al. 2023), each with its unit.</dd>
-        <dt>Fluid flow through clusters</dt>
-        <dd>Whether fermentation-driven flows move fluid through the cluster interior (Narayanasamy et al. 2025).</dd>
-        <dt>Growth rate</dt>
-        <dd>Doublings per daily transfer (Bozdag et al. 2023), single-cell doubling time (Cede&ntilde;o-P&eacute;rez et al. 2025), or the mode of growth of a single cluster over time (Narayanasamy et al. 2025).</dd>
+        <dd>How clusters respond to force: toughness, the stress at which they fracture, and the stiffness of individual cells.</dd>
+        <dt>Fluid flow</dt>
+        <dd>Whether metabolic activity drives fluid to flow through the inside of a cluster, carrying nutrients deeper than diffusion alone.</dd>
+        <dt>Growth</dt>
+        <dd>How fast biomass increases: cell doublings per daily transfer, or the doubling time of single cells.</dd>
         <dt>Relative fitness</dt>
-        <dd>Competitive fitness against a labelled reference, mostly as a selection rate constant per day. The statistic names the competitor and the conditions give the assay environment, because values from different assays are not comparable.</dd>
-        <dt>Reproduction and propagules</dt>
-        <dd>Only direct measurements of how clusters reproduce, such as the fold increase in cluster number over a growth cycle. Model predictions are not included.</dd>
+        <dd>How well a strain competes against a labelled reference, usually as a selection rate per day under the experiment&rsquo;s growth and settling selection. Different assays measure different things, so compare values within a column.</dd>
+        <dt>Reproduction</dt>
+        <dd>How clusters produce new clusters, measured directly, for example as the increase in cluster number over one growth cycle.</dd>
         <dt>Coexisting types</dt>
-        <dd>Whether distinct size types (Small and Large) coexist within one population (Pineau et al. 2024). The frequency of the Large type is listed under Other measurements.</dd>
-        <dt>Other measurements</dt>
-        <dd>Strain-level phenotypes that fit none of the above, for example oxygen penetration depth, bud-scar size, chaperone levels, and the frequency of the Large type in a population.</dd>
+        <dd>Whether distinct size types, Small and Large clusters, persist side by side in the same population.</dd>
+        <dt>Other</dt>
+        <dd>Strain-level measurements that fit none of the traits above, such as oxygen penetration, bud-scar size, chaperone levels, and the frequency of each size type within a population.</dd>
       </dl>
     </section>
   </div>
