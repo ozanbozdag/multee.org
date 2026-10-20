@@ -49,7 +49,7 @@ window.MULTEE = (function () {
     publishedThroughDay: 1000,          // Tong 2025 extends the record to day 1000
     currentGenerations: '9,000+',       // lab-confirmed, unpublished beyond day 1000
     currentGenerationsNote: 'Lab record. The published series ends at 1,000 transfers.',
-    maxDay: 1800                        // scrub range; beyond publishedThroughDay is unpublished
+    maxDay: 1000                        // scrub range ends at the last published day
   };
 
   /* ------------------------------------------------------------ measurements

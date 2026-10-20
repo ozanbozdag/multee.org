@@ -108,8 +108,10 @@
     var yb = yBot(), yt = yTop();
     var stripTop = yb + 26, stripH = 14;
 
-    /* --- 1. the unpublished region, shaded and named ---------------------- */
+    /* --- 1. the unpublished region, shaded and named (only if the range
+           extends past the published record) ------------------------------ */
     var xPub = xAt(PUB);
+    if (PUB < MAX) {
     ctx.save();
     ctx.globalAlpha = 0.5;
     ctx.fillStyle = C.rule;
@@ -128,6 +130,7 @@
     ctx.font = '500 9px ' + mono;
     ctx.textAlign = 'left';
     ctx.fillText(narrow ? 'UNPUBLISHED' : 'BEYOND THE PUBLISHED RECORD', xPub + 6, 12);
+    }
 
     /* --- 2. y axis: micrometres ------------------------------------------ */
     ctx.strokeStyle = C.rule;
@@ -215,6 +218,22 @@
     ctx.fillText('434', x6 - 8, y6 - 2);
 
     /* --- 4. trait ticks along the top rail -------------------------------- */
+    /* each milestone the playhead has passed also gets a faint guide line down
+       through the chart, so reaching it is visible on the graph itself */
+    ctx.save();
+    ctx.setLineDash([2, 4]);
+    ctx.globalAlpha = 0.45;
+    ctx.strokeStyle = C.amber;
+    ctx.lineWidth = 1;
+    M.TRAITS.forEach(function (t) {
+      if (t.day > day) return;
+      var gx = Math.round(xAt(t.day)) + 0.5;
+      ctx.beginPath();
+      ctx.moveTo(gx, 28);
+      ctx.lineTo(gx, yb);
+      ctx.stroke();
+    });
+    ctx.restore();
     M.TRAITS.forEach(function (t) {
       var x = Math.round(xAt(t.day)) + 0.5;
       var on = t.day <= day;
@@ -262,7 +281,7 @@
     ctx.moveTo(padL, Math.round(yb) + 0.5);
     ctx.lineTo(W - padR, Math.round(yb) + 0.5);
     ctx.stroke();
-    var ticks = narrow ? [0, 600, 1200, 1800] : [0, 300, 600, 900, 1200, 1500, 1800];
+    var ticks = narrow ? [0, 500, 1000] : [0, 200, 400, 600, 800, 1000];
     ctx.fillStyle = C.dim;
     ctx.font = '400 9px ' + mono;
     ctx.textAlign = 'center';
@@ -361,11 +380,18 @@
         : p.label + '. Tong et al. 2025.';
     }
 
-    /* traits */
+    /* traits. A milestone that has just been reached (moving forward, after
+       the first render) flashes briefly; CSS drops the flash under reduced motion. */
     traits.forEach(function (li) {
       var d = +li.getAttribute('data-day');
       var on = d <= day;
+      if (on && rendered && li.classList.contains('pending')) {
+        li.classList.remove('just-reached');
+        void li.offsetWidth;                 // restart the animation
+        li.classList.add('just-reached');
+      }
       li.classList.toggle('pending', !on);
+      if (!on) li.classList.remove('just-reached');
       var mark = li.querySelector('.trait-mark');
       var state = li.querySelector('.trait-state');
       if (mark) mark.textContent = on ? '●' : '○';
@@ -409,7 +435,9 @@
     }
 
     draw();
+    rendered = true;
   }
+  var rendered = false;
 
   /* ------------------------------------------------------------- interaction */
   if (range) {

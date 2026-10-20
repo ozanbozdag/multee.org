@@ -198,6 +198,15 @@
   color:var(--accent);
 }
 .trait.pending .trait-state{color:var(--ink-dim)}
+/* A reached milestone carries an accent edge, and flashes as the slider reaches it. */
+.trait{border-left:2px solid transparent;padding-left:var(--sp-2)}
+.trait:not(.pending){border-left-color:var(--accent)}
+.trait.just-reached{animation:trait-reached 1.6s ease-out}
+@keyframes trait-reached{
+  from{background:color-mix(in srgb,var(--accent) 22%,transparent)}
+  to{background:transparent}
+}
+@media (prefers-reduced-motion:reduce){.trait.just-reached{animation:none}}
 
 /* plate + papers */
 .scrub-plate{margin:0}

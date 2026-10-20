@@ -190,7 +190,6 @@ def protocols_index(index):
       <div class="section-head">
         <p class="eyebrow">{_count(len(c["protocols"]), "protocol")}</p>
         <h2>{esc(c["name"])}</h2>
-        {f'<p class="dim" style="margin-top:var(--sp-3)">{esc(c["description"])}</p>' if c["description"] else ""}
       </div>
       <ul class="pubs">
 {"".join(_protocol_item(p) for p in c["protocols"])}      </ul>
@@ -389,6 +388,21 @@ def pipeline_page(pl, protocols, site):
           <p class="pub-meta"><span class="venue">{esc(p["category"]["name"])}</span><span>By {esc(p["author"])}</span></p>
         </li>
 ''' for p in used)
+    used_block = f'''<div class="section-head">
+        <p class="eyebrow">Used with</p>
+        <h2>Protocols that use this pipeline</h2>
+      </div>
+      <ul class="pubs">{used_html}</ul>''' if used_html else ""
+    body = "\n      ".join(part for part in (used_block, contents) if part)
+    body_section = f'''
+
+  <hr class="rule">
+
+  <div class="page">
+    <section class="section" {SECTION_BODY}>
+      {body}
+    </section>
+  </div>''' if body else ""
     return f'''  <div class="page">
     <section class="section" {SECTION_HEAD}>
       <p class="eyebrow"><a href="pipelines/">Analysis pipelines</a></p>
@@ -398,20 +412,7 @@ def pipeline_page(pl, protocols, site):
       {f'<p class="protocol-actions">{" ".join(actions)}</p>' if actions else ""}
       {f'<p class="plate-caption">{esc(pl["url"])}</p>' if pl.get("url") else ""}
     </section>
-  </div>
-
-  <hr class="rule">
-
-  <div class="page">
-    <section class="section" {SECTION_BODY}>
-      <div class="section-head">
-        <p class="eyebrow">Used with</p>
-        <h2>Protocols that use this pipeline</h2>
-      </div>
-      {f'<ul class="pubs">{used_html}</ul>' if used_html else '<p class="dim">Not linked to a posted protocol yet.</p>'}
-      {contents}
-    </section>
-  </div>'''
+  </div>{body_section}'''
 
 
 def _zip_contents(path, limit=60):
