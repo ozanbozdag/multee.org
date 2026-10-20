@@ -1,0 +1,38 @@
+/* ==========================================================================
+   page-phenotypes.css: the Phenotype data table (phenotypes/index.html).
+   Loaded after site.css and page-sequences.css, whose .seq-* filter, bar,
+   table and notes rules this page reuses. Only what differs lives here.
+   ========================================================================== */
+
+/* Non-sortable header: same label register as the sort buttons. */
+.seq-table thead th.ph-plain{
+  padding:var(--sp-3) var(--sp-2);font-family:var(--font-mono);font-size:var(--t-micro);font-weight:400;
+  text-transform:uppercase;letter-spacing:var(--track-label);color:var(--ink-dim);
+}
+
+/* Long free text (statistics, methods, genotypes, locations) wraps; identifiers don't. */
+.ph-table .sub.ph-wrap{white-space:normal}
+.ph-table td{min-width:6rem}
+.ph-value{min-width:8rem}
+.ph-num{font-family:var(--font-mono);font-size:var(--t-label);color:var(--ink)}
+.ph-approx{color:var(--amber-ink)}
+.ph-how{min-width:14rem;max-width:24rem}
+.ph-table td:nth-child(4){min-width:10rem}
+.ph-line{display:block}
+.ph-table .seq-papers a{min-width:9rem}
+
+.ph-notes{margin-top:var(--sp-1)}
+.ph-notes summary{cursor:pointer;font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:var(--track-label);color:var(--ink-dim)}
+.ph-notes summary:hover{color:var(--accent)}
+.ph-notes p{margin-top:var(--sp-1);color:var(--ink-dim);font-size:var(--t-small)}
+.ph-notes strong{color:var(--ink);font-weight:500}
+
+/* ---------------------------------------------------------- trait guide */
+.ph-guide{display:grid;gap:var(--sp-4) var(--sp-6);grid-template-columns:minmax(10rem,14rem) minmax(0,1fr)}
+.ph-guide dt{font-family:var(--font-mono);font-size:var(--t-label);color:var(--ink);font-weight:500}
+.ph-guide dd{margin:0;color:var(--ink-dim);font-size:var(--t-small);line-height:1.5}
+@media (max-width:640px){
+  .ph-guide{grid-template-columns:minmax(0,1fr);gap:var(--sp-1)}
+  .ph-guide dd{margin-bottom:var(--sp-3)}
+}

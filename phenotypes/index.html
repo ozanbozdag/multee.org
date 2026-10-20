@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phenotype data | MuLTEE</title>
+<meta name="description" content="Every published MuLTEE phenotype measurement, by population, isolate and timepoint: cluster and cell size, cell shape, packing, budding, ploidy, mechanics, growth and fitness, each linked to its source figure or table.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/page-sequences.css">
+<link rel="stylesheet" href="../assets/css/page-phenotypes.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="../index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../story.html">The Story</a>
+      <a href="../experiment.html">The Experiment</a>
+      <a href="../populations.html">Populations</a>
+      <a href="../history.html">History</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../press.html">Press</a>
+      <a href="../data.html" aria-current="page">Data &amp; Strains</a>
+      <a href="../outreach.html">Outreach</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../team.html">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="page">
+    <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
+      <p class="eyebrow"><a href="../data.html#resources">Data &amp; Strains</a> / Phenotype data</p>
+      <h1 class="display">Phenotype data</h1>
+      <p class="lede">Every phenotype measurement published from the MuLTEE, one row per
+        measurement: cluster and cell size, cell shape, packing, ploidy, mechanics, growth, fitness
+        and more, for each population, isolate and timepoint. Filter by trait, treatment, line or
+        timepoint, then follow a row to the figure or table it came from.</p>
+    </section>
+  </div>
+
+  <div class="page">
+    <section class="section wide seq" style="padding-block:0 var(--sp-8)" aria-labelledby="ph-heading">
+      <h2 id="ph-heading" class="visually-hidden">Phenotype measurements</h2>
+
+      <form class="seq-filters" id="ph-filters" role="search" aria-label="Filter phenotype measurements">
+        <label class="seq-field seq-search">
+          <span>Search</span>
+          <input type="search" name="q" placeholder="Sample, strain, trait, method…" autocomplete="off">
+        </label>
+        <label class="seq-field"><span>Trait</span><select name="trait"></select></label>
+        <label class="seq-field"><span>Treatment</span><select name="treatment"></select></label>
+        <label class="seq-field"><span>Line</span><select name="line"></select></label>
+        <label class="seq-field"><span>Timepoint</span><select name="timepoint"></select></label>
+        <label class="seq-field"><span>Sample type</span><select name="type"></select></label>
+        <label class="seq-field"><span>Paper</span><select name="paper"></select></label>
+        <label class="seq-field"><span>Values</span><select name="source">
+          <option value="">All</option>
+          <option value="stated">Stated values only</option>
+        </select></label>
+        <button class="seq-reset" type="reset">Clear filters</button>
+      </form>
+
+      <div class="seq-bar">
+        <p class="seq-count" id="ph-count" aria-live="polite">Loading measurements…</p>
+        <p class="seq-downloads">
+          <a href="phenotypes.csv" download>All measurements (CSV)</a>
+          <button type="button" id="ph-dl">Shown measurements (CSV)</button>
+        </p>
+      </div>
+
+      <div class="seq-scroll" tabindex="0" role="region" aria-label="Phenotype measurements table, scrolls sideways on small screens">
+        <table class="seq-table ph-table" id="ph-table">
+          <thead>
+            <tr>
+              <th scope="col" data-key="sample" aria-sort="ascending"><button type="button">Sample</button></th>
+              <th scope="col" data-key="transfer"><button type="button">Timepoint</button></th>
+              <th scope="col" data-key="type"><button type="button">Type</button></th>
+              <th scope="col" data-key="trait"><button type="button">Trait</button></th>
+              <th scope="col" data-key="value"><button type="button">Value</button></th>
+              <th scope="col" class="ph-plain">Conditions &amp; method</th>
+              <th scope="col" data-key="paper"><button type="button">Source</button></th>
+            </tr>
+          </thead>
+          <tbody id="ph-body"></tbody>
+        </table>
+      </div>
+
+      <div class="seq-notes">
+        <p><strong>One row per measurement.</strong> A sample measured for several traits, or one
+          trait measured several ways, has several rows. <strong>Timepoint</strong> is the transfer
+          the sample was taken at (one transfer per day). Where a paper reports only a treatment
+          average, the sample reads <span class="mono">_mean</span> and the line is left blank.</p>
+        <p><strong>Values</strong> are the papers' own numbers, in their units and with their
+          thresholds (for example, what counts as macroscopic). Values marked
+          <em>≈ read off figure</em> were read from a plot rather than stated, so treat them as
+          approximate and check the source figure; the Values filter hides them. Yes/no traits
+          record only what a paper tested: a trait that was never measured has no row, which is
+          not the same as "no".</p>
+        <p>Sample and strain codes match the <a href="../sequences/">Genome sequences</a> table, so a
+          phenotyped isolate can be found there by its code. To ask about measurements not listed
+          here, use the <a href="../data.html#request">request form</a>. <span id="ph-updated"></span></p>
+      </div>
+      <noscript><p>This table needs JavaScript. The full list is available as <a href="phenotypes.csv">a CSV file</a>.</p></noscript>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== trait guide -->
+  <div class="page">
+    <section class="section" id="traits">
+      <div class="section-head">
+        <p class="eyebrow">Trait guide</p>
+        <h2>What each trait records</h2>
+      </div>
+      <dl class="ph-guide">
+        <dt>Macroscopic</dt>
+        <dd>Whether clusters reach a size visible to the naked eye, as each paper judges it. Bozdag et al. 2023 calls clusters macroscopic when they are visible by eye (millimetre scale); Day et al. 2024 uses &ldquo;larger than 1&nbsp;mm&rdquo;. Tong et al. 2025 gives no numeric threshold. The threshold a row uses is in its notes.</dd>
+        <dt>Entanglement</dt>
+        <dd>Whether branches from different parts of a cluster are physically interlocked, so the cluster holds together after mother&ndash;daughter bonds break. Each row gives the paper&rsquo;s evidence: overlapping components in reconstructed clusters (Bozdag et al. 2023), the fraction of entangled clusters in a growth assay, or a jump in group size in engineered strains (Day et al. 2024).</dd>
+        <dt>Cluster size</dt>
+        <dd>Papers report different statistics, and they are not interchangeable: mean radius (Bozdag et al. 2021, Pineau et al. 2024), biomass-weighted mean radius (Bozdag et al. 2023, Tong et al. 2025), or the diameter of clusters squashed into modules under a coverslip (Yoon et al. 2025). The statistic and the growth time are given in every row.</dd>
+        <dt>Cell aspect ratio</dt>
+        <dd>Long axis over short axis of individual cells, usually from calcofluor-stained cells of crushed clusters.</dd>
+        <dt>Cell size</dt>
+        <dd>Mostly cell volume in &micro;m&sup3;, computed from the long and short axes; the statistic says when another size measure is used.</dd>
+        <dt>Cell packing fraction</dt>
+        <dd>Fraction of a cluster&rsquo;s volume occupied by cells.</dd>
+        <dt>Budding pattern</dt>
+        <dd>Where and when cells bud: bud angle relative to the mother&rsquo;s axis, the timing of first and later divisions, and whether daughters divide in step with their mothers (mainly Cede&ntilde;o-P&eacute;rez et al. 2025; also Day et al. 2024).</dd>
+        <dt>Ploidy</dt>
+        <dd>Genome copy number, from propidium iodide DNA-content peaks or from sequencing karyotypes (Tong et al. 2025). The t50 and t100 population values are computed from the paper&rsquo;s cell-level data: the main DNA-content peak and the fraction of cells below 3N.</dd>
+        <dt>Mechanical properties</dt>
+        <dd>Toughness, fracture stress, compressive stress at a given strain, and single-cell stiffness (Bozdag et al. 2023), each with its unit.</dd>
+        <dt>Fluid flow through clusters</dt>
+        <dd>Whether fermentation-driven flows move fluid through the cluster interior (Narayanasamy et al. 2025).</dd>
+        <dt>Growth rate</dt>
+        <dd>Doublings per daily transfer (Bozdag et al. 2023), single-cell doubling time (Cede&ntilde;o-P&eacute;rez et al. 2025), or the mode of growth of a single cluster over time (Narayanasamy et al. 2025).</dd>
+        <dt>Relative fitness</dt>
+        <dd>Competitive fitness against a labelled reference, mostly as a selection rate constant per day. The statistic names the competitor and the conditions give the assay environment, because values from different assays are not comparable.</dd>
+        <dt>Reproduction and propagules</dt>
+        <dd>Only direct measurements of how clusters reproduce, such as the fold increase in cluster number over a growth cycle. Model predictions are not included.</dd>
+        <dt>Coexisting types</dt>
+        <dd>Whether distinct size types (Small and Large) coexist within one population (Pineau et al. 2024). The frequency of the Large type is listed under Other measurements.</dd>
+        <dt>Transcriptomic and proteomic data</dt>
+        <dd>Pointers to expression datasets rather than values. So far the only published MuLTEE transcriptome is the bulk RNA-seq of PA5 t600 against its ancestor (Montrose et al. 2024), which has no public accession; no MuLTEE proteome has been published. Genome sequencing is on the <a href="../sequences/">Genome sequences</a> page.</dd>
+        <dt>Other measurements</dt>
+        <dd>Strain-level phenotypes that fit none of the above, for example oxygen penetration depth, bud-scar size, chaperone levels, and the frequency of the Large type in a population.</dd>
+      </dl>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="../data.html">Strain requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/phenotype-table.js"></script>
+</body>
+</html>
