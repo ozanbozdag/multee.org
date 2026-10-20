@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-20",
-  "count": 1492,
+  "count": 1509,
   "traits": [
    {
     "key": "macroscopic",
@@ -1900,7 +1900,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "petite ace2D (evolved)",
    "value": "yes",
@@ -1916,7 +1916,7 @@
    "location": "Fig. 2A-D; Fig. 3A,B,D; Main text",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank. Flows enter at cluster sides and exit from top; flip experiment reverses flow (gravity/buoyancy driven); flow speed roughly constant over ~500 min and comparable to ciliary flows (Fig. 2C, no numeric value in text)."
+   "notes": "Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. Flows enter at cluster sides and exit from top; flip experiment reverses flow (gravity/buoyancy driven); flow speed roughly constant over ~500 min and comparable to ciliary flows (Fig. 2C, no numeric value in text)."
   },
   {
    "trait": "fluid_flow",
@@ -1924,7 +1924,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "petite ace2D (evolved)",
    "value": "no",
@@ -1948,7 +1948,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "petite ace2D (evolved)",
    "value": "no",
@@ -2060,7 +2060,7 @@
    "location": "Fig. 3D; Table S2 (not accessed); Main text",
    "value_source": "text",
    "confidence": "medium",
-   "notes": "Text: 'isolates from early time points ... did not induce fluid flows'; 'Only clusters from later in the evolution experiment (>300 transfers)' generated flows. Timepoints used: t200, t400, t800, t1000 of PA5. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank."
+   "notes": "Text: 'isolates from early time points ... did not induce fluid flows'; 'Only clusters from later in the evolution experiment (>300 transfers)' generated flows. Timepoints used: t200, t400, t800, t1000 of PA5. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'."
   },
   {
    "trait": "fluid_flow",
@@ -2084,7 +2084,7 @@
    "location": "Fig. 3D; Table S2 (not accessed); Main text",
    "value_source": "text",
    "confidence": "low",
-   "notes": "INFERRED from the statement that clusters from >300 transfers generated advective flows; t400 is the only sampled timepoint between 300 and 800. Verify against Fig. 3D/Table S2 (alpha may be intermediate). Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank."
+   "notes": "INFERRED from the statement that clusters from >300 transfers generated advective flows; t400 is the only sampled timepoint between 300 and 800. Verify against Fig. 3D/Table S2 (alpha may be intermediate). Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'."
   },
   {
    "trait": "fluid_flow",
@@ -2108,7 +2108,7 @@
    "location": "Fig. 3D; Table S2 (not accessed); Main text",
    "value_source": "text",
    "confidence": "medium",
-   "notes": "From statement that only clusters from >300 transfers generated flows. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank."
+   "notes": "From statement that only clusters from >300 transfers generated flows. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'."
   },
   {
    "trait": "growth_rate",
@@ -2116,7 +2116,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "petite ace2D (evolved)",
    "value": "exponential",
@@ -2132,7 +2132,7 @@
    "location": "Fig. 1B-D; figs. S6, S7; Main text",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Growth remains exponential even at millimetric sizes. No numeric rate given in main text (Fig. 1C plots normalised volume; error bars SE of 3 replicates). Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank."
+   "notes": "Growth remains exponential even at millimetric sizes. No numeric rate given in main text (Fig. 1C plots normalised volume; error bars SE of 3 replicates). Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'."
   },
   {
    "trait": "growth_rate",
@@ -2140,7 +2140,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "petite ace2D (evolved)",
    "value": "subexponential (linear)",
@@ -2156,7 +2156,7 @@
    "location": "Fig. 1B-C; figs. S6, S7",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Contrast with exponential growth in liquid. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank."
+   "notes": "Contrast with exponential growth in liquid. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'."
   },
   {
    "trait": "cluster_size",
@@ -2164,7 +2164,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "petite ace2D (evolved)",
    "value": "1000",
@@ -2180,7 +2180,7 @@
    "location": "Main text (radii ~1 mm); Methods (Protocol for breaking clusters: '~1000 um')",
    "value_source": "text",
    "confidence": "low",
-   "notes": "Main text: 'macroscopic clusters (radii ~1 mm)'; Methods: 'single cluster from the t1000 population (~1000 um)' without saying radius or diameter. Gravity-flip assay used a cluster of ~300 um radius. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank."
+   "notes": "Main text: 'macroscopic clusters (radii ~1 mm)'; Methods: 'single cluster from the t1000 population (~1000 um)' without saying radius or diameter. Gravity-flip assay used a cluster of ~300 um radius. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'."
   },
   {
    "trait": "macroscopic",
@@ -2188,7 +2188,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "petite ace2D (evolved)",
    "value": "yes",
@@ -2204,7 +2204,7 @@
    "location": "Main text; Fig. 1",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Paper's criterion: clusters millimetres in diameter / millimetric sizes, far above ~50 um diffusion-limited size. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'. multee.org runs.csv lists PA5_t1000_iso1 = GOB2153, but the paper does not confirm it used that isolate, so strain is left blank."
+   "notes": "Paper's criterion: clusters millimetres in diameter / millimetric sizes, far above ~50 um diffusion-limited size. Evolved isolate(s) of MuLTEE anaerobic line 5 (Methods: 'evolved isolates ... from anaerobic line 5'; 'PA5 t1000'). Isolate index not given; Dryad README labels the snowflake strain 'G11'."
   },
   {
    "trait": "cluster_size",
@@ -11019,7 +11019,7 @@
    "treatment": "PA",
    "line": 2,
    "transfer": 600,
-   "sample": "PA2_t600_iso_tagged",
+   "sample": "PA2_t600_iso2_tagged",
    "strain": "GOB1963 (ura3::dTOMATO-NAT/URA3) / GOB1988 (ura3::TEF-GFP-NAT/URA3); parent given as GOB1413-600",
    "sample_type": "Engineered",
    "genotype": "ura3::GFP or ura3::dTOMATO (NatMX) in evolved t600 isolate",
@@ -11036,7 +11036,7 @@
    "location": "Main text; Extended Data Fig. 9",
    "value_source": "text",
    "confidence": "medium",
-   "notes": "31/101 chimeric vs 1/110 for ancestor (chi2 = 36.1, p < 0.0001). LINE AMBIGUITY: text and ED Fig. 6 say PA2, ED Fig. 6 names GOB1413-600, but Supp. Table 1 and multee runs.csv list GOB1413 as the PA5 t600 isolate."
+   "notes": "31/101 chimeric vs 1/110 for ancestor (chi2 = 36.1, p < 0.0001). LINE AMBIGUITY: text and ED Fig. 6 say PA2, ED Fig. 6 names GOB1413-600, but Supp. Table 1 lists GOB1413 as the PA5 t600 isolate. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "other",
@@ -11067,7 +11067,7 @@
    "treatment": "PA",
    "line": 2,
    "transfer": 600,
-   "sample": "PA2_t600_iso_tagged",
+   "sample": "PA2_t600_iso2_tagged",
    "strain": "GOB1963 (ura3::dTOMATO-NAT/URA3) / GOB1988 (ura3::TEF-GFP-NAT/URA3); parent given as GOB1413-600",
    "sample_type": "Engineered",
    "genotype": "ura3::GFP or ura3::dTOMATO (NatMX) in evolved t600 isolate",
@@ -11084,7 +11084,7 @@
    "location": "Main text; Extended Data Fig. 6",
    "value_source": "text",
    "confidence": "medium",
-   "notes": "0/70 chimeric: clusters are monoclonal (permanent mother-daughter bonds, not aggregation). Same line ambiguity as above (PA2 vs GOB1413 = PA5)."
+   "notes": "0/70 chimeric: clusters are monoclonal (permanent mother-daughter bonds, not aggregation). GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "mechanical",
@@ -11308,7 +11308,7 @@
    "line": 2,
    "transfer": 600,
    "sample": "PA2_t600_iso1",
-   "strain": "",
+   "strain": "GOB1407",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "10.058",
@@ -11356,7 +11356,7 @@
    "line": 2,
    "transfer": 600,
    "sample": "PA2_t600_iso1",
-   "strain": "",
+   "strain": "GOB1407",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "0.892",
@@ -11404,7 +11404,7 @@
    "line": 2,
    "transfer": 600,
    "sample": "PA2_t600_iso1",
-   "strain": "",
+   "strain": "GOB1407",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "8.964",
@@ -11428,7 +11428,7 @@
    "line": 2,
    "transfer": 600,
    "sample": "PA2_t600_iso1",
-   "strain": "",
+   "strain": "GOB1407",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "1.28",
@@ -13628,7 +13628,7 @@
    "location": "Fig. 1C",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. Ancestor = ace2 delta/ace2 delta petite (anaerobic) Y55 snowflake."
+   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. Ancestor = ace2 delta/ace2 delta petite (anaerobic) Y55 snowflake. Strain: PA ancestor GOB21 (per user); Montrose lab ID KM2 (Table S2, ace2::KanMX/ace2::KanMX petite)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13636,7 +13636,7 @@
    "line": null,
    "transfer": 200,
    "sample": "PA_t200_iso1",
-   "strain": "",
+   "strain": "KM30",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "1.35",
@@ -13652,7 +13652,7 @@
    "location": "Fig. 1C",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. Line of T200/T400 strain not stated in Fig. 1; values (~1.35/~1.8) do not match PA5 in Fig. 3B (~1.8/~2.7), so line is unknown."
+   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. Line of T200/T400 strain not stated in Fig. 1; values (~1.35/~1.8) do not match PA5 in Fig. 3B (~1.8/~2.7), so line is unknown. Strain KM30 from Table S2 (Montrose lab ID). Table S2 lists a single T200 (KM30) and T400 (KM31) alongside T600 (KM34) without naming the line; presumably the PA5 series but not stated, and Fig. 1C values differ from PA5 in Fig. 3B, so line left blank."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13660,7 +13660,7 @@
    "line": null,
    "transfer": 400,
    "sample": "PA_t400_iso1",
-   "strain": "",
+   "strain": "KM31",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "1.8",
@@ -13676,7 +13676,7 @@
    "location": "Fig. 1C",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. Line of T200/T400 strain not stated in Fig. 1; values (~1.35/~1.8) do not match PA5 in Fig. 3B (~1.8/~2.7), so line is unknown."
+   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. Line of T200/T400 strain not stated in Fig. 1; values (~1.35/~1.8) do not match PA5 in Fig. 3B (~1.8/~2.7), so line is unknown. Strain KM31 from Table S2 (Montrose lab ID). Table S2 lists a single T200 (KM30) and T400 (KM31) alongside T600 (KM34) without naming the line; presumably the PA5 series but not stated, and Fig. 1C values differ from PA5 in Fig. 3B, so line left blank."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13684,7 +13684,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "3.0",
@@ -13700,7 +13700,7 @@
    "location": "Fig. 1C",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off violin median line. One-way ANOVA F3,1196 = 220.5; Tukey vs ancestor: T200 P = 0.004, T400/T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13724,7 +13724,7 @@
    "location": "Fig. 2B; main text",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median. One-way ANOVA F2,897 = 665.9; Ancestor vs T600 and T600 vs Hsc82OE P < 0.0001."
+   "notes": "Read off violin median. One-way ANOVA F2,897 = 665.9; Ancestor vs T600 and T600 vs Hsc82OE P < 0.0001. Strain: PA ancestor GOB21 (per user); Montrose lab ID KM2 (Table S2, ace2::KanMX/ace2::KanMX petite)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13732,7 +13732,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "2.93",
@@ -13748,7 +13748,7 @@
    "location": "Fig. 2B; main text",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Mean from text. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed One-way ANOVA F2,897 = 665.9; Ancestor vs T600 and T600 vs Hsc82OE P < 0.0001."
+   "notes": "Mean from text. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). One-way ANOVA F2,897 = 665.9; Ancestor vs T600 and T600 vs Hsc82OE P < 0.0001. Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13756,7 +13756,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level)",
    "value": "2.18",
@@ -13772,7 +13772,7 @@
    "location": "Fig. 2B; main text",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Mean from text; 4 independent clones combined. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed One-way ANOVA F2,897 = 665.9; Ancestor vs T600 and T600 vs Hsc82OE P < 0.0001."
+   "notes": "Mean from text; 4 independent clones combined. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). One-way ANOVA F2,897 = 665.9; Ancestor vs T600 and T600 vs Hsc82OE P < 0.0001. Strain KM175-177 from Table S2 (Montrose lab ID). Table S2 gives 3 IDs although the text describes 4 clones."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13796,7 +13796,7 @@
    "location": "Fig. 2C; main text",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median. Text: radicicol increased ancestor aspect ratio by ~10% after 6 h; t = 16.1, P < 0.0001."
+   "notes": "Read off violin median. Text: radicicol increased ancestor aspect ratio by ~10% after 6 h; t = 16.1, P < 0.0001. Strain: PA ancestor GOB21 (per user); Montrose lab ID KM2 (Table S2, ace2::KanMX/ace2::KanMX petite)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13820,7 +13820,7 @@
    "location": "Fig. 2C; main text",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median. Text: radicicol increased ancestor aspect ratio by ~10% after 6 h; t = 16.1, P < 0.0001."
+   "notes": "Read off violin median. Text: radicicol increased ancestor aspect ratio by ~10% after 6 h; t = 16.1, P < 0.0001. Strain: PA ancestor GOB21 (per user); Montrose lab ID KM2 (Table S2, ace2::KanMX/ace2::KanMX petite)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -13900,7 +13900,7 @@
    "line": 2,
    "transfer": 400,
    "sample": "PA2_t400_iso1",
-   "strain": "",
+   "strain": "GOB1327",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "2.17",
@@ -13948,7 +13948,7 @@
    "line": 3,
    "transfer": 400,
    "sample": "PA3_t400_iso1",
-   "strain": "",
+   "strain": "GOB1329",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "2.07",
@@ -14068,7 +14068,7 @@
    "line": null,
    "transfer": 600,
    "sample": "PM_t600_iso1",
-   "strain": "",
+   "strain": "KM155",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "1.4",
@@ -14084,7 +14084,7 @@
    "location": "Fig. 3D",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "'T600-Mixotroph'; PM line not stated. Compared with PA5 T600 (~3.0): t = 32.58, P < 0.0001."
+   "notes": "'T600-Mixotroph'; PM line not stated. Compared with PA5 T600 (~3.0): t = 32.58, P < 0.0001. Strain KM155 from Table S2 (Montrose lab ID). PM line not stated in paper or Table S2."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -14092,7 +14092,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "2.9",
@@ -14108,7 +14108,7 @@
    "location": "Fig. 4F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median. One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off violin median. One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -14116,7 +14116,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Cdc28OE",
-   "strain": "",
+   "strain": "KM184-188",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + extra CDC28 copy under its native promoter at a safe-harbor locus (Cdc28 protein 1.25 +/- 0.14 x ancestor)",
    "value": "2.2",
@@ -14132,7 +14132,7 @@
    "location": "Fig. 4F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median. 4 clones combined; One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off violin median. 4 clones combined; One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM184-188 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -14140,7 +14140,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level)",
    "value": "2.2",
@@ -14156,7 +14156,7 @@
    "location": "Fig. 4F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median. 4 clones combined; One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off violin median. 4 clones combined; One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM175-177 from Table S2 (Montrose lab ID). Table S2 gives 3 IDs although the text describes 4 clones."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -14164,7 +14164,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE_Cdc28OE",
-   "strain": "",
+   "strain": "KM189-192",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 + extra CDC28 copy (double overexpression)",
    "value": "2.2",
@@ -14180,7 +14180,7 @@
    "location": "Fig. 4F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off violin median. 3 clones combined; no additive effect over single overexpression (epistasis); One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off violin median. 3 clones combined; no additive effect over single overexpression (epistasis); One-way ANOVA F3,1596 = 25.25; each OE vs T600 P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM189-192 from Table S2 (Montrose lab ID). 4 IDs listed; Fig. 4F says 3 clones combined."
   },
   {
    "trait": "cluster_size",
@@ -14188,7 +14188,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "320",
@@ -14198,13 +14198,13 @@
    "unit": "µm",
    "statistic": "median cluster radius (violin, log axis)",
    "conditions": "YPD; growth time not stated (standard regime: 24 h growth + settling selection)",
-   "method": "cluster radius from images of clusters (method details in SI, not accessible)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
    "paper": "Montrose et al. 2024, Sci Adv",
    "doi": "10.1126/sciadv.adn2706",
    "location": "Fig. 2D",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off log-scale violin median line; approximate. Fig. 4D repeats T600 with n = 2742 (median similar, ~330). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off log-scale violin median line; approximate. Fig. 4D repeats T600 with n = 2742 (median similar, ~330). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "cluster_size",
@@ -14212,7 +14212,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level)",
    "value": "105",
@@ -14222,13 +14222,13 @@
    "unit": "µm",
    "statistic": "median cluster radius (violin, log axis)",
    "conditions": "YPD; growth time not stated (standard regime: 24 h growth + settling selection)",
-   "method": "cluster radius from images of clusters (method details in SI, not accessible)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
    "paper": "Montrose et al. 2024, Sci Adv",
    "doi": "10.1126/sciadv.adn2706",
    "location": "Fig. 2D; Fig. 4D",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off log-scale violin median line; approximate. 4 clones pooled. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off log-scale violin median line; approximate. 4 clones pooled. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM175-177 from Table S2 (Montrose lab ID). Table S2 gives 3 IDs although the text describes 4 clones."
   },
   {
    "trait": "cluster_size",
@@ -14236,7 +14236,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Cdc28OE",
-   "strain": "",
+   "strain": "KM184-188",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + extra CDC28 copy under its native promoter at a safe-harbor locus (Cdc28 protein 1.25 +/- 0.14 x ancestor)",
    "value": "120",
@@ -14246,13 +14246,13 @@
    "unit": "µm",
    "statistic": "median cluster radius (violin, log axis)",
    "conditions": "YPD; growth time not stated (standard regime: 24 h growth + settling selection)",
-   "method": "cluster radius from images of clusters (method details in SI, not accessible)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
    "paper": "Montrose et al. 2024, Sci Adv",
    "doi": "10.1126/sciadv.adn2706",
    "location": "Fig. 4D",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off log-scale violin median line; approximate. 4 clones pooled; resembles Hsc82OE; T600 vs Cdc28OE P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off log-scale violin median line; approximate. 4 clones pooled; resembles Hsc82OE; T600 vs Cdc28OE P < 0.0001. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM184-188 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "cluster_size",
@@ -14260,7 +14260,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level)",
    "value": "3.7",
@@ -14270,13 +14270,13 @@
    "unit": "fold",
    "statistic": "mean fold reduction in cluster size relative to T600 (mean over 4 clones)",
    "conditions": "YPD; growth time not stated",
-   "method": "cluster radius from images of clusters (method details in SI, not accessible)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
    "paper": "Montrose et al. 2024, Sci Adv",
    "doi": "10.1126/sciadv.adn2706",
    "location": "Main text; Fig. 2D; fig. S2B",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Mean 3.7-fold reduction in size across four independently generated PA5 T600-Hsc82OE clones; one-way ANOVA F1,6229 = 3024, P < 0.0001. Whether 'size' means radius or volume is not specified. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Mean 3.7-fold reduction in size across four independently generated PA5 T600-Hsc82OE clones; one-way ANOVA F1,6229 = 3024, P < 0.0001. Whether 'size' means radius or volume is not specified. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM175-177 from Table S2 (Montrose lab ID). Table S2 gives 3 IDs although the text describes 4 clones."
   },
   {
    "trait": "relative_fitness",
@@ -14284,7 +14284,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level)",
    "value": "-1.57",
@@ -14300,7 +14300,7 @@
    "location": "Main text; Fig. 2F",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Restoring Hsp90 is costly; nested ANOVA F1,14 = 8.4, P = 0.015. Legend gives n = 4 per competition in one place and n = 3 in another. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Restoring Hsp90 is costly; nested ANOVA F1,14 = 8.4, P = 0.015. Legend gives n = 4 per competition in one place and n = 3 in another. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM175-177 from Table S2 (Montrose lab ID). Table S2 gives 3 IDs although the text describes 4 clones."
   },
   {
    "trait": "relative_fitness",
@@ -14308,7 +14308,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE_c1",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 1",
    "value": "-2.4",
@@ -14324,7 +14324,7 @@
    "location": "Fig. 2F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
   },
   {
    "trait": "relative_fitness",
@@ -14332,7 +14332,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE_c2",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 2",
    "value": "-1.2",
@@ -14348,7 +14348,7 @@
    "location": "Fig. 2F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
   },
   {
    "trait": "relative_fitness",
@@ -14356,7 +14356,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE_c3",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 3",
    "value": "-1.3",
@@ -14372,7 +14372,7 @@
    "location": "Fig. 2F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
   },
   {
    "trait": "relative_fitness",
@@ -14380,7 +14380,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE_c4",
-   "strain": "",
+   "strain": "KM175-177",
    "sample_type": "Engineered",
    "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 4",
    "value": "-1.35",
@@ -14396,7 +14396,7 @@
    "location": "Fig. 2F",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off plot; error bar approximate. Normalizing control T600 vs T600-GFP = 0 by construction. Clones not significantly different from each other (NS). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
   },
   {
    "trait": "macroscopic",
@@ -14404,7 +14404,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "yes",
@@ -14420,7 +14420,7 @@
    "location": "Main text; Fig. 1A",
    "value_source": "text",
    "confidence": "medium",
-   "notes": "Restates prior work (Bozdag et al. 2023): in the first 600 transfers only the anaerobic lines evolved macroscopic size; PA5 grew the largest clusters. No explicit threshold given. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Restates prior work (Bozdag et al. 2023): in the first 600 transfers only the anaerobic lines evolved macroscopic size; PA5 grew the largest clusters. No explicit threshold given. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "macroscopic",
@@ -14428,7 +14428,7 @@
    "line": null,
    "transfer": 600,
    "sample": "PM_t600_iso1",
-   "strain": "",
+   "strain": "KM155",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "no",
@@ -14444,7 +14444,7 @@
    "location": "Main text (Convergent evolution section); Fig. 3C",
    "value_source": "text",
    "confidence": "medium",
-   "notes": "Mixotrophic T600 did not evolve macroscopic size or elongated cell morphology; PM line not stated."
+   "notes": "Mixotrophic T600 did not evolve macroscopic size or elongated cell morphology; PM line not stated. Strain KM155 from Table S2 (Montrose lab ID). PM line not stated in paper or Table S2."
   },
   {
    "trait": "other",
@@ -14452,7 +14452,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "0.44",
@@ -14468,7 +14468,7 @@
    "location": "Fig. 1E; main text",
    "value_source": "figure-read",
    "confidence": "medium",
-   "notes": "Text: HSC82 reduced ~2-fold in T600; decline already at T200 (~0.57) and T400 (~0.42) (figure-read; line of T200/T400 not stated). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Text: HSC82 reduced ~2-fold in T600; decline already at T200 (~0.57) and T400 (~0.42) (figure-read; line of T200/T400 not stated). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "other",
@@ -14476,7 +14476,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "0.25",
@@ -14492,7 +14492,7 @@
    "location": "Fig. 1F; main text",
    "value_source": "figure-read",
    "confidence": "medium",
-   "notes": "Text: HSP82 reduced ~3-fold in T600. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Text: HSP82 reduced ~3-fold in T600. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "other",
@@ -14500,7 +14500,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "0.6",
@@ -14516,7 +14516,7 @@
    "location": "Fig. 1G,H; main text",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Text: Hsp90 declined by ~40% (t = 4.6, P = 0.0098). Hsf1 occupancy at Hsp90 HSEs reduced ~70% (ChIP, Fig. 1J) and Hsf1 reporter activity lower (Fig. 1I); no mutations in HSF1 or HSEs. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Text: Hsp90 declined by ~40% (t = 4.6, P = 0.0098). Hsf1 occupancy at Hsp90 HSEs reduced ~70% (ChIP, Fig. 1J) and Hsf1 reporter activity lower (Fig. 1I); no mutations in HSF1 or HSEs. T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "other",
@@ -14524,7 +14524,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM34",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "0.75",
@@ -14540,7 +14540,7 @@
    "location": "Fig. 4C; main text",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Text: Cdc28 protein ~25% lower; CDC28 mRNA unchanged (Fig. 4A, P = 0.16). Hsc82OE restored ~80% of the loss (figure-read ~0.94). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Text: Cdc28 protein ~25% lower; CDC28 mRNA unchanged (Fig. 4A, P = 0.16). Hsc82OE restored ~80% of the loss (figure-read ~0.94). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM34 from Table S2 (Montrose lab ID)."
   },
   {
    "trait": "other",
@@ -14548,7 +14548,7 @@
    "line": null,
    "transfer": 600,
    "sample": "PM_t600_iso1",
-   "strain": "",
+   "strain": "KM155",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "0.89",
@@ -14564,7 +14564,7 @@
    "location": "Fig. 3E; main text",
    "value_source": "figure-read",
    "confidence": "medium",
-   "notes": "Text: mixotrophic T600 expressed HSC82 at the same level as the ancestor (P = 0.28) and ~50% higher than PA5 T600. PM line not stated."
+   "notes": "Text: mixotrophic T600 expressed HSC82 at the same level as the ancestor (P = 0.28) and ~50% higher than PA5 T600. PM line not stated. Strain KM155 from Table S2 (Montrose lab ID). PM line not stated in paper or Table S2."
   },
   {
    "trait": "other",
@@ -14588,7 +14588,7 @@
    "location": "Fig. 5B",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off plot (means +/- SEM). T600 mitosis delayed; Hsc82OE nearly restores ancestral timing; two-way ANOVA F6,72 = 14.52. Septin ring split ~95/122/105 min (ancestor/T600/Hsc82OE)."
+   "notes": "Read off plot (means +/- SEM). T600 mitosis delayed; Hsc82OE nearly restores ancestral timing; two-way ANOVA F6,72 = 14.52. Septin ring split ~95/122/105 min (ancestor/T600/Hsc82OE). Strain: PA ancestor GOB21 (per user); Montrose lab ID KM2 (Table S2, ace2::KanMX/ace2::KanMX petite). Measured in Shs1-mNeonGreen derivative KM178."
   },
   {
    "trait": "other",
@@ -14596,9 +14596,9 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "",
+   "strain": "KM179",
    "sample_type": "Isolate",
-   "genotype": "",
+   "genotype": "KM34 + SHS1-mNeonGreen:NatMX",
    "value": "208",
    "error": "",
    "error_type": "",
@@ -14612,7 +14612,7 @@
    "location": "Fig. 5B",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off plot (means +/- SEM). T600 mitosis delayed; Hsc82OE nearly restores ancestral timing; two-way ANOVA F6,72 = 14.52. Septin ring split ~95/122/105 min (ancestor/T600/Hsc82OE). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off plot (means +/- SEM). T600 mitosis delayed; Hsc82OE nearly restores ancestral timing; two-way ANOVA F6,72 = 14.52. Septin ring split ~95/122/105 min (ancestor/T600/Hsc82OE). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM179 = T600 Shs1-mNeonGreen (Table S2)."
   },
   {
    "trait": "other",
@@ -14620,9 +14620,9 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1_Hsc82OE",
-   "strain": "",
+   "strain": "KM180",
    "sample_type": "Engineered",
-   "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level)",
+   "genotype": "KM34 + SHS1-mNeonGreen:HygMX + TEF1pr-HSC82:NatMX",
    "value": "157",
    "error": "",
    "error_type": "",
@@ -14636,15 +14636,471 @@
    "location": "Fig. 5B",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Read off plot (means +/- SEM). T600 mitosis delayed; Hsc82OE nearly restores ancestral timing; two-way ANOVA F6,72 = 14.52. Septin ring split ~95/122/105 min (ancestor/T600/Hsc82OE). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters). Strain ID not in main text (Tables S1-S4 not accessible); multee.org runs.csv has PA5_t600_iso1 = GOB1413, identity not confirmed"
+   "notes": "Read off plot (means +/- SEM). T600 mitosis delayed; Hsc82OE nearly restores ancestral timing; two-way ANOVA F6,72 = 14.52. Septin ring split ~95/122/105 min (ancestor/T600/Hsc82OE). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Strain KM180 = T600 Shs1-mNeonGreen/Hsc82OE (Table S2)."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": null,
+   "transfer": 0,
+   "sample": "PA_t0_anc",
+   "strain": "GOB21",
+   "sample_type": "Ancestor",
+   "genotype": "",
+   "value": "16",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Strain: PA ancestor GOB21 (per user); Montrose lab ID KM2 (Table S2, ace2::KanMX/ace2::KanMX petite)."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 1,
+   "transfer": 200,
+   "sample": "PA1_t200_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "38",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.60. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 1,
+   "transfer": 400,
+   "sample": "PA1_t400_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "49",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.73. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 2,
+   "transfer": 200,
+   "sample": "PA2_t200_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "38",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.78. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 2,
+   "transfer": 400,
+   "sample": "PA2_t400_iso1",
+   "strain": "GOB1327",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "50",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.34. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 3,
+   "transfer": 200,
+   "sample": "PA3_t200_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "40",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.88. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 3,
+   "transfer": 400,
+   "sample": "PA3_t400_iso1",
+   "strain": "GOB1329",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "51",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.61. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 4,
+   "transfer": 200,
+   "sample": "PA4_t200_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "36",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.64. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 4,
+   "transfer": 400,
+   "sample": "PA4_t400_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "58",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.50. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 200,
+   "sample": "PA5_t200_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "46",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.57. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 400,
+   "sample": "PA5_t400_iso1",
+   "strain": "",
+   "sample_type": "Isolate",
+   "genotype": "",
+   "value": "350",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "cluster radius (x-axis of HSC82 vs cluster radius plot; summary statistic not stated)",
+   "conditions": "YPD, 3 rounds of 24 h growth + settling selection, then settling and 4-6 h growth to exponential phase (day 4)",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S3A",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale x-axis; approximate. Paired HSC82 relative mRNA ~0.42. Correlation r = 0.66, P = 0.02, y = -0.40x + 1.33. Legend says 'aerobic' lines but these are the anaerobic PA1-5 lines (same data as Fig. 3A/B). Per-line strain IDs not listed in Table S2."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Hsc82OE_c1",
+   "strain": "KM175-177",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 1",
+   "value": "115",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S2B",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,6226 = 3024). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Hsc82OE_c2",
+   "strain": "KM175-177",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 2",
+   "value": "115",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S2B",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,6226 = 3024). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Hsc82OE_c3",
+   "strain": "KM175-177",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 3",
+   "value": "100",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S2B",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,6226 = 3024). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Hsc82OE_c4",
+   "strain": "KM175-177",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + TEF1pr-HSC82 integrated at a safe-harbor locus (Hsc82 overexpression; ~50% higher HSC82 mRNA, restores ancestral Hsp90 level); clone 4",
+   "value": "110",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S2B",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,6226 = 3024). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM175-177 (3 IDs) for T600-Hsc82OE although the text describes 4 clones; clone-to-ID mapping not given."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Cdc28OE_c1",
+   "strain": "KM184-188",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + extra CDC28 copy under its native promoter at a safe-harbor locus (Cdc28 protein 1.25 +/- 0.14 x ancestor); clone 1",
+   "value": "120",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S4C",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,7195 = 3477). Cdc28 protein in clones 1-4 ~1.1/1.2/1.4/1.3 x ancestor (fig. S4B, figure-read; n = 5). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM184-188 (5 IDs) for T600-Cdc28OE (4 clones in figures); clone-to-ID mapping not given."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Cdc28OE_c2",
+   "strain": "KM184-188",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + extra CDC28 copy under its native promoter at a safe-harbor locus (Cdc28 protein 1.25 +/- 0.14 x ancestor); clone 2",
+   "value": "130",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S4C",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,7195 = 3477). Cdc28 protein in clones 1-4 ~1.1/1.2/1.4/1.3 x ancestor (fig. S4B, figure-read; n = 5). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM184-188 (5 IDs) for T600-Cdc28OE (4 clones in figures); clone-to-ID mapping not given."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Cdc28OE_c3",
+   "strain": "KM184-188",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + extra CDC28 copy under its native promoter at a safe-harbor locus (Cdc28 protein 1.25 +/- 0.14 x ancestor); clone 3",
+   "value": "110",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S4C",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,7195 = 3477). Cdc28 protein in clones 1-4 ~1.1/1.2/1.4/1.3 x ancestor (fig. S4B, figure-read; n = 5). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM184-188 (5 IDs) for T600-Cdc28OE (4 clones in figures); clone-to-ID mapping not given."
+  },
+  {
+   "trait": "cluster_size",
+   "treatment": "PA",
+   "line": 5,
+   "transfer": 600,
+   "sample": "PA5_t600_iso1_Cdc28OE_c4",
+   "strain": "KM184-188",
+   "sample_type": "Engineered",
+   "genotype": "PA5 T600 + extra CDC28 copy under its native promoter at a safe-harbor locus (Cdc28 protein 1.25 +/- 0.14 x ancestor); clone 4",
+   "value": "110",
+   "error": "",
+   "error_type": "",
+   "n": "",
+   "unit": "µm",
+   "statistic": "median cluster radius (violin, log axis)",
+   "conditions": "YPD; growth time not stated",
+   "method": "cluster radius from images of clusters (imaging/segmentation method not detailed in paper or SI)",
+   "paper": "Montrose et al. 2024, Sci Adv",
+   "doi": "10.1126/sciadv.adn2706",
+   "location": "fig. S4C",
+   "value_source": "figure-read",
+   "confidence": "low",
+   "notes": "Read off log-scale violin median; approximate. T600 vs each clone P < 0.0001 (F1,7195 = 3477). Cdc28 protein in clones 1-4 ~1.1/1.2/1.4/1.3 x ancestor (fig. S4B, figure-read; n = 5). T600 = PA5 t600 isolate ('the T600 isolate'; PA5 grew the largest clusters), Montrose lab strain KM34 (Table S2; GOB ID not given). Table S2 lists KM184-188 (5 IDs) for T600-Cdc28OE (4 clones in figures); clone-to-ID mapping not given."
   },
   {
    "trait": "entanglement",
    "treatment": "PA",
    "line": 2,
    "transfer": 600,
-   "sample": "PA2_t600_iso1",
-   "strain": "GOB1413-600",
+   "sample": "PA2_t600_iso2",
+   "strain": "GOB1413",
    "sample_type": "Isolate",
    "genotype": "evolved; GFP- or tdTomato-tagged derivatives used",
    "value": "yes",
@@ -14660,15 +15116,15 @@
    "location": "Sec. V.A; Fig. 5a-b; Appendix A.2, B",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Criterion: red- and green-labelled clusters become entangled into chimeric groups during growth; non-growth (saline) controls show significantly less (p<0.01, z test). Paper isolates 'a single snowflake genotype from PA2, t600 (strain GOB1413-600)'. CONFLICT: multee.org runs.csv lists GOB1413 as PA5_t600_iso1 (PA2_t600_iso1 = GOB1407); sample code kept as the paper states."
+   "notes": "Criterion: red- and green-labelled clusters become entangled into chimeric groups during growth; non-growth (saline) controls show significantly less (p<0.01, z test). Paper isolates 'a single snowflake genotype from PA2, t600 (strain GOB1413-600)'. sample code kept as the paper states. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "other",
    "treatment": "PA",
    "line": 2,
    "transfer": 600,
-   "sample": "PA2_t600_iso1",
-   "strain": "GOB1413-600",
+   "sample": "PA2_t600_iso2",
+   "strain": "GOB1413",
    "sample_type": "Isolate",
    "genotype": "GFP- and tdTomato-tagged derivatives",
    "value": "0.15",
@@ -14684,15 +15140,15 @@
    "location": "Sec. V.A; Fig. 5b; Appendix B (Fig. 6)",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Control (no-growth mixing) error level n_e = 0.033. Appendix B says counts normalized by smaller of red/green cluster fractions; unclear whether the 15%/14% values use this normalization. Fig. 5b no-growth saline controls (figure-read, small/large clusters): ~0.02/0.00 at 50 rpm, ~0.014/0.012 at 150 rpm, ~0.022/0.00 at 250 rpm; dashed control line ~0.016."
+   "notes": "Control (no-growth mixing) error level n_e = 0.033. Appendix B says counts normalized by smaller of red/green cluster fractions; unclear whether the 15%/14% values use this normalization. Fig. 5b no-growth saline controls (figure-read, small/large clusters): ~0.02/0.00 at 50 rpm, ~0.014/0.012 at 150 rpm, ~0.022/0.00 at 250 rpm; dashed control line ~0.016. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "other",
    "treatment": "PA",
    "line": 2,
    "transfer": 600,
-   "sample": "PA2_t600_iso1",
-   "strain": "GOB1413-600",
+   "sample": "PA2_t600_iso2",
+   "strain": "GOB1413",
    "sample_type": "Isolate",
    "genotype": "GFP- and tdTomato-tagged derivatives",
    "value": "0.14",
@@ -14708,15 +15164,15 @@
    "location": "Sec. V.A; Fig. 5b; Appendix B (Fig. 6)",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Control (no-growth mixing) error level n_e = 0.033. Appendix B says counts normalized by smaller of red/green cluster fractions; unclear whether the 15%/14% values use this normalization. Fig. 5b no-growth saline controls (figure-read, small/large clusters): ~0.02/0.00 at 50 rpm, ~0.014/0.012 at 150 rpm, ~0.022/0.00 at 250 rpm; dashed control line ~0.016."
+   "notes": "Control (no-growth mixing) error level n_e = 0.033. Appendix B says counts normalized by smaller of red/green cluster fractions; unclear whether the 15%/14% values use this normalization. Fig. 5b no-growth saline controls (figure-read, small/large clusters): ~0.02/0.00 at 50 rpm, ~0.014/0.012 at 150 rpm, ~0.022/0.00 at 250 rpm; dashed control line ~0.016. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "other",
    "treatment": "PA",
    "line": 2,
    "transfer": 600,
-   "sample": "PA2_t600_iso1",
-   "strain": "GOB1413-600",
+   "sample": "PA2_t600_iso2",
+   "strain": "GOB1413",
    "sample_type": "Isolate",
    "genotype": "GFP- and tdTomato-tagged derivatives",
    "value": "0.017",
@@ -14732,7 +15188,7 @@
    "location": "Sec. V.A; Fig. 5b; Appendix B (Fig. 6)",
    "value_source": "figure-read",
    "confidence": "low",
-   "notes": "Control (no-growth mixing) error level n_e = 0.033. Appendix B says counts normalized by smaller of red/green cluster fractions; unclear whether the 15%/14% values use this normalization. 250 rpm: text says only 'rare'; value read from Fig. 5b (at control level). Fig. 5b no-growth saline controls (figure-read, small/large clusters): ~0.02/0.00 at 50 rpm, ~0.014/0.012 at 150 rpm, ~0.022/0.00 at 250 rpm; dashed control line ~0.016."
+   "notes": "Control (no-growth mixing) error level n_e = 0.033. Appendix B says counts normalized by smaller of red/green cluster fractions; unclear whether the 15%/14% values use this normalization. 250 rpm: text says only 'rare'; value read from Fig. 5b (at control level). Fig. 5b no-growth saline controls (figure-read, small/large clusters): ~0.02/0.00 at 50 rpm, ~0.014/0.012 at 150 rpm, ~0.022/0.00 at 250 rpm; dashed control line ~0.016. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "entanglement",
@@ -17756,7 +18212,7 @@
    "location": "Fig. 3e; Source Data sheet Fig3e",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "Computed from Source Data per-cell values: median 2.632, IQR 2.516-3.082. Matches text means (~1.30 t0, ~3.28 t1000). Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; multee.org runs.csv PA5_t600_iso1 = GOB1413 (match not confirmed). Tag per Fig. 3 caption (Methods list tags differently)."
+   "notes": "Computed from Source Data per-cell values: median 2.632, IQR 2.516-3.082. Matches text means (~1.30 t0, ~3.28 t1000). Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; Tag per Fig. 3 caption (Methods list tags differently)."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -17764,7 +18220,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "HSC82-GFP tagged",
    "value": "3.279",
@@ -17780,7 +18236,7 @@
    "location": "Fig. 3e; Source Data sheet Fig3e",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "Computed from Source Data per-cell values: median 3.249, IQR 2.723-3.746. Matches text means (~1.30 t0, ~3.28 t1000). Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; multee.org runs.csv PA5_t1000_iso1 = GOB2153 (match not confirmed). Tag per Fig. 3 caption (Methods list tags differently)."
+   "notes": "Computed from Source Data per-cell values: median 3.249, IQR 2.723-3.746. Matches text means (~1.30 t0, ~3.28 t1000). Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; Tag per Fig. 3 caption (Methods list tags differently)."
   },
   {
    "trait": "cluster_size",
@@ -17876,7 +18332,7 @@
    "location": "Fig. 3f; Source Data sheet Fig3f",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "Computed from Source Data per-module values: median 60.1, IQR 46.6-72.5. Matches text means (30.7 um t0, 87.1 um t1000); Fig. 3f box plots show medians. Macroscopic clusters dissociate into modules under the coverslip, so this is not whole-cluster size. Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; multee.org runs.csv PA5_t600_iso1 = GOB1413 (match not confirmed). Tag per Fig. 3 caption (Methods list tags differently)."
+   "notes": "Computed from Source Data per-module values: median 60.1, IQR 46.6-72.5. Matches text means (30.7 um t0, 87.1 um t1000); Fig. 3f box plots show medians. Macroscopic clusters dissociate into modules under the coverslip, so this is not whole-cluster size. Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; Tag per Fig. 3 caption (Methods list tags differently)."
   },
   {
    "trait": "cluster_size",
@@ -17884,7 +18340,7 @@
    "line": 5,
    "transfer": 1000,
    "sample": "PA5_t1000_iso1",
-   "strain": "",
+   "strain": "GOB2153",
    "sample_type": "Isolate",
    "genotype": "HSC82-GFP tagged",
    "value": "87.1",
@@ -17900,7 +18356,7 @@
    "location": "Fig. 3f; Source Data sheet Fig3f",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "Computed from Source Data per-module values: median 86.3, IQR 73.3-95.8. Matches text means (30.7 um t0, 87.1 um t1000); Fig. 3f box plots show medians. Macroscopic clusters dissociate into modules under the coverslip, so this is not whole-cluster size. Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; multee.org runs.csv PA5_t1000_iso1 = GOB2153 (match not confirmed). Tag per Fig. 3 caption (Methods list tags differently)."
+   "notes": "Computed from Source Data per-module values: median 86.3, IQR 73.3-95.8. Matches text means (30.7 um t0, 87.1 um t1000); Fig. 3f box plots show medians. Macroscopic clusters dissociate into modules under the coverslip, so this is not whole-cluster size. Tagged strain from population PA5 (assumed clonal, coded iso1). Parent isolate not stated; Tag per Fig. 3 caption (Methods list tags differently)."
   },
   {
    "trait": "cluster_size",
@@ -21652,7 +22108,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "GOB1413",
+   "strain": "",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "293.6",
@@ -21668,7 +22124,7 @@
    "location": "Fig. 1c; Extended Data Fig. 2b; Source data Fig1cde_evo.csv",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "one clonal isolate per population; n = clusters measured (from Fig1c_raw_EDFig2ab.csv)"
+   "notes": "Strain ID unknown: the paper lists GOB1413, but GOB1413 is a PA2 t600 isolate. one clonal isolate per population; n = clusters measured (from Fig1c_raw_EDFig2ab.csv) GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "cluster_size",
@@ -21676,7 +22132,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "GOB1413",
+   "strain": "",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "470.1",
@@ -21692,7 +22148,7 @@
    "location": "Extended Data Fig. 2a,b (4 h); Source data Fig1c_raw_EDFig2ab.csv.zip",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "computed here from per-cluster volumes in the raw source data with the authors' formula ((volume-weighted mean volume)/(4/3 pi))^(1/3); same computation reproduces all 24 h values in Fig1cde_evo.csv exactly; n = clusters measured"
+   "notes": "Strain ID unknown: the paper lists GOB1413, but GOB1413 is a PA2 t600 isolate. computed here from per-cluster volumes in the raw source data with the authors' formula ((volume-weighted mean volume)/(4/3 pi))^(1/3); same computation reproduces all 24 h values in Fig1cde_evo.csv exactly; n = clusters measured. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "cell_volume",
@@ -21700,7 +22156,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "GOB1413",
+   "strain": "",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "153.1",
@@ -21716,7 +22172,7 @@
    "location": "Fig. 1d; Extended Data Fig. 2c; Source data Fig1cde_evo.csv",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "on average n = 1,288 cells per strain"
+   "notes": "Strain ID unknown: the paper lists GOB1413, but GOB1413 is a PA2 t600 isolate. on average n = 1,288 cells per strain. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "cell_aspect_ratio",
@@ -21724,7 +22180,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "GOB1413",
+   "strain": "",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "2.906",
@@ -21740,7 +22196,7 @@
    "location": "Fig. 1e; Extended Data Fig. 2d; Source data Fig1cde_evo.csv",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "on average n = 1,288 cells per strain"
+   "notes": "Strain ID unknown: the paper lists GOB1413, but GOB1413 is a PA2 t600 isolate. on average n = 1,288 cells per strain. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "cluster_size",
@@ -22852,7 +23308,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "GOB1413",
+   "strain": "",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "yes",
@@ -22868,7 +23324,7 @@
    "location": "Main text 'Aneuploidy underpins macroscopic size'; Fig. 1c",
    "value_source": "text",
    "confidence": "high",
-   "notes": "Main text: macroscopic size evolved by t600 for all PA lines except PA3; all PA t1000 isolates macroscopic (nine macroscopic PA t600/t1000 isolates); no numeric threshold stated in this paper"
+   "notes": "Strain ID unknown: the paper lists GOB1413, but GOB1413 is a PA2 t600 isolate. Main text: macroscopic size evolved by t600 for all PA lines except PA3; all PA t1000 isolates macroscopic (nine macroscopic PA t600/t1000 isolates); no numeric threshold stated in this paper. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "macroscopic",
@@ -23428,7 +23884,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "GOB1413",
+   "strain": "",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "3.683",
@@ -23444,7 +23900,7 @@
    "location": "Fig. 2b; Source data Fig2b.csv",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "DNA content of the G1 peak of the cellular DNA-content distribution; on average n = 11,456 cells per strain; ploidy calibrated with engineered 2N/4N controls"
+   "notes": "Strain ID unknown: the paper lists GOB1413, but GOB1413 is a PA2 t600 isolate. DNA content of the G1 peak of the cellular DNA-content distribution; on average n = 11,456 cells per strain; ploidy calibrated with engineered 2N/4N controls. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "ploidy",
@@ -24388,7 +24844,7 @@
    "line": 5,
    "transfer": 600,
    "sample": "PA5_t600_iso1",
-   "strain": "GOB1413",
+   "strain": "",
    "sample_type": "Isolate",
    "genotype": "",
    "value": "4n baseline, aneuploid (I:3, V:3, VIII:5, IX:5, XII:3, XIII:3, XIV:3, XVI:3)",
@@ -24404,7 +24860,7 @@
    "location": "Fig. 2d; Extended Data Fig. 4 (segmental aneuploidy); Source data Fig2d.csv",
    "value_source": "source-data",
    "confidence": "high",
-   "notes": "chromosome copy numbers (CCN) = rounded median 1-kb bin coverage x baseline ploidy; values in parentheses are chromosomes deviating from baseline"
+   "notes": "Strain ID unknown: the paper lists GOB1413, but GOB1413 is a PA2 t600 isolate. chromosome copy numbers (CCN) = rounded median 1-kb bin coverage x baseline ploidy; values in parentheses are chromosomes deviating from baseline. GOB1413 is a PA2 t600 isolate (PA2_t600_iso2), as confirmed by the lab; PA2_t600_iso1 is GOB1407."
   },
   {
    "trait": "ploidy",
@@ -35877,54 +36333,6 @@
    "value_source": "source-data",
    "confidence": "high",
    "notes": "D-S pair 2"
-  },
-  {
-   "trait": "omics_data",
-   "treatment": "PA",
-   "line": null,
-   "transfer": 0,
-   "sample": "PA_t0_anc",
-   "strain": "GOB21",
-   "sample_type": "Ancestor",
-   "genotype": "ace2/ace2 petite (anaerobic ancestor)",
-   "value": "transcriptome RNA-seq (bulk)",
-   "error": "",
-   "error_type": "",
-   "n": "",
-   "unit": "",
-   "statistic": "data pointer",
-   "conditions": "",
-   "method": "bulk mRNA-seq (Illumina TruSeq Stranded mRNA; NextSeq 500 PE75; DESeq2)",
-   "paper": "Montrose et al. 2024, Sci Adv",
-   "doi": "10.1126/sciadv.adn2706",
-   "location": "Main text (Results, Fig. 1); Methods 'RNA sequencing and data analysis'; Data and materials availability",
-   "value_source": "text",
-   "confidence": "medium",
-   "notes": "NO PUBLIC ACCESSION FOUND: paper gives no GEO/SRA/ENA accession and data statement says all data are in paper/supplement; searches of GEO, SRA, ENA, ArrayExpress/BioStudies found nothing. Comparison: Ancestor vs PA5 t600 cells; ~540 down- and ~460 up-regulated genes (P<0.05, |log2FC|>=0.5). Sequenced at FIMM, Univ. Helsinki. Ancestor here = the anaerobic (petite) MuLTEE ancestor."
-  },
-  {
-   "trait": "omics_data",
-   "treatment": "PA",
-   "line": 5,
-   "transfer": 600,
-   "sample": "PA5_t600_iso1",
-   "strain": "",
-   "sample_type": "Isolate",
-   "genotype": "",
-   "value": "transcriptome RNA-seq (bulk)",
-   "error": "",
-   "error_type": "",
-   "n": "",
-   "unit": "",
-   "statistic": "data pointer",
-   "conditions": "",
-   "method": "bulk mRNA-seq (Illumina TruSeq Stranded mRNA; NextSeq 500 PE75; DESeq2)",
-   "paper": "Montrose et al. 2024, Sci Adv",
-   "doi": "10.1126/sciadv.adn2706",
-   "location": "Main text (Results, Fig. 1); Methods 'RNA sequencing and data analysis'; Data and materials availability",
-   "value_source": "text",
-   "confidence": "medium",
-   "notes": "NO PUBLIC ACCESSION FOUND (see ancestor row). Paper says 'anaerobic line 5 (PA5) T600 cells'; the exact isolate/strain ID is not given, so the iso1 code is assumed, not confirmed (runs.csv PA5_t600_iso1 = GOB1413). Related qPCR (not omics) on T200/T400/T600 in Fig. 1E-F."
   }
  ]
 }
