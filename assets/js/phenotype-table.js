@@ -23,7 +23,8 @@
     'derived': 'computed from the paper’s data',
     'figure-read': 'read off a figure (approximate)'
   };
-  var LINEAGE = 'lineage';   // kind filter value: everything except engineered strains
+  var MULTI = ['treatment', 'line', 'timepoint', 'kind', 'paper'];   // tick-box filters; none ticked = all
+  var HIDDEN_KIND = 'Engineered strain';                            // unticked by default
 
   var form = document.getElementById('ph-filters');
   var table = document.getElementById('ph-table');
@@ -88,33 +89,58 @@
   }
 
   /* ------------------------------------------------------------ filters */
-  function fillSelect(name, allLabel, options) {
-    var s = form.elements[name];
-    if (allLabel != null) s.appendChild(el('option', { value: '', text: allLabel }));
-    options.forEach(function (o) { s.appendChild(el('option', { value: o[0], text: o[1] })); });
+  function multi(name) { return form.querySelector('.ph-multi[data-name="' + name + '"]'); }
+  function ticks(name) { return Array.prototype.slice.call(multi(name).querySelectorAll('input[type=checkbox]')); }
+  function selected(name) {
+    return ticks(name).filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+  }
+  function fillMulti(name, options, ticked) {
+    var list = multi(name).querySelector('.ph-multi-list');
+    var tools = el('p', { cls: 'ph-multi-tools' }, [
+      el('button', { type: 'button', 'data-all': '1', text: 'Tick all' }),
+      el('button', { type: 'button', 'data-all': '', text: 'Clear' })]);
+    tools.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      ticks(name).forEach(function (box) { box.checked = !!b.getAttribute('data-all'); });
+      render();
+    });
+    list.appendChild(tools);
+    options.forEach(function (o) {
+      var box = el('input', { type: 'checkbox', value: o[0] });
+      box.defaultChecked = box.checked = !!(ticked && ticked(o[0]));   // defaultChecked: what Clear filters restores
+      list.appendChild(el('label', { cls: 'ph-multi-opt' }, [box, el('span', { text: o[1] })]));
+    });
+  }
+  function summarise(name) {
+    var all = ticks(name), on = all.filter(function (b) { return b.checked; });
+    var asDefault = name === 'kind' && all.every(function (b) { return b.checked === b.defaultChecked; });
+    var text = !on.length || on.length === all.length ? 'All'
+      : asDefault ? 'All but engineered'
+      : on.length <= 2 ? on.map(function (b) { return b.nextSibling.textContent.split(' · ')[0]; }).join(', ')
+      : on.length + ' selected';
+    multi(name).querySelector('summary').textContent = text;
   }
   function buildFilters() {
-    fillSelect('treatment', 'All', [['PA', 'PA · Anaerobic'], ['PM', 'PM · Mixotrophic'], ['PO', 'PO · Aerobic']]);
-    fillSelect('line', 'All', [1, 2, 3, 4, 5].map(function (n) { return [String(n), 'Line ' + n]; }));
+    fillMulti('treatment', [['PA', 'PA · Anaerobic'], ['PM', 'PM · Mixotrophic'], ['PO', 'PO · Aerobic']]);
+    fillMulti('line', [1, 2, 3, 4, 5].map(function (n) { return [String(n), 'Line ' + n]; }));
     var tps = {};
     samples.forEach(function (s) { if (s.transfer != null) tps[s.transfer] = true; });
-    fillSelect('timepoint', 'All', Object.keys(tps).sort(function (a, b) { return a - b; })
+    fillMulti('timepoint', Object.keys(tps).sort(function (a, b) { return a - b; })
       .map(function (t) { return [t, 't' + t]; }));
-    fillSelect('kind', null, [[LINEAGE, 'MuLTEE lineage'], ['', 'All, incl. engineered']]
-      .concat(kindOrder.map(function (k) { return [k, k]; })));
-    fillSelect('paper', 'All', meta.papers.map(function (p) { return [p.label, p.label]; }));
+    fillMulti('kind', kindOrder.map(function (k) { return [k, k]; }), function (k) { return k !== HIDDEN_KIND; });
+    fillMulti('paper', meta.papers.map(function (p) { return [p.label, p.label]; }));
   }
   function state() {
-    var f = form.elements;
-    return { q: f.q.value.trim().toLowerCase(), treatment: f.treatment.value, line: f.line.value,
-             timepoint: f.timepoint.value, kind: f.kind.value, paper: f.paper.value, empty: f.empty.checked };
+    var st = { q: form.elements.q.value.trim().toLowerCase(), empty: form.elements.empty.checked };
+    MULTI.forEach(function (k) { st[k] = selected(k); });
+    return st;
   }
   function matches(s, st) {
-    if (st.treatment && s.treatment !== st.treatment) return false;
-    if (st.line && String(s.line) !== st.line) return false;
-    if (st.timepoint && String(s.transfer) !== st.timepoint) return false;
-    if (st.kind === LINEAGE ? s.kind === 'Engineered strain' : st.kind && s.kind !== st.kind) return false;
-    if (st.paper && s.papers.indexOf(st.paper) < 0) return false;
+    function out(list, v) { return list.length && list.indexOf(String(v)) < 0; }
+    if (out(st.treatment, s.treatment) || out(st.line, s.line) || out(st.timepoint, s.transfer) ||
+        out(st.kind, s.kind)) return false;
+    if (st.paper.length && !s.papers.some(function (p) { return st.paper.indexOf(p) >= 0; })) return false;
     if (!st.empty && !visible.some(function (k) { return s.c[k]; })) return false;
     if (st.q) {
       var hay = [s.id, popLabel(s), 't' + s.transfer, s.kind].concat(s.strains, s.papers).join(' ').toLowerCase();
@@ -239,6 +265,7 @@
   function render() {
     closePop();
     var st = state();
+    MULTI.forEach(summarise);
     shown = samples.filter(function (s) { return matches(s, st); }).sort(compare);
     head();
     var body = table.tBodies[0];
@@ -259,11 +286,13 @@
   }
 
   /* ---------------------------------------------------------- URL state */
-  var FIELDS = ['q', 'treatment', 'line', 'timepoint', 'paper'];
   function writeUrl(st) {
     var p = new URLSearchParams();
-    FIELDS.forEach(function (k) { if (st[k]) p.set(k, form.elements[k].value.trim()); });
-    if (st.kind !== LINEAGE) p.set('kind', st.kind || 'all');
+    if (st.q) p.set('q', form.elements.q.value.trim());
+    MULTI.forEach(function (k) {
+      var isDefault = ticks(k).every(function (b) { return b.checked === b.defaultChecked; });
+      if (!isDefault) p.set(k, st[k].join(',') || 'all');
+    });
     if (st.empty) p.set('empty', '1');
     var d = defaults();
     if (visible.join() !== d.join()) p.set('cols', visible.join(',') || 'none');
@@ -273,8 +302,12 @@
   }
   function readUrl() {
     var p = new URLSearchParams(location.search);
-    FIELDS.forEach(function (k) { if (p.has(k)) form.elements[k].value = p.get(k); });
-    form.elements.kind.value = p.has('kind') ? (p.get('kind') === 'all' ? '' : p.get('kind')) : LINEAGE;
+    if (p.has('q')) form.elements.q.value = p.get('q');
+    MULTI.forEach(function (k) {
+      if (!p.has(k)) return;
+      var want = p.get(k) === 'all' ? [] : p.get(k).split(',');
+      ticks(k).forEach(function (b) { b.checked = want.indexOf(b.value) >= 0; });
+    });
     form.elements.empty.checked = p.get('empty') === '1';
     var c = p.get('cols');
     visible = c ? (c === 'none' ? [] : c.split(',').filter(function (k) { return colByKey[k]; })) : defaults();
@@ -309,14 +342,28 @@
   form.addEventListener('input', render);
   form.addEventListener('change', render);
   form.addEventListener('submit', function (e) { e.preventDefault(); });
-  form.addEventListener('reset', function () {
-    setTimeout(function () { form.elements.kind.value = LINEAGE; render(); }, 0);
+  form.addEventListener('reset', function () { setTimeout(render, 0); });
+  // One filter dropdown open at a time; clicking elsewhere closes it.
+  form.addEventListener('toggle', function (e) {
+    if (!e.target.open) return;
+    Array.prototype.forEach.call(form.querySelectorAll('.ph-multi details[open]'), function (d) {
+      if (d !== e.target) d.open = false;
+    });
+  }, true);
+  document.addEventListener('click', function (e) {
+    Array.prototype.forEach.call(form.querySelectorAll('.ph-multi details[open]'), function (d) {
+      if (!d.contains(e.target)) d.open = false;
+    });
   });
   document.addEventListener('click', function (e) {
     if (pop.hidden) return;
     if (e.target.closest('.ph-pop-close') || (!pop.contains(e.target) && !e.target.closest('.ph-v'))) closePop();
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    closePop();
+    Array.prototype.forEach.call(form.querySelectorAll('.ph-multi details[open]'), function (d) { d.open = false; });
+  });
   window.addEventListener('resize', closePop);
 
   /* --------------------------------------------------------------- load */

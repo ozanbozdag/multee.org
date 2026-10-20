@@ -63,11 +63,16 @@
           <span>Search</span>
           <input type="search" name="q" placeholder="Sample, strain, paper…" autocomplete="off">
         </label>
-        <label class="seq-field"><span>Treatment</span><select name="treatment"></select></label>
-        <label class="seq-field"><span>Line</span><select name="line"></select></label>
-        <label class="seq-field"><span>Timepoint</span><select name="timepoint"></select></label>
-        <label class="seq-field"><span>Strains</span><select name="kind"></select></label>
-        <label class="seq-field"><span>Paper</span><select name="paper"></select></label>
+        <div class="seq-field ph-multi" data-name="treatment"><span>Treatment</span>
+          <details><summary>All</summary><div class="ph-multi-list" role="group" aria-label="Treatment"></div></details></div>
+        <div class="seq-field ph-multi" data-name="line"><span>Line</span>
+          <details><summary>All</summary><div class="ph-multi-list" role="group" aria-label="Line"></div></details></div>
+        <div class="seq-field ph-multi" data-name="timepoint"><span>Timepoint</span>
+          <details><summary>All</summary><div class="ph-multi-list" role="group" aria-label="Timepoint"></div></details></div>
+        <div class="seq-field ph-multi" data-name="kind"><span>Strains</span>
+          <details><summary>All</summary><div class="ph-multi-list" role="group" aria-label="Strains"></div></details></div>
+        <div class="seq-field ph-multi" data-name="paper"><span>Paper</span>
+          <details><summary>All</summary><div class="ph-multi-list" role="group" aria-label="Paper"></div></details></div>
         <label class="ph-check"><input type="checkbox" name="empty"> Include samples with no data in the shown columns</label>
         <button class="seq-reset" type="reset">Clear filters</button>
       </form>

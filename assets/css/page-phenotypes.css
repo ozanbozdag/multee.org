@@ -9,6 +9,32 @@
   font-size:var(--t-micro);color:var(--ink-dim);min-height:2.25rem}
 .ph-check input{accent-color:var(--accent)}
 
+/* Tick-box dropdowns: several values per filter; none ticked means all. */
+.ph-multi details{position:relative}
+.ph-multi summary{list-style:none;cursor:pointer;font-family:var(--font-mono);font-size:var(--t-label);color:var(--ink);
+  background:var(--bg);border:1px solid var(--rule);padding:var(--sp-2) var(--sp-5) var(--sp-2) var(--sp-3);
+  min-height:2.25rem;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:16rem}
+.ph-multi summary::-webkit-details-marker{display:none}
+.ph-multi summary::after{content:"\25BE";position:absolute;right:var(--sp-2);top:50%;transform:translateY(-50%);
+  color:var(--ink-dim)}
+.ph-multi summary:hover,.ph-multi details[open] summary{border-color:var(--ink-dim)}
+.ph-multi-list{position:absolute;z-index:20;top:calc(100% + 2px);left:0;min-width:100%;width:max-content;
+  max-width:min(24rem,90vw);max-height:18rem;overflow:auto;background:var(--bg);border:1px solid var(--ink-dim);
+  padding:var(--sp-2) var(--sp-3);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.ph-multi-opt{display:flex;align-items:center;gap:var(--sp-2);padding-block:3px;cursor:pointer;
+  font-size:var(--t-small);line-height:1.35}
+.seq-field .ph-multi-opt input{accent-color:var(--accent);flex:none;min-height:0;padding:0;margin:0;border:0}
+/* .seq-field span styles the filter heading; option labels are body text. */
+.seq-field .ph-multi-opt span{font-family:var(--font-serif);font-size:var(--t-small);text-transform:none;
+  letter-spacing:0;color:inherit}
+.ph-multi-opt:hover{color:var(--accent)}
+.ph-multi-tools{display:flex;gap:var(--sp-2);margin:0 0 var(--sp-2);padding-bottom:var(--sp-2);
+  border-bottom:1px solid var(--rule)}
+.ph-multi-tools button{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim);background:none;border:1px solid var(--rule);
+  padding:2px var(--sp-2);cursor:pointer}
+.ph-multi-tools button:hover{color:var(--accent);border-color:var(--accent)}
+
 /* ------------------------------------------------------ column picker */
 .ph-cols{border-bottom:1px solid var(--rule);padding-block:var(--sp-3)}
 .ph-cols summary{cursor:pointer;font-family:var(--font-mono);font-size:var(--t-label);
