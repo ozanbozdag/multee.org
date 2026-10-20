@@ -47,10 +47,10 @@
     <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
       <p class="eyebrow"><a href="../data.html#resources">Data &amp; Strains</a> / Phenotype data</p>
       <h1 class="display">Phenotype data</h1>
-      <p class="lede">Every phenotype measurement published from the MuLTEE, for each population,
+      <p class="lede">Phenotype measurements from the published MuLTEE papers, for each population,
         isolate and timepoint: cluster and cell size, cell shape, packing, budding, ploidy, mechanics,
         growth, fitness and more. Choose the traits to show, filter
-        by treatment, line or timepoint, and hover over a value to see where it came from.</p>
+        by treatment, line or timepoint, and click a value to see where it came from.</p>
     </section>
   </div>
 
@@ -110,10 +110,15 @@
           600). Choose columns under <em>Trait columns</em>; each trait is split into columns that
           are comparable down the page (same statistic, similar growth time), and one-off
           measurements sit in that trait&rsquo;s <em>Other</em> column.</p>
-        <p><strong>Hover over or click any value</strong> for how it was measured and where it was
-          published. Values marked <em>≈</em> were read off a figure, so treat them as approximate.
-          A dot means the sample was not measured for that column, which is not the same as
-          &ldquo;no&rdquo;. <strong>Strains</strong> hides engineered strains by default.</p>
+        <p><strong>Click any value</strong> (or hover over it) for how it was measured and where it
+          was published. Values marked <em>≈</em> were read off a figure, so treat them as
+          approximate. Values marked <em>*</em> were calculated from a paper&rsquo;s data and are
+          not reported in the paper itself. A dot means the sample was not measured for that column,
+          which is not the same as &ldquo;no&rdquo;. <strong>Strains</strong> hides engineered
+          strains by default; the categories are defined <a href="#strains">at the foot of this
+          page</a>.</p>
+        <p><strong>Citing these data.</strong> Please cite the original paper for each value (linked
+          from the value), not this table.</p>
         <p>Sample and strain codes match the <a href="../sequences/">Genome sequences</a> table. To ask
           about measurements not listed here, use the <a href="../data.html#request">request form</a>.
           No MuLTEE transcriptome or proteome data are public yet. <span id="ph-updated"></span></p>
@@ -163,6 +168,24 @@
         <dt>Other</dt>
         <dd>Strain-level measurements that fit none of the traits above, such as oxygen penetration, bud-scar size, chaperone levels, and the frequency of each size type within a population.</dd>
       </dl>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== strain categories
+       Filled from meta.kind_defs (tools/build_phenotypes.py) so the hover text in the Strains
+       filter and this table never disagree. -->
+  <div class="page">
+    <section class="section" id="strains">
+      <div class="section-head">
+        <p class="eyebrow">Strains</p>
+        <h2>Strain categories</h2>
+      </div>
+      <table class="ph-kinds" id="ph-kinds">
+        <thead><tr><th scope="col">Category</th><th scope="col">What it includes</th></tr></thead>
+        <tbody></tbody>
+      </table>
     </section>
   </div>
 

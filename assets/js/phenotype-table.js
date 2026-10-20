@@ -20,7 +20,7 @@
     'table': 'from a table in the paper',
     'supplement-table': 'from a supplementary table',
     'source-data': 'from the paper’s source data',
-    'derived': 'computed from the paper’s data',
+    'derived': 'calculated from the paper’s data; not reported in the paper (*)',
     'figure-read': 'read off a figure (approximate)'
   };
   var MULTI = ['treatment', 'line', 'timepoint', 'kind', 'paper'];   // tick-box filters; none ticked = all
@@ -58,6 +58,7 @@
   function valueText(m, unit) {
     var v = (m.value_source === 'figure-read' ? '≈' : '') + m.value;
     if (m.error) v += ' ± ' + m.error;
+    if (m.value_source === 'derived') v += '*';
     var u = unit === null ? '' : m.unit;   // null: the column header carries the unit
     return u ? v + ' ' + u : v;
   }
@@ -380,6 +381,10 @@
       buildPicker();
       readUrl();
       document.getElementById('ph-updated').textContent = 'Table updated ' + meta.generated + '.';
+      var kinds = document.getElementById('ph-kinds');
+      if (kinds) kindOrder.forEach(function (k) {
+        kinds.tBodies[0].appendChild(el('tr', {}, [el('th', { scope: 'row', text: k }), el('td', { text: meta.kind_defs[k] })]));
+      });
       setVisible(visible);
     })
     .catch(function (err) {
