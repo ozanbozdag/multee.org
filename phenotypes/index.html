@@ -47,10 +47,10 @@
     <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
       <p class="eyebrow"><a href="../data.html#resources">Data &amp; Strains</a> / Phenotype data</p>
       <h1 class="display">Phenotype data</h1>
-      <p class="lede">Every phenotype measurement published from the MuLTEE, one row per
-        measurement: cluster and cell size, cell shape, packing, budding, ploidy, mechanics, growth,
-        fitness and more, for each population, isolate and timepoint. Filter by trait, treatment, line or
-        timepoint, then follow a row to the figure or table it came from.</p>
+      <p class="lede">Every phenotype measurement published from the MuLTEE, for each population,
+        isolate and timepoint: cluster and cell size, cell shape, packing, budding, ploidy, mechanics,
+        growth, fitness and more. Choose the traits to show, filter
+        by treatment, line or timepoint, and hover over a value to see where it came from.</p>
     </section>
   </div>
 
@@ -58,65 +58,60 @@
     <section class="section wide seq" style="padding-block:0 var(--sp-8)" aria-labelledby="ph-heading">
       <h2 id="ph-heading" class="visually-hidden">Phenotype measurements</h2>
 
-      <form class="seq-filters" id="ph-filters" role="search" aria-label="Filter phenotype measurements">
+      <form class="seq-filters" id="ph-filters" role="search" aria-label="Filter samples">
         <label class="seq-field seq-search">
           <span>Search</span>
-          <input type="search" name="q" placeholder="Sample, strain, trait, method…" autocomplete="off">
+          <input type="search" name="q" placeholder="Sample, strain, paper…" autocomplete="off">
         </label>
-        <label class="seq-field"><span>Trait</span><select name="trait"></select></label>
         <label class="seq-field"><span>Treatment</span><select name="treatment"></select></label>
         <label class="seq-field"><span>Line</span><select name="line"></select></label>
         <label class="seq-field"><span>Timepoint</span><select name="timepoint"></select></label>
-        <label class="seq-field"><span>Sample type</span><select name="type"></select></label>
+        <label class="seq-field"><span>Strains</span><select name="kind"></select></label>
         <label class="seq-field"><span>Paper</span><select name="paper"></select></label>
-        <label class="seq-field"><span>Values</span><select name="source">
-          <option value="">All</option>
-          <option value="stated">Stated values only</option>
-        </select></label>
+        <label class="ph-check"><input type="checkbox" name="empty"> Include samples with no data in the shown columns</label>
         <button class="seq-reset" type="reset">Clear filters</button>
       </form>
+
+      <details class="ph-cols" id="ph-cols">
+        <summary><span class="ph-cols-title">Trait columns</span> <span class="ph-cols-n"></span></summary>
+        <div class="ph-cols-tools">
+          <button type="button" data-cols="default">Defaults</button>
+          <button type="button" data-cols="none">None</button>
+          <span class="dim">Numbers show how many samples have a value in each column.</span>
+        </div>
+        <div class="ph-cols-body"></div>
+      </details>
 
       <div class="seq-bar">
         <p class="seq-count" id="ph-count" aria-live="polite">Loading measurements…</p>
         <p class="seq-downloads">
           <a href="phenotypes.csv" download>All measurements (CSV)</a>
-          <button type="button" id="ph-dl">Shown measurements (CSV)</button>
+          <button type="button" id="ph-dl">Shown table (CSV)</button>
         </p>
       </div>
 
-      <div class="seq-scroll" tabindex="0" role="region" aria-label="Phenotype measurements table, scrolls sideways on small screens">
+      <div class="seq-scroll ph-scroll" tabindex="0" role="region" aria-label="Phenotype table, scrolls sideways when many columns are shown">
         <table class="seq-table ph-table" id="ph-table">
-          <thead>
-            <tr>
-              <th scope="col" data-key="sample" aria-sort="ascending"><button type="button">Sample</button></th>
-              <th scope="col" data-key="transfer"><button type="button">Timepoint</button></th>
-              <th scope="col" data-key="type"><button type="button">Type</button></th>
-              <th scope="col" data-key="trait"><button type="button">Trait</button></th>
-              <th scope="col" data-key="value"><button type="button">Value</button></th>
-              <th scope="col" class="ph-plain">Conditions &amp; method</th>
-              <th scope="col" data-key="paper"><button type="button">Source</button></th>
-            </tr>
-          </thead>
-          <tbody id="ph-body"></tbody>
+          <thead></thead>
+          <tbody></tbody>
         </table>
       </div>
+      <div class="ph-pop" id="ph-pop" role="dialog" aria-label="Measurement details" hidden></div>
 
       <div class="seq-notes">
-        <p><strong>One row per measurement.</strong> A sample measured for several traits, or one
-          trait measured several ways, has several rows. <strong>Timepoint</strong> is the transfer
-          the sample was taken at (one transfer per day). Where a paper reports only a treatment
-          average, the sample reads <span class="mono">_mean</span> and the line is left blank.</p>
-        <p><strong>Values</strong> are the papers' own numbers, in their units and with their
-          thresholds (for example, what counts as macroscopic). Values marked
-          <em>≈ read off figure</em> were read from a plot rather than stated, so treat them as
-          approximate and check the source figure; the Values filter hides them. Yes/no traits
-          record only what a paper tested: a trait that was never measured has no row, which is
-          not the same as "no".</p>
-        <p>Sample and strain codes match the <a href="../sequences/">Genome sequences</a> table, so a
-          phenotyped isolate can be found there by its code. To ask about measurements not listed
-          here, use the <a href="../data.html#request">request form</a>. No MuLTEE transcriptome or
-          proteome data are public yet; genome sequencing is on the <a href="../sequences/">Genome
-          sequences</a> page. <span id="ph-updated"></span></p>
+        <p><strong>One row per sample, one column per kind of measurement.</strong> A sample is a
+          population, isolate or strain at one timepoint; its code gives treatment, line and
+          timepoint (<span class="mono">PA2_t600_iso1</span> is isolate 1 of line PA2 at transfer
+          600). Choose columns under <em>Trait columns</em>; each trait is split into columns that
+          are comparable down the page (same statistic, similar growth time), and one-off
+          measurements sit in that trait&rsquo;s <em>Other</em> column.</p>
+        <p><strong>Hover over or click any value</strong> for how it was measured and where it was
+          published. Values marked <em>≈</em> were read off a figure, so treat them as approximate.
+          A dot means the sample was not measured for that column, which is not the same as
+          &ldquo;no&rdquo;. <strong>Strains</strong> hides engineered strains by default.</p>
+        <p>Sample and strain codes match the <a href="../sequences/">Genome sequences</a> table. To ask
+          about measurements not listed here, use the <a href="../data.html#request">request form</a>.
+          No MuLTEE transcriptome or proteome data are public yet. <span id="ph-updated"></span></p>
       </div>
       <noscript><p>This table needs JavaScript. The full list is available as <a href="phenotypes.csv">a CSV file</a>.</p></noscript>
     </section>
