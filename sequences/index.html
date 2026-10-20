@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genome sequences | MuLTEE</title>
+<meta name="description" content="Every public MuLTEE whole-genome sequencing run, sortable and filterable by population, timepoint, strain and paper, with direct links to the read files at ENA and SRA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/page-sequences.css">
+<script>
+  /* Set before first paint so neither the theme nor the reveal state flashes. */
+  (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  document.documentElement.classList.add('js-focus');})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-open="false">
+  <div class="masthead-in">
+    <a class="brand" href="../index.html">MuLTEE<span class="brand-sub">Ratcliff Lab &middot; Georgia Tech</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../story.html">The Story</a>
+      <a href="../experiment.html">The Experiment</a>
+      <a href="../populations.html">Populations</a>
+      <a href="../history.html">History</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../press.html">Press</a>
+      <a href="../data.html" aria-current="page">Data &amp; Strains</a>
+      <a href="../outreach.html">Outreach</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../team.html">Team</a>
+      <button class="theme-toggle" type="button">Light</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="page">
+    <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
+      <p class="eyebrow"><a href="../data.html#resources">Data &amp; Strains</a> / Genome sequences</p>
+      <h1 class="display">Genome sequences</h1>
+      <p class="lede">Every public whole-genome sequencing run from the MuLTEE, one row per run. Sort
+        and filter by population, timepoint, strain or paper, then follow a run to its record at ENA
+        or SRA, or download its read files directly.</p>
+    </section>
+  </div>
+
+  <div class="page">
+    <section class="section wide seq" style="padding-block:0 var(--sp-9)" aria-labelledby="seq-heading">
+      <h2 id="seq-heading" class="visually-hidden">Sequencing runs</h2>
+
+      <form class="seq-filters" id="seq-filters" role="search" aria-label="Filter sequencing runs">
+        <label class="seq-field seq-search">
+          <span>Search</span>
+          <input type="search" name="q" placeholder="Sample, strain, run accession…" autocomplete="off">
+        </label>
+        <label class="seq-field"><span>Treatment</span><select name="treatment"></select></label>
+        <label class="seq-field"><span>Line</span><select name="line"></select></label>
+        <label class="seq-field"><span>Timepoint</span><select name="timepoint"></select></label>
+        <label class="seq-field"><span>Sample type</span><select name="type"></select></label>
+        <label class="seq-field"><span>Paper</span><select name="paper"></select></label>
+        <button class="seq-reset" type="reset">Clear filters</button>
+      </form>
+
+      <div class="seq-bar">
+        <p class="seq-count" id="seq-count" aria-live="polite">Loading runs…</p>
+        <p class="seq-downloads">
+          <a href="runs.csv" download>All runs (CSV)</a>
+          <button type="button" id="dl-csv">Shown runs (CSV)</button>
+          <button type="button" id="dl-urls" title="A plain list of FASTQ links, e.g. for wget -i">Shown read files (URL list)</button>
+        </p>
+      </div>
+
+      <div class="seq-scroll" tabindex="0" role="region" aria-label="Sequencing runs table, scrolls sideways on small screens">
+        <table class="seq-table" id="seq-table">
+          <thead>
+            <tr>
+              <th scope="col" data-key="sample" aria-sort="ascending"><button type="button">Sample</button></th>
+              <th scope="col" data-key="transfer"><button type="button">Timepoint</button></th>
+              <th scope="col" data-key="type"><button type="button">Type</button></th>
+              <th scope="col" data-key="strain"><button type="button">Strain</button></th>
+              <th scope="col" data-key="ploidy"><button type="button">Ploidy</button></th>
+              <th scope="col" data-key="paper"><button type="button">Paper</button></th>
+              <th scope="col" data-key="run"><button type="button">Run</button></th>
+              <th scope="col" data-key="platform"><button type="button">Platform</button></th>
+              <th scope="col" data-key="reads" class="num"><button type="button">Reads</button></th>
+              <th scope="col" data-key="bytes"><button type="button">Files</button></th>
+            </tr>
+          </thead>
+          <tbody id="seq-body"></tbody>
+        </table>
+      </div>
+
+      <div class="seq-notes">
+        <p><strong>Where the data live.</strong> All reads are archived in the International Nucleotide
+          Sequence Database Collaboration (ENA, SRA, DDBJ) under BioProjects
+          <span id="seq-projects">PRJNA943273</span>. Run accessions open the ENA record; the SRA link
+          opens the same run at NCBI.</p>
+        <p><strong>Reads</strong> are read pairs; <strong>Files</strong> download gzipped FASTQ directly from ENA. <strong>Timepoint</strong> is the transfer the isolate was sampled at (one transfer per day).
+          <strong>Ploidy</strong> is given only where a paper states it. Donut and spread strains were derived
+          from the timepoint isolate of the same line; spread strain <em>n</em> arose from donut strain
+          <em>n</em> (Tong et al. 2025).</p>
+        <p>More runs will be added as they are deposited. To ask about data not listed here, use the
+          <a href="../data.html#request">request form</a>. <span id="seq-updated"></span></p>
+      </div>
+      <noscript><p>This table needs JavaScript. The full list is available as <a href="runs.csv">a CSV file</a>.</p></noscript>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-grid wide">
+      <div>
+        <h3>The experiment</h3>
+        <p>The Multicellularity Long-Term Evolution Experiment is run by the
+          <a href="https://ratclifflab.biosci.gatech.edu/">Ratcliff Lab</a> in the School of
+          Biological Sciences at the Georgia Institute of Technology.</p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>NSF Long-Term Research in Environmental Biology (LTREB),
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452109">Award 2452109</a>.
+          Earlier and concurrent support from NIH NIGMS, NASA Exobiology, the John Templeton
+          Foundation and the Packard Foundation.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:ratcliff@gatech.edu">ratcliff@gatech.edu</a></li>
+          <li><a href="mailto:gonensin.bozdag@biology.gatech.edu">gonensin.bozdag@biology.gatech.edu</a></li>
+          <li><a href="../data.html">Strain requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Images</h3>
+        <p>All micrographs on this site were made in the Ratcliff Lab. Please contact us before
+          reuse.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/sequence-table.js"></script>
+</body>
+</html>

@@ -1,0 +1,3451 @@
+{
+ "meta": {
+  "generated": "2026-10-20",
+  "runs": 100,
+  "source": "MuLTEE sequencing catalogue (Ratcliff Lab); run metadata from the ENA Portal API",
+  "bioprojects": [
+   "PRJNA1064559",
+   "PRJNA1093477",
+   "PRJNA719855",
+   "PRJNA943273"
+  ]
+ },
+ "runs": [
+  {
+   "sample": "PM_t0_anc",
+   "treatment": "PM",
+   "line": null,
+   "ancestor": true,
+   "transfer": 0,
+   "strain": "GOB8",
+   "type": "Ancestor",
+   "ploidy": "2n",
+   "run": "SRR28618276",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 13249415,
+   "bases": 3460327511,
+   "bytes": 1498079663,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/076/SRR28618276/SRR28618276_1.fastq.gz",
+     "md5": "5a021f71f2c9e4e6f49bb8c94f821ecf"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/076/SRR28618276/SRR28618276_2.fastq.gz",
+     "md5": "4ee7a2deb55a7fb956bc53822f0a4193"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PM1_t200_iso1",
+   "treatment": "PM",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 200,
+   "strain": "GOB377_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591006",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4383672,
+   "bases": 1306252382,
+   "bytes": 505807292,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/006/SRR28591006/SRR28591006_1.fastq.gz",
+     "md5": "921310996ee271aa130628e88d1e124f"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/006/SRR28591006/SRR28591006_2.fastq.gz",
+     "md5": "ea2ce2964a16085c1d84d0b252c82498"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM1_t400_iso1",
+   "treatment": "PM",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 400,
+   "strain": "GOB784_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591005",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4590759,
+   "bases": 1368831999,
+   "bytes": 532519367,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/005/SRR28591005/SRR28591005_1.fastq.gz",
+     "md5": "c240c90568fed91b3f147a13a3af09ec"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/005/SRR28591005/SRR28591005_2.fastq.gz",
+     "md5": "5a63c2953d89a84462701b7fa375d536"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM1_t600_iso1",
+   "treatment": "PM",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1297_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591004",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4573950,
+   "bases": 1360883751,
+   "bytes": 525525727,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/004/SRR28591004/SRR28591004_1.fastq.gz",
+     "md5": "3ca602151692a4fec7b9884111af95c4"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/004/SRR28591004/SRR28591004_2.fastq.gz",
+     "md5": "045dcfc8dccd2f114c568e49fd335868"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM1_t1000_iso1",
+   "treatment": "PM",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2144",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618283",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 9418427,
+   "bases": 2486945515,
+   "bytes": 1075403281,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/083/SRR28618283/SRR28618283_1.fastq.gz",
+     "md5": "b09403a494129507cd6e2925a54293eb"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/083/SRR28618283/SRR28618283_2.fastq.gz",
+     "md5": "734aa05a8a11e0565e664a4d67cfac3c"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PM2_t200_iso1",
+   "treatment": "PM",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 200,
+   "strain": "GOB378_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591017",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 5019741,
+   "bases": 1495033275,
+   "bytes": 577607776,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/017/SRR28591017/SRR28591017_1.fastq.gz",
+     "md5": "7c0c937c8cf636b17c50970b15ef06d5"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/017/SRR28591017/SRR28591017_2.fastq.gz",
+     "md5": "e0bfedf8f5bb51428e2f46449080bea5"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM2_t400_iso1",
+   "treatment": "PM",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 400,
+   "strain": "GOB785_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591016",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 3874460,
+   "bases": 1153901444,
+   "bytes": 449782379,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/016/SRR28591016/SRR28591016_1.fastq.gz",
+     "md5": "ed86c2456e34dc43f27b4069756cbef8"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/016/SRR28591016/SRR28591016_2.fastq.gz",
+     "md5": "d919dab9434acaf0ac21440f6d0bde13"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM2_t1000_iso1",
+   "treatment": "PM",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2145",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618282",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 9170146,
+   "bases": 2434358829,
+   "bytes": 1050635334,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/082/SRR28618282/SRR28618282_1.fastq.gz",
+     "md5": "4e0eef61777c701ca5e1768996fc8e74"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/082/SRR28618282/SRR28618282_2.fastq.gz",
+     "md5": "3b86575ec489ffd051cce6bf0ba4fd56"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PM3_t200_iso1",
+   "treatment": "PM",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 200,
+   "strain": "GOB379_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591014",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4213177,
+   "bases": 1256524886,
+   "bytes": 487356972,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/014/SRR28591014/SRR28591014_1.fastq.gz",
+     "md5": "e8680a462ae3132dc4f8df7df2f8bf28"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/014/SRR28591014/SRR28591014_2.fastq.gz",
+     "md5": "a03e721eff99d7863e34de24caaa7af1"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM3_t400_iso1",
+   "treatment": "PM",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 400,
+   "strain": "GOB786_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591013",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4165702,
+   "bases": 1240445037,
+   "bytes": 480304708,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/013/SRR28591013/SRR28591013_1.fastq.gz",
+     "md5": "22b1b90391b6dd094dbc02a2ebe4738d"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/013/SRR28591013/SRR28591013_2.fastq.gz",
+     "md5": "58b4f16a3cfb1d282c4c2f872a935f0f"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM3_t600_iso1",
+   "treatment": "PM",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1299_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591011",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4179124,
+   "bases": 1248536702,
+   "bytes": 483318999,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/011/SRR28591011/SRR28591011_1.fastq.gz",
+     "md5": "bd454857e9c9dc864f3e43bff5f448a4"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/011/SRR28591011/SRR28591011_2.fastq.gz",
+     "md5": "d0fb7d10260edcf419f4923bda217042"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM3_t1000_iso1",
+   "treatment": "PM",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2146",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618275",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 9835127,
+   "bases": 2556465632,
+   "bytes": 1110921055,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/075/SRR28618275/SRR28618275_1.fastq.gz",
+     "md5": "e59f1ddb46b530f4c2d77a8a1ba962f6"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/075/SRR28618275/SRR28618275_2.fastq.gz",
+     "md5": "878f6030dcc45e0c9f95e82c31100b36"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PM4_t400_iso1",
+   "treatment": "PM",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 400,
+   "strain": "GOB787_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591010",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 3565401,
+   "bases": 1064357696,
+   "bytes": 415126665,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/010/SRR28591010/SRR28591010_1.fastq.gz",
+     "md5": "7d279d2dc10c33329955f539b9d431fa"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/010/SRR28591010/SRR28591010_2.fastq.gz",
+     "md5": "2c903711b8614b1593d04c6b9d74526c"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM4_t600_iso1",
+   "treatment": "PM",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1300_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591009",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 3940507,
+   "bases": 1175012831,
+   "bytes": 457445329,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/009/SRR28591009/SRR28591009_1.fastq.gz",
+     "md5": "8b16d27e124b1087ff29751eb0ced59a"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/009/SRR28591009/SRR28591009_2.fastq.gz",
+     "md5": "ee60a29559e86450184cc8dcd166c5dd"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM4_t1000_iso1",
+   "treatment": "PM",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2147",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618274",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 8868956,
+   "bases": 2342226847,
+   "bytes": 1013386990,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/074/SRR28618274/SRR28618274_1.fastq.gz",
+     "md5": "2402a6a4141804d503a2bf7b0591814a"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/074/SRR28618274/SRR28618274_2.fastq.gz",
+     "md5": "d372e1ef4dc0f9eda9f0694d960cbe36"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PM5_t200_iso1",
+   "treatment": "PM",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 200,
+   "strain": "GOB381_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591015",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4112090,
+   "bases": 1225088790,
+   "bytes": 478929339,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/015/SRR28591015/SRR28591015_1.fastq.gz",
+     "md5": "2b36ca2e2f4f94956c951cc16e3d1109"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/015/SRR28591015/SRR28591015_2.fastq.gz",
+     "md5": "e2eff309095d6317fc315333df247ca0"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM5_t400_iso1",
+   "treatment": "PM",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 400,
+   "strain": "GOB788_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591007",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 4274658,
+   "bases": 1276941428,
+   "bytes": 494036426,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/007/SRR28591007/SRR28591007_1.fastq.gz",
+     "md5": "dc68615b2c1d39a7c8fcad7e7237b3d0"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/007/SRR28591007/SRR28591007_2.fastq.gz",
+     "md5": "18dadaae489e40c2c06f06d41ebb571d"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM5_t600_iso1",
+   "treatment": "PM",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1301_sci",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591008",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 3992531,
+   "bases": 1189217426,
+   "bytes": 462358737,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/008/SRR28591008/SRR28591008_1.fastq.gz",
+     "md5": "e17ee05ee0771e307f6cd3877f9789e3"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/008/SRR28591008/SRR28591008_2.fastq.gz",
+     "md5": "d7a9d5a0f4f4aaa93c19257e7f03285e"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PM5_t1000_iso1",
+   "treatment": "PM",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2148",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618273",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 7938062,
+   "bases": 2038509565,
+   "bytes": 891132360,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/073/SRR28618273/SRR28618273_1.fastq.gz",
+     "md5": "8af1e25907396bf939dd96cff70ae578"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/073/SRR28618273/SRR28618273_2.fastq.gz",
+     "md5": "56f6649ca26c5cc13ed7685cbee305e4"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PA1_t600_iso1",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1405",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR23803539",
+   "data_type": "WGS",
+   "platform": "Illumina HiSeq 2500",
+   "layout": "PAIRED",
+   "reads": 9813506,
+   "bases": 2507661460,
+   "bytes": 1654226010,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/039/SRR23803539/SRR23803539_1.fastq.gz",
+     "md5": "70cda4f616c97759b33d31b858b80b7e"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/039/SRR23803539/SRR23803539_2.fastq.gz",
+     "md5": "70a9d97e028a168db9a8ab680d2c8649"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Bozdag et al. 2023, Nature",
+     "doi": "10.1038/s41586-023-06052-1"
+    },
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2023-03-11"
+  },
+  {
+   "sample": "PA1_t600_donut1",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD1",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502102",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4020039,
+   "bases": 1201886399,
+   "bytes": 443847390,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/002/SRR28502102/SRR28502102_1.fastq.gz",
+     "md5": "fbd6438d6c34a0c337d67cfd9818fc89"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/002/SRR28502102/SRR28502102_2.fastq.gz",
+     "md5": "b2b364c6f257d689f040e7638b28b6dc"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t600_donut2",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD3",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502089",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4832700,
+   "bases": 1445478448,
+   "bytes": 473137958,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/089/SRR28502089/SRR28502089_1.fastq.gz",
+     "md5": "b4f51cf34a31ea8728b61ce7221d3918"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/089/SRR28502089/SRR28502089_2.fastq.gz",
+     "md5": "f3a273f9d8f7bb0e093cbe8ac37070e3"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t600_spread1",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD2",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502101",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 2471739,
+   "bases": 741200642,
+   "bytes": 264324400,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/001/SRR28502101/SRR28502101_1.fastq.gz",
+     "md5": "0dafcc42e1be0ce05b463ca7593869ea"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/001/SRR28502101/SRR28502101_2.fastq.gz",
+     "md5": "5ff70269495e2ab657e9b7bc32e64d24"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t600_spread2",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD4",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502081",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3247606,
+   "bases": 976698857,
+   "bytes": 309405202,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/081/SRR28502081/SRR28502081_1.fastq.gz",
+     "md5": "e70b06912796f6bf1b4409d481c731de"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/081/SRR28502081/SRR28502081_2.fastq.gz",
+     "md5": "c3325a3e5dd691018e05b0ab79cf58c0"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t1000_iso1",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2149",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618272",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 11458039,
+   "bases": 2910759304,
+   "bytes": 1274348274,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/072/SRR28618272/SRR28618272_1.fastq.gz",
+     "md5": "35b496b58d7bf221e3e4889d71ca3965"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/072/SRR28618272/SRR28618272_2.fastq.gz",
+     "md5": "f7ec9674eefa00d31d20cb331c19268e"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PA1_t1000_donut1",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD5",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502090",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5398973,
+   "bases": 1613845497,
+   "bytes": 538449890,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/090/SRR28502090/SRR28502090_1.fastq.gz",
+     "md5": "882db649f22d51379ae36df89c79616a"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/090/SRR28502090/SRR28502090_2.fastq.gz",
+     "md5": "85a05108aaa3eddd3835e93fd2a60bbc"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t1000_donut2",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD7",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502085",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5213701,
+   "bases": 1562521588,
+   "bytes": 498631931,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/085/SRR28502085/SRR28502085_1.fastq.gz",
+     "md5": "cfdd2ce3ba123b09a36f398e41245d3d"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/085/SRR28502085/SRR28502085_2.fastq.gz",
+     "md5": "e912b2d89b3aa7c9ad2a52bda3f1512f"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t1000_donut3",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD9",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502083",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4911298,
+   "bases": 1470440212,
+   "bytes": 477222672,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/083/SRR28502083/SRR28502083_1.fastq.gz",
+     "md5": "060b704e1fbb3ada52351d8f2f71dc57"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/083/SRR28502083/SRR28502083_2.fastq.gz",
+     "md5": "2c0f8bfdfae2aa007d465431f1c361d7"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t1000_spread1",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD6",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502086",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4094557,
+   "bases": 1229329058,
+   "bytes": 387975737,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/086/SRR28502086/SRR28502086_1.fastq.gz",
+     "md5": "a0f22476925c6b040dae8589398d003f"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/086/SRR28502086/SRR28502086_2.fastq.gz",
+     "md5": "fe1efcedef24c0a260855f823d11b0ec"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t1000_spread2",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD8",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502084",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4772904,
+   "bases": 1433304711,
+   "bytes": 449621330,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/084/SRR28502084/SRR28502084_1.fastq.gz",
+     "md5": "5238d00e38fd65c1de26e64cd3098b8e"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/084/SRR28502084/SRR28502084_2.fastq.gz",
+     "md5": "6b98b0b9b3c6320e277229b6e3bd5093"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA1_t1000_spread3",
+   "treatment": "PA",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD10",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502080",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4551978,
+   "bases": 1365508832,
+   "bytes": 447488154,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/080/SRR28502080/SRR28502080_1.fastq.gz",
+     "md5": "f0530868c25ed80cf550aa4f76bab2eb"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/080/SRR28502080/SRR28502080_2.fastq.gz",
+     "md5": "028dae14c73fbb3a81e779651b87d508"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t400_iso1",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 400,
+   "strain": "GOB1327",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591018",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 3904452,
+   "bases": 1165035105,
+   "bytes": 447210852,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/018/SRR28591018/SRR28591018_1.fastq.gz",
+     "md5": "65398c25063d92384737f6c525a1f73b"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/018/SRR28591018/SRR28591018_2.fastq.gz",
+     "md5": "9d97b38919bf80c2bdaf5e1b697a2aeb"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PA2_t600_iso1",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1407",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR14146515",
+   "data_type": "WGS",
+   "platform": "Illumina HiSeq 2500",
+   "layout": "PAIRED",
+   "reads": 11138855,
+   "bases": 2904374018,
+   "bytes": 1777076903,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR141/015/SRR14146515/SRR14146515_1.fastq.gz",
+     "md5": "3996e3402ade5d1d1435081996ccd88e"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR141/015/SRR14146515/SRR14146515_2.fastq.gz",
+     "md5": "bfd6c804d87550b9c71d764360866508"
+    }
+   ],
+   "bioproject": "PRJNA719855",
+   "papers": [
+    {
+     "label": "Bozdag et al. 2021, Nat Commun",
+     "doi": "10.1038/s41467-021-23104-0"
+    },
+    {
+     "label": "Bozdag et al. 2023, Nature",
+     "doi": "10.1038/s41586-023-06052-1"
+    },
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2021-04-07"
+  },
+  {
+   "sample": "PA2_t600_donut1",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD11",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502059",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5689465,
+   "bases": 1695726459,
+   "bytes": 590137029,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/059/SRR28502059/SRR28502059_1.fastq.gz",
+     "md5": "8355a6a82ae741a338d373b9d93176e5"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/059/SRR28502059/SRR28502059_2.fastq.gz",
+     "md5": "273829df77b707b7ef31cdc9d0927ba0"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t600_donut2",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD13",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502075",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3675950,
+   "bases": 1095747661,
+   "bytes": 414765390,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/075/SRR28502075/SRR28502075_1.fastq.gz",
+     "md5": "4489f62a97c4c6a6da8eec677da5626f"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/075/SRR28502075/SRR28502075_2.fastq.gz",
+     "md5": "21bc34aa0d053807d7ee00c73710366e"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t600_donut3",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD15",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502073",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5655148,
+   "bases": 1687543932,
+   "bytes": 583098292,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/073/SRR28502073/SRR28502073_1.fastq.gz",
+     "md5": "afdb22f955914b2a55ea733d18b40b77"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/073/SRR28502073/SRR28502073_2.fastq.gz",
+     "md5": "d212632e1461ee16c09ba72946773db5"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t600_spread1",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD12",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502076",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4906623,
+   "bases": 1465458333,
+   "bytes": 494025415,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/076/SRR28502076/SRR28502076_1.fastq.gz",
+     "md5": "b6e94075d5b69c80ac5965962dd36a17"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/076/SRR28502076/SRR28502076_2.fastq.gz",
+     "md5": "c6729d919773cf6bfdb5d75b177ed1bf"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t600_spread2",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD14",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502074",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4298802,
+   "bases": 1280960377,
+   "bytes": 485477293,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/074/SRR28502074/SRR28502074_1.fastq.gz",
+     "md5": "6820ad9e037310b626758c5eaf058aae"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/074/SRR28502074/SRR28502074_2.fastq.gz",
+     "md5": "1a123a8ff0822bd6eae2e59f810dfe8c"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t600_spread3",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD16",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502072",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 6472261,
+   "bases": 1930975218,
+   "bytes": 648359913,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/072/SRR28502072/SRR28502072_1.fastq.gz",
+     "md5": "d72222b8d04c600e07e3d3eaa4ebe2fa"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/072/SRR28502072/SRR28502072_2.fastq.gz",
+     "md5": "95ef8019e7195173b24037ff38298056"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t1000_iso1",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2150",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618271",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 10478016,
+   "bases": 2719228190,
+   "bytes": 1182855204,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/071/SRR28618271/SRR28618271_1.fastq.gz",
+     "md5": "decb115b9a21683db2766e0687f84250"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/071/SRR28618271/SRR28618271_2.fastq.gz",
+     "md5": "2a678cb1a4b541aafe72bf8681340a7e"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PA2_t1000_donut1",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD17",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502071",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4981375,
+   "bases": 1486324600,
+   "bytes": 497909282,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/071/SRR28502071/SRR28502071_1.fastq.gz",
+     "md5": "a7006f5b78cc28dc8f997ad341759efa"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/071/SRR28502071/SRR28502071_2.fastq.gz",
+     "md5": "f93113662637cdbe7f94e7a77857ad27"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t1000_donut2",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD19",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502069",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5714003,
+   "bases": 1705765637,
+   "bytes": 572702283,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/069/SRR28502069/SRR28502069_1.fastq.gz",
+     "md5": "0a1210e73677da205df25e76631f26b0"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/069/SRR28502069/SRR28502069_2.fastq.gz",
+     "md5": "61e11feabd2076f1a9fae4ecea9bc89d"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t1000_donut3",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD21",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502067",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5472665,
+   "bases": 1631807893,
+   "bytes": 549981388,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/067/SRR28502067/SRR28502067_1.fastq.gz",
+     "md5": "f7b1da62217aa16918f7d8f68668ce38"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/067/SRR28502067/SRR28502067_2.fastq.gz",
+     "md5": "19f203e14a74291731b81bca4e6255f0"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t1000_spread1",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD18",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502070",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5274746,
+   "bases": 1569694253,
+   "bytes": 535949566,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/070/SRR28502070/SRR28502070_1.fastq.gz",
+     "md5": "bfad953d9b809fdcdf6ef1f35d5173b5"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/070/SRR28502070/SRR28502070_2.fastq.gz",
+     "md5": "022a142e5a2a2336b4d3679fcabc0f67"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t1000_spread2",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD20",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502068",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4305388,
+   "bases": 1285798881,
+   "bytes": 457668518,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/068/SRR28502068/SRR28502068_1.fastq.gz",
+     "md5": "5f3295608fb500031f88281ae3c23ab3"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/068/SRR28502068/SRR28502068_2.fastq.gz",
+     "md5": "d069b390548c8e592f0e4cdf5c14997d"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA2_t1000_spread3",
+   "treatment": "PA",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD22",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502066",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4915933,
+   "bases": 1459464005,
+   "bytes": 501895343,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/066/SRR28502066/SRR28502066_1.fastq.gz",
+     "md5": "714285806eb5624a01739713d71c5e21"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/066/SRR28502066/SRR28502066_2.fastq.gz",
+     "md5": "000a56c3f81ad0ccbac727e4b78f6b72"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA3_t400_iso1",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 400,
+   "strain": "GOB1329",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28591012",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 3632038,
+   "bases": 1084170391,
+   "bytes": 418623117,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/012/SRR28591012/SRR28591012_1.fastq.gz",
+     "md5": "bc376aab49027a2c0ffdd811aaee73a6"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/012/SRR28591012/SRR28591012_2.fastq.gz",
+     "md5": "a3f9839f0940377861714db7ae319d39"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-04-09"
+  },
+  {
+   "sample": "PA3_t600_iso1",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1409",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR23803538",
+   "data_type": "WGS",
+   "platform": "Illumina HiSeq 2500",
+   "layout": "PAIRED",
+   "reads": 10645178,
+   "bases": 2896186482,
+   "bytes": 1877225250,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/038/SRR23803538/SRR23803538_1.fastq.gz",
+     "md5": "f55d394b986834ea36a31974f1653fa4"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/038/SRR23803538/SRR23803538_2.fastq.gz",
+     "md5": "0301799c55619f5842f90eace5366815"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Bozdag et al. 2023, Nature",
+     "doi": "10.1038/s41586-023-06052-1"
+    },
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2023-03-11"
+  },
+  {
+   "sample": "PA3_t1000_iso1",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2151",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618270",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 9394713,
+   "bases": 2454606041,
+   "bytes": 1066243494,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/070/SRR28618270/SRR28618270_1.fastq.gz",
+     "md5": "19e617186e23eb3d1c0f899360f1b3cf"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/070/SRR28618270/SRR28618270_2.fastq.gz",
+     "md5": "222bf1d1126639b7dfc24319ea293ad0"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PA3_t1000_donut1",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD23",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502065",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5772543,
+   "bases": 1723263935,
+   "bytes": 575141712,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/065/SRR28502065/SRR28502065_1.fastq.gz",
+     "md5": "1848bfc3fc88c7eebc32cadbeb18cc46"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/065/SRR28502065/SRR28502065_2.fastq.gz",
+     "md5": "16e6444aff92b1a2421060dc1d36dcca"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA3_t1000_donut2",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD25",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502063",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5331280,
+   "bases": 1592196390,
+   "bytes": 531840879,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/063/SRR28502063/SRR28502063_1.fastq.gz",
+     "md5": "2b7424acdc732231f843a544015a82a6"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/063/SRR28502063/SRR28502063_2.fastq.gz",
+     "md5": "6a35534664a435cc95bf9244e8b62834"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA3_t1000_donut3",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD27",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502061",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5344551,
+   "bases": 1594919819,
+   "bytes": 536702077,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/061/SRR28502061/SRR28502061_1.fastq.gz",
+     "md5": "3f677661320666759680ffb752686b05"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/061/SRR28502061/SRR28502061_2.fastq.gz",
+     "md5": "93601f41dfe6d08e0b8032f1b7abe919"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA3_t1000_spread1",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD24",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502064",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4683556,
+   "bases": 1398331517,
+   "bytes": 463088066,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/064/SRR28502064/SRR28502064_1.fastq.gz",
+     "md5": "f8c48437ba6a21ea44e7f3b54987f739"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/064/SRR28502064/SRR28502064_2.fastq.gz",
+     "md5": "215530760b332353623e02cebcafb0ee"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA3_t1000_spread2",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD26",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502062",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5725380,
+   "bases": 1710063750,
+   "bytes": 571159349,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/062/SRR28502062/SRR28502062_1.fastq.gz",
+     "md5": "fd6754208887792eb6a9b13e216233a2"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/062/SRR28502062/SRR28502062_2.fastq.gz",
+     "md5": "0ae0cc22845ff3ef45b6532b1f92d7c0"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA3_t1000_spread3",
+   "treatment": "PA",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD28",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502060",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4531105,
+   "bases": 1351606020,
+   "bytes": 464229019,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/060/SRR28502060/SRR28502060_1.fastq.gz",
+     "md5": "57859d71b514288096f440c47a08992d"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/060/SRR28502060/SRR28502060_2.fastq.gz",
+     "md5": "52454d9e5a1e72b748c925917e3f5a18"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t600_iso1",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB2350",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR23803537",
+   "data_type": "WGS",
+   "platform": "Illumina HiSeq 2500",
+   "layout": "PAIRED",
+   "reads": 5081108,
+   "bases": 1489365959,
+   "bytes": 528449332,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/037/SRR23803537/SRR23803537_1.fastq.gz",
+     "md5": "25fdfff4ffab85bf5e0eb4df29128a2e"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/037/SRR23803537/SRR23803537_2.fastq.gz",
+     "md5": "bc367dd795e08c983fce0adb20ae8576"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Bozdag et al. 2023, Nature",
+     "doi": "10.1038/s41586-023-06052-1"
+    }
+   ],
+   "first_public": "2023-03-11"
+  },
+  {
+   "sample": "PA4_t600_donut1",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD29",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502100",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4202849,
+   "bases": 1254303819,
+   "bytes": 429385777,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/000/SRR28502100/SRR28502100_1.fastq.gz",
+     "md5": "219e542a2a2137ccaaa198501bf2cb95"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/000/SRR28502100/SRR28502100_2.fastq.gz",
+     "md5": "bbef7b058c07249b316ec65ec64010a3"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t600_donut2",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD31",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502097",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5153311,
+   "bases": 1539481633,
+   "bytes": 511149372,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/097/SRR28502097/SRR28502097_1.fastq.gz",
+     "md5": "35729c6da065a54481d7e4eef0a1d042"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/097/SRR28502097/SRR28502097_2.fastq.gz",
+     "md5": "4e58818e7e14859e37dfb815a88a240e"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t600_donut3",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD33",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502095",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5155370,
+   "bases": 1537780127,
+   "bytes": 528116055,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/095/SRR28502095/SRR28502095_1.fastq.gz",
+     "md5": "5cf69683945713b60f7fb04f26d6fbd9"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/095/SRR28502095/SRR28502095_2.fastq.gz",
+     "md5": "0c8545c615f8b359bfd5fe6146195fa6"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t600_spread1",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD30",
+   "type": "Spread strain",
+   "ploidy": "partially triploidized",
+   "run": "SRR28502099",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5203040,
+   "bases": 1552228992,
+   "bytes": 533750520,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/099/SRR28502099/SRR28502099_1.fastq.gz",
+     "md5": "4330677e03573b99a951886fd430c65d"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/099/SRR28502099/SRR28502099_2.fastq.gz",
+     "md5": "23355b82c643a7d3cdee23d6d64c2473"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t600_spread2",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD32",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502096",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4588921,
+   "bases": 1370342610,
+   "bytes": 467722739,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/096/SRR28502096/SRR28502096_1.fastq.gz",
+     "md5": "8e7a2dfd82e6f5f0081fca44bb0f091a"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/096/SRR28502096/SRR28502096_2.fastq.gz",
+     "md5": "004910111b63c17f5d30e2a583503769"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t600_spread3",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD34",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502098",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5810258,
+   "bases": 1732147511,
+   "bytes": 598905640,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/098/SRR28502098/SRR28502098_1.fastq.gz",
+     "md5": "c2ed09d0532ff4ba121b76dc850bb08e"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/098/SRR28502098/SRR28502098_2.fastq.gz",
+     "md5": "861af61600c6d31a02e37db73fd74bd2"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t1000_iso1",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2152",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618269",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 8184989,
+   "bases": 2141199890,
+   "bytes": 930128589,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/069/SRR28618269/SRR28618269_1.fastq.gz",
+     "md5": "59fd3f34e2338ad952171ddfbf7f6a10"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/069/SRR28618269/SRR28618269_2.fastq.gz",
+     "md5": "6a184ac26c7213b95efc38a5a9611f95"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PA4_t1000_donut1",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD35",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502058",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3363399,
+   "bases": 1002703451,
+   "bytes": 332814820,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/058/SRR28502058/SRR28502058_1.fastq.gz",
+     "md5": "bfda46fc757943ed265649eb436e077c"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/058/SRR28502058/SRR28502058_2.fastq.gz",
+     "md5": "3610170eace4b3faf276dee11beb8a78"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t1000_donut2",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD37",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502056",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3929488,
+   "bases": 1170181171,
+   "bytes": 381089514,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/056/SRR28502056/SRR28502056_1.fastq.gz",
+     "md5": "a50be1e87ee7d437cd849a56be1dd9d2"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/056/SRR28502056/SRR28502056_2.fastq.gz",
+     "md5": "2687224c5d2dc8d40617611a16f95fb5"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t1000_donut3",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD39",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502054",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4013516,
+   "bases": 1197708902,
+   "bytes": 390078633,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/054/SRR28502054/SRR28502054_1.fastq.gz",
+     "md5": "615ce9a71b3a7334d2f7c28e18e9714a"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/054/SRR28502054/SRR28502054_2.fastq.gz",
+     "md5": "5e2fa86c0089b8b31baa9e4e3d1e19c6"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t1000_spread1",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD36",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502057",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5547606,
+   "bases": 1648621151,
+   "bytes": 562631308,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/057/SRR28502057/SRR28502057_1.fastq.gz",
+     "md5": "db5a1ce8f76224f77b1e3cd4301d9054"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/057/SRR28502057/SRR28502057_2.fastq.gz",
+     "md5": "90e48248d228fe2df57d87e87a907b0b"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t1000_spread2",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD38",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502055",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3768296,
+   "bases": 1123631103,
+   "bytes": 384029907,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/055/SRR28502055/SRR28502055_1.fastq.gz",
+     "md5": "1556215906a202c2f6391c8e80ce0c8d"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/055/SRR28502055/SRR28502055_2.fastq.gz",
+     "md5": "c46b4a4d073e23a8fef8769212b15b82"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA4_t1000_spread3",
+   "treatment": "PA",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD40",
+   "type": "Spread strain",
+   "ploidy": "partially triploidized",
+   "run": "SRR28502053",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3544854,
+   "bases": 1057857734,
+   "bytes": 353172340,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/053/SRR28502053/SRR28502053_1.fastq.gz",
+     "md5": "22d7ef19406c8581f2b3ad6552974d22"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/053/SRR28502053/SRR28502053_2.fastq.gz",
+     "md5": "c345610a3fb044b910af16a5361ce2f1"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t600_iso1",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "GOB1413",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR23803536",
+   "data_type": "WGS",
+   "platform": "Illumina HiSeq 2500",
+   "layout": "PAIRED",
+   "reads": 9104386,
+   "bases": 2216797816,
+   "bytes": 1472486500,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/036/SRR23803536/SRR23803536_1.fastq.gz",
+     "md5": "13dc0781d02c160c3edd37bc3b067c21"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR238/036/SRR23803536/SRR23803536_2.fastq.gz",
+     "md5": "2873b4a74553c420175fd605e226afa8"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [
+    {
+     "label": "Bozdag et al. 2023, Nature",
+     "doi": "10.1038/s41586-023-06052-1"
+    }
+   ],
+   "first_public": "2023-03-11"
+  },
+  {
+   "sample": "PA5_t600_donut1",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD41",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502094",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3403155,
+   "bases": 1022825545,
+   "bytes": 329216559,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/094/SRR28502094/SRR28502094_1.fastq.gz",
+     "md5": "73fe0aa28b3832505dd110252667df0a"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/094/SRR28502094/SRR28502094_2.fastq.gz",
+     "md5": "6e137a62a013bdc36a015126fa0b2a6c"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t600_donut2",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD43",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502092",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5023588,
+   "bases": 1502124322,
+   "bytes": 502268748,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/092/SRR28502092/SRR28502092_1.fastq.gz",
+     "md5": "9721239608bba209a74b09c30cf713ba"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/092/SRR28502092/SRR28502092_2.fastq.gz",
+     "md5": "04bb31b814dc73beeb594aa57ad15f52"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t600_donut3",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD45",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502088",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4394278,
+   "bases": 1321325098,
+   "bytes": 401802393,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/088/SRR28502088/SRR28502088_1.fastq.gz",
+     "md5": "ee97694fc248d618c68fb76911002dfe"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/088/SRR28502088/SRR28502088_2.fastq.gz",
+     "md5": "0cec4635960ed197b4e6336dd10dbab2"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t600_spread1",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD42",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502093",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3144246,
+   "bases": 945160074,
+   "bytes": 297241032,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/093/SRR28502093/SRR28502093_1.fastq.gz",
+     "md5": "461d83630e6f7e9c91866303ef22a376"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/093/SRR28502093/SRR28502093_2.fastq.gz",
+     "md5": "1cf72334daa1873811ca7f7f3bf166cc"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t600_spread2",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD44",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502091",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 5550090,
+   "bases": 1659678875,
+   "bytes": 540105752,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/091/SRR28502091/SRR28502091_1.fastq.gz",
+     "md5": "3c456ae6e5d3c81a41f1b27be5048ed4"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/091/SRR28502091/SRR28502091_2.fastq.gz",
+     "md5": "b306abe9977b345a74fb90e8bd8ea178"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t600_spread3",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 600,
+   "strain": "SD46",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502087",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3686243,
+   "bases": 1108316045,
+   "bytes": 344030552,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/087/SRR28502087/SRR28502087_1.fastq.gz",
+     "md5": "876f522125d221fb91714658d88f0503"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/087/SRR28502087/SRR28502087_2.fastq.gz",
+     "md5": "8c210a2f760ab3522bb973b640e50218"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t1000_iso1",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2153",
+   "type": "Isolate",
+   "ploidy": "4n baseline",
+   "run": "SRR28618268",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 7566355,
+   "bases": 1987796703,
+   "bytes": 863361888,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/068/SRR28618268/SRR28618268_1.fastq.gz",
+     "md5": "e677a1da6926c2a05a47eadb80c21695"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/068/SRR28618268/SRR28618268_2.fastq.gz",
+     "md5": "9b6bd5c7ed163e812171a8cf1f0b3af4"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PA5_t1000_donut1",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD47",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502082",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 2595157,
+   "bases": 779293428,
+   "bytes": 277822245,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/082/SRR28502082/SRR28502082_1.fastq.gz",
+     "md5": "07ceef69ffed33dde80c4c1ea06048fa"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/082/SRR28502082/SRR28502082_2.fastq.gz",
+     "md5": "db944820863b33360f7fa6cd441aded5"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t1000_donut2",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD49",
+   "type": "Donut strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502078",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 2821136,
+   "bases": 847133072,
+   "bytes": 308819444,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/078/SRR28502078/SRR28502078_1.fastq.gz",
+     "md5": "1c19d27efdb1f9640143fc948b24fcb8"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/078/SRR28502078/SRR28502078_2.fastq.gz",
+     "md5": "dbecc57c81e2dc6b1d6d4b571d1c0c43"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t1000_spread1",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD48",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502079",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 4424874,
+   "bases": 1306041246,
+   "bytes": 487886473,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/079/SRR28502079/SRR28502079_1.fastq.gz",
+     "md5": "55a21bacb900b8f243ef0ab3379f9c09"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/079/SRR28502079/SRR28502079_2.fastq.gz",
+     "md5": "f3ca561e5343905734ebe9b53222413a"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PA5_t1000_spread2",
+   "treatment": "PA",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "SD50",
+   "type": "Spread strain",
+   "ploidy": "4n baseline",
+   "run": "SRR28502077",
+   "data_type": "WGS",
+   "platform": "Illumina NovaSeq 6000",
+   "layout": "PAIRED",
+   "reads": 3340525,
+   "bases": 1002482335,
+   "bytes": 372420988,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/077/SRR28502077/SRR28502077_1.fastq.gz",
+     "md5": "fbe49b541837c23d8169efbee68cc81c"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR285/077/SRR28502077/SRR28502077_2.fastq.gz",
+     "md5": "8c0dbe9134fadd7b4846e984be7aebd0"
+    }
+   ],
+   "bioproject": "PRJNA1093477",
+   "papers": [
+    {
+     "label": "Tong et al. 2025, Nature",
+     "doi": "10.1038/s41586-025-08689-6"
+    }
+   ],
+   "first_public": "2024-03-30"
+  },
+  {
+   "sample": "PO1_t1000_iso1",
+   "treatment": "PO",
+   "line": 1,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2154",
+   "type": "Isolate",
+   "ploidy": "",
+   "run": "SRR28618281",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 8006930,
+   "bases": 2083969857,
+   "bytes": 906642555,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/081/SRR28618281/SRR28618281_1.fastq.gz",
+     "md5": "ec906f4b60a703bc72aefb3a23838eea"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/081/SRR28618281/SRR28618281_2.fastq.gz",
+     "md5": "7d94150053261e1eb582ebcb19023ee2"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PO2_t1000_iso1",
+   "treatment": "PO",
+   "line": 2,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2155",
+   "type": "Isolate",
+   "ploidy": "",
+   "run": "SRR28618280",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 26093676,
+   "bases": 6444838209,
+   "bytes": 2824484365,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/080/SRR28618280/SRR28618280_1.fastq.gz",
+     "md5": "6e08ff6f4f9109ea8510ab2ffe052aa2"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/080/SRR28618280/SRR28618280_2.fastq.gz",
+     "md5": "b565bdae5e4a6d6b33af4e8596c750ce"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PO3_t715_pop",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Population",
+   "ploidy": "",
+   "run": "SRR27560389",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 5650786,
+   "bases": 1658817024,
+   "bytes": 660777709,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/089/SRR27560389/SRR27560389_1.fastq.gz",
+     "md5": "9dd000ba81ab3d2dcb4e39e9ac70b118"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/089/SRR27560389/SRR27560389_2.fastq.gz",
+     "md5": "78500aa5d32751d8ef21a2bf1c3f39dd"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO3_t715_small1",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Small)",
+   "ploidy": "",
+   "run": "SRR27560380",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 5920157,
+   "bases": 1523103422,
+   "bytes": 662034200,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/080/SRR27560380/SRR27560380_1.fastq.gz",
+     "md5": "5aaef3359dc07644e828c08f2d6d1900"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/080/SRR27560380/SRR27560380_2.fastq.gz",
+     "md5": "0e2b727aed65d4bf32560751db252d3e"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO3_t715_small2",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Small)",
+   "ploidy": "",
+   "run": "SRR27560379",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 7809535,
+   "bases": 1950689448,
+   "bytes": 854373596,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/079/SRR27560379/SRR27560379_1.fastq.gz",
+     "md5": "d986628ba02680094d4165fb0eff7c1d"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/079/SRR27560379/SRR27560379_2.fastq.gz",
+     "md5": "c9dfa0cc4dff098054063afafd6d69fb"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO3_t715_small3",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Small)",
+   "ploidy": "",
+   "run": "SRR27560378",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 8708143,
+   "bases": 2159845228,
+   "bytes": 947481828,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/078/SRR27560378/SRR27560378_1.fastq.gz",
+     "md5": "bf96337103ef216f2922c2947b815e18"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/078/SRR27560378/SRR27560378_2.fastq.gz",
+     "md5": "a4ffec829a3b8d4d8d98d9428f9a8c71"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO3_t715_large1",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Large)",
+   "ploidy": "",
+   "run": "SRR27560384",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 3848624,
+   "bases": 1006961223,
+   "bytes": 436433181,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/084/SRR27560384/SRR27560384_1.fastq.gz",
+     "md5": "e18fd764c1593c8acef8b8686ff07823"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/084/SRR27560384/SRR27560384_2.fastq.gz",
+     "md5": "7b2d01ddfac43747d4ede218a2a4cbe5"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO3_t715_large2",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Large)",
+   "ploidy": "",
+   "run": "SRR27560382",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 4494940,
+   "bases": 1175207877,
+   "bytes": 508386684,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/082/SRR27560382/SRR27560382_1.fastq.gz",
+     "md5": "b52d8cac787b6016cd00b46a7e140354"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/082/SRR27560382/SRR27560382_2.fastq.gz",
+     "md5": "15acbbf128ca42f02d5cddb5de5b209a"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO3_t715_large3",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Large)",
+   "ploidy": "",
+   "run": "SRR27560381",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 4984425,
+   "bases": 1287731917,
+   "bytes": 559569825,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/081/SRR27560381/SRR27560381_1.fastq.gz",
+     "md5": "fbefffb28efbcda7ba613b5ec4e078b7"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/081/SRR27560381/SRR27560381_2.fastq.gz",
+     "md5": "fb36466cd48f675e3f3f7ceeb1335004"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO3_t1000_iso1",
+   "treatment": "PO",
+   "line": 3,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2156",
+   "type": "Isolate",
+   "ploidy": "",
+   "run": "SRR28618279",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 15610727,
+   "bases": 3970439207,
+   "bytes": 1731955501,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/079/SRR28618279/SRR28618279_1.fastq.gz",
+     "md5": "7e581a7788749d4d628fb7692c16d8a2"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/079/SRR28618279/SRR28618279_2.fastq.gz",
+     "md5": "6c49ddd4c89bd79da3404931baf6d161"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PO4_t715_pop",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Population",
+   "ploidy": "",
+   "run": "SRR27560388",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 5642090,
+   "bases": 1641264356,
+   "bytes": 657873203,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/088/SRR27560388/SRR27560388_1.fastq.gz",
+     "md5": "c68018371565782c4f90d1a0e831f825"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/088/SRR27560388/SRR27560388_2.fastq.gz",
+     "md5": "70ad845ae40554a9a16e571b2240feb8"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO4_t715_small1",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Small)",
+   "ploidy": "",
+   "run": "SRR27560386",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 6221139,
+   "bases": 1612068143,
+   "bytes": 698852842,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/086/SRR27560386/SRR27560386_1.fastq.gz",
+     "md5": "5c7ed652d9884d40895a3ffa80fa02be"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/086/SRR27560386/SRR27560386_2.fastq.gz",
+     "md5": "4198ffbe9346c3f5016e8805b864d268"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO4_t715_small2",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Small)",
+   "ploidy": "",
+   "run": "SRR27560383",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 5348414,
+   "bases": 1533684375,
+   "bytes": 614318657,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/083/SRR27560383/SRR27560383_1.fastq.gz",
+     "md5": "9f6592e0aa9f9c7718fb8559476995bc"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/083/SRR27560383/SRR27560383_2.fastq.gz",
+     "md5": "1bc35c2f801139d9cb979e08c46d94ad"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO4_t715_small3",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Small)",
+   "ploidy": "",
+   "run": "SRR27560385",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 6578266,
+   "bases": 1673185266,
+   "bytes": 729496400,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/085/SRR27560385/SRR27560385_1.fastq.gz",
+     "md5": "bc69595a322df8fee01a249e6f2fc3d6"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/085/SRR27560385/SRR27560385_2.fastq.gz",
+     "md5": "50c322e5a04b5b91196d158d897a189f"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO4_t715_large1",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Large)",
+   "ploidy": "",
+   "run": "SRR27560377",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 5725811,
+   "bases": 1486029919,
+   "bytes": 643081868,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/077/SRR27560377/SRR27560377_1.fastq.gz",
+     "md5": "964773a59c4182ee07785545088830c7"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/077/SRR27560377/SRR27560377_2.fastq.gz",
+     "md5": "a7fdacf7432fcdeb34c3dd40644f9ef4"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO4_t715_large2",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Large)",
+   "ploidy": "",
+   "run": "SRR27560376",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 5692355,
+   "bases": 1653108009,
+   "bytes": 662747912,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/076/SRR27560376/SRR27560376_1.fastq.gz",
+     "md5": "98376d86754b4492db99d4bb58d704e1"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/076/SRR27560376/SRR27560376_2.fastq.gz",
+     "md5": "afea8a3fabe89d9b19312e88faab4f85"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO4_t715_large3",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 715,
+   "strain": "",
+   "type": "Isolate (Large)",
+   "ploidy": "",
+   "run": "SRR27560387",
+   "data_type": "WGS",
+   "platform": "Illumina Genome Analyzer",
+   "layout": "PAIRED",
+   "reads": 6356464,
+   "bases": 1653749121,
+   "bytes": 714077090,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/087/SRR27560387/SRR27560387_1.fastq.gz",
+     "md5": "2de9de0c523b9c80dda9badde1b112b7"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR275/087/SRR27560387/SRR27560387_2.fastq.gz",
+     "md5": "3382e1dcb3e2a55c028746132b88ce06"
+    }
+   ],
+   "bioproject": "PRJNA1064559",
+   "papers": [
+    {
+     "label": "Pineau et al. 2024, Nat Ecol Evol",
+     "doi": "10.1038/s41559-024-02367-y"
+    }
+   ],
+   "first_public": "2024-01-18"
+  },
+  {
+   "sample": "PO4_t1000_iso1",
+   "treatment": "PO",
+   "line": 4,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2157",
+   "type": "Isolate",
+   "ploidy": "",
+   "run": "SRR28618278",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 12714719,
+   "bases": 3309818685,
+   "bytes": 1433702580,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/078/SRR28618278/SRR28618278_1.fastq.gz",
+     "md5": "9b6f1dce9408b17668897ca7b82f3bb5"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/078/SRR28618278/SRR28618278_2.fastq.gz",
+     "md5": "7cd6eee7cfd1d4aeb3d21fb9caef995d"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  },
+  {
+   "sample": "PO5_t1000_iso1",
+   "treatment": "PO",
+   "line": 5,
+   "ancestor": false,
+   "transfer": 1000,
+   "strain": "GOB2158",
+   "type": "Isolate",
+   "ploidy": "",
+   "run": "SRR28618277",
+   "data_type": "WGS",
+   "platform": "NextSeq 2000",
+   "layout": "PAIRED",
+   "reads": 17099682,
+   "bases": 4244843798,
+   "bytes": 1865130011,
+   "fastq": [
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/077/SRR28618277/SRR28618277_1.fastq.gz",
+     "md5": "6de7aa18df9ecf3733bae8711c173072"
+    },
+    {
+     "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR286/077/SRR28618277/SRR28618277_2.fastq.gz",
+     "md5": "1df7af14db330901c8270dab9435bece"
+    }
+   ],
+   "bioproject": "PRJNA943273",
+   "papers": [],
+   "first_public": "2024-04-14"
+  }
+ ]
+}

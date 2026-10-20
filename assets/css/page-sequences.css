@@ -1,0 +1,89 @@
+/* ==========================================================================
+   page-sequences.css: the Genome sequences table (sequences/index.html).
+   Loaded after site.css. Same rules as the rest of the site: hairlines, no
+   fills, mono for labels and identifiers, serif for prose. Treatment colour
+   always travels with its code and oxygen glyph, never alone.
+   ========================================================================== */
+
+/* ------------------------------------------------------------ filters */
+.seq-filters{
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:var(--sp-3) var(--sp-4);
+  padding-bottom:var(--sp-5);border-bottom:1px solid var(--rule);
+}
+.seq-field{display:flex;flex-direction:column;gap:var(--sp-1);min-width:8.5rem}
+.seq-field span{
+  font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--ink-dim);
+}
+.seq-search{flex:1 1 16rem}
+.seq-field input,.seq-field select,.seq-reset,.seq-downloads button{
+  font-family:var(--font-mono);font-size:var(--t-label);color:var(--ink);
+  background:var(--bg);border:1px solid var(--rule);border-radius:0;
+  padding:var(--sp-2) var(--sp-3);min-height:2.25rem;
+}
+.seq-field select{padding-right:var(--sp-5);cursor:pointer}
+.seq-field input:hover,.seq-field select:hover{border-color:var(--ink-dim)}
+.seq-reset,.seq-downloads button{
+  text-transform:uppercase;letter-spacing:var(--track-label);color:var(--ink-dim);
+  background:none;cursor:pointer;
+}
+.seq-reset:hover,.seq-downloads button:hover{color:var(--accent);border-color:var(--accent)}
+
+/* --------------------------------------------------------- count, downloads */
+.seq-bar{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  gap:var(--sp-3) var(--sp-5);padding-block:var(--sp-4);
+}
+.seq-count{font-family:var(--font-mono);font-size:var(--t-label);color:var(--ink-dim);
+  text-transform:uppercase;letter-spacing:var(--track-label)}
+.seq-count strong{color:var(--ink);font-weight:500}
+.seq-downloads{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-3);
+  font-family:var(--font-mono);font-size:var(--t-label)}
+.seq-downloads button{min-height:auto;padding:var(--sp-1) var(--sp-2);font-size:var(--t-micro)}
+
+/* ----------------------------------------------------------------- table */
+.seq-scroll{overflow-x:auto;border-top:1px solid var(--rule)}
+.seq-scroll:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.seq-table{width:100%;border-collapse:collapse;font-size:var(--t-small);line-height:1.4}
+.seq-table th,.seq-table td{
+  text-align:left;vertical-align:top;padding:var(--sp-2);
+  border-bottom:1px solid var(--rule);
+}
+.seq-table td.num,.seq-table th.num{text-align:right}
+.seq-table thead th{
+  background:var(--bg);padding:0;border-bottom:1px solid var(--ink-dim);white-space:nowrap;
+}
+.seq-table thead button{
+  all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;
+  padding:var(--sp-3) var(--sp-2);font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:var(--track-label);color:var(--ink-dim);
+}
+.seq-table thead th.num button{text-align:right}
+.seq-table thead button:hover{color:var(--ink)}
+.seq-table thead button:focus-visible{outline:2px solid var(--focus);outline-offset:-2px}
+.seq-table thead button::after{content:"";display:inline-block;width:1.1em;text-align:center}
+.seq-table th[aria-sort="ascending"] button,
+.seq-table th[aria-sort="descending"] button{color:var(--ink)}
+.seq-table th[aria-sort="ascending"] button::after{content:"\2191"}
+.seq-table th[aria-sort="descending"] button::after{content:"\2193"}
+.seq-table tbody tr:hover td{background:var(--surface)}
+
+.seq-table .mono{font-family:var(--font-mono);font-size:var(--t-label)}
+.seq-table .dim{color:var(--ink-dim)}
+.seq-table .sub{display:block;font-family:var(--font-mono);font-size:var(--t-micro);
+  color:var(--ink-dim);margin-top:2px}
+.seq-pop{font-family:var(--font-mono);font-size:var(--t-label);font-weight:500;white-space:nowrap}
+.seq-pop .glyph{margin-right:.35em}
+.seq-table td a{white-space:nowrap}
+.seq-files a+a{margin-left:var(--sp-2)}
+.seq-papers a{display:block;white-space:normal;min-width:11rem}
+.seq-empty td{text-align:center;color:var(--ink-dim);padding:var(--sp-6)}
+
+/* ----------------------------------------------------------------- notes */
+.seq-notes{margin-top:var(--sp-6);display:grid;gap:var(--sp-3);max-width:var(--measure);
+  font-size:var(--t-small);color:var(--ink-dim)}
+.seq-notes strong{color:var(--ink);font-weight:500}
+
+@media (max-width:640px){
+  .seq-field{flex:1 1 45%;min-width:0}
+}
