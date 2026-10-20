@@ -94,7 +94,7 @@
   function selected(name) {
     return ticks(name).filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
   }
-  function fillMulti(name, options, ticked) {
+  function fillMulti(name, options, ticked, tips) {
     var list = multi(name).querySelector('.ph-multi-list');
     var tools = el('p', { cls: 'ph-multi-tools' }, [
       el('button', { type: 'button', 'data-all': '1', text: 'Tick all' }),
@@ -109,7 +109,9 @@
     options.forEach(function (o) {
       var box = el('input', { type: 'checkbox', value: o[0] });
       box.defaultChecked = box.checked = !!(ticked && ticked(o[0]));   // defaultChecked: what Clear filters restores
-      list.appendChild(el('label', { cls: 'ph-multi-opt' }, [box, el('span', { text: o[1] })]));
+      var opt = el('label', { cls: 'ph-multi-opt' }, [box, el('span', { text: o[1] })]);
+      if (tips && tips[o[0]]) opt.title = tips[o[0]];
+      list.appendChild(opt);
     });
   }
   function summarise(name) {
@@ -128,7 +130,8 @@
     samples.forEach(function (s) { if (s.transfer != null) tps[s.transfer] = true; });
     fillMulti('timepoint', Object.keys(tps).sort(function (a, b) { return a - b; })
       .map(function (t) { return [t, 't' + t]; }));
-    fillMulti('kind', kindOrder.map(function (k) { return [k, k]; }), function (k) { return k !== HIDDEN_KIND; });
+    fillMulti('kind', kindOrder.map(function (k) { return [k, k]; }), function (k) { return k !== HIDDEN_KIND; },
+              meta.kind_defs);
     fillMulti('paper', meta.papers.map(function (p) { return [p.label, p.label]; }));
   }
   function state() {

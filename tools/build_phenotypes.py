@@ -37,6 +37,25 @@ CONFIDENCE = {'high', 'medium', 'low'}
 # Strain kinds are mutually exclusive, by where the sample came from.
 KINDS = ['Ancestor', 'Evolved population', 'Evolved isolate', 'Derived strain', 'Treatment average',
          'Engineered strain']
+# Shown when hovering over a kind in the Strains filter.
+KIND_DEFS = {
+    'Ancestor': 'The founding strain of a treatment at t0, measured directly. GOB21 founded the PA lines; '
+                'GOB8 founded the PM and PO lines.',
+    'Evolved population': 'A whole-population sample of one MuLTEE line (PA, PM or PO 1–5), taken from the '
+                          'experiment at a given transfer.',
+    'Evolved isolate': 'A single genotype (clone) isolated from one MuLTEE line at a given transfer, measured '
+                       'after regrowth with nothing else done to it. Includes isolates of the Small and Large '
+                       'types.',
+    'Derived strain': 'Descends from an ancestor or evolved isolate through a further step outside the main '
+                      'experiment: donut and spread colonies, populations selected against large size on agar, '
+                      'mutation-accumulation lines, and monoculture replays. Also holds pooled isolates and '
+                      'sub-samples (cluster interiors and exteriors, fragments) that fit no other category.',
+    'Treatment average': 'Not a single sample: a value reported only as the mean of the five lines of a '
+                         'treatment. The line is left blank.',
+    'Engineered strain': 'Built by genetic modification: gene knockouts, overexpression clones, engineered '
+                         'diploid and tetraploid pairs, and fluorescently tagged strains. Hidden by default.',
+}
+assert set(KIND_DEFS) == set(KINDS)
 
 # ----------------------------------------------------------------------------- trait columns
 # Each column holds one comparable kind of measurement. "list" columns collect the one-off
@@ -279,6 +298,7 @@ def main():
         'samples': len(samples),
         'columns': columns,
         'kinds': KINDS,
+        'kind_defs': KIND_DEFS,
         'papers': [{'label': p, 'doi': d} for p, d in papers],
     }
     data = {'meta': meta, 'samples': list(samples.values()), 'measurements': measurements}
