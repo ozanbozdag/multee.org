@@ -237,6 +237,9 @@
     .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
     .then(function (data) {
       runs = data.runs;
+      // The catalogue's "4n baseline" is curator shorthand for the whole-genome ploidy;
+      // the papers say tetraploid, so show 4n (the page note covers aneuploidy).
+      runs.forEach(function (r) { if (r.ploidy === '4n baseline') r.ploidy = '4n'; });
       buildFilters();
       readUrl();
       var projects = document.getElementById('seq-projects');

@@ -23,7 +23,7 @@ window.MULTEE = (function () {
     day2024:      { key: 'day2024',      cite: 'Day et al. 2024, Physical Review X 14:011008',       doi: '10.1103/PhysRevX.14.011008' },
     nara2025:     { key: 'nara2025',     cite: 'Narayanasamy et al. 2025, Science Advances 11:eadr6399', doi: '10.1126/sciadv.adr6399' },
     yoon2025:     { key: 'yoon2025',     cite: 'Yoon et al. 2025, Nature Communications 16:9309',    doi: '10.1038/s41467-025-64368-0' },
-    cedeno2025:   { key: 'cedeno2025',   cite: 'Cedeño-Pérez et al. 2025, PLOS Computational Biology', doi: '10.1101/2025.04.23.650085' },
+    cedeno2025:   { key: 'cedeno2025',   cite: 'Cedeño-Pérez et al. 2025, bioRxiv preprint', doi: '10.1101/2025.04.23.650085' },
     ratcliff2012: { key: 'ratcliff2012', cite: 'Ratcliff et al. 2012, PNAS 109:1595–1600',           doi: '10.1073/pnas.1115323109' },
     ratcliff2015: { key: 'ratcliff2015', cite: 'Ratcliff et al. 2015, Nature Communications 6:6102', doi: '10.1038/ncomms7102' },
     lab:          { key: 'lab',          cite: 'Ratcliff Lab, unpublished / operational record',      doi: null }
@@ -213,7 +213,7 @@ window.MULTEE = (function () {
     { date: '2021-05-14', title: 'Oxygen suppression of macroscopic multicellularity', short: 'Bozdag et al. 2021',
       venue: 'Nature Communications 12:2838', doi: '10.1038/s41467-021-23104-0', theme: 'ecology', multee: false,
       finding: 'Intermediate oxygen suppressed size evolution (+8.9%) while anaerobic (+93%) and high oxygen (+97%) permitted it.' },
-    { date: '2022-05-10', title: 'Cellular organization in lab-evolved and extant multicellular species', short: 'Day et al. 2022',
+    { date: '2022-02-21', title: 'Cellular organization in lab-evolved and extant multicellular species', short: 'Day et al. 2022',
       venue: 'eLife 11:e72707', doi: '10.7554/eLife.72707', theme: 'biophysics', multee: false,
       finding: 'Maximum-entropy cell packing turns noisy assembly into predictable, heritable group-level traits.' },
     { date: '2023-05-10', title: 'De novo evolution of macroscopic multicellularity', short: 'Bozdag et al. 2023',
@@ -237,8 +237,8 @@ window.MULTEE = (function () {
     { date: '2025-10-21', title: 'Real-time, high-throughput super-resolution microscopy via panoramic integration', short: 'Yoon et al. 2025',
       venue: 'Nature Communications 16:9309', doi: '10.1038/s41467-025-64368-0', theme: 'methods', multee: true,
       finding: 'SPI imaging recovers aspect ratio rising from 1.30 to 3.28 and module size from 30.7 µm to 87.1 µm by 1,000 transfers.' },
-    { date: '2025-04-23', title: 'Emergence of coordinated cell division', short: 'Cedeño-Pérez et al. 2025',
-      venue: 'PLOS Computational Biology', doi: '10.1101/2025.04.23.650085', theme: 'theory', multee: true,
+    { date: '2025-04-23', title: 'Cell division timing shapes the morphology and size of nascent multicellular organisms', short: 'Cedeño-Pérez et al. 2025',
+      venue: 'bioRxiv preprint', doi: '10.1101/2025.04.23.650085', theme: 'theory', multee: true,
       finding: 'The ancestral first-division delay was lost by day 200; synchrony makes groups bigger by changing topology.' }
   ];
 
