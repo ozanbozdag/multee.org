@@ -64,7 +64,10 @@ function main() {
     const p = parameterStatus(state, selected(), {resetting});
     $('sf-pending').textContent = p.note;
     $('sf-pending').hidden = !p.note;
-    $('sf-active').textContent = p.active;
+    // Same names as the sliders (parameter-status.mjs is a byte-identical lab file, so reword here).
+    $('sf-active').textContent = state
+      ? `This run: cell shape ${state.params.shape.toFixed(2)} · bond strength ${state.params.strength.toFixed(2)} · later-bud angle ${state.params.angle}° · seed ${state.seed}`
+      : p.active;
     $('sf-apply').hidden = !p.pending && !resetting;
     $('sf-apply').disabled = !state || !p.validSeed || resetting;
   }

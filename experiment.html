@@ -75,13 +75,21 @@
           there is nothing for a cheater cell to gain, and cell fitness and group fitness point the
           same way from the start.</p>
         <p>The genetic basis is a single transcription factor. <em>ACE2</em> regulates the genes that
-          degrade the bud neck septum, so a loss-of-function mutation leaves daughters attached and
-          produces the whole snowflake package at once. When we sequenced ten independently evolved
-          snowflake lineages, five carried non-synonymous <em>ACE2</em> mutations, and in every case
-          both copies had been made identical by gene conversion. The mutation is repeatable. We do
-          not wait for it: all fifteen MuLTEE populations were founded from an
-          <em>ace2&Delta;</em> strain in the Y55 background, so the experiment starts at the
-          multicellular state rather than having to evolve into it.</p>
+          degrade the bud neck septum, so a loss-of-function mutation leaves daughters attached. When
+          we sequenced ten independently evolved snowflake lineages, five carried non-synonymous
+          <em>ACE2</em> mutations, and in every case both copies had been made identical by gene
+          conversion (<a href="https://doi.org/10.1038/ncomms7102">Ratcliff et al. 2015</a>).</p>
+        <p>Loss of <em>ACE2</em> has arisen independently many times in yeast evolution experiments
+          that favour multicellular groups, including in other labs and other species: in
+          fast-sedimenting lineages of <em>S.&nbsp;cerevisiae</em>
+          (<a href="https://doi.org/10.1073/pnas.1305949110">Oud et al. 2013</a>), in the budding yeast
+          <em>Kluyveromyces lactis</em>, where it was the main route to multicellularity
+          (<a href="https://doi.org/10.1038/s42003-024-06485-y">Wang, Driscoll &amp; Travisano 2024</a>),
+          and in two of five lineages of the fission yeast <em>Schizosaccharomyces pombe</em>, which
+          split from budding yeast hundreds of millions of years ago
+          (<a href="https://doi.org/10.1093/evlett/qrae024">Pineau et al. 2024</a>).</p>
+        <p>All fifteen MuLTEE populations were founded from an <em>ace2&Delta;</em> strain in the Y55
+          background, so they were multicellular from the first day.</p>
       </div>
 
       <figure class="plate reveal" style="margin-top:var(--sp-7)">
@@ -103,9 +111,9 @@
           </dl>
         </div>
       </figure>
-      <p class="plate-caption">One cluster, one genome. The cyan outlines are cell walls and the
-        orange points are nuclei, one per cell. Branch points are where a daughter budded and never
-        let go.</p>
+      <p class="plate-caption">A single cluster. The cyan outlines are cell walls and the orange
+        points are nuclei, one per cell. Each branch point is where a daughter cell budded and stayed
+        attached.</p>
     </section>
   </div>
 
@@ -165,7 +173,7 @@
       <!-- ============================== the transfer engine (interactive) -->
       <div class="te" id="transfer-engine" style="margin-top:var(--sp-8)">
         <p class="te-flag">Interactive &middot; Schematic, not to scale</p>
-        <h3 style="margin:0 0 var(--sp-3)">The transfer engine</h3>
+        <h3 style="margin:0 0 var(--sp-3)">Settling selection, simulated</h3>
         <p class="te-caption" style="margin-top:0">Forty clusters in a tube. Press play and they
           fall, larger ones faster. Everything that reaches the transfer line goes into fresh medium
           and regrows to a full culture; everything still in suspension is thrown away. The chart
@@ -199,13 +207,9 @@
           the cycle one selection event at a time, and <strong>Reset</strong> to start the run
           again.</p>
 
-        <p class="te-caption"><strong>What is schematic.</strong> Settling speed here rises with
-          cluster size by one simple monotonic rule, plus a small random difference between clusters
-          that stands in for everything else. Real snowflake clusters are branched and porous, so
-          they do not follow the simple relation that holds for a solid sphere: fluid moves through
-          and around a branched body, and evolved changes in shape and packing alter how fast it
-          sinks independently of how big it is. Sizes appear only as multiples of the starting mean,
-          never in micrometres.</p>
+        <p class="te-caption">In the simulation, settling speed rises with cluster size by a simple
+          rule, plus a small random term. Real clusters are branched and porous, so their shape and
+          packing also affect how fast they sink. Sizes are shown relative to the starting mean.</p>
 
         <p class="te-caption">The selection step is simplified too. In the widget the settling
           window ends when the pipette volume is full, so about twelve clusters out of forty carry

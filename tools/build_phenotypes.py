@@ -39,21 +39,20 @@ KINDS = ['Ancestor', 'Evolved population', 'Evolved isolate', 'Derived strain', 
          'Engineered strain']
 # Shown when hovering over a kind in the Strains filter.
 KIND_DEFS = {
-    'Ancestor': 'The founding strain of a treatment at t0, measured directly. GOB21 founded the PA lines; '
+    'Ancestor': 'The founding strain of a treatment (t0). GOB21 founded the PA lines; '
                 'GOB8 founded the PM and PO lines.',
     'Evolved population': 'A whole-population sample of one MuLTEE line (PA, PM or PO 1–5), taken from the '
                           'experiment at a given transfer.',
-    'Evolved isolate': 'A single genotype (clone) isolated from one MuLTEE line at a given transfer, measured '
-                       'after regrowth with nothing else done to it. Includes isolates of the Small and Large '
+    'Evolved isolate': 'A single genotype (clone) isolated from one MuLTEE line at a given transfer and '
+                       'regrown, with no further manipulation. Includes isolates of the Small and Large '
                        'types.',
     'Derived strain': 'Descends from an ancestor or evolved isolate through a further step outside the main '
                       'experiment: donut and spread colonies, populations selected against large size on agar, '
-                      'mutation-accumulation lines, and monoculture replays. Also holds pooled isolates and '
-                      'sub-samples (cluster interiors and exteriors, fragments) that fit no other category.',
-    'Treatment average': 'Not a single sample: a value reported only as the mean of the five lines of a '
-                         'treatment. The line is left blank.',
+                      'mutation-accumulation lines, and monoculture replays. Also includes pooled isolates '
+                      'and sub-samples such as cluster interiors, cluster exteriors and fragments.',
+    'Treatment average': 'A value reported only as the mean of a treatment’s five lines, so no line is given.',
     'Engineered strain': 'Built by genetic modification: gene knockouts, overexpression clones, engineered '
-                         'diploid and tetraploid pairs, and fluorescently tagged strains. Hidden by default.',
+                         'diploid and tetraploid pairs, and fluorescently tagged strains.',
 }
 assert set(KIND_DEFS) == set(KINDS)
 
@@ -91,7 +90,7 @@ COLUMN_DEFS = [
     ('bud_first', 'Budding pattern', 'First cell division, median duration', 'min', 'num', False),
     ('bud_later', 'Budding pattern', 'Later cell divisions, median duration', 'min', 'num', False),
     ('bud_dslow', 'Budding pattern', 'Daughters divide slower than mothers', '', 'cat', False),
-    ('bud_mdsync', 'Budding pattern', 'Mother–daughter timing deviates from identity', '', 'cat', False),
+    ('bud_mdsync', 'Budding pattern', 'Mother and daughter division times differ (vs 1:1 line)', '', 'cat', False),
     ('bud_angle', 'Budding pattern', 'Budding angle, median', '°', 'num', False),
     ('bud_polar', 'Budding pattern', 'Bud polar angle, mean (bud scars)', '°', 'num', False),
     ('bud_other', 'Budding pattern', 'Other budding measurements', '', 'list', False),
