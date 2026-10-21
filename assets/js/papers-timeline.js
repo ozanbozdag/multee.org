@@ -4,7 +4,7 @@
    One dot per paper in MULTEE.PAPERS, placed at its real publication date on a
    single time axis that runs from the year of the first paper to the end of the
    current year. Papers that use MuLTEE populations are filled; the foundational
-   work is hollow. A marked line at 1 January 2018 (day 0, first transfer) splits
+   work is hollow. A marked line at the start of 2018 (the year of the first transfer; the exact date is not published) splits
    the two eras, and a band shows the span the experiment has been running.
 
    HONESTY. Every date, venue, DOI and finding rendered here is read from
@@ -108,7 +108,7 @@
   cv.setAttribute('aria-hidden', 'true');
   cv.appendChild(document.createTextNode(
     'Time axis from ' + START_YEAR + ' to ' + (END_YEAR - 1) +
-    ', marked at 1 January 2018, the first transfer.'));
+    ', marked at 2018, the year of the first transfer.'));
   var dots = el('div', 'pt-dots');
   dots.setAttribute('role', 'group');
   dots.setAttribute('aria-label',
@@ -406,7 +406,7 @@
       c.fillStyle = C.amber;
       c.font = mono(10, 500);
       c.textAlign = 'left';
-      c.fillText('DAY 0  ·  1 JAN 2018  ·  FIRST TRANSFER', a0 + 7, G.padT - 26);
+      c.fillText('FIRST TRANSFER  ·  2018', a0 + 7, G.padT - 26);
       c.textAlign = 'right';
       c.fillStyle = C.dim;
       c.font = mono(9.5, 500);
@@ -463,7 +463,7 @@
       c.font = mono(9.5, 500);
       c.textAlign = 'right';
       c.textBaseline = 'bottom';
-      c.fillText('DAY 0 · 1 JAN 2018 · FIRST TRANSFER', right, a0 - 4);
+      c.fillText('FIRST TRANSFER · 2018', right, a0 - 4);
     }
   }
 
