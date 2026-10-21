@@ -346,7 +346,8 @@ def _figure(ph, protocol_title):
 def _pipeline_item(pl):
     paras = _paragraphs(pl["description"])
     meta = [f"By {esc(pl['author'])}", f"Updated {esc(pl['last_updated'])}"]
-    meta.append(" + ".join(x for x in ("Link" if pl.get("url") else "", "Zip" if pl.get("zip") else "") if x))
+    if pl.get("url"):
+        meta.append("Link")
     return f'''        <li>
           <h3 class="pub-title"><a href="pipelines/{esc(pl["slug"])}/">{esc(pl["title"])}</a></h3>
           <p class="pub-meta">{"".join(f"<span>{m}</span>" for m in meta)}</p>

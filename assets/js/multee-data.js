@@ -206,7 +206,7 @@ window.MULTEE = (function () {
       finding: 'Ten replicate populations evolved clonal snowflake clusters within 60 transfers of settling selection.' },
     { date: '2013-04-09', title: 'Tempo and mode of multicellular adaptation in experimentally evolved Saccharomyces cerevisiae', short: 'Ratcliff et al. 2013',
       venue: 'Evolution 67:1573–1581', doi: '10.1111/evo.12101', theme: 'origins', multee: false,
-      finding: 'Settling speed rose 44% over 227 days in three phases: more cells per cluster, larger cells, then rounder clusters.' },
+      finding: 'Settling speed rose 44% between days 7 and 227 in three phases: more cells per cluster, larger cells, then more hydrodynamic clusters.' },
     { date: '2014-09-18', title: 'Geometry shapes evolution of early multicellularity', short: 'Libby et al. 2014',
       venue: 'PLoS Computational Biology 10:e1003803', doi: '10.1371/journal.pcbi.1003803', theme: 'theory', multee: false,
       finding: 'Branching geometry constrains interior space, so a higher rate of cell death becomes adaptive.' },
