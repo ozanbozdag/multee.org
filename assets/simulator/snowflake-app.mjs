@@ -122,7 +122,7 @@ function main() {
     if (!Number.isInteger(value) || value < 1 || value > C.maxCap) return;
     if (requestedLimit === value || requestedLimit === null && value === (state?.maxCells ?? C.cap)) return;
     requestedLimit = value; requestedLimitId = ++limitRequestSequence;
-    $('sf-limit-note').textContent = `Changing the limit to ${value} cells when the current calculation finishes…`;
+    $('sf-limit-note').textContent = `Changing the limit to ${value} cells…`;
     worker.postMessage({type: 'setGrowthLimit', maxCells: value, requestId: requestedLimitId});
   }
   $('sf-limit').addEventListener('change', applySelectedLimit);
@@ -133,12 +133,12 @@ function main() {
   /* ------------------------------------------------------- worker updates */
   function describe(measured) {
     if (!measured) return 'starting';
-    if (measured.fault) return 'stopped at a numerical limit';
+    if (measured.fault) return 'stopped';
     const s = measured.status;
     if (s === 'ready') return 'ready';
     if (s.startsWith('cell cap')) return 'growth limit reached';
     if (s.startsWith('maturing')) return 'buds maturing at the growth limit';
-    if (s.startsWith('stalled')) return 'numerical settling stalled';
+    if (s.startsWith('stalled')) return 'waiting for cells to settle';
     if (s.startsWith('ready to continue')) return 'ready to continue';
     // "relaxing" alternates with "growing" many times a second during ordinary
     // growth: the cluster settles before each growth step. Both read as growing.
@@ -158,7 +158,7 @@ function main() {
     if (d.error) {
       running = false; stepping = false; pauseRequested = false; requestedLimit = null; requestedLimitId = null;
       $('sf-limit').value = String(state?.maxCells ?? C.cap);
-      setStatus(`Stopped: ${d.error}. Reset to start again.`);
+      setStatus('The simulation stopped because of an error. Press Reset to start again.');
       $('sf-run').textContent = 'Reset required'; $('sf-run').disabled = true; $('sf-step').disabled = true;
       return;
     }
@@ -186,7 +186,7 @@ function main() {
         : state.maxCells >= 512 ? 'Large runs can take several minutes. Pause stays available.'
         : state.maxCells >= 256 ? 'Larger runs take longer. Pause stays available.' : '';
     } else {
-      $('sf-limit-note').textContent = `Active limit is still ${state.maxCells}; applying ${requestedLimit} when the current calculation finishes…`;
+      $('sf-limit-note').textContent = `Changing the limit from ${state.maxCells} to ${requestedLimit} cells…`;
     }
 
     $('sf-cells').textContent = state.cells.length;
@@ -206,8 +206,8 @@ function main() {
     const stalled = lastCompleted?.status.startsWith('stalled');
     $('sf-notice').hidden = !stalled && !lastCompleted?.fault;
     $('sf-notice').textContent = lastCompleted?.fault
-      ? `${lastCompleted.fault}. The last finite geometry is shown. Reset to start a new run; this is a numerical limit of the solver, not a biological prediction.`
-      : stalled ? `Growth is paused because the numerical settling criterion has not cleared (${lastCompleted.cells} cells). This is a solver criterion, not evidence of biological jamming. Continue to keep relaxing, or reset with different settings.` : '';
+      ? 'The calculation ran into a numerical problem and stopped. The last shape is still shown. Press Reset to start a new run.'
+      : stalled ? `Growth has paused while the cells settle into place (${lastCompleted.cells} cells). Leave it running to give them more time, or press Reset to try different settings.` : '';
 
     syncParameters(); dirty = true; requestFrame();
   });
@@ -223,8 +223,8 @@ function main() {
     $('sf-tick-mid').textContent = number(strain.threshold / 2);
     $('sf-tick-high').textContent = `${number(strain.threshold)} · ${previewing ? 'selected' : 'break'}`;
     $('sf-readout').textContent = !useStrain ? '' : previewing
-      ? `Colour scale previews the selected threshold, ${number(strain.threshold)}. This culture still breaks at ${number(strain.mechanicalThreshold)}; apply the change to restart with the new value.`
-      : `Peak strain on an intact bond: ${number(strain.peak)}, or ${number(strain.peak / strain.threshold * 100)}% of the breaking threshold.`;
+      ? `The colours now preview a bond strength of ${number(strain.threshold)}. This run still uses ${number(strain.mechanicalThreshold)}; apply the change to restart with the new value.`
+      : `Most stretched bond: ${number(strain.peak / strain.threshold * 100)}% of the way to breaking.`;
   }
 
   /* ---------------------------------------------------------- the render */

@@ -355,7 +355,7 @@ def pipelines_index(pipelines, protocols):
     <section class="section" {SECTION_HEAD}>
       <p class="eyebrow"><a href="data.html#resources">Data &amp; Strains</a> / Pipelines</p>
       <h1 class="display">Analysis pipelines</h1>
-      <p class="lede">Code the lab uses to analyse MuLTEE data, with the protocols each one goes with.</p>
+      <p class="lede">Code the lab uses to analyse MuLTEE data.</p>
       <p class="protocol-actions"><a class="btn btn-ghost" href="protocols/">Protocols</a></p>
     </section>
   </div>
@@ -433,8 +433,8 @@ def _updated_note(index):
     # The date of the newest change, not of the build: an unchanged export must
     # produce byte-identical pages so the nightly update has nothing to commit.
     dates = [p["last_updated"] for c in index["categories"] for p in c["protocols"]]
-    latest = f" Last change {esc(max(dates))}." if dates else ""
-    return (f"Maintained in the lab's protocol log.{latest} "
+    latest = f"Last updated {esc(max(dates))}. " if dates else ""
+    return (f"{latest}"
             "Questions about a protocol: see <a href=\"data.html#contact\">who to write to</a>.")
 
 

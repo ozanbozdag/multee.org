@@ -15,7 +15,7 @@
   };
   var TYPE_ORDER = ['Ancestor', 'Isolate', 'Isolate (Small)', 'Isolate (Large)', 'Population',
                     'Donut strain', 'Spread strain'];
-  var NO_PAPER = 'Not yet in a paper';
+  var NO_PAPER = 'Unpublished';
 
   var form = document.getElementById('seq-filters');
   var body = document.getElementById('seq-body');

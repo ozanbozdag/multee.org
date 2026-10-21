@@ -47,12 +47,9 @@
     <section class="section" style="padding-block:var(--sp-8) var(--sp-6)">
       <p class="eyebrow">How the experiment works</p>
       <h1 class="display">The experimental protocol</h1>
-      <p class="lede">The experimental design is simple. Yeast are grown for a day, the culture is
-        allowed to settle, and only the fraction that reaches the bottom first is carried forward.
-        That one procedure, repeated every day across fifteen populations in three metabolic
-        environments, is the only selection we impose. Everything the MuLTEE has produced, from
-        millimetre-scale bodies visible to the naked eye to a duplicated genome, has evolved under
-        it.</p>
+      <p class="lede">Each day the yeast grow, the culture is left to settle, and only the clusters
+        that reach the bottom first are moved into fresh medium. This is the only selection we
+        impose, and it is the same for all fifteen populations in three metabolic environments.</p>
     </section>
   </div>
 
@@ -156,8 +153,8 @@
           <div>
             <h3>Transfer the fastest-settling fraction into fresh medium</h3>
             <p>Only the bottom fraction is moved forward. Everything still in suspension is
-              discarded. That transfer is the selection event, and tomorrow it happens again. Over
-              600 rounds this took mean cluster radius from 16&nbsp;&micro;m to 434&nbsp;&micro;m in
+              discarded. Over 600 transfers this took mean cluster radius from 16&nbsp;&micro;m to
+              434&nbsp;&micro;m in
               the anaerobic populations, roughly a 20,000-fold increase in volume, and took the
               number of cells in a group from about 100 to about 450,000.</p>
           </div>
@@ -253,17 +250,14 @@
 
       <div style="max-width:var(--measure)">
         <div class="prose">
-          <p>Larger clusters sink faster through liquid. Larger, denser clusters reach the bottom
-            first, so the regime is directional selection for increased group size.</p>
-          <p>We chose settling selection because it is experimentally tractable. Its strength can be
-            tuned simply by shortening the settling window, it is far more reproducible than
-            predation, and there is no predator to co-evolve or go extinct halfway through a
-            decade. Sedimentation rate is also an ecological trait in its own right for aquatic
-            organisms, not purely a laboratory convenience.</p>
-          <p>Many of the interesting phenotypes that evolved were not things we directly selected
-            for. Cells elongated, lowering how densely a cluster packs and delaying fracture.
-            Branches entangled. Division timing synchronised. All of those arrived because they
-            made clusters bigger or harder to break.</p>
+          <p>Larger clusters sink faster, so settling selection favours larger groups. We chose it
+            because it is easy to control: its strength can be tuned by shortening the settling
+            time, and unlike predation it needs no second species that could co-evolve or die out.
+            Sinking rate is also an ecologically relevant trait for aquatic organisms.</p>
+          <p>Many of the traits that evolved were not selected for directly. Cells became longer,
+            which loosens packing and delays fracture; branches became entangled; and cell division
+            became synchronised. These traits spread because they made clusters larger or harder to
+            break.</p>
         </div>
       </div>
 
@@ -321,17 +315,13 @@
 
       <div style="max-width:var(--measure)">
         <div class="prose">
-          <p>A big body has an interior, and the interior has to be fed. For an organism that
-            respires, that means oxygen has to diffuse in, and diffusion sets a hard ceiling on how
-            large a solid mass of metabolising cells can get. The three treatments exist to test
-            whether that ceiling is what limits multicellular size over the long run, by giving five
-            replicate populations each a different relationship to oxygen and then applying the
-            identical settling regime to all fifteen.</p>
-          <p>These treatments were established in 2018, and the first 145 transfers were published
-            in 2021 as a test of how oxygen affects size evolution. The result was counterintuitive:
-            intermediate oxygen suppressed size evolution, while both anaerobic conditions and high
-            oxygen permitted it. Fifteen of those populations have been transferred continuously ever
-            since, and they are the fifteen described here.</p>
+          <p>Cells inside a large cluster rely on oxygen diffusing in from outside, and diffusion
+            limits how large a solid mass of respiring cells can grow. The three treatments test
+            whether this limit constrains multicellular size over the long run.</p>
+          <p>The treatments come from a twenty-population experiment established in 2018. Results
+            from its first 145 transfers, published in 2021, showed that intermediate oxygen
+            suppressed size evolution, while anaerobic conditions and high oxygen allowed it.
+            Fifteen of those populations have been transferred ever since and form the MuLTEE.</p>
         </div>
       </div>
 
@@ -339,11 +329,10 @@
         <article class="treatment">
           <div class="treatment-body">
             <span class="chip chip-pa" data-o2="&#9675;">PA1&ndash;5 Anaerobic</span>
-            <h3>Cannot respire, so pays no oxygen cost for size</h3>
+            <h3>Cannot respire</h3>
             <dl>
               <dt>Metabolism</dt><dd>Obligate fermentation</dd>
               <dt>Mitochondria</dt><dd>Petite; respiration lost</dd>
-              <dt>Oxygen</dt><dd>Cannot be used at all</dd>
               <dt>Medium</dt><dd>YPD (glucose)</dd>
             </dl>
             <p>Petite mutants carry defective mitochondria and cannot use oxygen at all. Removing
@@ -363,8 +352,7 @@
               <dt>Medium</dt><dd>YPD (glucose)</dd>
             </dl>
             <p>Glucose with access to oxygen, which is how ordinary yeast grows. These populations
-              stayed microscopic, but they are not a passive control. All five underwent the same
-              whole-genome duplication as the anaerobic lines, and all five have since evolved hollow
+              stayed microscopic. All five underwent the same whole-genome duplication as the anaerobic lines, and all five have since evolved hollow
               toroidal morphologies whose central opening drives rapid flow with no cilia or flagella
               (unpublished).</p>
           </div>
@@ -373,7 +361,7 @@
         <article class="treatment">
           <div class="treatment-body">
             <span class="chip chip-po" data-o2="&#9679;">PO1&ndash;5 Obligately aerobic</span>
-            <h3>Must respire, so oxygen is a contested resource</h3>
+            <h3>Must respire</h3>
             <dl>
               <dt>Metabolism</dt><dd>Obligate respiration</dd>
               <dt>Mitochondria</dt><dd>Intact and required</dd>
@@ -398,8 +386,7 @@
   <div class="page">
     <section class="section" id="archive">
       <div class="section-head">
-        <p class="eyebrow">The frozen fossil record</p>
-        <h2>Cryopreservation and the revivable past</h2>
+        <h2>The frozen fossil record</h2>
       </div>
 
       <div class="prose">
@@ -407,23 +394,20 @@
           &minus;80&nbsp;&deg;C. Frozen samples neither die nor continue to evolve, so when they are
           thawed they resume growing in the state the population was in on the day it was frozen.
           This frozen fossil record now holds more than 3,000 samples.</p>
-        <p>A revivable past is what separates a long-term evolution experiment from an experiment
-          that simply runs for a long time. In most studies the past exists only as data. Here it
-          exists as a living organism that can be thawed, placed in a tube alongside its own
-          descendant, and competed directly. That is how we measure fitness: an evolved isolate is
-          competed against the ancestor it came from, under the same growth-and-settling cycle the
-          population experienced.</p>
+        <p>Because frozen samples can be revived, an ancestor can be grown in the same tube as its
+          own descendants. This is how we measure fitness: an evolved isolate is competed against
+          the ancestor it came from, under the same growth-and-settling cycle the population
+          experienced.</p>
         <p>The archive also lets us test the order in which things happened. If a trait is present at
           day 600, we can thaw day 400 and check whether it was already segregating there, rather
           than inferring it. Reversibility can be tested the same way, by relaxing selection on a
           revived evolved strain and seeing whether the trait is lost. That is how we showed that
           tetraploidy in these populations is maintained by ongoing selection rather than by genome
           stability.</p>
-        <p>Finally, the archive is built for instruments that do not exist yet. Some of the most
+        <p>The archive also keeps samples for methods that do not exist yet. Some of the most
           important results from Lenski's <em>E.&nbsp;coli</em> LTEE came from genome sequencing and
           genetic reconstruction, neither of which was available at scale when that experiment began
-          in 1988. Freezing samples is inexpensive. Regenerating a decade of evolution is not
-          possible at all.</p>
+          in 1988.</p>
       </div>
 
       <div class="note" style="margin-top:var(--sp-6)">
@@ -448,10 +432,8 @@
       </div>
 
       <div class="prose">
-        <p>The daily transfer is the experiment itself. Everything else is measurement, carried out
-          on isolates revived from the freezer. Because the archive is available, the same assay can
-          be applied to day 0, day 400 and day 1,000 in the same week, by the same person, on the
-          same instrument.</p>
+        <p>Measurements are made on isolates revived from the archive, so samples from day 0, day
+          400 and day 1,000 can be measured side by side.</p>
       </div>
 
       <ul class="glossary" style="margin-top:var(--sp-6)">

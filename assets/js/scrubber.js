@@ -343,29 +343,27 @@
     if (r.beyond) {
       rTxt = '434 µm';
       tagTxt = 'Series ends';
-      spokenTag = 'the last measured value, at day ' + LAST_RADIUS_DAY + '; nothing is published past it';
+      spokenTag = 'the last published value, at day ' + LAST_RADIUS_DAY;
       tagCls = 'tag tag-interp';
-      subTxt = 'Last measured value, day ' + LAST_RADIUS_DAY + '. No size measurement is published past day ' + LAST_RADIUS_DAY + ', and none is drawn.';
+      subTxt = 'Last published measurement, day ' + LAST_RADIUS_DAY + '.';
     } else if (r.exact) {
       rTxt = '16 µm';
       tagTxt = 'Measured';
       spokenTag = 'measured';
       tagCls = 'tag tag-measured';
-      subTxt = 'The ancestral radius stated in Bozdag et al. 2023.';
+      subTxt = 'Ancestral radius (Bozdag et al. 2023).';
     } else if (r.onSample) {
       rTxt = Math.round(r.value) + ' µm';
       tagTxt = 'Sampled';
-      spokenTag = 'a sampled timepoint, digitized from figure 1e';
+      spokenTag = 'a sampled timepoint';
       tagCls = 'tag tag-measured';
-      subTxt = 'A sampling point in Bozdag et al. 2023 Fig. 1e, mean of the five anaerobic lines. ' +
-               'Digitized from the published figure, so approximate to a few per cent.';
+      subTxt = 'Mean of the five anaerobic populations (Bozdag et al. 2023).';
     } else {
       rTxt = Math.round(r.value) + ' µm';
       tagTxt = 'Between samples';
-      spokenTag = 'between two sampled timepoints, drawing only';
+      spokenTag = 'estimated between sampled timepoints';
       tagCls = 'tag tag-interp';
-      subTxt = 'Between two sampling points 50 days apart, interpolated on the log axis the ' +
-               'paper plots. Drawing only, not a measurement.';
+      subTxt = 'Estimated between sampling points.';
     }
     if (out.radius) out.radius.textContent = rTxt;
     if (out.radiusTag) { out.radiusTag.textContent = tagTxt; out.radiusTag.className = tagCls; }
@@ -408,9 +406,7 @@
     }
     if (plateCap) plateCap.textContent = plate.caption;
     if (plateNote) {
-      plateNote.textContent = plate.day > day
-        ? 'The archive holds no image before day 400. This is the nearest archived timepoint, which is later than the day shown.'
-        : 'Nearest archived timepoint at or before this day. Four timepoints are imaged: 400, 600, 715, 1000.';
+      plateNote.textContent = 'Images are available from days 400, 600, 715 and 1,000.';
     }
 
     /* papers */

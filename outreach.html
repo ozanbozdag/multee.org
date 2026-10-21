@@ -298,7 +298,7 @@
                 <div><dt>Cells</dt><dd id="sf-cells">1</dd></div>
                 <div><dt>Clusters</dt><dd id="sf-clusters">1</dd></div>
                 <div><dt>Broken bonds</dt><dd id="sf-broken">0</dd></div>
-                <div><dt>Growth ticks</dt><dd id="sf-ticks">0</dd></div>
+                <div><dt>Growth steps</dt><dd id="sf-ticks">0</dd></div>
               </dl>
 
               <div class="sf-controls">
@@ -323,7 +323,7 @@
           <aside class="sf-panel" aria-label="Simulation settings">
             <fieldset class="sf-group">
               <legend>Compare bond strengths</legend>
-              <p class="sf-small">Seed 8, shape 1.80, later-bud angle 25°. Each restarts and runs.</p>
+              <p class="sf-small">Each button restarts the run with seed 8, cell shape 1.80 and a 25&deg; later-bud angle, changing only the bond strength.</p>
               <div class="sf-presets">
                 <button type="button" class="btn btn-ghost" data-sf-preset="0.45">Weak &middot; 0.45</button>
                 <button type="button" class="btn btn-ghost" data-sf-preset="1">Default &middot; 1.00</button>
@@ -371,8 +371,8 @@
                   <option value="512">512 cells</option>
                   <option value="1024" selected>1,024 cells</option>
                 </select>
-                <small>Total cells across all clusters. This is not a biological setting: it
-                  takes effect immediately, and raising it lets a finished run continue.</small>
+                <small>Total cells across all clusters. Changes take effect straight away, and
+                  raising the limit lets a finished run carry on.</small>
               </div>
               <p class="sf-small" id="sf-limit-note" aria-live="polite"></p>
             </fieldset>
@@ -459,11 +459,11 @@
         <p>This is a deliberately simple model. Cells are rigid ellipsoids that grow, bud and push
           against their neighbours. Each bond between a mother and daughter stretches like a spring,
           bends a little (yielding permanently past a modest angle), and breaks for good once it is
-          stretched past the threshold you set. Nothing tells a cluster when or where to split:
-          every break comes out of the mechanics of growth and crowding. All units are
-          dimensionless and nothing is calibrated to measured yeast, so the simulator shows how a
-          branched body can generate its own reproduction, not how large or how fast a real
-          cluster grows.</p>
+          stretched past the threshold you set. No rule tells a cluster when or where to split;
+          breaks happen because growth crowds the cells. Sizes and times are in arbitrary units
+          and are not matched to real yeast, so the model can show how a branched cluster comes
+          to break apart on its own, but it cannot predict how large or how fast a real cluster
+          grows.</p>
         <p>The model also counts every detached piece as a new cluster, without asking whether
           that piece could actually escape its neighbours. Branch entanglement, which let evolved
           MuLTEE clusters hold together after many mother-daughter bonds had broken, is
@@ -471,39 +471,10 @@
       </div>
 
       <details class="note sf-details" style="margin-top:var(--sp-6)">
-        <summary class="label" style="cursor:pointer">Model details and numerical limits</summary>
-        <p>Oriented, rigid ellipsoids grow and bud with elastic surface attachments and modest
-          angular plasticity. A mature cell has size 1 and a newborn starts at 0.23; changing the
-          shape preserves cell volume. Every cell places its first successful daughter at its
-          distal pole, along the positive long axis. Later daughters use the selected 0&ndash;90&deg;
-          initial growth-axis angle. Their attachment sites are independent of this direction: a
-          fixed surface ring at 90% of the mother's half-length toward its distal pole, with random
-          azimuth. The newborn's basal pole starts 0.25 model units from its attachment site along
-          its own axis. Contacts and elastic bending can change the axes after birth; the selected
-          angle is an initial condition, not a permanent angular constraint. Each newborn begins
-          its own reproductive history.</p>
-        <p>Repulsion and torque from cell contacts rearrange branches. Contact uses
-          orientation-dependent ellipsoid overlap classification (Perram&ndash;Wertheim) with an
-          approximate soft-penalty depth and normal. Bending below 12&deg; from the current
-          preferred angle is elastic. Beyond 12&deg;, the preferred angle gradually changes; that
-          retained change is plastic. Each bond has a cumulative 25&deg; plastic-rotation
-          allowance. Axial rest length does not change. Failure uses axial tensile strain only, is
-          irreversible, and is checked during numerical relaxation rather than after a fully
-          equilibrated fracture solve. More than one bond can fail in a substep. Connected
-          components define clusters. Clusters keep growing and contacting each other in the
-          mechanical model; no cuts or separating kicks are imposed on the solver.</p>
-        <p>Mechanics are overdamped, with illustrative spring, bending and contact parameters.
-          Growth advances only when overlap is at most 0.035 and residual motion is at most 0.0015
-          after relaxation, so some updates relax the same cells without advancing their growth
-          tick, and growth can appear uneven. The solver compares one full step with two half
-          steps to estimate numerical error and accepts only the two-half-step path. A persistent
-          stall means this numerical settling criterion remains unresolved, not that biological
-          jamming has been established. A solver fault retains the last finite state and is not a
-          biological outcome.</p>
-        <p>Growth schedules, mobility, neck geometry, stiffness and time step are illustrative.
-          These are not calibrated forces, physical times or predictions of yeast phenotypes.
-          The cluster separation and jiggle are rigid display transforms of whole clusters; they
-          never alter the forces, strain or fracture calculation.</p>
+        <summary class="label" style="cursor:pointer">More about the model</summary>
+        <p>A newborn cell starts at about a quarter of mature size (0.23) and grows to size 1; changing the cell shape keeps cell volume the same. Each cell's first daughter grows from its tip, in line with its long axis. Later daughters attach near the same end, at a random position around the cell, and start growing at the later-bud angle you choose. After that, pushing from neighbours can turn them.</p>
+        <p>A bond can bend by up to 12&deg; and spring back. Bent further, it slowly takes on the new angle permanently, up to 25&deg; in total. A bond breaks only when it is stretched past the breaking point, and a broken bond never reforms. Every group of cells still joined by bonds counts as one cluster, and all clusters keep growing and pushing on each other.</p>
+        <p>The model waits for the cells to settle after each growth step before growing again, so growth can look uneven, and on rare occasions it pauses or stops. These pauses come from the calculation, not from the biology.</p>
       </details>
     </section>
   </div>

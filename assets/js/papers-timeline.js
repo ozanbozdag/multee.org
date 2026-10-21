@@ -126,7 +126,7 @@
     return i;
   }
   legend.appendChild(legendItem('is-multee', 'Filled: uses MuLTEE populations'));
-  legend.appendChild(legendItem('is-found', 'Hollow: foundational, before or beside the experiment'));
+  legend.appendChild(legendItem('is-found', 'Hollow: other snowflake yeast work'));
 
   /* ---- card */
   var card = el('div', 'pt-card');

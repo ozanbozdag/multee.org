@@ -57,9 +57,8 @@
         <p class="eyebrow">The story</p>
         <h1 class="display">Running the transition forward</h1>
         <p class="lede">The major transitions in individuality happened in the deep past, and the
-          transitional forms are long extinct. Rather than reconstruct the origin of
-          multicellularity from what survives, we evolve it forward under conditions we control, one
-          transfer per day, and freeze the entire record as we go.</p>
+          transitional forms are long extinct. We evolve multicellularity forward in the lab
+          instead, transferring the populations daily and freezing samples as we go.</p>
         <div class="hero-actions">
           <a class="btn" href="#what-happened">Interactive timeline</a>
           <a class="btn btn-ghost" href="experiment.html">How the experiment works</a>
@@ -138,7 +137,7 @@
     <section class="section prose">
       <div class="section-head">
         <p class="eyebrow">4 &middot; The catch</p>
-        <h2>Development is a consequence of multicellularity, not a precondition</h2>
+        <h2>Development came after multicellularity</h2>
       </div>
       <p>Development is the obvious candidate explanation. Transcriptional programs, cell-type
         specification, and controlled morphogenesis are what allow a group of cells to build a body.
@@ -160,16 +159,15 @@
         <p class="eyebrow">5 &middot; The answer</p>
         <h2>Long-term experimental evolution as an alternative approach</h2>
       </div>
-      <p>Ozan Bozdag founded fifteen populations of snowflake yeast in 2018 and has transferred them
-        every day since. Each population is grown for 24 hours and then selected on how fast it
+      <p>Ozan Bozdag established twenty populations of snowflake yeast in 2018, and the fifteen that
+        were kept running are the MuLTEE. Each population is grown for 24 hours and then selected on how fast it
         settles through liquid. Five populations ferment anaerobically, five are mixotrophic, and
         five respire obligately. All fifteen descend from a single known genotype, so nothing about
         the starting condition has to be inferred. Every 25 days, roughly every 125 generations, a
         sample of each population is frozen at &minus;80&nbsp;&deg;C. The archive now holds more than
-        3,000 samples, and transfers continue daily.</p>
-      <p>Our model system cannot simply be studied. It has to be created through evolution, which
-        means the primary deliverable of the project is the continuation of the experiment itself.
-        A frozen population can be revived years later and measured with instruments that did not
+        3,000 samples.</p>
+      <p>Our model system has to be created by evolution, so keeping the experiment running is the
+        core of the project. A frozen population can be revived years later and measured with instruments that did not
         exist when it was frozen. Some of the most important results from Lenski and Barrick's
         <em>E.&nbsp;coli</em> LTEE came from genome sequencing and genetic reconstruction, neither of
         which was available at scale when that experiment began in 1988. To our knowledge we are the
@@ -209,7 +207,7 @@
             </canvas>
           </div>
           <figcaption class="scrub-legend">
-            <span><i>&#9679;</i> Sampling point, Fig. 1e</span>
+            <span><i>&#9679;</i> Sampling point</span>
             <span><i class="dash">&#9476;&#9476;&#9476;</i> The five replicate lines</span>
             <span><i class="hollow">&#9675;</i> Approximate trait onset</span>
           </figcaption>
@@ -222,7 +220,7 @@
           <label class="label" for="scrub-day">Transfer day</label>
           <input class="scrub-range" type="range" id="scrub-day"
                  min="0" max="1000" step="1" value="600"
-                 aria-valuetext="Day 600, transfer 600, about 3,000 generations. Cluster radius 434 micrometres, digitized from Fig. 1e.">
+                 aria-valuetext="Day 600, transfer 600, about 3,000 generations. Cluster radius 434 micrometres.">
           <button class="scrub-play" type="button" id="scrub-play" aria-pressed="false">Play</button>
         </div>
 
@@ -241,7 +239,7 @@
             <dt>Cluster radius</dt>
             <dd id="rd-radius">434 &micro;m</dd>
             <span id="rd-radius-tag" class="tag tag-measured">Sampled</span>
-            <span class="sub" id="rd-radius-sub">A sampling point in Bozdag et al. 2023 Fig. 1e, mean of the five anaerobic lines. Digitized from the published figure, so approximate to a few per cent.</span>
+            <span class="sub" id="rd-radius-sub">Mean of the five anaerobic populations (Bozdag et al. 2023).</span>
           </div>
           <div>
             <dt>Ploidy</dt>
@@ -360,8 +358,8 @@
                      width="1021" height="1021" loading="lazy"
                      alt="Confocal micrograph of an anaerobic snowflake yeast cluster, blue-dominant, against black.">
               </div>
-              <figcaption class="plate-caption" id="scrub-plate-cap">Day 600, anaerobic treatment. Replicate line not recorded.</figcaption>
-              <p class="trait-meta" style="margin-top:var(--sp-2)" id="scrub-plate-note">Nearest archived timepoint at or before this day. Four timepoints are imaged: 400, 600, 715, 1000.</p>
+              <figcaption class="plate-caption" id="scrub-plate-cap">Day 600, anaerobic treatment.</figcaption>
+              <p class="trait-meta" style="margin-top:var(--sp-2)" id="scrub-plate-note">Images are available from days 400, 600, 715 and 1,000.</p>
             </figure>
 
             <div class="scrub-papers">
@@ -374,11 +372,9 @@
         </div>
 
         <p class="scrub-foot">
-          Sources: cluster radius, Bozdag et&nbsp;al. 2023 (two measured points, day&nbsp;0 and
-          day&nbsp;600, anaerobic lines). Ploidy, Tong et&nbsp;al. 2025, published through
-          day&nbsp;1,000. Trait onsets are the day each trait is first reported, which is not
-          necessarily the day it arose. Generations use the published conversion of 5 per transfer.
-          Nothing on this instrument is extrapolated past its last published value.
+          Sources: cluster radius, Bozdag et&nbsp;al. 2023; ploidy, Tong et&nbsp;al. 2025. Trait days
+          are when each trait was first reported, which may be later than when it arose. Generations
+          assume about 5 per transfer.
         </p>
       </div>
     </section>

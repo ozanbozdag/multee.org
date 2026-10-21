@@ -178,13 +178,13 @@ window.MULTEE = (function () {
   var PLATES = [
     { day: 400,  src: 'assets/img/nuclei-cellwall-day400.jpg',        sm: 'assets/img/nuclei-cellwall-day400-sm.jpg',
       alt: 'Confocal micrograph of snowflake yeast with cyan cell walls and amber nuclei, branching from central attachment points.',
-      caption: 'Day 400. Cell walls and nuclei. Line not recorded.' },
+      caption: 'Day 400. Cell walls and nuclei.' },
     { day: 600,  src: 'assets/img/anaerobic-day600-confocal.jpg',     sm: 'assets/img/anaerobic-day600-confocal-sm.jpg',
       alt: 'Confocal micrograph of an anaerobic snowflake yeast cluster, blue-dominant, against black.',
-      caption: 'Day 600, anaerobic treatment. Replicate line not recorded.' },
+      caption: 'Day 600, anaerobic treatment.' },
     { day: 715,  src: 'assets/img/aerobic-day715-membrane-cellwall.jpg', sm: 'assets/img/aerobic-day715-membrane-cellwall-sm.jpg',
       alt: 'Fluorescence micrograph of rounder aerobic yeast cells with red membrane and green cell-wall labelling.',
-      caption: 'Day 715, obligately aerobic treatment. Replicate line not recorded.' },
+      caption: 'Day 715, obligately aerobic treatment.' },
     { day: 1000, src: 'assets/img/pa5-day1000-cellwall-gfp.jpg',      sm: 'assets/img/pa5-day1000-cellwall-gfp-sm.jpg',
       alt: 'Dense field of elongated snowflake yeast cells with teal cell walls and green interiors.',
       caption: 'Day 1000, anaerobic line PA5.' }
