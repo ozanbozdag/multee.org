@@ -519,6 +519,8 @@ h3{font-size:var(--t-h3)}
   padding-block:var(--sp-8)}
 .site-footer .page{row-gap:var(--sp-6)}
 .footer-grid{display:grid;gap:var(--sp-6);grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+/* six boxes: two even rows of three on wide screens rather than four plus two */
+@media (min-width:900px){.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .site-footer h3{font-family:var(--font-mono);font-size:var(--t-micro);text-transform:uppercase;
   letter-spacing:var(--track-label);color:var(--ink-dim);margin:0 0 var(--sp-3);font-weight:500}
 .site-footer p,.site-footer li{font-size:var(--t-small);color:var(--ink-dim);margin:0 0 var(--sp-2)}
