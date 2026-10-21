@@ -172,6 +172,11 @@ def _one_line(text):
     return text if len(text) <= 300 else text[:297].rsplit(" ", 1)[0] + "…"
 
 
+def _paragraphs(text):
+    """Split a description into its blank-line-separated paragraphs."""
+    return [p.strip() for p in re.split(r"\n\s*\n", (text or "").strip()) if p.strip()]
+
+
 # --- Pages --------------------------------------------------------------------
 # Links are written relative to the site root ("protocols/x/"); _relink adjusts them.
 
@@ -200,7 +205,7 @@ def protocols_index(index):
       <p class="eyebrow"><a href="data.html#resources">Data &amp; Strains</a> / Protocols</p>
       <h1 class="display">Protocols</h1>
       <p class="lede">How the MuLTEE is run and measured, from daily settling selection to
-        phenotyping. {_count(total, "protocol")}, written and maintained by the lab and updated as
+        phenotyping: {_count(total, "protocol")}, written and maintained by the lab and updated as
         methods change.</p>
       <p class="protocol-actions"><a class="btn btn-ghost" href="pipelines/">Analysis pipelines</a></p>
     </section>
@@ -339,12 +344,13 @@ def _figure(ph, protocol_title):
 
 
 def _pipeline_item(pl):
+    paras = _paragraphs(pl["description"])
     meta = [f"By {esc(pl['author'])}", f"Updated {esc(pl['last_updated'])}"]
     meta.append(" + ".join(x for x in ("Link" if pl.get("url") else "", "Zip" if pl.get("zip") else "") if x))
     return f'''        <li>
           <h3 class="pub-title"><a href="pipelines/{esc(pl["slug"])}/">{esc(pl["title"])}</a></h3>
           <p class="pub-meta">{"".join(f"<span>{m}</span>" for m in meta)}</p>
-          {f'<p class="finding-text">{esc(pl["description"])}</p>' if pl["description"] else ""}
+          {f'<p class="finding-text">{esc(paras[0])}</p>' if paras else ""}
         </li>
 '''
 
@@ -394,6 +400,8 @@ def pipeline_page(pl, protocols, site):
       </div>
       <ul class="pubs">{used_html}</ul>''' if used_html else ""
     body = "\n      ".join(part for part in (used_block, contents) if part)
+    description = "\n      ".join(f'<p class="lede">{esc(p)}</p>' if i == 0 else f'<p>{esc(p)}</p>'
+                                   for i, p in enumerate(_paragraphs(pl["description"])))
     body_section = f'''
 
   <hr class="rule">
@@ -408,7 +416,7 @@ def pipeline_page(pl, protocols, site):
       <p class="eyebrow"><a href="pipelines/">Analysis pipelines</a></p>
       <h1 class="display protocol-title">{esc(pl["title"])}</h1>
       <p class="pub-meta protocol-meta"><span>By {esc(pl["author"])}</span><span>Updated {esc(pl["last_updated"])}</span></p>
-      {f'<p class="lede">{esc(pl["description"])}</p>' if pl["description"] else ""}
+      {description}
       {f'<p class="protocol-actions">{" ".join(actions)}</p>' if actions else ""}
       {f'<p class="plate-caption">{esc(pl["url"])}</p>' if pl.get("url") else ""}
     </section>

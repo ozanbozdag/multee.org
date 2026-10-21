@@ -169,7 +169,7 @@
 
     var name = el('span', 'visually-hidden',
       p.short + ': ' + p.title + '. ' +
-      (p.multee ? 'Uses MuLTEE populations.' : 'Foundational, does not use MuLTEE populations.'));
+      (p.multee ? 'Uses MuLTEE populations.' : 'Other snowflake yeast work.'));
     a.appendChild(name);
 
     var desc = el('span', 'visually-hidden');
@@ -198,7 +198,7 @@
     var th = THEMES[p.theme];
     cSwatch.style.color = (th || {}).color || 'var(--on-void)';
     cTheme.textContent = th ? th.label : '';
-    cKind.textContent = p.multee ? 'Uses MuLTEE populations' : 'Foundational';
+    cKind.textContent = p.multee ? 'Uses MuLTEE populations' : 'Other snowflake yeast work';
     cKind.className = 'pt-card-kind' + (p.multee ? ' is-multee' : '');
     cDate.textContent = longDate(TS[i]);
     cTitle.textContent = p.title;
