@@ -39,12 +39,12 @@
 .scrub-controls{
   padding:var(--sp-4);
   border-bottom:1px solid var(--rule);
-  display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+  display:grid;grid-template-columns:auto minmax(0,1fr);
   gap:var(--sp-3) var(--sp-4);align-items:center;
 }
 .scrub-controls .label{white-space:nowrap}
 @media (max-width:640px){
-  .scrub-controls{grid-template-columns:minmax(0,1fr) auto}
+  .scrub-controls{grid-template-columns:minmax(0,1fr)}
   .scrub-controls .label{grid-column:1/-1}
 }
 
@@ -69,13 +69,6 @@
   width:12px;height:26px;border-radius:0;
   background:var(--accent);border:1px solid var(--accent);
 }
-.scrub-play{
-  font-family:var(--font-mono);font-size:var(--t-label);
-  text-transform:uppercase;letter-spacing:var(--track-label);
-  padding:var(--sp-2) var(--sp-4);min-width:6.5rem;
-  background:none;color:var(--ink);border:1px solid var(--rule);cursor:pointer;
-}
-.scrub-play:hover{color:var(--accent);border-color:var(--accent)}
 
 /* ---- numeric readout */
 .scrub-readout{
@@ -114,7 +107,7 @@
 .tag-interp{color:var(--amber-ink);border-style:dashed}
 
 /* ---- panels: traits, plate, papers */
-.scrub-panels{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.scrub-panels{display:grid;grid-template-columns:minmax(0,1fr)}
 @media (max-width:880px){.scrub-panels{grid-template-columns:minmax(0,1fr)}}
 .scrub-panel{padding:var(--sp-5);border-right:1px solid var(--rule)}
 .scrub-panel:last-child{border-right:0}
@@ -202,3 +195,42 @@
 .prose .scrub-foot,.prose .trait-detail,.prose .trait-meta,
 .prose .scrub-papers .recent,.prose .scrub-readout .sub{color:var(--ink-dim)}
 
+
+/* ---- trait tower: one box per evolved trait, beside the chart. Outline always
+   accent; filled once the slider passes the trait's day; hover or focus expands
+   a box to show its full caption. */
+.scrub-top{display:grid;grid-template-columns:minmax(0,1fr) 15.5rem;border-bottom:1px solid var(--rule)}
+.scrub-top .scrub-chart{border-bottom:0}
+.trait-tower-wrap{padding:var(--sp-4);border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:var(--sp-2)}
+.trait-tower{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.375rem}
+.tower-box{
+  position:relative;border:1px solid var(--accent);background:var(--accent);color:var(--bg);
+  padding:.3rem .55rem;font-size:var(--t-small);line-height:1.3;cursor:default;
+  transition:background-color .35s ease,color .35s ease;
+}
+.tower-box.pending{background:transparent;color:var(--ink)}
+.tower-box:focus{outline:none}
+.tower-box:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.tower-name{display:block}
+.tower-detail{
+  display:none;position:absolute;right:calc(100% - 1px);top:-1px;width:19rem;z-index:5;
+  background:var(--surface);color:var(--ink);border:1px solid var(--accent);
+  padding:var(--sp-3);font-size:var(--t-small);line-height:1.45;
+}
+.tower-day,.tower-meta{display:block;font-family:var(--font-mono);font-size:var(--t-micro);
+  text-transform:uppercase;letter-spacing:.06em;color:var(--ink-dim)}
+.tower-day{margin-bottom:var(--sp-1);color:var(--accent)}
+.tower-meta{margin-top:var(--sp-2)}
+.tower-box:hover,.tower-box:focus-visible{z-index:6}
+.tower-box:hover .tower-detail,.tower-box:focus .tower-detail{display:block}
+.tower-box.just-reached{animation:tower-reached 1.2s ease-out}
+@keyframes tower-reached{
+  from{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 45%,transparent)}
+  to{box-shadow:0 0 0 0 transparent}
+}
+@media (prefers-reduced-motion:reduce){.tower-box.just-reached{animation:none}}
+@media (max-width:880px){
+  .scrub-top{grid-template-columns:minmax(0,1fr)}
+  .trait-tower-wrap{border-left:0;border-top:1px solid var(--rule)}
+  .tower-detail{position:static;width:auto;border:0;padding:var(--sp-2) 0 0;background:transparent;color:inherit}
+}

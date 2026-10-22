@@ -28,7 +28,6 @@
   var canvas = document.getElementById('scrub-canvas');
   var wrap = canvas ? canvas.parentNode : null;
   var range = document.getElementById('scrub-day');
-  var play = document.getElementById('scrub-play');
   var controls = document.getElementById('scrub-controls');
 
   var out = {
@@ -45,14 +44,13 @@
   var plateImg = document.getElementById('scrub-plate-img');
   var plateCap = document.getElementById('scrub-plate-cap');
   var plateNote = document.getElementById('scrub-plate-note');
-  var traits = Array.prototype.slice.call(root.querySelectorAll('.trait'));
+  var traits = Array.prototype.slice.call(root.querySelectorAll('.trait, .tower-box'));
 
   /* --------------------------------------------------------------- helpers */
   function css(name) {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   }
   function comma(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   /* Colours are re-read whenever the theme changes; nothing here is hardcoded. */
   var C = {};
@@ -428,51 +426,9 @@
     range.max = String(MAX);
     range.addEventListener('input', function () {
       day = +range.value;
-      stop();
       render();
     });
   }
-
-  var raf = null, last = 0;
-  var SPEED = 170;  // transfer days per second
-
-  function stop() {
-    if (raf) { cancelAnimationFrame(raf); raf = null; }
-    if (play) { play.textContent = 'Play'; play.setAttribute('aria-pressed', 'false'); }
-  }
-  function tick(ts) {
-    if (!last) last = ts;
-    var dt = Math.min(100, ts - last) / 1000;
-    last = ts;
-    day = Math.min(MAX, day + SPEED * dt);
-    if (range) range.value = String(Math.round(day));
-    render();
-    if (day >= MAX) { day = MAX; stop(); return; }
-    raf = requestAnimationFrame(tick);
-  }
-  function start() {
-    if (day >= MAX) { day = 0; if (range) range.value = '0'; }
-    last = 0;
-    if (play) { play.textContent = 'Pause'; play.setAttribute('aria-pressed', 'true'); }
-    raf = requestAnimationFrame(tick);
-  }
-  if (play) {
-    play.addEventListener('click', function () { raf ? stop() : start(); });
-  }
-
-  /* Reduced motion: the settled state is rendered immediately, self-playing is
-     removed entirely, and the slider keeps working because a drag is a user
-     action rather than an animation. */
-  function applyMotionPref() {
-    if (reduced.matches) {
-      stop();
-      if (play && play.parentNode) play.parentNode.removeChild(play);
-      play = null;
-    }
-  }
-  reduced.addEventListener
-    ? reduced.addEventListener('change', applyMotionPref)
-    : reduced.addListener(applyMotionPref);
 
   /* --------------------------------------------------------- theme + resize */
   new MutationObserver(function () { readColours(); draw(); })
@@ -490,7 +446,6 @@
   /* ------------------------------------------------------------------- init */
   if (controls) controls.removeAttribute('data-requires-js');
   if (canvas) canvas.removeAttribute('data-requires-js');
-  applyMotionPref();
   resize();
   render();
 })();
