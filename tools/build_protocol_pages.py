@@ -202,7 +202,7 @@ def protocols_index(index):
   </div>''' for c in cats)
     return f'''  <div class="page">
     <section class="section" {SECTION_HEAD}>
-      <p class="eyebrow"><a href="data.html#resources">Data &amp; Strains</a> / Protocols</p>
+      <p class="eyebrow"><a href="data.html#resources">Open Science</a> / Protocols</p>
       <h1 class="display">Protocols</h1>
       <p class="lede">How the MuLTEE is run and measured, from daily settling selection to
         phenotyping: {_count(total, "protocol")}, written and maintained by the lab and updated as
@@ -360,7 +360,7 @@ def pipelines_index(pipelines, protocols):
     items = "".join(_pipeline_item(pl) for pl in pipelines.values())
     return f'''  <div class="page">
     <section class="section" {SECTION_HEAD}>
-      <p class="eyebrow"><a href="data.html#resources">Data &amp; Strains</a> / Pipelines</p>
+      <p class="eyebrow"><a href="data.html#resources">Open Science</a> / Pipelines</p>
       <h1 class="display">Analysis pipelines</h1>
       <p class="lede">Code the lab uses to analyse MuLTEE data.</p>
       <p class="protocol-actions"><a class="btn btn-ghost" href="protocols/">Protocols</a></p>
