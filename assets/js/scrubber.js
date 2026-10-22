@@ -45,8 +45,6 @@
   var plateImg = document.getElementById('scrub-plate-img');
   var plateCap = document.getElementById('scrub-plate-cap');
   var plateNote = document.getElementById('scrub-plate-note');
-  var paperCount = document.getElementById('scrub-paper-count');
-  var paperRecent = document.getElementById('scrub-paper-recent');
   var traits = Array.prototype.slice.call(root.querySelectorAll('.trait'));
 
   /* --------------------------------------------------------------- helpers */
@@ -409,15 +407,6 @@
       plateNote.textContent = 'Images are available from days 400, 600, 715 and 1,000.';
     }
 
-    /* papers */
-    var pubs = M.reportedBy(day);
-    if (paperCount) paperCount.textContent = String(pubs.length);
-    if (paperRecent) {
-      paperRecent.textContent = pubs.length
-        ? 'Most recent: “' + pubs[pubs.length - 1].title + '”, ' + pubs[pubs.length - 1].short + '.'
-        : 'None yet.';
-    }
-
     /* the whole synchronised readout, spoken in one string */
     if (range) {
       range.setAttribute('aria-valuetext',
@@ -426,7 +415,6 @@
         '. Cluster radius ' + rTxt + ', ' + spokenTag +
         '. Ploidy ' + p.state + ', ' + p.label +
         '. ' + M.traitsBy(day).length + ' of ' + M.TRAITS.length + ' evolved traits reported' +
-        '. ' + pubs.length + ' papers report the state of the experiment by this day' +
         (day > PUB ? '. Beyond the published record.' : '.'));
     }
 

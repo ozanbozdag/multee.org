@@ -145,16 +145,10 @@
   card.appendChild(cMeta); card.appendChild(cTitle); card.appendChild(cCite);
   card.appendChild(cFinding); card.appendChild(cDoi);
 
-  var note = el('p', 'pt-note',
-    'Vertical position carries no meaning. Dots are nudged off the line only so that ' +
-    'papers published within a few weeks of each other stay visible. Horizontal position ' +
-    'is the real publication date.');
-
   plate.appendChild(filterBar);
   plate.appendChild(wrap);
   plate.appendChild(legend);
   plate.appendChild(card);
-  plate.appendChild(note);
   mount.appendChild(plate);
 
   /* ------------------------------------------------------------------- dots */
