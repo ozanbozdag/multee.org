@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>History | MuLTEE</title>
-<meta name="description" content="History of the MuLTEE: development of the snowflake yeast model system from around 2010, the 2018 experiment testing whether oxygen limits multicellular size, and the continued daily transfers that made it a long-term evolution experiment.">
+<meta name="description" content="History of the MuLTEE: development of the snowflake yeast model system from around 2010, the 2018 experiment testing whether oxygen limits multicellular size, the continued daily transfers that made it a long-term evolution experiment, and an interactive timeline of its first 1,000 transfers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/scrubber.css">
 <script>
   /* Set before first paint so neither the theme nor the reveal state flashes. */
   (function(){try{var t=localStorage.getItem('multee-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}
@@ -24,7 +25,7 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="story.html">The Story</a>
+      <a href="story.html">Our Direction</a>
       <a href="experiment.html">The Experiment</a>
       <a href="populations.html">Populations</a>
       <a href="history.html" aria-current="page">History</a>
@@ -193,6 +194,205 @@
       <p>The experiment has since become the central project of the Ratcliff Lab and the basis of a
         decadal research program. Bozdag is principal investigator on the NSF LTREB award that funds
         it and Ratcliff is co-principal investigator.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ===================================================== 4. the first 1,000 transfers -->
+  <div class="page">
+    <section class="section wide" id="what-happened">
+      <div class="section-head">
+        <p class="eyebrow">Four &middot; Days 0 to 1,000</p>
+        <h2>The first 1,000 transfers</h2>
+      </div>
+
+      <div class="prose" style="max-width:var(--measure);margin-bottom:var(--sp-6)">
+        <p>Drag the slider to move through the experiment. The size curve plots all five anaerobic
+          populations at the twelve sampling points in Bozdag et al. 2023 Fig. 1e, digitized from
+          the published figure. Published size data runs through day 600, and the experiment
+          continues well past that. The faint lines behind the mean are the individual replicates,
+          which begin increasing in size at different times.</p>
+      </div>
+
+      <div class="scrub" id="scrub">
+
+        <!-- ---- chart -->
+        <figure class="scrub-chart">
+          <div class="scrub-canvas-wrap">
+            <canvas id="scrub-canvas" data-requires-js
+                    role="img"
+                    aria-label="Timeline of the MuLTEE from transfer day 0 to day 1,000. Mean cluster radius in the anaerobic populations rises from 16 micrometres at day 0 to 434 micrometres at day 600. Trait onsets are ticked along the top, with a guide line once reached, and ploidy state along the bottom.">
+              Mean cluster radius in the anaerobic populations rose from 16&nbsp;&micro;m at day 0 to
+              434&nbsp;&micro;m at day 600.
+            </canvas>
+          </div>
+          <figcaption class="scrub-legend">
+            <span><i>&#9679;</i> Sampling point</span>
+            <span><i class="dash">&#9472;&#9472;&#9472;</i> The five replicate lines</span>
+            <span><i class="hollow">&#9675;</i> Approximate trait onset</span>
+          </figcaption>
+        </figure>
+
+        <!-- ---- controls. Hidden until scrubber.js removes data-requires-js, so a
+                  script failure leaves a complete static day-600 snapshot instead
+                  of a slider that does nothing. -->
+        <div class="scrub-controls" id="scrub-controls" data-requires-js>
+          <label class="label" for="scrub-day">Transfer day</label>
+          <input class="scrub-range" type="range" id="scrub-day"
+                 min="0" max="1000" step="1" value="600"
+                 aria-valuetext="Day 600, transfer 600, about 3,000 generations. Cluster radius 434 micrometres.">
+          <button class="scrub-play" type="button" id="scrub-play" aria-pressed="false">Play</button>
+        </div>
+
+        <!-- ---- readout. Static values below are the day-600 state. -->
+        <dl class="scrub-readout">
+          <div>
+            <dt>Transfer</dt>
+            <dd id="rd-transfer">600</dd>
+          </div>
+          <div>
+            <dt>Generations</dt>
+            <dd id="rd-gens">&#8776;3,000</dd>
+            <span class="sub">At 5 generations per transfer (Bozdag et al. 2023).</span>
+          </div>
+          <div>
+            <dt>Cluster radius</dt>
+            <dd id="rd-radius">434 &micro;m</dd>
+            <span id="rd-radius-tag" class="tag tag-measured">Sampled</span>
+            <span class="sub" id="rd-radius-sub">Mean of the five anaerobic populations (Bozdag et al. 2023).</span>
+          </div>
+          <div>
+            <dt>Ploidy</dt>
+            <dd id="rd-ploidy">4n</dd>
+            <span class="sub" id="rd-ploidy-sub">Tetraploid, fixed. Tong et al. 2025.</span>
+          </div>
+        </dl>
+
+        <!-- ---- panels -->
+        <div class="scrub-panels">
+
+          <div class="scrub-panel">
+            <h3>Evolved traits</h3>
+            <ul class="trait-list">
+              <li class="trait" data-day="100">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 100</span>
+                <span class="trait-body">
+                  <span class="trait-name">Cells elongate</span>
+                  <span class="trait-detail">Higher cellular aspect ratio lowers packing density and delays the strain-driven fracture that limits cluster size.</span>
+                  <span class="trait-meta">PA &middot; Bozdag et al. 2023</span>
+                </span>
+                <span class="trait-state">Evolved by day 100</span>
+              </li>
+              <li class="trait" data-day="100">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 100</span>
+                <span class="trait-body">
+                  <span class="trait-name">Tetraploidy fixes</span>
+                  <span class="trait-detail">Whole-genome duplication arose by day 50 and fixed by day 100 in all ten focal populations. Longer tetraploid cells make larger clusters.</span>
+                  <span class="trait-meta">PA + PM &middot; Tong et al. 2025</span>
+                </span>
+                <span class="trait-state">Evolved by day 100</span>
+              </li>
+              <li class="trait" data-day="200">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 200</span>
+                <span class="trait-body">
+                  <span class="trait-name">Division becomes synchronous</span>
+                  <span class="trait-detail">The ancestral first-division delay was lost by day 200 and synchrony was retained through day 1,000. Synchrony builds less branched topologies that fracture later.</span>
+                  <span class="trait-meta">PA &middot; Cede&ntilde;o-P&eacute;rez et al. 2025</span>
+                </span>
+                <span class="trait-state">Evolved by day 200</span>
+              </li>
+              <li class="trait" data-day="400">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 400</span>
+                <span class="trait-body">
+                  <span class="trait-name">Branches entangle</span>
+                  <span class="trait-detail">Elongated branches interlock in configurations that rigid-body motion cannot undo, so groups hold together after many cell-cell bonds break.</span>
+                  <span class="trait-meta">PA &middot; Day et al. 2024</span>
+                </span>
+                <span class="trait-state">Evolved by day 400</span>
+              </li>
+              <li class="trait" data-day="600">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 600</span>
+                <span class="trait-body">
+                  <span class="trait-name">Hsp90 down-regulated</span>
+                  <span class="trait-detail">All five macroscopic anaerobic lineages converged on reduced Hsp90, destabilizing Cdc28, delaying mitosis and prolonging polarized growth.</span>
+                  <span class="trait-meta">PA &middot; Montrose et al. 2024</span>
+                </span>
+                <span class="trait-state">Evolved by day 600</span>
+              </li>
+              <li class="trait" data-day="600">
+                <span class="trait-mark" aria-hidden="true">&#9679;</span>
+                <span class="trait-day">Day 600</span>
+                <span class="trait-body">
+                  <span class="trait-name">Bodies become macroscopic</span>
+                  <span class="trait-detail">Mean cluster radius reaches 434 &micro;m, about 20,000 times the ancestral volume. As a material the yeast goes from weaker than gelatin to the toughness of wood.</span>
+                  <span class="trait-meta">PA &middot; Bozdag et al. 2023</span>
+                </span>
+                <span class="trait-state">Evolved by day 600</span>
+              </li>
+              <li class="trait pending" data-day="715">
+                <span class="trait-mark" aria-hidden="true">&#9675;</span>
+                <span class="trait-day">Day 715</span>
+                <span class="trait-body">
+                  <span class="trait-name">Small and large specialists coexist</span>
+                  <span class="trait-detail">Three of five obligately aerobic populations split into coexisting morphs held at roughly 9% large and 91% small by competition for dissolved oxygen.</span>
+                  <span class="trait-meta">PO &middot; Pineau et al. 2024</span>
+                </span>
+                <span class="trait-state">Not yet at this day</span>
+              </li>
+              <li class="trait pending" data-day="800">
+                <span class="trait-mark" aria-hidden="true">&#9675;</span>
+                <span class="trait-day">Day 800</span>
+                <span class="trait-body">
+                  <span class="trait-name">Clusters pump their own fluid</span>
+                  <span class="trait-detail">Above a threshold size, metabolism drives buoyant circulation that carries nutrients inward, sustaining exponential growth past the diffusion limit.</span>
+                  <span class="trait-meta">PA &middot; Narayanasamy et al. 2025</span>
+                </span>
+                <span class="trait-state">Not yet at this day</span>
+              </li>
+              <li class="trait pending" data-day="1000">
+                <span class="trait-mark" aria-hidden="true">&#9675;</span>
+                <span class="trait-day">Day 1,000</span>
+                <span class="trait-body">
+                  <span class="trait-name">Aneuploid routes open</span>
+                  <span class="trait-detail">Anaerobic tetraploids accumulated extensive, partly convergent aneuploidy that tracked the continued evolution of macroscopic size.</span>
+                  <span class="trait-meta">PA &middot; Tong et al. 2025</span>
+                </span>
+                <span class="trait-state">Not yet at this day</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="scrub-panel">
+            <h3>From the archive</h3>
+            <figure class="scrub-plate">
+              <div class="plate-figure">
+                <img id="scrub-plate-img" data-day="600"
+                     src="assets/img/anaerobic-day600-confocal.jpg"
+                     srcset="assets/img/anaerobic-day600-confocal-sm.jpg 900w, assets/img/anaerobic-day600-confocal.jpg 1021w"
+                     sizes="(max-width:880px) 100vw, 33vw"
+                     width="1021" height="1021" loading="lazy"
+                     alt="Confocal micrograph of an anaerobic snowflake yeast cluster, blue-dominant, against black.">
+              </div>
+              <figcaption class="plate-caption" id="scrub-plate-cap">Day 600, anaerobic treatment.</figcaption>
+              <p class="trait-meta" style="margin-top:var(--sp-2)" id="scrub-plate-note">Images are available from days 400, 600, 715 and 1,000.</p>
+            </figure>
+
+            <p class="trait-meta" style="margin-top:var(--sp-5)"><a href="publications.html">See all publications on the calendar timeline &rarr;</a></p>
+          </div>
+        </div>
+
+        <p class="scrub-foot">
+          Sources: cluster radius, Bozdag et&nbsp;al. 2023; ploidy, Tong et&nbsp;al. 2025. Trait days
+          are when each trait was first reported, which may be later than when it arose. Generations
+          assume about 5 per transfer.
+        </p>
+      </div>
     </section>
   </div>
 
@@ -441,5 +641,7 @@
 </footer>
 
 <script src="assets/js/site.js"></script>
+<script src="assets/js/multee-data.js"></script>
+<script src="assets/js/scrubber.js"></script>
 </body>
 </html>
