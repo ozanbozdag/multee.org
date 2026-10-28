@@ -30,25 +30,26 @@ window.MULTEE = (function () {
   };
 
   /* -------------------------------------------------------------- the clock
-     The lab reports 9,000+ generations as of 2026. The published record runs to
-     1,000 transfers (~5,000 generations, Tong 2025), so the conversion below is
-     the published one and the present-day total is the lab's own figure. */
+     Bozdag, Tong et al. 2026 (Nature review) report more than 10,000 generations.
+     The detailed published record runs to 1,000 transfers (~5,000 generations,
+     Tong 2025), so the conversion below is the published one and the present-day
+     total is the review's figure. */
   /* TWO CLOCKS, and they are NOT the same. Conflating them is the easiest way
      to put a wrong number on this site.
        TRANSFER DAY  – experiment time. TRAITS[].day, RADIUS_SERIES.days and the
                        scrubber all use this. Day 600 is 600 completed transfers.
        CALENDAR DATE – wall-clock time. PAPERS[].date uses this.
      There is no sound mapping between them. Transfers are not one per calendar
-     day: at 5 generations per transfer, the lab's 9,000+ generations would be
-     1,800 transfer days, which is under five years, yet that figure is current
-     in 2026. So the experiment has paused at times, and any transfer-day-to-year
+     day: at 5 generations per transfer, 10,000+ generations would be about
+     2,000 transfer days, roughly five and a half years, yet the experiment began
+     in 2018. So the experiment has paused at times, and any transfer-day-to-year
      conversion would be invented. Do not add one. */
   var CLOCK = {
     startYear: 2018,
     generationsPerTransfer: 5,          // 600 transfers ≈ 3,000 gens (Bozdag 2023)
     publishedThroughDay: 1000,          // Tong 2025 extends the record to day 1000
-    currentGenerations: '9,000+',       // lab-confirmed, unpublished beyond day 1000
-    currentGenerationsNote: 'Lab record. The published series ends at 1,000 transfers.',
+    currentGenerations: '10,000+',      // Bozdag, Tong et al. 2026, Nature review
+    currentGenerationsNote: 'Bozdag, Tong et al. 2026. The detailed published series ends at 1,000 transfers.',
     maxDay: 1000                        // scrub range ends at the last published day
   };
 
